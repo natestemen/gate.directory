@@ -1,0 +1,12 @@
+---
+layout: base
+title: "Quantum Gate Database"
+---
+
+Welcome to the Quantum Gate Database. Click on a gate below to learn more:
+
+<ul>
+  {% for gate in collections.gates %}
+  <li><a href="{{ gate.url }}">{{ gate.data.title }}</a></li>
+  {% endfor %}
+</ul>
