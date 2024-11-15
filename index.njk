@@ -1,12 +1,18 @@
 ---
 layout: base
-title: "Quantum Gate Database"
+title: Quantum gate directory
 ---
 
-Welcome to the Quantum Gate Database. Click on a gate below to learn more:
+Quantum gates are the fundamental building block of quantum computation.
+This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
 
+
+<h2>Gates</h2>
 <ul>
   {% for gate in collections.gates %}
   <li><a href="{{ gate.url }}">{{ gate.data.title }}</a></li>
   {% endfor %}
 </ul>
+
+Not finding a gate you're interested in?
+Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a>!
