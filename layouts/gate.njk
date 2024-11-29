@@ -3,16 +3,18 @@
 {% block content %}
 <h1>{{ title }}</h1>
 
-<p><strong>Symbol:</strong> {{ symbol }}</p>
+<p><strong>Symbol:</strong> ${{ symbol }}$</p>
+
+<div>
+  {{ content | safe }}
+</div>
+
+<p>This group is contained in the following groups:</p>
 <ul>
   {% for group in groups %}
   <li><a href="/groups/{{ group }}">{{ group }}</a></li>
   {% endfor %}
 </ul>
-
-<div>
-  {{ content | safe }}
-</div>
 
 <a href="/">Back to home</a>
 {% endblock %}
