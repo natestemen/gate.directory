@@ -2,7 +2,11 @@
 layout: gate
 title: Pauli-X Gate
 symbol: X
-permalink: "/gates/pauli-x/"
+alias:
+  - x
+groups:
+  - pauli
+  - clifford
 ---
 
 The Pauli-X gate is similar to the classical NOT gate, flipping the $|0\rangle$ state to $|1\rangle$ and vice versa.

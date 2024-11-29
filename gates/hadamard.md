@@ -2,7 +2,8 @@
 layout: gate
 title: Hadamard Gate
 symbol: H
-permalink: "/gates/hadamard/"
+alias:
+  - h
 ---
 
 The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition.

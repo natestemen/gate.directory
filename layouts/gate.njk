@@ -1,23 +1,14 @@
-{% extends "base.njk" %}
+{# {% extends "base.njk" %} #}
 
 {% block content %}
 <h1>{{ title }}</h1>
 
 <p><strong>Symbol:</strong> {{ symbol }}</p>
-
-<h2>Matrix</h2>
-<table>
-  {% for row in matrix %}
-  <tr>
-    {% for cell in row %}
-    <td>{{ cell }}</td>
-    {% endfor %}
-  </tr>
+<ul>
+  {% for group in groups %}
+  <li><a href="/groups/{{ group }}">{{ group }}</a></li>
   {% endfor %}
-</table>
-
-<h2>Description</h2>
-<p>{{ description }}</p>
+</ul>
 
 <div>
   {{ content | safe }}
