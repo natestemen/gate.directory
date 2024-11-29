@@ -7,6 +7,7 @@ alias:
 groups:
   - pauli
   - clifford
+arity: 1
 ---
 
 The Pauli-Y gate is
@@ -15,7 +16,7 @@ The Pauli-Y gate is
 | ----------- | ------------------------------------------------ |
 | Notation(s) | $Y$, $\sigma_y$, $\sigma_2$                      |
 | Matrix      | $\begin{bmatrix}0 & -i \\\\ i & 0 \end{bmatrix}$ |
-| Arity       | 1                                                |
+| Arity       | {{ arity }}                                      |
 | Group       | $\mathsf{U}(2)$                                  |
 
 ## Mathematical facts

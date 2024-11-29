@@ -4,19 +4,19 @@ title: Hadamard Gate
 symbol: H
 alias:
   - h
+groups:
+  - clifford
+arity: 1
 ---
 
 The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition.
 
-## Matrix
-
-$$
-H =
-\frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 &  1 \\\\
-  1 & -1
-\end{bmatrix}
-$$
+|             |                                                                    |
+| ----------- | ------------------------------------------------------------------ |
+| Notation(s) | $H$                                                                |
+| Matrix      | $\frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\\\ 1 & -1 \end{bmatrix}$ |
+| Arity       | {{ arity }}                                                        |
+| Group       | $\mathsf{U}(2)$                                                    |
 
 ### Usage
 

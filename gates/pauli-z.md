@@ -7,13 +7,14 @@ alias:
 groups:
   - pauli
   - clifford
+arity: 1
 ---
 
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
 | Notation(s) | $Z$, $\sigma_z$, $\sigma_3$                      |
 | Matrix      | $\begin{bmatrix}1 & 0 \\\\ 0 & -1 \end{bmatrix}$ |
-| Arity       | 1                                                |
+| Arity       | {{ arity }}                                      |
 | Group       | $\mathsf{U}(2)$                                  |
 
 ### More Details
