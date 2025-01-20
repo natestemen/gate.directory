@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  <title>Quantum gate directory</title>
+</head>
+<body>
+  <main>
+    <div class="content">
+      <div class="not-footer">
+        <header>
+          <h1><a href="/">Quantum Gates</a></h1>
+        </header>
+        
+<p>
+  Quantum gates are the fundamental building block of quantum computation.
+  This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
+</p>
+
+
+<h2>Gates</h2>
+<ul>
+  
+  <li><a href="/gates/cnot/">Controlled Not Gate</a></li>
+  
+  <li><a href="/gates/hadamard/">Hadamard Gate</a></li>
+  
+  <li><a href="/gates/pauli-x/">Pauli-X Gate</a></li>
+  
+  <li><a href="/gates/pauli-y/">Pauli-Y Gate</a></li>
+  
+  <li><a href="/gates/pauli-z/">Pauli-Z Gate</a></li>
+  
+</ul>
+
+
+
+<p>
+Not finding a gate you're interested in?
+Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a>!
+</p>
+
+
+      </div>
+      <footer>
+        <p>Quantum gate directory</p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
