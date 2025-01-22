@@ -7,20 +7,27 @@
   This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
 </p>
 
+<br/>
 
 <h2>Gates</h2>
+<p>Quantum gates, or gates for short, are individual or families of elements of the unitary group $\mathsf{U}(n)$.</p>
 <ul>
   {% for gate in collections.gates %}
   <li><a href="{{ gate.url }}">{{ gate.data.title }}</a></li>
   {% endfor %}
 </ul>
 
+<br/>
+
 <h2>Groups</h2>
+<p>Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
 <ul>
   {% for group in collections.groups %}
   <li><a href="{{ group.url }}">{{ group.data.title }}</a></li>
   {% endfor %}
 </ul>
+
+<br/>
 
 <p>
 Not finding a gate you're interested in?
