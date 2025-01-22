@@ -12,7 +12,7 @@
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-  <title>Pauli-Z Gate</title>
+  <title>SWAP Gate</title>
 </head>
 <body>
   <main>
@@ -22,12 +22,13 @@
           <h1><a href="/">Quantum Gates</a></h1>
         </header>
         
-<h2>Pauli-Z Gate</h2>
+<h2>SWAP Gate</h2>
 
-<p><strong>Symbol:</strong> $Z$</p>
+<p><strong>Symbol:</strong> $SWAP$</p>
 
 <div>
-  <table>
+  <p>The SWAP gate exchanges the states of two qubits. It is commonly used in quantum circuits to reorder qubits or facilitate interactions between qubits that are not directly connected.</p>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -37,32 +38,38 @@
 <tbody>
 <tr>
 <td>Notation(s)</td>
-<td>$Z$, $\sigma_z$, $\sigma_3$</td>
+<td>$\text{SWAP}$</td>
 </tr>
 <tr>
 <td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}$</td>
+<td>$\begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$</td>
 </tr>
 <tr>
 <td>Arity</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr>
 <td>Group</td>
-<td>$\mathsf{U}(2)$</td>
+<td>$\mathsf{U}(4)$</td>
 </tr>
 </tbody>
 </table>
-<h3>More Details</h3>
-<p>This gate is also useful for generating entanglement when combined with other gates.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Reversible</strong>: The SWAP gate is its own inverse, i.e., $\mathrm{SWAP} \cdot \mathrm{SWAP} = I$. Or put differently, the gate is <em>self-adjoint</em>.</li>
+<li><strong>Decomposition</strong>: The SWAP gate can be decomposed into three CNOT gates: $\mathrm{SWAP} = \mathrm{CNOT}<em>{12} \cdot \mathrm{CNOT}</em>{21} \cdot \mathrm{CNOT}_{12}$</li>
+</ul>
+<h3>Applications</h3>
+<ul>
+<li>Reordering qubits in a circuit.</li>
+<li>Facilitating interactions between qubits in hardware with limited connectivity.</li>
+</ul>
 
 </div>
 
 
   <p>This group is contained in the following groups:</p>
   <ul>
-    
-    <li><a href="/groups/pauli">pauli</a></li>
     
     <li><a href="/groups/clifford">clifford</a></li>
     

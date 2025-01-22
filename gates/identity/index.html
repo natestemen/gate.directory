@@ -12,7 +12,7 @@
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-  <title>Pauli-Z Gate</title>
+  <title>Idenity Gate</title>
 </head>
 <body>
   <main>
@@ -22,12 +22,13 @@
           <h1><a href="/">Quantum Gates</a></h1>
         </header>
         
-<h2>Pauli-Z Gate</h2>
+<h2>Idenity Gate</h2>
 
-<p><strong>Symbol:</strong> $Z$</p>
+<p><strong>Symbol:</strong> $I$</p>
 
 <div>
-  <table>
+  <p>The identity gate $I_n$, acting on $n$-qubits, leaves the qubits unchanged.</p>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -37,24 +38,22 @@
 <tbody>
 <tr>
 <td>Notation(s)</td>
-<td>$Z$, $\sigma_z$, $\sigma_3$</td>
+<td>$I$, $\mathbb{1}$, $1$</td>
 </tr>
 <tr>
 <td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}$</td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$</td>
 </tr>
 <tr>
 <td>Arity</td>
-<td>1</td>
+<td>n</td>
 </tr>
 <tr>
 <td>Group</td>
-<td>$\mathsf{U}(2)$</td>
+<td>$\mathsf{U}(2^n)$</td>
 </tr>
 </tbody>
 </table>
-<h3>More Details</h3>
-<p>This gate is also useful for generating entanglement when combined with other gates.</p>
 
 </div>
 

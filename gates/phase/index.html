@@ -12,7 +12,7 @@
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-  <title>Pauli-Z Gate</title>
+  <title>Phase Shift Gate</title>
 </head>
 <body>
   <main>
@@ -22,12 +22,13 @@
           <h1><a href="/">Quantum Gates</a></h1>
         </header>
         
-<h2>Pauli-Z Gate</h2>
+<h2>Phase Shift Gate</h2>
 
-<p><strong>Symbol:</strong> $Z$</p>
+<p><strong>Symbol:</strong> $P(&#92;phi)$</p>
 
 <div>
-  <table>
+  <p>The Phase Shift gate applies a rotation to the phase of the quantum state, leaving the $|0\rangle$ component unchanged while applying a phase shift $e^{i\phi}$ to the $|1\rangle$ component.</p>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -37,11 +38,11 @@
 <tbody>
 <tr>
 <td>Notation(s)</td>
-<td>$Z$, $\sigma_z$, $\sigma_3$</td>
+<td>$P(\phi)$, $R_z(\phi)$</td>
 </tr>
 <tr>
 <td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}$</td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; e^{i\phi} \end{bmatrix}$</td>
 </tr>
 <tr>
 <td>Arity</td>
@@ -53,20 +54,42 @@
 </tr>
 </tbody>
 </table>
-<h3>More Details</h3>
-<p>This gate is also useful for generating entanglement when combined with other gates.</p>
+<h3>Special Cases</h3>
+<p>The Phase Shift gate corresponds to other well-known gates for specific values of $\phi$:</p>
+<table>
+<thead>
+<tr>
+<th>$\phi$</th>
+<th>Equivalent Gate</th>
+<th>Matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0$</td>
+<td>Identity ($I$)</td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; 1\end{bmatrix}$</td>
+</tr>
+<tr>
+<td>$\pi/2$</td>
+<td>Phase ($S$)</td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; i\end{bmatrix}$</td>
+</tr>
+<tr>
+<td>$\pi$</td>
+<td>Pauli-Z ($Z$)</td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1\end{bmatrix}$</td>
+</tr>
+<tr>
+<td>$3\pi/2$</td>
+<td>$S^\dagger$</td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -i\end{bmatrix}$</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
-
-  <p>This group is contained in the following groups:</p>
-  <ul>
-    
-    <li><a href="/groups/pauli">pauli</a></li>
-    
-    <li><a href="/groups/clifford">clifford</a></li>
-    
-  </ul>
 
 
 <a href="/">Back to home</a>

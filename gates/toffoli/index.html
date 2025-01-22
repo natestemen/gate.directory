@@ -12,7 +12,7 @@
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-  <title>Pauli-Z Gate</title>
+  <title>Toffoli Gate</title>
 </head>
 <body>
   <main>
@@ -22,12 +22,13 @@
           <h1><a href="/">Quantum Gates</a></h1>
         </header>
         
-<h2>Pauli-Z Gate</h2>
+<h2>Toffoli Gate</h2>
 
-<p><strong>Symbol:</strong> $Z$</p>
+<p><strong>Symbol:</strong> $&#92;mathrm{CCX}$</p>
 
 <div>
-  <table>
+  <p>The Toffoli gate, also known as the Controlled-Controlled-NOT ($\mathrm{CCX}$) gate, flips the state of a target qubit if and only if the two control qubits are in the $|1\rangle$ state. It is a universal gate for classical reversible computation and plays an important role in quantum algorithms.</p>
+<table>
 <thead>
 <tr>
 <th></th>
@@ -37,36 +38,36 @@
 <tbody>
 <tr>
 <td>Notation(s)</td>
-<td>$Z$, $\sigma_z$, $\sigma_3$</td>
+<td>$\mathrm{CCX}$, $\mathrm{CCNOT}$, $\mathrm{TOFF}$</td>
 </tr>
 <tr>
 <td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}$</td>
+<td>$\begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}$</td>
 </tr>
 <tr>
 <td>Arity</td>
-<td>1</td>
+<td>3</td>
 </tr>
 <tr>
 <td>Group</td>
-<td>$\mathsf{U}(2)$</td>
+<td>$\mathsf{U}(8)$</td>
 </tr>
 </tbody>
 </table>
-<h3>More Details</h3>
-<p>This gate is also useful for generating entanglement when combined with other gates.</p>
+<h3>Properties</h3>
+<ul>
+<li><strong>Classical Universality</strong>: The Toffoli gate can implement any classical reversible computation when combined with single-qubit NOT gates.</li>
+<li><strong>Reversibility</strong>: The Toffoli gate is its own inverse, i.e., $\text{CCX} \cdot \text{CCX} = I$.</li>
+<li><strong>Decomposition</strong>: The Toffoli gate can be decomposed into single-qubit and two-qubit gates (e.g., Hadamard, T, and CNOT gates) on a universal quantum gate set.</li>
+</ul>
+<h3>Applications</h3>
+<ul>
+<li>Classical reversible computation.</li>
+<li>Controlled operations involving multiple control qubits.</li>
+</ul>
 
 </div>
 
-
-  <p>This group is contained in the following groups:</p>
-  <ul>
-    
-    <li><a href="/groups/pauli">pauli</a></li>
-    
-    <li><a href="/groups/clifford">clifford</a></li>
-    
-  </ul>
 
 
 <a href="/">Back to home</a>

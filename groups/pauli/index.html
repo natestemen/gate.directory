@@ -1,4 +1,59 @@
-<h1>Pauli Group</h1>
-<p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := {i^n \sigma_j | i, j\in{0, 1, 2, 3}}.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  <title>Pauli Group</title>
+</head>
+<body>
+  <main>
+    <div class="content">
+      <div class="not-footer">
+        <header>
+          <h1><a href="/">Quantum Gates</a></h1>
+        </header>
+        
+<h2>Pauli Group</h2>
+
+<div>
+  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := { i^n \sigma_j \mid n, j \in {0, 1, 2, 3} }$.
 The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$\mathcal{P}<em>n := {\bigotimes</em>{i=0}^{n-1}X_i | X_i \in \mathcal{P}_n}</p>
+<p>$$
+\mathcal{P}<em>n := { \bigotimes\limits</em>{i=0}^{n-1} X_i \mid X_i \in \mathcal{P}_n }
+$$</p>
+
+</div>
+
+<p>The following gates are contained in this group:</p>
+<ul>
+
+</ul>
+
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made with ⚛️ by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
