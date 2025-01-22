@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Controlled Not Gate
-symbol: \mathrm{C}-X
+symbol: \mathrm{C}X
 groups:
   - clifford
 arity: 2
@@ -11,7 +11,7 @@ The Hadamard gate is one of the fundamental quantum gates, enabling qubits to en
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
-| Notation(s) | $\mathrm{C}X$,$\mathrm{C}-X$, $CNOT$                                                                  |
+| Notation(s) | $\mathrm{C}X$, $\mathrm{CNOT}$, $\mathrm{CNOT}_{ij}$                                                                        |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                           |
 | Group       | $\mathsf{U}(4)$                                                                                       |
