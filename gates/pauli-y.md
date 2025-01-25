@@ -10,7 +10,7 @@ groups:
 arity: 1
 ---
 
-The Pauli-Y gate is
+The Pauli-Y gate is {.gate-description}
 
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
