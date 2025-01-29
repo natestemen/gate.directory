@@ -7,14 +7,14 @@ groups:
 arity: 2
 ---
 
-The SWAP gate exchanges the states of two qubits. It is commonly used in quantum circuits to reorder qubits or facilitate interactions between qubits that are not directly connected.
+The SWAP gate exchanges the states of two qubits. It is commonly used in quantum circuits to reorder qubits or facilitate interactions between qubits that are not directly connected. {.gate-description}
 
-|             |                                                         |
-| ----------- | ------------------------------------------------------- |
-| Notation(s) | $\text{SWAP}$                                          |
+|             |                                                                                                       |
+| ----------- | ----------------------------------------------------------------------------------------------------- |
+| Notation(s) | $\text{SWAP}$                                                                                         |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix}$ |
-| Arity       | {{ arity }}                                             |
-| Group       | $\mathsf{U}(4)$                                        |
+| Arity       | {{ arity }}                                                                                           |
+| Group       | $\mathsf{U}(4)$                                                                                       |
 
 ### Properties
 

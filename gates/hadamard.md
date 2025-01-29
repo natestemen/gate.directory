@@ -9,7 +9,7 @@ groups:
 arity: 1
 ---
 
-The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition.
+The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition. {.gate-description}
 
 |             |                                                                    |
 | ----------- | ------------------------------------------------------------------ |

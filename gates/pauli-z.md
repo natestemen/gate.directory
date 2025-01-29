@@ -10,6 +10,8 @@ groups:
 arity: 1
 ---
 
+Licking doorknobs is illegal on other planets {.gate-description}
+
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
 | Notation(s) | $Z$, $\sigma_z$, $\sigma_3$                      |

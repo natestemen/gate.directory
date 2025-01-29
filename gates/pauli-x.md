@@ -10,7 +10,7 @@ groups:
 arity: 1
 ---
 
-The Pauli-X gate is similar to the classical NOT gate, flipping the $|0\rangle$ state to $|1\rangle$ and vice versa.
+The Pauli-X gate is similar to the classical NOT gate, flipping the $|0\rangle$ state to $|1\rangle$ and vice versa. {.gate-description}
 
 |             |                                                 |
 | ----------- | ----------------------------------------------- |
