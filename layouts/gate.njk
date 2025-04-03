@@ -4,18 +4,28 @@
 <div class="gate">
   <h2 class="gate-title">{{ title }}</h2>
 
-  <div class="symbol-row">
-    {#<p><strong>Symbol:</strong> ${{ symbol }}$</p> #}
-    <p>Symbol</p>
-    <div class="symbol-box">${{ symbol }}$</div>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">${{ symbol }}$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p>{{ description }}</p>
+      </div>
+    </div>
+
+    <div class="column">
+      {{ content | safe }}
+    </div>
   </div>
 
-  <div>
-    {{ content | safe }}
-  </div>
+  <br/>
 
   {% if groups %}
-    <p>This group is contained in the following groups:</p>
+    <h3>Groups</h3>
+    <p>This gate is contained in the following groups:</p>
     <ul>
       {% for group in groups %}
       <li><a href="/groups/{{ group }}">{{ group }}</a></li>

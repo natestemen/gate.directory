@@ -6,7 +6,7 @@
 
 .gate-title {
   font-size: 40px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .symbol-row {
@@ -19,9 +19,9 @@
 }
 
 .symbol-box {
-  border:1px solid black;
-  padding:10px;
-  width:fit-content;
+  border: 1px solid black;
+  padding: 10px;
+  width: fit-content;
   min-width: 85px;
   height: 85px;
   display: flex;
@@ -30,19 +30,31 @@
   font-size: 20px;
   font-style: bold;
 
-  background:var(--gradient2);
+  background: var(--gradient2);
 }
 
 .gate-description {
   /* margin-bottom: 20px; */
+  width: 90%;
+}
+
+.two-column {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  /* width:100%;
+  display: flex;
+  justify-content: center; */
 }
 
 .gate table {
   border: 1px solid black;
-  margin-bottom: 20px;
-  min-width:300px;
-  padding:10px;
-  margin-top: 20px;
+  /* margin-bottom: 20px; */
+  min-width: 300px;
+  padding: 10px;
+  /* margin-top: 20px; */
 
-  background:var(--gradient2);
+  background: var(--gradient2);
 }

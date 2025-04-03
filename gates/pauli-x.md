@@ -8,9 +8,8 @@ groups:
   - pauli
   - clifford
 arity: 1
+description: The Pauli-X gate is similar to the classical NOT gate, sending $|0\rangle \to |1\rangle$ and vice versa.
 ---
-
-The Pauli-X gate is similar to the classical NOT gate, flipping the $|0\rangle$ state to $|1\rangle$ and vice versa. {.gate-description}
 
 |             |                                                 |
 | ----------- | ----------------------------------------------- |

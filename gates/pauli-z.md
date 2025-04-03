@@ -8,9 +8,8 @@ groups:
   - pauli
   - clifford
 arity: 1
+description: The Pauli-Z gate is known as a phase flip, leaving $|0\rangle$ unchanged and sending $|1\rangle \to -|1\rangle$.
 ---
-
-Licking doorknobs is illegal on other planets {.gate-description}
 
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
@@ -18,7 +17,3 @@ Licking doorknobs is illegal on other planets {.gate-description}
 | Matrix      | $\begin{bmatrix}1 & 0 \\\\ 0 & -1 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                      |
 | Group       | $\mathsf{U}(2)$                                  |
-
-### More Details
-
-This gate is also useful for generating entanglement when combined with other gates.
