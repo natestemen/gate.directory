@@ -10,8 +10,7 @@ groups:
 arity: n
 ---
 
-The identity gate $I_n$, acting on $n$-qubits, leaves the qubits unchanged.
-
+The identity gate $I_n$, acting on $n$-qubits, leaves the qubits unchanged. {.gate-description}
 
 |             |                                                 |
 | ----------- | ----------------------------------------------- |
