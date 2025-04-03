@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
@@ -16,19 +17,20 @@
 </head>
 <body>
   <main>
-    <div class="content">
-      <div class="not-footer">
-        <header>
-          <h1><a href="/">quantum gate directory</a></h1>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
         </header>
+      <div class="not-footer">
+        
         
 <h2>Pauli Group</h2>
 
 <div>
-  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := { i^n \sigma_j \mid n, j \in {0, 1, 2, 3} }$.
+  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := { i^n \sigma_j \mid n, j \in {0, 1, 2, 3} }$.<br>
 The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$$
-\mathcal{P}<em>n := { \bigotimes\limits</em>{i=0}^{n-1} X_i \mid X_i \in \mathcal{P}_n }
+<p>$$<br>
+\mathcal{P}<em i="0">n := { \bigotimes\limits</em>^{n-1} X_i \mid X_i \in \mathcal{P}_n }<br>
 $$</p>
 
 </div>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
@@ -16,18 +17,24 @@
 </head>
 <body>
   <main>
-    <div class="content">
-      <div class="not-footer">
-        <header>
-          <h1><a href="/">quantum gate directory</a></h1>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
         </header>
+      <div class="not-footer">
         
-<h2>Phase Shift Gate</h2>
+        
+<div class="gate">
+  <h2 class="gate-title">Phase Shift Gate</h2>
 
-<p><strong>Symbol:</strong> $P(&#92;phi)$</p>
+  <div class="symbol-row">
+    
+    <p>Symbol</p>
+    <div class="symbol-box">$P(&#92;phi)$</div>
+  </div>
 
-<div>
-  <p>The Phase Shift gate applies a rotation to the phase of the quantum state, leaving the $|0\rangle$ component unchanged while applying a phase shift $e^{i\phi}$ to the $|1\rangle$ component.</p>
+  <div>
+    <p class="gate-description">The Phase Shift gate applies a rotation to the phase of the quantum state, leaving the $|0\rangle$ component unchanged while applying a phase shift $e^{i\phi}$ to the $|1\rangle$ component.</p>
 <table>
 <thead>
 <tr>
@@ -88,11 +95,12 @@
 </tbody>
 </table>
 
+  </div>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
 </div>
-
-
-
-<a href="/">Back to home</a>
 
       </div>
       <footer>
