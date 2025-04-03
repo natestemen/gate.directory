@@ -5,6 +5,9 @@ symbol: \mathrm{C}X
 groups:
   - clifford
 arity: 2
+controlled: pauli-x
+description: The {{ symbol }} gate generates entanglement between two qubits.
+
 ---
 
 The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition. {.gate-description}
