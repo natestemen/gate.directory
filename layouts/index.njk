@@ -13,6 +13,10 @@
 <div class="periodic-table">
   {% for gate in collections.gates %}
   <a class="periodic-cell" href="{{ gate.url }}">
+    <div class="top-row">
+      <span class="group">{{ gate.data.groups[0] }}</span>
+      <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
+    </div>
     <div class="symbol">${{ gate.data.symbol | safe }}$</div>
     <div class="name">{{ gate.data.title }}</div>
   </a>
