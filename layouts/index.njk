@@ -9,13 +9,15 @@
 
 <br/>
 
-<h2>Gates</h2>
-<p>Quantum gates, or gates for short, are individual or families of elements of the unitary group $\mathsf{U}(n)$.</p>
-<ul>
+<h2>Quantum Gate Periodic Table</h2>
+<div class="periodic-table">
   {% for gate in collections.gates %}
-  <li><a href="{{ gate.url }}">{{ gate.data.title }}</a></li>
+  <a class="periodic-cell" href="{{ gate.url }}">
+    <div class="symbol">${{ gate.data.symbol | safe }}$</div>
+    <div class="name">{{ gate.data.title }}</div>
+  </a>
   {% endfor %}
-</ul>
+</div>
 
 <br/>
 
