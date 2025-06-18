@@ -86,7 +86,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     gap: 10px;
-    margin-top: 20px;
+    margin: 20px auto 0;
+    width: 600px;
 }
 
 .periodic-table a {
@@ -103,26 +104,27 @@ footer {
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
-.periodic-cell .top-row {
-    display: flex;
-    justify-content: space-between;
+
+
+.periodic-cell .arity-dim {
     font-size: 10px;
-    margin-bottom: 4px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
 }
 
 .periodic-cell .symbol {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 6px;
 }
 
 .periodic-cell .name {
     font-size: 12px;
-}
-
-.periodic-cell .group,
-.periodic-cell .arity-dim {
-    font-size: 10px;
+    margin-top: auto;
+    margin-bottom: 4px;
 }
