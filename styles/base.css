@@ -81,3 +81,50 @@ footer {
 
     background: var(--gradient2);
 }
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin: 20px auto 0;
+    width: 600px;
+}
+
+.periodic-table a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.periodic-cell {
+    border: 1px solid black;
+    padding: 10px;
+    background: var(--gradient2);
+    text-align: center;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+
+
+.periodic-cell .arity-dim {
+    font-size: 10px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+.periodic-cell .symbol {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.periodic-cell .name {
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: 4px;
+}
