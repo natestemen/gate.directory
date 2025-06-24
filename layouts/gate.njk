@@ -28,11 +28,11 @@
     <p>This gate is contained in the following groups:</p>
     <ul>
       {% for group in groups %}
-      <li><a href="/groups/{{ group }}">{{ group }}</a></li>
+      <li><a href="{{ '/groups/' + group | url }}">{{ group }}</a></li>
       {% endfor %}
     </ul>
   {% endif %}
 
-  <a class="back-to-home" href="/">Back to home</a>
+  <a class="back-to-home" href="{{ '/' | url }}">Back to home</a>
 </div>
 {% endblock %}
