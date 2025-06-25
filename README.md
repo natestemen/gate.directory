@@ -20,3 +20,9 @@ The website is built with static site generator [11ty](https://www.11ty.dev/), a
     npm run serve
     ```
 4. The `npm run serve` command will indicate which port the pages are being served from on your machine.
+
+When deploying to GitHub Pages the build uses a path prefix of `/gate.directory/` so asset URLs resolve correctly. Locally you can override this with the `PATH_PREFIX` environment variable:
+
+```sh
+PATH_PREFIX=/ npm run build
+```
