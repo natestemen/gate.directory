@@ -28,7 +28,7 @@
     <p>This gate is contained in the following groups:</p>
     <ul>
       {% for group in groups %}
-      <li><a href="{{ '/groups/' + group | url }}">{{ group }}</a></li>
+      <li><a href="{{ ('/groups/' + group) | url }}">{{ group }}</a></li>
       {% endfor %}
     </ul>
   {% endif %}
