@@ -15,3 +15,6 @@ cd gate.directory
 </li>
 <li>The <code>npm run serve</code> command will indicate which port the pages are being served from on your machine.</li>
 </ol>
+<p>When deploying to GitHub Pages the build uses a path prefix of <code>/gate.directory/</code> so asset URLs resolve correctly. Locally you can override this with the <code>PATH_PREFIX</code> environment variable:</p>
+<pre><code class="language-sh">PATH_PREFIX=/ npm run build
+</code></pre>
