@@ -47,7 +47,8 @@ main {
 }
 
 .content-container {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -87,7 +88,8 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     gap: 10px;
     margin: 20px auto 0;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .periodic-table a {
