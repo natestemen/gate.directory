@@ -1,0 +1,43 @@
+{% extends "base.njk" %}
+
+
+{% block content %}
+<p>
+  Quantum gates are the fundamental building block of quantum computation.
+  This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
+</p>
+
+<br/>
+
+<h2>Quantum Gate Periodic Table</h2>
+<p class="periodic-explanation">Each cell shows the gate symbol with its
+arity and quDit dimension in the top right (e.g. <code>2q2d</code> for a
+two‑qubit gate).</p>
+<div class="periodic-table">
+  {% for gate in collections.gates %}
+  <a class="periodic-cell" href="{{ gate.url }}">
+    <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
+    <div class="symbol">${{ gate.data.symbol | safe }}$</div>
+    <div class="name">{{ gate.data.title }}</div>
+  </a>
+  {% endfor %}
+</div>
+
+<br/>
+
+<h2>Groups</h2>
+<p>Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
+<ul>
+  {% for group in collections.groups %}
+  <li><a href="{{ group.url }}">{{ group.data.title }}</a></li>
+  {% endfor %}
+</ul>
+
+<br/>
+
+<p>
+Not finding a gate you're interested in?
+Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a> and we'll add it!
+</p>
+
+{% endblock %}

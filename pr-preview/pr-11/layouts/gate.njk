@@ -1,0 +1,38 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="gate">
+  <h2 class="gate-title">{{ title }}</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">${{ symbol }}$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p>{{ description }}</p>
+      </div>
+    </div>
+
+    <div class="column">
+      {{ content | safe }}
+    </div>
+  </div>
+
+  <br/>
+
+  {% if groups %}
+    <h3>Groups</h3>
+    <p>This gate is contained in the following groups:</p>
+    <ul>
+      {% for group in groups %}
+      <li><a href="{{ ('/groups/' + group) | url }}">{{ group }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <a class="back-to-home" href="{{ '/' | url }}">Back to home</a>
+</div>
+{% endblock %}

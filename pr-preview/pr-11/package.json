@@ -1,0 +1,11 @@
+{
+  "name": "gate.directory",
+  "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it-attrs": "^4.3.1"
+  }
+}
