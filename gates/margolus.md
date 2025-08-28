@@ -2,7 +2,7 @@
 layout: gate
 title: Margolus gate
 symbol: G
-arity: 2
+arity: 1
 description: This page is a stub
 citation:
   year: 2003
