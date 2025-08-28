@@ -18,8 +18,6 @@ jobs:
           node-version: '22.x'
 
       - name: Install dependencies & build
-        env:
-          PATH_PREFIX: "/gate.directory/"
         run: |
           npm ci
           npm run build
