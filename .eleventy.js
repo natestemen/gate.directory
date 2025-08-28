@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true,
+    pathPrefix: "/",
     // leftDelimiter: "{{",
     // rightDelimiter: "}}",
   };
