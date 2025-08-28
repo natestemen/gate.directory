@@ -6,7 +6,6 @@ module.exports = function (eleventyConfig) {
     html: true,
     breaks: true,
     linkify: true,
-    pathPrefix: "/",
     // leftDelimiter: "{{",
     // rightDelimiter: "}}",
   };
@@ -16,6 +15,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
+  eleventyConfig.addPassthroughCopy("CNAME");
 
   eleventyConfig.addCollection("gates", function (collectionApi) {
     return collectionApi.getFilteredByGlob("gates/*.md");
