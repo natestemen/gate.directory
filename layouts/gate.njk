@@ -34,5 +34,7 @@
   {% endif %}
 
   <a class="back-to-home" href="{{ '/' | url }}">Back to home</a>
+  {% set githubPath = page.inputPath | replace('./', '') %}
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/{{ githubPath }}">Edit this page on GitHub</a></p>
 </div>
 {% endblock %}
