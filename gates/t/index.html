@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <title>$T$ gate</title>
+</head>
+<body>
+  <main>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        </header>
+      <div class="not-footer">
+        
+        
+<div class="gate">
+  <h2 class="gate-title">$T$ gate</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$T$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p>This page is a stub</p>
+      </div>
+    </div>
+
+    <div class="column">
+      <p>$$T = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; e^{i\frac{\pi}{4}}\end{bmatrix} = \sqrt{S} = \sqrt[4]{Z}$$</p>
+
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+</div>
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made with ⚛️ by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    function renderPageMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ]
+        });
+      }
+    }
+    window.addEventListener("load", renderPageMath);
+  </script>
+</body>
+</html>
