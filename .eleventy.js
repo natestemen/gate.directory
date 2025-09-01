@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
 
   const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs);
   eleventyConfig.setLibrary("md", markdownLib);
+  eleventyConfig.addFilter("markdown", (str) => markdownLib.render(str || ""));
 
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");

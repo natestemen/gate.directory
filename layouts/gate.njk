@@ -12,7 +12,7 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p>{{ description }}</p>
+        <p>{{ description | markdown | safe }}</p>
       </div>
     </div>
 
