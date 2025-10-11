@@ -1,7 +1,6 @@
 {
-  "name": "gate.directory",
   "scripts": {
-    "serve": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve --quiet",
     "build": "npx @11ty/eleventy"
   },
   "dependencies": {
