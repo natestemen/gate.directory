@@ -4,7 +4,7 @@ const markdownItAttrs = require("markdown-it-attrs");
 module.exports = function (eleventyConfig) {
   const markdownItOptions = {
     html: true,
-    breaks: true,
+    breaks: false,
     linkify: true,
     // leftDelimiter: "{{",
     // rightDelimiter: "}}",
