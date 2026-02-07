@@ -8,12 +8,13 @@
   {{ content | safe }}
 </div>
 
+{% set groupSlug = page.fileSlug %}
 <p>The following gates are contained in this group:</p>
 <ul>
-{% for gate in gates %}
-    {% if group in gate.groups %}
-        <li><a href="{{ ('/gates/' + gate) | url }}">{{ gate }}</a></li>
-    {% endif %}
+{% for gate in collections.gates %}
+  {% if gate.data.groups and groupSlug in gate.data.groups %}
+    <li><a href="{{ gate.url | url }}">{{ gate.data.title }}</a></li>
+  {% endif %}
 {% endfor %}
 </ul>
 
