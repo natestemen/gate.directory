@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Della+Respira&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
 
@@ -18,7 +24,7 @@
   <main>
     <div class="content-container">
       <header>
-          <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
         </header>
       <div class="not-footer">
         
@@ -26,7 +32,7 @@
 <h2>Clifford Group</h2>
 
 <div>
-  <p>The Clifford group is defined as all unitaries which commute with the <a href="../pauli">Pauli group</a>.<br>
+  <p>The Clifford group is defined as all unitaries which commute with the <a href="../pauli">Pauli group</a>.
 This is typically specified for a given number of qubits $n$.</p>
 <p>$$\mathcal{C}_n := \{ U\in\mathsf{U}(2^n) \mid U^\dag \mathcal{P}_n U = \mathcal{P}_n \}$$</p>
 
@@ -51,7 +57,8 @@ This is typically specified for a given number of qubits $n$.</p>
           delimiters: [
             {left: "$$", right: "$$", display: true},
             {left: "$", right: "$", display: false}
-          ]
+          ],
+          trust: true
         });
       }
     }
