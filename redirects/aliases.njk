@@ -1,0 +1,24 @@
+---
+pagination:
+  data: collections.gateAliases
+  size: 1
+  alias: gate
+layout: null
+eleventyComputed:
+  permalink: "{{ gate.alias | slug }}/index.html"
+  targetUrl: "{{ gate.url | url }}"
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ gate.title }} | gate.directory</title>
+    <meta http-equiv="refresh" content="0; url={{ targetUrl }}" />
+    <link rel="canonical" href="{{ targetUrl }}" />
+  </head>
+  <body>
+    <p>
+      Redirecting to <a href="{{ targetUrl }}">{{ gate.title }}</a>…
+    </p>
+  </body>
+</html>

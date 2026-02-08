@@ -13,6 +13,19 @@ module.exports = function (eleventyConfig) {
   const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs);
   eleventyConfig.setLibrary("md", markdownLib);
   eleventyConfig.addFilter("markdown", (str) => markdownLib.render(str || ""));
+  eleventyConfig.addFilter("stripMath", (str = "") => {
+    if (!str) {
+      return "";
+    }
+
+    return str
+      .replace(/\$\$([\s\S]+?)\$\$/g, "$1")
+      .replace(/\$([\s\S]+?)\$/g, "$1")
+      .replace(/\\\(|\\\)|\\\[|\\\]/g, "")
+      .replace(/\\([a-zA-Z]+)/g, "$1")
+      .replace(/\s+/g, " ")
+      .trim();
+  });
 
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
@@ -24,6 +37,20 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("groups", function (collectionApi) {
     return collectionApi.getFilteredByGlob("groups/*.md");
+  });
+
+  eleventyConfig.addCollection("gateAliases", function (collectionApi) {
+    const gates = collectionApi.getFilteredByGlob("gates/*.md");
+
+    return gates.flatMap((gate) => {
+      const aliases = gate.data.alias || [];
+
+      return aliases.map((alias) => ({
+        alias,
+        title: gate.data.title,
+        url: gate.url,
+      }));
+    });
   });
 
   return {

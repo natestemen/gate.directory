@@ -2,15 +2,15 @@
 layout: gate
 title: Controlled Not
 symbol: \mathrm{C}X
+alias:
+  - cx
 groups:
   - clifford
 arity: 2
 controlled: pauli-x
-description: The {{ symbol }} gate generates entanglement between two qubits.
+description: The $\mathrm{C}X$ gate generates entanglement between two qubits.
 
 ---
-
-The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition. {.gate-description}
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
@@ -22,3 +22,8 @@ The Hadamard gate is one of the fundamental quantum gates, enabling qubits to en
 ### Usage
 
 This gate is commonly used in algorithms like the Quantum Fourier Transform.
+
+## References
+
+- Q#: [`Std.Intrinsic.CNOT`](https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/cnot)
+- PyQuil: [`pyquil.gates.CNOT`](https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CNOT)
