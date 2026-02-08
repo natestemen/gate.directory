@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Virtual Distillation gate</title>
+  <title>Virtual Distillation</title>
 </head>
 <body>
   <main>
@@ -30,23 +30,35 @@
         
         
 <div class="gate">
-  <h2 class="gate-title">Virtual Distillation gate</h2>
+  <h2 class="gate-title">Virtual Distillation</h2>
 
   <div class="two-column">
     <div class="column">
       <div class="symbol-row">
         <p>Symbol</p>
-        <div class="symbol-box">$B^{(i)}$</div>
+        <div class="symbol-box">$B^{(2)}_i$</div>
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>Used in the virtual distillation for error mitigation protocol: <a href="https://arxiv.org/abs/2011.07064">https://arxiv.org/abs/2011.07064</a>.</p>
+        <p><p>A gate used in the virtual distillation protocol for error mitigation.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p>$$B^{(2)} = \begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; \frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2} &amp; 0 \\ 0 &amp; \frac{\sqrt{2}}{2} &amp; \frac{\sqrt{2}}{2} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}$$</p>
+      <p>Virtual distillation is an error-mitigation technique that improves expectation-value estimates by effectively amplifying the contribution of the dominant eigenstate of a noisy quantum state.
+The gate $B^{(2)}_i$ is a the two-qubit case of a more general entangling gate.
+In the two-qubit case it on the $i$th qubit of two copies of a prepared state $\rho$ before measurement to extract information about higher moments of $\rho$ (such as $\mathrm{Tr}(\rho^2 O)$) using standard quantum hardware.</p>
+<p>$$
+B^{(2)}_i =
+\begin{bmatrix}
+1 &amp; 0                  &amp; 0                   &amp; 0 \\
+0 &amp; \frac{\sqrt{2}}{2} &amp; -\frac{\sqrt{2}}{2} &amp; 0 \\
+0 &amp; \frac{\sqrt{2}}{2} &amp; \frac{\sqrt{2}}{2}  &amp; 0 \\
+0 &amp; 0                  &amp; 0                   &amp; 1
+\end{bmatrix}
+$$</p>
+<p>See <a href="https://arxiv.org/abs/2011.07064">arXiv:2011.07064</a> for the full protocol.</p>
 
     </div>
   </div>

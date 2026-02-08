@@ -1,143 +1,134 @@
 :root {
-    --color-a: #adc7f3;
-    --color-b: #F5D395;
+  --color-a: #adc7f3;
+  --color-b: #f5d395;
 
-    /* Derived gradients */
-    --gradient1: linear-gradient(130deg, var(--color-a) 0%, var(--color-b) 100%);
-    /* --gradient2: linear-gradient(130deg, var(--color-b) 0%, var(--color-a) 100%); */
-    --gradient2: var(--color-b);
-    
-    /* pink theme */
-    /* --gradient2:linear-gradient(130deg, rgb(255, 177, 140) 0%, rgb(255, 218, 201) 100%);
-    --gradient1:linear-gradient(130deg, rgb(255, 218, 201) 0%, rgb(255, 177, 140) 100%); */
+  --gradient1: linear-gradient(130deg, var(--color-a) 0%, var(--color-b) 100%);
+  --gradient2: var(--color-b);
 
-    /* banana theme */
-    /* --gradient1: linear-gradient(130deg, #305CCF 0%, #CFA330 100%);
-    --gradient2: linear-gradient(130deg, #CFA330 0%, #305CCF 100%); */
-
-    /* basic theme */
-    /* --gradient1: rgb(255, 177, 140);
-    --gradient2: rgb(255, 218, 201); */
 }
 
 * {
-    box-sizing: inherit;
-    outline: inherit;
-    margin: 0;
+  box-sizing: inherit;
+  outline: inherit;
+  margin: 0;
 }
 
 html {
-    box-sizing: border-box;
-    outline: none;
+  box-sizing: border-box;
+  outline: none;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 100vh;
 }
 
-
-p, a, li {
-    color:black;
-    font-family: "TASA Orbiter", sans-serif;
+p,
+a,
+li {
+  color: black;
+  font-family: "TASA Orbiter", sans-serif;
 }
-
 
 /* generic above, specifics below */
 
 main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    min-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
 }
 
 .content-container {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 header {
-    background: var(--gradient2);
-    padding:20px;
+  background: var(--gradient2);
+  padding: 20px;
 }
 
 .header-title {
-    font-size: 20px;
-    font-family: "BBH Bartle", sans-serif;
+  font-size: 20px;
+  font-family: "BBH Bartle", sans-serif;
 }
 
 .not-footer {
-    background: var(--gradient1);
-    flex-grow: 1;
-    padding: 20px;
+  background: var(--gradient1);
+  flex-grow: 1;
+  padding: 20px;
 }
 
 footer {
-    /* padding-bottom: 20px; */
-    align-self: flex-end;
-    width: 100%;
-    padding:20px;
+  /* padding-bottom: 20px; */
+  align-self: flex-end;
+  width: 100%;
+  padding: 20px;
 
-    background: var(--gradient2);
+  background: var(--gradient2);
 }
 
 .periodic-table {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 10px;
-    margin: 20px auto 0;
-    width: 100%;
-    max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .periodic-table a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-
 .periodic-cell {
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    background: var(--gradient2);
-    text-align: center;
-    /* font-family: sans-serif; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background: var(--gradient2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .periodic-cell .arity-dim {
-    font-size: 10px;
-    position: absolute;
-    top: 2px;
-    right: 2px;
+  font-size: 10px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 
 .periodic-cell .symbol {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 6px;
 }
 
 .periodic-cell .name {
-    font-size: 12px;
-    margin-top: auto;
-    margin-bottom: 4px;
+  font-size: 12px;
+  margin-top: auto;
+  margin-bottom: 4px;
 }
 
 .periodic-cell {
-    transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
-.periodic-cell:nth-child(3n):hover { transform: rotate(-1deg) skew(0.5deg, -0.75deg); }
-.periodic-cell:nth-child(3n+1):hover { transform: rotate(-1.5deg) skew(1deg, 0.2deg); }
-.periodic-cell:nth-child(3n+2):hover { transform: rotate(2deg) skew(-0.5deg, 1deg); }
+.periodic-cell:nth-child(3n):hover {
+  transform: rotate(-1deg) skew(0.5deg, -0.75deg);
+}
+.periodic-cell:nth-child(3n + 1):hover {
+  transform: rotate(-1.5deg) skew(1deg, 0.2deg);
+}
+.periodic-cell:nth-child(3n + 2):hover {
+  transform: rotate(2deg) skew(-0.5deg, 1deg);
+}

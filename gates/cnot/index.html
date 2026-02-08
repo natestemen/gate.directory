@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Controlled Not Gate</title>
+  <title>Controlled Not</title>
 </head>
 <body>
   <main>
@@ -30,7 +30,7 @@
         
         
 <div class="gate">
-  <h2 class="gate-title">Controlled Not Gate</h2>
+  <h2 class="gate-title">Controlled Not</h2>
 
   <div class="two-column">
     <div class="column">
@@ -40,14 +40,13 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>The {{ symbol }} gate generates entanglement between two qubits.</p>
+        <p><p>The $\mathrm{C}X$ gate generates entanglement between two qubits.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p class="gate-description">The Hadamard gate is one of the fundamental quantum gates, enabling qubits to enter a state of superposition.</p>
-<table>
+      <table>
 <thead>
 <tr>
 <th></th>
@@ -75,6 +74,11 @@
 </table>
 <h3>Usage</h3>
 <p>This gate is commonly used in algorithms like the Quantum Fourier Transform.</p>
+<h2>References</h2>
+<ul>
+<li>Q#: <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/cnot"><code>Std.Intrinsic.CNOT</code></a></li>
+<li>PyQuil: <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CNOT"><code>pyquil.gates.CNOT</code></a></li>
+</ul>
 
     </div>
   </div>

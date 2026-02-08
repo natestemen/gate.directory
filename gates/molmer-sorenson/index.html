@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Mølmer-Sørensen gate</title>
+  <title>Mølmer-Sørensen</title>
 </head>
 <body>
   <main>
@@ -30,7 +30,7 @@
         
         
 <div class="gate">
-  <h2 class="gate-title">Mølmer-Sørensen gate</h2>
+  <h2 class="gate-title">Mølmer-Sørensen</h2>
 
   <div class="two-column">
     <div class="column">
@@ -40,13 +40,24 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>This page is a stub</p>
+        <p><p>A native two qubit operation for ion traps.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      
+      <p>The Mølmer-Sørensen (MS) gate is defined to act on $n$ qubits, but in the case of $n = 2$ reduces to <a href="/gates/rxx">$R_{xx}$</a>.
+In full generality the MS gate (sometimes referred to as global MS or GMS) takes $n(n-1)/2$ parameters $\chi_{ij}$.</p>
+<p>$$
+\mathrm{MS}(\chi_{ij}) = \exp\left(-i \sum_{i=1}^n\sum_{j=i+1}^n X_i\otimes X_j \, \chi_{ij} / 2\right)
+$$</p>
+<p>Where $X_i$ denotes a <a href="/gates/pauli-x">Pauli X</a> on qubit $i$.</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.MSGate"><code>qiskit.circuit.library.MSGate</code></a></li>
+<li><a href="https://arxiv.org/abs/1707.06356">Use of global interactions in efficient quantum circuit constructions</a></li>
+</ul>
+
     </div>
   </div>
 

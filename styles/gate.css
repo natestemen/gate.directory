@@ -64,3 +64,7 @@ h2 {
   font-family: "BBH Bartle", sans-serif;
   padding-top: 20px;
 }
+
+p a .katex { /* this is probably too specific? */
+  border-bottom: 1px solid currentColor;
+}
