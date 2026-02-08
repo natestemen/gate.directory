@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Pauli Group</title>
+  <title>Phase Oracle</title>
 </head>
 <body>
   <main>
@@ -29,79 +29,46 @@
       <div class="not-footer">
         
         
-<h2>Pauli Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Phase Oracle</h2>
 
-<div>
-  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := \{ i^n \sigma_j \mid n, j \in \{0, 1, 2, 3\} \}$.
-The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$$\mathcal{P}_n = \left\{ \bigotimes\limits_{i=0}^{n-1} P_i \mid P_i \in \mathcal{P}_1 \right\}$$</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$O_f^&#92;pm$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Implements a classical function as a “black-box” operation that encodes its output in the phase of quantum states.</p>
+</p>
+      </div>
+    </div>
 
-</div>
-
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>A phase oracle is a variant of the <a href="/gates/oracle">&quot;standard&quot; oracle</a> that acts on a single register $|x\rangle$, encoding the value of a classical Boolean function $f: \{0, 1\}^n \to \{0, 1\}$ as a relative phase:
+$$
+|x\rangle  \xmapsto{O_f^\pm} (-1)^{f(x)}|x\rangle
+$$
+This construction is particularly useful in algorithms like Grover's search, where interference between states allows the amplitudes of marked states to be amplified.</p>
+<h2>References</h2>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/identity/">Identity Gate</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-x/">Pauli-X Gate</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-y/">Pauli-Y Gate</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z Gate</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.PhaseOracleGate"><code>qiskit.circuit.library.PhaseOracleGate</code></a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/quantum/concepts-oracles">Microsoft: Understanding quantum oracles</a></li>
+<li><a href="https://docs.classiq.io/latest/explore/tutorials/workshops/oracle_workshop/oracles_workshop/">Classiq: Quantum Oracles Workshop</a></li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/phase-oracle.md">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>

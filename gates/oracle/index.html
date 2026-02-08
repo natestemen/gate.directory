@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Pauli Group</title>
+  <title>Oracle</title>
 </head>
 <body>
   <main>
@@ -29,79 +29,46 @@
       <div class="not-footer">
         
         
-<h2>Pauli Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Oracle</h2>
 
-<div>
-  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := \{ i^n \sigma_j \mid n, j \in \{0, 1, 2, 3\} \}$.
-The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$$\mathcal{P}_n = \left\{ \bigotimes\limits_{i=0}^{n-1} P_i \mid P_i \in \mathcal{P}_1 \right\}$$</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$O_f$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Implements a classical function as a reversible &quot;black-box&quot; operation that can be queried coherently by quantum algorithms.</p>
+</p>
+      </div>
+    </div>
 
-</div>
-
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>An oracle is a quantum operation that implements a classical function $f: \{0, 1\}^n \to \{0, 1\}^m$ as a reversible, unitary operation. Given an input register $|x\rangle$ and output register $|y\rangle$ the gate acts as
+$$
+|x\rangle \otimes |y\rangle \xmapsto{O_f} |x\rangle \otimes |b \oplus f(x)\rangle.
+$$
+where $\oplus$ denotes bitwise XOR. By coherently evaluating $f$ on superpositions of inputs, oracles allow quantum algorithms to achieve speedups for search, decision, and hidden-structure problems, while treating the function as a &quot;black box.&quot;</p>
+<h2>References</h2>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/identity/">Identity Gate</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-x/">Pauli-X Gate</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-y/">Pauli-Y Gate</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z Gate</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.BitFlipOracleGate"><code>qiskit.circuit.library.BitFlipOracleGate</code></a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/quantum/concepts-oracles">Microsoft: Understanding quantum oracles</a></li>
+<li><a href="https://docs.classiq.io/latest/explore/tutorials/workshops/oracle_workshop/oracles_workshop/">Classiq: Quantum Oracles Workshop</a></li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/oracle.md">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>
