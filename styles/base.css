@@ -133,3 +133,11 @@ footer {
     margin-top: auto;
     margin-bottom: 4px;
 }
+
+.periodic-cell {
+    transition: transform 0.5s ease;
+}
+
+.periodic-cell:nth-child(3n):hover { transform: rotate(-1deg) skew(0.5deg, -0.75deg); }
+.periodic-cell:nth-child(3n+1):hover { transform: rotate(-1.5deg) skew(1deg, 0.2deg); }
+.periodic-cell:nth-child(3n+2):hover { transform: rotate(2deg) skew(-0.5deg, 1deg); }
