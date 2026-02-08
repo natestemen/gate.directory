@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: $T$ gate
+title: $\pi / 8$ or $T$
 symbol: T
 arity: 1
 description: This page is a stub

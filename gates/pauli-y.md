@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Pauli-Y Gate
+title: Pauli-Y
 symbol: Y
 alias:
   - y

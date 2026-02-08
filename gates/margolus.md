@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Margolus gate
+title: Margolus
 symbol: G
 arity: 1
 description: This page is a stub

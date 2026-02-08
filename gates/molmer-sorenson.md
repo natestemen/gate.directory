@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Mølmer-Sørensen gate
+title: Mølmer-Sørensen
 symbol: MS
 arity: 2
 description: This page is a stub

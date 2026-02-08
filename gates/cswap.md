@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Fredkin Gate
+title: Fredkin
 symbol: \mathrm{CSWAP}
 arity: 3
 description: This page is a stub

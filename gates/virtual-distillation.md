@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Virtual Distillation gate
+title: Virtual Distillation
 symbol: B^{(i)}
 arity: 2
 description: "Used in the virtual distillation for error mitigation protocol: https://arxiv.org/abs/2011.07064."

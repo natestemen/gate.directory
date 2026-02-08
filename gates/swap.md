@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: SWAP Gate
+title: SWAP
 symbol: \mathrm{SWAP}
 groups:
   - clifford

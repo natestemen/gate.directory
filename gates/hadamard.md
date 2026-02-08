@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Hadamard Gate
+title: Hadamard
 symbol: H
 alias:
   - h

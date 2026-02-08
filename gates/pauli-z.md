@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Pauli-Z Gate
+title: Pauli-Z
 symbol: Z
 alias:
   - z

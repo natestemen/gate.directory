@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Identity Gate
+title: Identity
 symbol: I
 alias:
   - i

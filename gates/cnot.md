@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Controlled Not Gate
+title: Controlled Not
 symbol: \mathrm{C}X
 groups:
   - clifford

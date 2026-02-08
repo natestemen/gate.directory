@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Pauli-X Gate
+title: Pauli-X
 symbol: X
 alias:
   - x

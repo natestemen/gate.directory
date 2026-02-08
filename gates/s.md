@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Phase Gate
+title: Phase
 symbol: S
 arity: 1
 groups:

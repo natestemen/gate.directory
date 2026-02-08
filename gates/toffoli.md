@@ -1,6 +1,6 @@
 ---
 layout: gate
-title: Toffoli Gate
+title: Toffoli
 symbol: \mathrm{CCX}
 alias:
   - toffoli
