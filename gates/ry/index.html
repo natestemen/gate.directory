@@ -40,19 +40,30 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>This page is a stub</p>
+        <p><p>A rotation about the Y axis on the Bloch sphere.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p>$$
+      <p>The only purely real rotation matrix from $R_x$, $R_y$, $R_z$.
+$$
 R_y(\theta) = \exp\left(-i\frac{\theta}{2}Y\right) =
 \begin{bmatrix}
-\phantom{+}\cos\frac{\theta}{2}    &amp; -\sin\frac{\theta}{2} \\
--\sin{\frac{\theta}{2}}            &amp; \phantom{+}\cos\frac{\theta}{2}
+\cos\frac{\theta}{2}    &amp; -\sin\frac{\theta}{2} \\
+\sin{\frac{\theta}{2}}            &amp; \phantom{+}\cos\frac{\theta}{2}
 \end{bmatrix}
 $$</p>
+<h2>References</h2>
+<ul>
+<li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.RYGate"><code>qiskit.circuit.library.RYGate</code></a></li>
+<li><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#rotation-y-axis-ry"><code>qibo.gates.RY</code></a></li>
+<li><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RY"><code>pyquil.gates.RY</code></a></li>
+<li><a href="https://quantumai.google/reference/python/cirq/Ry"><code>cirq.Ry</code></a></li>
+<li><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.RY.html"><code>pennylane.RY</code></a></li>
+<li><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Ry"><code>braket.circuits.gates.Ry</code></a></li>
+<li><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYGate.html"><code>bqskit.ir.gates.RYGate</code></a></li>
+</ul>
 
     </div>
   </div>
