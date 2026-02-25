@@ -48,16 +48,40 @@ two-qubit gate).</p>
     <div class="name">Controlled Not</div>
   </a>
   
+  <a class="periodic-cell" href="/gates/controlled-phase/">
+    <span class="arity-dim">2q2d</span>
+    <div class="symbol">$\mathrm{CP}(\phi)$</div>
+    <div class="name">Controlled Phase</div>
+  </a>
+  
   <a class="periodic-cell" href="/gates/cswap/">
     <span class="arity-dim">3q2d</span>
     <div class="symbol">$\mathrm{CSWAP}$</div>
     <div class="name">Fredkin</div>
   </a>
   
+  <a class="periodic-cell" href="/gates/cz/">
+    <span class="arity-dim">2q2d</span>
+    <div class="symbol">$\mathrm{CZ}$</div>
+    <div class="name">Controlled-Z</div>
+  </a>
+  
   <a class="periodic-cell" href="/gates/ecr/">
     <span class="arity-dim">2q2d</span>
     <div class="symbol">$ECR$</div>
     <div class="name">Echoed Cross-Resonance</div>
+  </a>
+  
+  <a class="periodic-cell" href="/gates/givens/">
+    <span class="arity-dim">2q2d</span>
+    <div class="symbol">$G(\theta)$</div>
+    <div class="name">Givens Rotation</div>
+  </a>
+  
+  <a class="periodic-cell" href="/gates/global-phase/">
+    <span class="arity-dim">nq2d</span>
+    <div class="symbol">$e^{i\phi}$</div>
+    <div class="name">Global Phase</div>
   </a>
   
   <a class="periodic-cell" href="/gates/hadamard/">
@@ -118,6 +142,12 @@ two-qubit gate).</p>
     <span class="arity-dim">1q2d</span>
     <div class="symbol">$P(\phi)$</div>
     <div class="name">Phase Shift</div>
+  </a>
+  
+  <a class="periodic-cell" href="/gates/rot/">
+    <span class="arity-dim">1q2d</span>
+    <div class="symbol">$\mathrm{Rot}(\vec{n}, \theta)$</div>
+    <div class="name">Arbitrary Rotation</div>
   </a>
   
   <a class="periodic-cell" href="/gates/rx/">
@@ -186,6 +216,12 @@ two-qubit gate).</p>
     <div class="name">Toffoli</div>
   </a>
   
+  <a class="periodic-cell" href="/gates/u3/">
+    <span class="arity-dim">1q2d</span>
+    <div class="symbol">$U_3(\theta, \phi, \lambda)$</div>
+    <div class="name">U3</div>
+  </a>
+  
   <a class="periodic-cell" href="/gates/virtual-distillation/">
     <span class="arity-dim">2q2d</span>
     <div class="symbol">$B^{(2)}_i$</div>
@@ -232,7 +268,123 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
         });
       }
     }
-    window.addEventListener("load", renderPageMath);
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
   </script>
 </body>
 </html>

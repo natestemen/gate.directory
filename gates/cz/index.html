@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Hadamard</title>
+  <title>Controlled-Z</title>
 </head>
 <body>
   <main>
@@ -30,59 +30,42 @@
         
         
 <div class="gate">
-  <h2 class="gate-title">Hadamard</h2>
+  <h2 class="gate-title">Controlled-Z</h2>
 
   <div class="two-column">
     <div class="column">
       <div class="symbol-row">
         <p>Symbol</p>
-        <div class="symbol-box">$H$</div>
+        <div class="symbol-box">$&#92;mathrm{CZ}$</div>
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.</p>
+        <p><p>Applies a $-1$ phase to $|11\rangle$.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p>The Hadamard gate creates and removes superposition by mapping $|0\rangle \mapsto |+\rangle$ and $|1\rangle \mapsto |-\rangle$.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Notation(s)</td>
-<td>$H$</td>
-</tr>
-<tr>
-<td>Matrix</td>
-<td>$\frac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}$</td>
-</tr>
-<tr>
-<td>Arity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>$\mathsf{O}(2)$</td>
-</tr>
-</tbody>
-</table>
+      <p>The controlled-$Z$ gate is a two-qubit diagonal entangling gate.</p>
+<p>$$
+\mathrm{CZ} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
-<li>Self-inverse and Hermitian: $H^\dagger = H$.</li>
-<li>Conjugates Pauli operators: $H X H = Z$ and $H Z H = X$.</li>
-<li>Real and symmetric.</li>
+<li>Clifford, Hermitian, and self-inverse.</li>
+<li>Related to CNOT by Hadamards on the target: $\mathrm{CNOT} = (I \otimes H),\mathrm{CZ},(I \otimes H)$.</li>
+<li>Symmetric under exchange of the two qubits.</li>
 </ul>
 <h3>Usage</h3>
 <ul>
-<li>Basis changes between $Z$ and $X$ measurements.</li>
-<li>State preparation and interference in algorithms like QFT and Grover.</li>
+<li>Native entangling gate on several hardware platforms.</li>
+<li>Controlled phase flips and stabilizer circuits.</li>
 </ul>
 
     </div>
@@ -102,7 +85,7 @@
 
   <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/hadamard.md">Edit this page on GitHub</a></p>
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/cz.md">Edit this page on GitHub</a></p>
 </div>
 
       </div>

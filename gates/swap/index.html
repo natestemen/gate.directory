@@ -40,12 +40,13 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p></p>
+        <p><p>Exchanges the quantum states of two qubits.</p>
+</p>
       </div>
     </div>
 
     <div class="column">
-      <p class="gate-description">The SWAP gate exchanges the states of two qubits. It is commonly used in quantum circuits to reorder qubits or facilitate interactions between qubits that are not directly connected.</p>
+      <p>The SWAP gate exchanges the states of two qubits and is commonly used to reorder qubits or mediate interactions between distant qubits.</p>
 <table>
 <thead>
 <tr>
@@ -74,13 +75,13 @@
 </table>
 <h3>Properties</h3>
 <ul>
-<li><strong>Reversible</strong>: The SWAP gate is its own inverse, i.e., $\mathrm{SWAP} \cdot \mathrm{SWAP} = I$. Or put differently, the gate is <em>self-adjoint</em>.</li>
-<li><strong>Decomposition</strong>: The SWAP gate can be decomposed into three CNOT gates: $\mathrm{SWAP} = \mathrm{CNOT}_{12} \cdot \mathrm{CNOT}_{21} \cdot \mathrm{CNOT}_{12}$</li>
+<li>Reversible: the SWAP gate is its own inverse.</li>
+<li>Decomposition: $\mathrm{SWAP} = \mathrm{CNOT}<em 21="">{12} \cdot \mathrm{CNOT}</em> \cdot \mathrm{CNOT}_{12}$.</li>
 </ul>
-<h3>Applications</h3>
+<h3>Usage</h3>
 <ul>
 <li>Reordering qubits in a circuit.</li>
-<li>Facilitating interactions between qubits in hardware with limited connectivity.</li>
+<li>Facilitating interactions in hardware with limited connectivity.</li>
 </ul>
 
     </div>
@@ -121,7 +122,123 @@
         });
       }
     }
-    window.addEventListener("load", renderPageMath);
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
   </script>
 </body>
 </html>

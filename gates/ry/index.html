@@ -40,20 +40,32 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>A rotation about the Y axis on the Bloch sphere.</p>
+        <p><p>Rotation about the $y$ axis of the Bloch sphere.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p>The only purely real rotation matrix from $R_x$, $R_y$, $R_z$.
-$$
+      <p>The $R_y$ gate rotates a qubit by angle $\theta$ around the $y$ axis.
+It is the only purely real rotation matrix among $R_x$, $R_y$, and $R_z$.</p>
+<p>$$
 R_y(\theta) = \exp\left(-i\frac{\theta}{2}Y\right) =
 \begin{bmatrix}
 \cos\frac{\theta}{2}    &amp; -\sin\frac{\theta}{2} \\
 \sin{\frac{\theta}{2}}            &amp; \phantom{+}\cos\frac{\theta}{2}
 \end{bmatrix}
 $$</p>
+<h3>Properties</h3>
+<ul>
+<li>Unitary with generator $Y$: $R_y(\theta) = e^{-i\theta Y/2}$.</li>
+<li>Real-valued matrix; useful for preparing real-amplitude states.</li>
+<li>$R_y(\pi)$ equals $-iY$ up to global phase.</li>
+</ul>
+<h3>Usage</h3>
+<ul>
+<li>State preparation and mixing amplitudes in variational circuits.</li>
+<li>Combined with $R_z$ for arbitrary single-qubit rotations.</li>
+</ul>
 <h2>References</h2>
 <ul>
 <li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.RYGate"><code>qiskit.circuit.library.RYGate</code></a></li>
@@ -95,7 +107,123 @@ $$</p>
         });
       }
     }
-    window.addEventListener("load", renderPageMath);
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
   </script>
 </body>
 </html>

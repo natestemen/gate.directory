@@ -40,13 +40,14 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>The Echoed Cross-Resonance (ECR) gate is a two-qubit Clifford gate that is native to superconducting quantum processors based on the cross-resonance interaction. Up to local single-qubit Clifford operations, the ECR gate is equivalent to a CNOT, and can therefore be used as a drop-in replacement for CNOT in Clifford circuits.</p>
+        <p><p>A native two-qubit Clifford gate for cross-resonance hardware, locally equivalent to CNOT.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p>$$
+      <p>The echoed cross-resonance (ECR) gate is an entangling operation used on superconducting processors based on the cross-resonance interaction.</p>
+<p>$$
 ECR = \frac{1}{\sqrt{2}}
 \begin{pmatrix}
 0 &amp; 1   &amp;  0  &amp; i \\
@@ -55,6 +56,17 @@ ECR = \frac{1}{\sqrt{2}}
 -i &amp; 0  &amp;  1  &amp; 0
 \end{pmatrix}
 $$</p>
+<h3>Properties</h3>
+<ul>
+<li>Clifford and entangling.</li>
+<li>Locally equivalent to CNOT via single-qubit Clifford gates.</li>
+<li>Implemented using echoed cross-resonance pulses.</li>
+</ul>
+<h3>Usage</h3>
+<ul>
+<li>Native two-qubit gate on cross-resonance superconducting devices.</li>
+<li>Compiled to or from CNOT in Clifford circuits.</li>
+</ul>
 <h2>References</h2>
 <ul>
 <li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.ECRGate"><code>qiskit.circuit.library.ECRGate</code></a></li>
@@ -100,7 +112,123 @@ $$</p>
         });
       }
     }
-    window.addEventListener("load", renderPageMath);
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
   </script>
 </body>
 </html>

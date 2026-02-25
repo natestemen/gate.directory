@@ -60,6 +60,43 @@
   background: var(--gradient2);
 }
 
+.matrix-copy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  float: right;
+}
+
+.copy-matrix-button {
+  border: 2px solid black;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: var(--gradient2);
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.copy-matrix-button:hover {
+  transform: translateY(-1px);
+}
+
+.copy-matrix-button:active {
+  transform: translateY(0);
+}
+
+.copy-matrix-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.copy-matrix-status {
+  font-size: 12px;
+  font-style: italic;
+}
+
 h2 {
   font-family: "BBH Bartle", sans-serif;
   padding-top: 20px;

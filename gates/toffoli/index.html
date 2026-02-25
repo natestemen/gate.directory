@@ -40,12 +40,13 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p></p>
+        <p><p>Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\rangle$.</p>
+</p>
       </div>
     </div>
 
     <div class="column">
-      <p class="gate-description">The Toffoli gate, also known as the Controlled-Controlled-NOT ($\mathrm{CCX}$) gate, flips the state of a target qubit if and only if the two control qubits are in the $|1\rangle$ state. It is a universal gate for classical reversible computation and plays an important role in quantum algorithms.</p>
+      <p>The Toffoli gate (Controlled-Controlled-NOT) flips a target qubit if and only if two control qubits are in the $|1\rangle$ state. It is universal for classical reversible computation and is widely used in quantum algorithms.</p>
 <table>
 <thead>
 <tr>
@@ -74,14 +75,14 @@
 </table>
 <h3>Properties</h3>
 <ul>
-<li><strong>Classical Universality</strong>: The Toffoli gate can implement any classical reversible computation when combined with single-qubit NOT gates.</li>
-<li><strong>Reversibility</strong>: The Toffoli gate is its own inverse, i.e., $\text{CCX} \cdot \text{CCX} = I$.</li>
-<li><strong>Decomposition</strong>: The Toffoli gate can be decomposed into single-qubit and two-qubit gates (e.g., Hadamard, T, and CNOT gates) on a universal quantum gate set.</li>
+<li>Classical universality: implements any reversible Boolean computation with NOT gates.</li>
+<li>Reversible: the Toffoli gate is its own inverse.</li>
+<li>Decomposable into single- and two-qubit gates (e.g., $H$, $T$, and CNOT).</li>
 </ul>
-<h3>Applications</h3>
+<h3>Usage</h3>
 <ul>
-<li>Classical reversible computation.</li>
-<li>Controlled operations involving multiple control qubits.</li>
+<li>Classical reversible computation and arithmetic circuits.</li>
+<li>Multi-controlled operations in quantum algorithms.</li>
 </ul>
 
     </div>
@@ -114,7 +115,123 @@
         });
       }
     }
-    window.addEventListener("load", renderPageMath);
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
   </script>
 </body>
 </html>

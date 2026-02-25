@@ -40,12 +40,13 @@
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p></p>
+        <p><p>Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.</p>
+</p>
       </div>
     </div>
 
     <div class="column">
-      <p class="gate-description">The Phase Shift gate applies a rotation to the phase of the quantum state, leaving the $|0\rangle$ component unchanged while applying a phase shift $e^{i\phi}$ to the $|1\rangle$ component.</p>
+      <p>The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiplying $|1\rangle$ by $e^{i\phi}$.</p>
 <table>
 <thead>
 <tr>
@@ -72,8 +73,18 @@
 </tr>
 </tbody>
 </table>
+<h3>Properties</h3>
+<ul>
+<li>Equivalent to $R_z(\phi)$ up to a global phase.</li>
+<li>Clifford when $\phi$ is an integer multiple of $\pi/2$.</li>
+</ul>
+<h3>Usage</h3>
+<ul>
+<li>Phase corrections and calibrated $Z$ rotations.</li>
+<li>Implementing controlled-phase operations and diagonal unitaries.</li>
+</ul>
 <h3>Special Cases</h3>
-<p>The Phase Shift gate corresponds to other well-known gates for specific values of $\phi$:</p>
+<p>The phase shift gate corresponds to other well-known gates for specific values of $\phi$:</p>
 <table>
 <thead>
 <tr>
@@ -136,7 +147,123 @@
         });
       }
     }
-    window.addEventListener("load", renderPageMath);
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
   </script>
 </body>
 </html>

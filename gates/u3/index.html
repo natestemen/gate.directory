@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Hadamard</title>
+  <title>U3</title>
 </head>
 <body>
   <main>
@@ -30,59 +30,39 @@
         
         
 <div class="gate">
-  <h2 class="gate-title">Hadamard</h2>
+  <h2 class="gate-title">U3</h2>
 
   <div class="two-column">
     <div class="column">
       <div class="symbol-row">
         <p>Symbol</p>
-        <div class="symbol-box">$H$</div>
+        <div class="symbol-box">$U_3(&#92;theta, &#92;phi, &#92;lambda)$</div>
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.</p>
+        <p><p>General single-qubit gate parameterized by three Euler angles.</p>
 </p>
       </div>
     </div>
 
     <div class="column">
-      <p>The Hadamard gate creates and removes superposition by mapping $|0\rangle \mapsto |+\rangle$ and $|1\rangle \mapsto |-\rangle$.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Notation(s)</td>
-<td>$H$</td>
-</tr>
-<tr>
-<td>Matrix</td>
-<td>$\frac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}$</td>
-</tr>
-<tr>
-<td>Arity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>$\mathsf{O}(2)$</td>
-</tr>
-</tbody>
-</table>
+      <p>The $U_3$ gate is a universal single-qubit rotation. It can be decomposed as $U_3(\theta, \phi, \lambda) = R_z(\phi) R_y(\theta) R_z(\lambda)$.</p>
+<p>$$
+U_3(\theta, \phi, \lambda) =
+\begin{bmatrix}
+\cos\frac{\theta}{2} &amp; -e^{i\lambda}\sin\frac{\theta}{2} \\
+e^{i\phi}\sin\frac{\theta}{2} &amp; e^{i(\phi+\lambda)}\cos\frac{\theta}{2}
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
-<li>Self-inverse and Hermitian: $H^\dagger = H$.</li>
-<li>Conjugates Pauli operators: $H X H = Z$ and $H Z H = X$.</li>
-<li>Real and symmetric.</li>
+<li>Generates all of $\mathsf{U}(2)$ up to a global phase.</li>
+<li>Equivalent to an Euler-angle decomposition around $z$ and $y$ axes.</li>
 </ul>
 <h3>Usage</h3>
 <ul>
-<li>Basis changes between $Z$ and $X$ measurements.</li>
-<li>State preparation and interference in algorithms like QFT and Grover.</li>
+<li>Standard single-qubit parameterization in compilation and variational circuits.</li>
+<li>Maps directly to hardware-native rotations on many platforms.</li>
 </ul>
 
     </div>
@@ -91,18 +71,10 @@
   <br/>
 
   
-    <h3>Groups</h3>
-    <p>This gate is contained in the following groups:</p>
-    <ul>
-      
-      <li><a href="/groups/clifford">clifford</a></li>
-      
-    </ul>
-  
 
   <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/hadamard.md">Edit this page on GitHub</a></p>
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/u3.md">Edit this page on GitHub</a></p>
 </div>
 
       </div>
