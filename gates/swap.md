@@ -12,7 +12,7 @@ The SWAP gate exchanges the states of two qubits and is commonly used to reorder
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
-| Notation(s) | $\mathrm{SWAP}$                                                                                        |
+| Notation(s) | $\mathrm{SWAP}$                                                                                       |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                           |
 | Group       | $\mathsf{U}(4)$                                                                                       |
@@ -20,7 +20,8 @@ The SWAP gate exchanges the states of two qubits and is commonly used to reorder
 ### Properties
 
 - Reversible: the SWAP gate is its own inverse.
-- Decomposition: $\mathrm{SWAP} = \mathrm{CNOT}_{12} \cdot \mathrm{CNOT}_{21} \cdot \mathrm{CNOT}_{12}$.
+- Decomposition:
+  $\mathrm{SWAP} = \mathrm{CNOT}\_{12} \cdot \mathrm{CNOT}\_{21} \cdot \mathrm{CNOT}\_{12}$.
 
 ### Usage
 
