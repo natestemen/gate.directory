@@ -5,9 +5,10 @@ symbol: \mathrm{SWAP}
 groups:
   - clifford
 arity: 2
+description: Exchanges the quantum states of two qubits.
 ---
 
-The SWAP gate exchanges the states of two qubits. It is commonly used in quantum circuits to reorder qubits or facilitate interactions between qubits that are not directly connected. {.gate-description}
+The SWAP gate exchanges the states of two qubits and is commonly used to reorder qubits or mediate interactions between distant qubits.
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
@@ -18,10 +19,10 @@ The SWAP gate exchanges the states of two qubits. It is commonly used in quantum
 
 ### Properties
 
-- **Reversible**: The SWAP gate is its own inverse, i.e., $\mathrm{SWAP} \cdot \mathrm{SWAP} = I$. Or put differently, the gate is <em>self-adjoint</em>.
-- **Decomposition**: The SWAP gate can be decomposed into three CNOT gates: $\mathrm{SWAP} = \mathrm{CNOT}_{12} \cdot \mathrm{CNOT}\_{21} \cdot \mathrm{CNOT}\_{12}$
+- Reversible: the SWAP gate is its own inverse.
+- Decomposition: $\mathrm{SWAP} = \mathrm{CNOT}_{12} \cdot \mathrm{CNOT}_{21} \cdot \mathrm{CNOT}_{12}$.
 
-### Applications
+### Usage
 
 - Reordering qubits in a circuit.
-- Facilitating interactions between qubits in hardware with limited connectivity.
+- Facilitating interactions in hardware with limited connectivity.

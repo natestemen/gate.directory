@@ -4,15 +4,24 @@ title: Oracle
 symbol: O_f
 arity: n
 dimension: p
-description: Implements a classical function as a reversible "black-box" operation that can be queried coherently by quantum algorithms.
-
+description: Implements a classical function as a reversible black-box unitary that can be queried coherently.
 ---
 
 An oracle is a quantum operation that implements a classical function $f: \\{0, 1\\}^n \to \\{0, 1\\}^m$ as a reversible, unitary operation. Given an input register $|x\rangle$ and output register $|y\rangle$ the gate acts as
 $$
 |x\rangle \otimes |y\rangle \xmapsto{O_f} |x\rangle \otimes |b \oplus f(x)\rangle.
 $$
-where $\oplus$ denotes bitwise XOR. By coherently evaluating $f$ on superpositions of inputs, oracles allow quantum algorithms to achieve speedups for search, decision, and hidden-structure problems, while treating the function as a "black box."
+where $\oplus$ denotes bitwise XOR. By coherently evaluating $f$ on superpositions of inputs, oracles allow quantum algorithms to achieve speedups for search, decision, and hidden-structure problems, while treating the function as a black box.
+
+### Properties
+
+- Unitary embedding of a classical function via reversible computation and optional ancilla.
+- Often the dominant cost in query-complexity analyses.
+
+### Usage
+
+- Grover search, phase estimation, and hidden-structure algorithms.
+- Modeling problem-specific black boxes during algorithm design.
 
 ## References
 

@@ -4,15 +4,24 @@ title: Phase Oracle
 symbol: O_f^\pm
 arity: n
 dimension: p
-description: Implements a classical function as a “black-box” operation that encodes its output in the phase of quantum states.
-
+description: Encodes a Boolean function as phases on computational basis states.
 ---
 
-A phase oracle is a variant of the ["standard" oracle](/gates/oracle) that acts on a single register $|x\rangle$, encoding the value of a classical Boolean function $f: \\{0, 1\\}^n \to \\{0, 1\\}$ as a relative phase:
+A phase oracle is a variant of the [standard oracle](/gates/oracle) that acts on a single register $|x\rangle$, encoding the value of a classical Boolean function $f: \\{0, 1\\}^n \to \\{0, 1\\}$ as a relative phase:
 $$
 |x\rangle  \xmapsto{O_f^\pm} (-1)^{f(x)}|x\rangle
 $$
 This construction is particularly useful in algorithms like Grover's search, where interference between states allows the amplitudes of marked states to be amplified.
+
+### Properties
+
+- Diagonal in the computational basis; unitary and Hermitian for Boolean $f$.
+- Can be implemented from a standard oracle via phase kickback.
+
+### Usage
+
+- Grover search and amplitude amplification.
+- Encoding classical predicates into quantum phases.
 
 ## References
 

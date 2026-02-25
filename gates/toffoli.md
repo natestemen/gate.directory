@@ -9,9 +9,10 @@ groups:
 properties:
   - hermitian
 arity: 3
+description: Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\rangle$.
 ---
 
-The Toffoli gate, also known as the Controlled-Controlled-NOT ($\mathrm{CCX}$) gate, flips the state of a target qubit if and only if the two control qubits are in the $|1\rangle$ state. It is a universal gate for classical reversible computation and plays an important role in quantum algorithms. {.gate-description}
+The Toffoli gate (Controlled-Controlled-NOT) flips a target qubit if and only if two control qubits are in the $|1\rangle$ state. It is universal for classical reversible computation and is widely used in quantum algorithms.
 
 |             |                                                                                                                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,11 +23,11 @@ The Toffoli gate, also known as the Controlled-Controlled-NOT ($\mathrm{CCX}$) g
 
 ### Properties
 
-- **Classical Universality**: The Toffoli gate can implement any classical reversible computation when combined with single-qubit NOT gates.
-- **Reversibility**: The Toffoli gate is its own inverse, i.e., $\text{CCX} \cdot \text{CCX} = I$.
-- **Decomposition**: The Toffoli gate can be decomposed into single-qubit and two-qubit gates (e.g., Hadamard, T, and CNOT gates) on a universal quantum gate set.
+- Classical universality: implements any reversible Boolean computation with NOT gates.
+- Reversible: the Toffoli gate is its own inverse.
+- Decomposable into single- and two-qubit gates (e.g., $H$, $T$, and CNOT).
 
-### Applications
+### Usage
 
-- Classical reversible computation.
-- Controlled operations involving multiple control qubits.
+- Classical reversible computation and arithmetic circuits.
+- Multi-controlled operations in quantum algorithms.

@@ -8,8 +8,10 @@ groups:
   - pauli
   - clifford
 arity: 1
-description: The Pauli-Y gate is similar to the classical NOT gate, but introduces an imaginary $i$ sending $|0\rangle \to i|1\rangle$ and $|1\rangle \to -i|0\rangle$.
+description: Bit-and-phase flip combining $X$ and $Z$ with a phase.
 ---
+
+The Pauli-$Y$ gate is a $\pi$ rotation around the $y$ axis of the Bloch sphere.
 
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
@@ -17,3 +19,12 @@ description: The Pauli-Y gate is similar to the classical NOT gate, but introduc
 | Matrix      | $\begin{bmatrix}0 & -i \\\\ i & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                      |
 | Group       | $\mathsf{U}(2)$                                  |
+
+### Properties
+
+- Hermitian and self-inverse: $Y^\dagger = Y$ and $Y^2 = I$.
+- Equivalent to a $\pi$ rotation about $y$ up to global phase.
+
+### Usage
+
+- Phase-sensitive bit flips and basis changes.

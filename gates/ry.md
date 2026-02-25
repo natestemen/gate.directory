@@ -3,10 +3,12 @@ layout: gate
 title: $y$ Rotation
 symbol: R_y
 arity: 1
-description: A rotation about the Y axis on the Bloch sphere.
+description: Rotation about the $y$ axis of the Bloch sphere.
 ---
 
-The only purely real rotation matrix from $R_x$, $R_y$, $R_z$.
+The $R_y$ gate rotates a qubit by angle $\theta$ around the $y$ axis.
+It is the only purely real rotation matrix among $R_x$, $R_y$, and $R_z$.
+
 $$
 R_y(\theta) = \exp\left(-i\frac{\theta}{2}Y\right) =
 \begin{bmatrix}
@@ -14,6 +16,17 @@ R_y(\theta) = \exp\left(-i\frac{\theta}{2}Y\right) =
     \sin{\frac{\theta}{2}}            & \phantom{+}\cos\frac{\theta}{2}
 \end{bmatrix}
 $$
+
+### Properties
+
+- Unitary with generator $Y$: $R_y(\theta) = e^{-i\theta Y/2}$.
+- Real-valued matrix; useful for preparing real-amplitude states.
+- $R_y(\pi)$ equals $-iY$ up to global phase.
+
+### Usage
+
+- State preparation and mixing amplitudes in variational circuits.
+- Combined with $R_z$ for arbitrary single-qubit rotations.
 
 ## References
 

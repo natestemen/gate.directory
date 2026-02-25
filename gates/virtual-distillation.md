@@ -3,15 +3,14 @@ layout: gate
 title: Virtual Distillation
 symbol: B^{(2)}_i
 arity: 2
-description: A gate used in the virtual distillation protocol for error mitigation.
+description: A two-qubit entangling gate used in virtual distillation error-mitigation protocols.
 citation:
   year: 2020
   url: https://arxiv.org/abs/2011.07064
 ---
 
-Virtual distillation is an error-mitigation technique that improves expectation-value estimates by effectively amplifying the contribution of the dominant eigenstate of a noisy quantum state.
-The gate $B^{(2)}_i$ is a the two-qubit case of a more general entangling gate.
-In the two-qubit case it on the $i$th qubit of two copies of a prepared state $\rho$ before measurement to extract information about higher moments of $\rho$ (such as $\mathrm{Tr}(\rho^2 O)$) using standard quantum hardware.
+Virtual distillation is an error-mitigation technique that amplifies the dominant eigenstate of a noisy density matrix.
+The gate $B^{(2)}_i$ is the two-qubit case of a more general entangling gate applied to two copies of a state.
 
 $$
 B^{(2)}_i =
@@ -22,5 +21,15 @@ B^{(2)}_i =
   0 & 0                  & 0                   & 1
 \end{bmatrix}
 $$
+
+### Properties
+
+- Unitary and entangling.
+- Implements a partial swap between two copies of a state on qubit $i$.
+
+### Usage
+
+- Estimating nonlinear functionals like $\mathrm{Tr}(\rho^2 O)$ with hardware.
+- Error mitigation in near-term experiments.
 
 See [arXiv:2011.07064](https://arxiv.org/abs/2011.07064) for the full protocol.

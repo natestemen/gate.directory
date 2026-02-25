@@ -7,9 +7,10 @@ alias:
   - p
 groups:
 arity: 1
+description: Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.
 ---
 
-The Phase Shift gate applies a rotation to the phase of the quantum state, leaving the $|0\rangle$ component unchanged while applying a phase shift $e^{i\phi}$ to the $|1\rangle$ component. {.gate-description}
+The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiplying $|1\rangle$ by $e^{i\phi}$.
 
 |             |                                                         |
 | ----------- | ------------------------------------------------------- |
@@ -18,9 +19,19 @@ The Phase Shift gate applies a rotation to the phase of the quantum state, leavi
 | Arity       | {{ arity }}                                             |
 | Group       | $\mathsf{U}(2)$                                         |
 
+### Properties
+
+- Equivalent to $R_z(\phi)$ up to a global phase.
+- Clifford when $\phi$ is an integer multiple of $\pi/2$.
+
+### Usage
+
+- Phase corrections and calibrated $Z$ rotations.
+- Implementing controlled-phase operations and diagonal unitaries.
+
 ### Special Cases
 
-The Phase Shift gate corresponds to other well-known gates for specific values of $\phi$:
+The phase shift gate corresponds to other well-known gates for specific values of $\phi$:
 
 | $\phi$   | Equivalent Gate | Matrix                                          |
 | -------- | --------------- | ----------------------------------------------- |

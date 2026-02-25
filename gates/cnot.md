@@ -8,9 +8,10 @@ groups:
   - clifford
 arity: 2
 controlled: pauli-x
-description: The $\mathrm{C}X$ gate generates entanglement between two qubits.
-
+description: Flips the target qubit when the control qubit is in the $|1\rangle$ state.
 ---
+
+The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally applies $X$ to the target.
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
@@ -19,9 +20,16 @@ description: The $\mathrm{C}X$ gate generates entanglement between two qubits.
 | Arity       | {{ arity }}                                                                                           |
 | Group       | $\mathsf{U}(4)$                                                                                       |
 
+### Properties
+
+- Self-inverse and Hermitian: $\mathrm{CNOT}^\dagger = \mathrm{CNOT}$.
+- Entangling; it can create Bell states from $|+0\rangle$.
+- Equivalent to a controlled-$Z$ up to Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\,\mathrm{CZ}\,(I \otimes H)$.
+
 ### Usage
 
-This gate is commonly used in algorithms like the Quantum Fourier Transform.
+- Entanglement generation, parity checks, and stabilizer circuits.
+- A standard two-qubit gate in Clifford and error-correction circuits.
 
 ## References
 
