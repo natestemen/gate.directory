@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Pauli Group</title>
+  <title>Magic</title>
 </head>
 <body>
   <main>
@@ -29,93 +29,51 @@
       <div class="not-footer">
         
         
-<h2>Pauli Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Magic</h2>
 
-<div>
-  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := \{ i^n \sigma_j \mid n, j \in \{0, 1, 2, 3\} \}$.
-The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$$\mathcal{P}_n = \left\{ \bigotimes\limits_{i=0}^{n-1} P_i \mid P_i \in \mathcal{P}_1 \right\}$$</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$M$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Changes from the computational basis to the magic (Bell) basis used in two-qubit local invariants.</p>
+</p>
+      </div>
+    </div>
 
-</div>
-
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The magic gate is a fixed two-qubit unitary that performs a basis change to the magic basis (a Bell basis with specific phases).</p>
+<p>$$
+M = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 &amp; i &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; i &amp; 1 \\
+0 &amp; 0 &amp; i &amp; -1 \\
+1 &amp; -i &amp; 0 &amp; 0
+\end{bmatrix}
+$$</p>
+<h3>Properties</h3>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-x/">Pauli-X</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-y/">Pauli-Y</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<li>Columns are (phase-adjusted) Bell states, so it maps the computational basis to the magic basis:
+$M|00\rangle = \tfrac{|00\rangle + |11\rangle}{\sqrt{2}}$, $M|01\rangle = \tfrac{i(|00\rangle - |11\rangle)}{\sqrt{2}}$, $M|10\rangle = \tfrac{i(|01\rangle + |10\rangle)}{\sqrt{2}}$, $M|11\rangle = \tfrac{|01\rangle - |10\rangle}{\sqrt{2}}$.</li>
+<li>If $U \in \mathsf{SO}(4)$, then $M U M^\dagger = A \otimes B$ for some $A,B \in \mathsf{SU}(2)$ (the $\mathsf{SO}(4) \simeq (\mathsf{SU}(2)\times\mathsf{SU}(2))/\mathbb{Z}_2$ correspondence).</li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/magic.md">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>
