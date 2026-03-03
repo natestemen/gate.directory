@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Pauli Group</title>
+  <title>B Gate</title>
 </head>
 <body>
   <main>
@@ -29,95 +29,48 @@
       <div class="not-footer">
         
         
-<h2>Pauli Group</h2>
+<div class="gate">
+  <h2 class="gate-title">B Gate</h2>
 
-<div>
-  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := \{ i^n \sigma_j \mid n, j \in \{0, 1, 2, 3\} \}$.
-The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$$\mathcal{P}_n = \left\{ \bigotimes\limits_{i=0}^{n-1} P_i \mid P_i \in \mathcal{P}_1 \right\}$$</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$B$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.</p>
+</p>
+      </div>
+    </div>
 
-</div>
-
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The B gate introduced in Zhang, Vala, Sastry, and Whaley is</p>
+<p>$$
+B = e^{-i\left(\frac{\pi}{4}X\otimes X + \frac{\pi}{8}Y\otimes Y\right)}.
+$$</p>
+<h3>Properties</h3>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-x/">Pauli-X</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-y/">Pauli-Y</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<li>Any $U \in U(4)$ can be realized with only two B gates plus local single-qubit gates.</li>
+<li>This improves on common alternatives (for example CNOT and DCNOT), which need three applications, and many other two-qubit gates that need three or more to synthesize arbitrary $U(4)$ operations.</li>
+</ul>
+<h2>References</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/quant-ph/0312193">Minimum construction of two-qubit quantum operations</a></li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/edit/main/gates/b.md">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>
