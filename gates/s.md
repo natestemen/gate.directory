@@ -2,6 +2,11 @@
 layout: gate
 title: Phase
 symbol: S
+notations:
+  - S
+  - \sqrt{Z}
+  - Z^{1/2}
+  - P(\pi/2)
 arity: 1
 groups:
   - clifford

@@ -4,6 +4,12 @@ title: Controlled Not
 symbol: \mathrm{C}X
 alias:
   - cx
+notations:
+  - \mathrm{C}X
+  - \mathrm{CNOT}
+  - \mathrm{CNOT}_{ij}
+  - \text{controlled-}X
+  - \Lambda(X)
 groups:
   - clifford
 arity: 2
@@ -15,7 +21,6 @@ The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
-| Notation(s) | $\mathrm{C}X$, $\mathrm{CNOT}$, $\mathrm{CNOT}_{ij}$                                                  |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                           |
 | Group       | $\mathsf{U}(4)$                                                                                       |

@@ -2,6 +2,9 @@
 layout: gate
 title: Global Phase
 symbol: e^{i\phi}
+notations:
+  - e^{i\phi} I
+  - \mathrm{Ph}(\phi)
 arity: n
 description: Multiplies the entire quantum state by an overall phase factor.
 ---
@@ -25,4 +28,3 @@ $$
 
 - Often ignored in circuit optimization and compilation.
 - Appears when simplifying products of rotations.
-

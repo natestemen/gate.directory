@@ -1,9 +1,11 @@
 ---
 layout: gate
-title: $\pi / 8$ or $T$
+title: T
 symbol: T
+notations:
+  - \pi/8
 arity: 1
-description: $\pi/8$ phase gate, a non-Clifford rotation about $Z$.
+description: A $\pi/8$ phase gate which is a non-Clifford rotation about $Z$.
 ---
 
 The $T$ gate applies a phase of $e^{i\pi/4}$ to $|1\rangle$.

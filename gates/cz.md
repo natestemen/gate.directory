@@ -4,6 +4,8 @@ title: Controlled-Z
 symbol: \mathrm{CZ}
 alias:
   - cz
+notations:
+  - \Lambda(Z)
 groups:
   - clifford
 arity: 2
@@ -32,4 +34,3 @@ $$
 
 - Native entangling gate on several hardware platforms.
 - Controlled phase flips and stabilizer circuits.
-

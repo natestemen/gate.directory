@@ -2,6 +2,9 @@
 layout: gate
 title: Phase Oracle
 symbol: O_f^\pm
+notations:
+  - U_f^\pm
+  - \mathcal{O}_f^\pm
 arity: n
 dimension: p
 description: Encodes a Boolean function as phases on computational basis states.

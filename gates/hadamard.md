@@ -14,7 +14,6 @@ The Hadamard gate creates and removes superposition by mapping $|0\rangle \mapst
 
 |             |                                                                    |
 | ----------- | ------------------------------------------------------------------ |
-| Notation(s) | $H$                                                                |
 | Matrix      | $\frac{1}{\sqrt{2}}\begin{bmatrix}1 & 1 \\\\ 1 & -1 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                        |
 | Group       | $\mathsf{O}(2)$                                                    |

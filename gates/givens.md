@@ -4,6 +4,9 @@ title: Givens Rotation
 symbol: G(\theta)
 alias:
   - givens
+notations:
+  - G(\theta)
+  - G_{ij}(\theta)
 arity: 2
 description: Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.
 ---

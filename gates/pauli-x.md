@@ -4,6 +4,11 @@ title: Pauli-X
 symbol: X
 alias:
   - x
+notations:
+  - X
+  - \sigma_x
+  - \sigma_1
+  - \mathrm{NOT}
 groups:
   - pauli
   - clifford
@@ -15,7 +20,6 @@ The Pauli-$X$ gate is the quantum analog of a classical NOT.
 
 |             |                                                 |
 | ----------- | ----------------------------------------------- |
-| Notation(s) | $X$, $\sigma_x$, $\sigma_1$                     |
 | Matrix      | $\begin{bmatrix}0 & 1 \\\\ 1 & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                     |
 | Group       | $\mathsf{U}(2)$                                 |

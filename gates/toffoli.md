@@ -5,6 +5,13 @@ symbol: \mathrm{CCX}
 alias:
   - toffoli
   - ccx
+notations:
+  - \mathrm{CCX}
+  - \mathrm{CCNOT}
+  - \mathrm{TOFF}
+  - C^2X
+  - \Lambda^2(X)
+  - \text{Toffoli}
 groups:
 properties:
   - hermitian
@@ -16,7 +23,6 @@ The Toffoli gate (Controlled-Controlled-NOT) flips a target qubit if and only if
 
 |             |                                                                                                                                                                                                                                                                                                                   |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Notation(s) | $\mathrm{CCX}$, $\mathrm{CCNOT}$, $\mathrm{TOFF}$                                                                                                                                                                                                                                                                 |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                                                                                                                                                                                                                                       |
 | Group       | $\mathsf{U}(8)$                                                                                                                                                                                                                                                                                                   |

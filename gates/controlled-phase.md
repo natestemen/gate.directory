@@ -5,6 +5,8 @@ symbol: \mathrm{CP}(\phi)
 alias:
   - cphase
   - cp
+notations:
+  - \mathrm{CPhase}(\phi)
 arity: 2
 description: Applies a phase $e^{i\phi}$ to $|11\rangle$ and leaves other basis states unchanged.
 ---
@@ -31,4 +33,3 @@ $$
 
 - Phase-kickback in algorithms and controlled phase rotations.
 - Building block for QFT and diagonal unitaries.
-

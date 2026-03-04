@@ -2,6 +2,9 @@
 layout: gate
 title: Oracle
 symbol: O_f
+notations:
+  - U_f
+  - \mathcal{O}_f
 arity: n
 dimension: p
 description: Implements a classical function as a reversible black-box unitary that can be queried coherently.

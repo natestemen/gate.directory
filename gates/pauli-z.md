@@ -4,6 +4,10 @@ title: Pauli-Z
 symbol: Z
 alias:
   - z
+notations:
+  - Z
+  - \sigma_z
+  - \sigma_3
 groups:
   - pauli
   - clifford
@@ -15,7 +19,6 @@ The Pauli-$Z$ gate applies a relative phase of $-1$ to the $|1\rangle$ component
 
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
-| Notation(s) | $Z$, $\sigma_z$, $\sigma_3$                      |
 | Matrix      | $\begin{bmatrix}1 & 0 \\\\ 0 & -1 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                      |
 | Group       | $\mathsf{U}(2)$                                  |

@@ -2,6 +2,11 @@
 layout: gate
 title: $y$ Rotation
 symbol: R_y
+notations:
+  - R_y(\theta)
+  - \mathrm{Ry}(\theta)
+  - Y(\theta)
+  - Y_\theta
 arity: 1
 description: Rotation about the $y$ axis of the Bloch sphere.
 ---

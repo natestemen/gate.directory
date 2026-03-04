@@ -2,6 +2,10 @@
 layout: gate
 title: Mølmer-Sørensen
 symbol: MS
+notations:
+  - \mathrm{MS}
+  - \mathrm{MS}(\chi_{ij})
+  - \mathrm{GMS}
 arity: n
 dimension: 2
 description: A native entangling interaction in ion-trap systems based on collective spin-motion coupling.

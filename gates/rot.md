@@ -1,9 +1,12 @@
 ---
 layout: gate
 title: Arbitrary Rotation
-symbol: \mathrm{Rot}(\vec{n}, \theta)
+symbol: R_{\mathbf{n}}(\theta)
 alias:
   - rot
+notations:
+  - \mathrm{Rot}(\vec{n}, \theta)
+  - R_{\vec{n}}(\theta)
 arity: 1
 description: Rotation by angle $\theta$ about the Bloch-sphere axis $\vec{n}$.
 ---
@@ -31,4 +34,3 @@ $$
 
 - Arbitrary axis rotations in pulse-level control.
 - Compact parameterization for variational circuits and compilation.
-

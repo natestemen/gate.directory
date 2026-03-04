@@ -4,6 +4,10 @@ title: Pauli-Y
 symbol: Y
 alias:
   - y
+notations:
+  - Y
+  - \sigma_y
+  - \sigma_2
 groups:
   - pauli
   - clifford
@@ -15,7 +19,6 @@ The Pauli-$Y$ gate is a $\pi$ rotation around the $y$ axis of the Bloch sphere.
 
 |             |                                                  |
 | ----------- | ------------------------------------------------ |
-| Notation(s) | $Y$, $\sigma_y$, $\sigma_2$                      |
 | Matrix      | $\begin{bmatrix}0 & -i \\\\ i & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                      |
 | Group       | $\mathsf{U}(2)$                                  |

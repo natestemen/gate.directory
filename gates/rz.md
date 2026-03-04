@@ -2,6 +2,11 @@
 layout: gate
 title: $z$ Rotation
 symbol: R_z
+notations:
+  - R_z(\theta)
+  - \mathrm{Rz}(\theta)
+  - Z(\theta)
+  - Z_\theta
 arity: 1
 description: Rotation about the $z$ axis of the Bloch sphere.
 ---

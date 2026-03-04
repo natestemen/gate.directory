@@ -5,6 +5,8 @@ symbol: P(\phi)
 alias:
   - phase
   - p
+notations:
+  - U_1(\phi)
 groups:
 arity: 1
 description: Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.
@@ -14,7 +16,6 @@ The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiply
 
 |             |                                                         |
 | ----------- | ------------------------------------------------------- |
-| Notation(s) | $P(\phi)$, $R_z(\phi)$                                  |
 | Matrix      | $\begin{bmatrix}1 & 0 \\\\ 0 & e^{i\phi} \end{bmatrix}$ |
 | Arity       | {{ arity }}                                             |
 | Group       | $\mathsf{U}(2)$                                         |

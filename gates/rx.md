@@ -2,6 +2,11 @@
 layout: gate
 title: $x$ Rotation
 symbol: R_x
+notations:
+  - R_x(\theta)
+  - \mathrm{Rx}(\theta)
+  - X(\theta)
+  - X_\theta
 arity: 1
 description: Rotation about the $x$ axis of the Bloch sphere.
 ---

@@ -4,6 +4,12 @@ title: Identity
 symbol: I
 alias:
   - i
+notations:
+  - I
+  - I_n
+  - 1_n
+  - \mathbb{1}
+  - \mathrm{Id}
 groups:
   - pauli
   - clifford
@@ -15,7 +21,6 @@ The identity gate $I_n$ acts on $n$ qubits and leaves all basis states unchanged
 
 |             |                                                 |
 | ----------- | ----------------------------------------------- |
-| Notation(s) | $I$, $1$, $I_n$, $1_n$                          |
 | Matrix      | $\begin{bmatrix}1 & 0 \\\\ 0 & 1 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                     |
 | Group       | $\mathsf{U}(2^n)$                               |

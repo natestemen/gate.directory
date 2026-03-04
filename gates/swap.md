@@ -2,6 +2,9 @@
 layout: gate
 title: SWAP
 symbol: \mathrm{SWAP}
+notations:
+  - \mathrm{SWAP}
+  - \mathrm{SWAP}_{ij}
 groups:
   - clifford
 arity: 2
@@ -12,7 +15,6 @@ The SWAP gate exchanges the states of two qubits and is commonly used to reorder
 
 |             |                                                                                                       |
 | ----------- | ----------------------------------------------------------------------------------------------------- |
-| Notation(s) | $\mathrm{SWAP}$                                                                                       |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                           |
 | Group       | $\mathsf{U}(4)$                                                                                       |
