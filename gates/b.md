@@ -12,7 +12,23 @@ citation:
 The B gate introduced in Zhang, Vala, Sastry, and Whaley is
 
 $$
-B = e^{-i\left(\frac{\pi}{4}X\otimes X + \frac{\pi}{8}Y\otimes Y\right)}.
+\begin{align*}
+B & = \exp\left[-i\left(\frac{\pi}{4}X\otimes X + \frac{\pi}{8}Y\otimes Y\right)\right] \\\\
+  & = \begin{bmatrix}
+    \alpha^{+} & 0 & 0 & i\alpha^{-} \\\\
+    0 & \alpha^{-} & i\alpha^{+} & 0 \\\\
+    0 & i\alpha^{+} & \alpha^{-} & 0 \\\\
+    i\alpha^{-} & 0 & 0 & \alpha^{+}
+  \end{bmatrix}
+\end{align*}
+$$
+
+Where
+$$
+\begin{align*}
+\alpha^{\pm} & = \tfrac{\sqrt{2}}{2}\left(\cos \tfrac{\pi}{8} \pm \sin \tfrac{\pi}{8}\right) \\\\
+             & = \tfrac{\sqrt{2}}{4}\left(\sqrt{2 + \sqrt{2}} \pm \sqrt{2 - \sqrt{2}}\right)
+\end{align*}
 $$
 
 ### Properties
