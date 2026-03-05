@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Controlled Not</title>
+  <title>Orthogonal Group</title>
 </head>
 <body>
   <main>
@@ -29,100 +29,87 @@
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Controlled Not</h2>
+<h2>Orthogonal Group</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$&#92;mathrm{C}X$</div>
-      </div>
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Flips the target qubit when the control qubit is in the $|1\rangle$ state.</p>
-</p>
-        <br>
+<div>
+  <p>coming soon</p>
 
-        
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$&#92;mathrm{C}X$</li>
-            
-            <li>$&#92;mathrm{CNOT}$</li>
-            
-            <li>$&#92;mathrm{CNOT}_{ij}$</li>
-            
-            <li>$&#92;text{controlled-}X$</li>
-            
-            <li>$&#92;Lambda(X)$</li>
-            
-          </ul>
-        
-      </div>
-    </div>
-
-    <div class="column">
-      <p>The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally applies $X$ to the target.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}$</td>
-</tr>
-<tr>
-<td>Arity</td>
-<td>2</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>$\mathsf{O}(4)$</td>
-</tr>
-</tbody>
-</table>
-<h3>Properties</h3>
-<ul>
-<li>Self-inverse and Hermitian: $\mathrm{CNOT}^\dagger = \mathrm{CNOT}$.</li>
-<li>Entangling; it can create Bell states from $|+0\rangle$.</li>
-<li>Equivalent to a controlled-$Z$ up to Hadamards on the target: $\mathrm{CNOT} = (I \otimes H),\mathrm{CZ},(I \otimes H)$.</li>
-</ul>
-<h3>Usage</h3>
-<ul>
-<li>Entanglement generation, parity checks, and stabilizer circuits.</li>
-<li>A standard two-qubit gate in Clifford and error-correction circuits.</li>
-</ul>
-<h2>References</h2>
-<ul>
-<li>Q#: <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/cnot"><code>Std.Intrinsic.CNOT</code></a></li>
-<li>PyQuil: <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CNOT"><code>pyquil.gates.CNOT</code></a></li>
-</ul>
-
-    </div>
-  </div>
-
-  <br/>
-
-  
-    <h3>Groups</h3>
-    <p>This gate is contained in the following groups:</p>
-    <ul>
-      
-      <li><a href="/groups/clifford">clifford</a></li>
-      
-    </ul>
-  
-
-  <a class="back-to-home" href="/">Back to home</a>
-  
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cnot.md" target="_blank">Edit this page on GitHub</a></p>
 </div>
+
+
+<p>The following gates are contained in this group:</p>
+<ul>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/toffoli/">Toffoli</a></li>
+  
+
+  
+
+  
+
+</ul>
+
 
       </div>
       <footer>

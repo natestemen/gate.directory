@@ -4,6 +4,10 @@
 
   --gradient1: linear-gradient(130deg, var(--color-a) 0%, var(--color-b) 100%);
   --gradient2: var(--color-b);
+  --pauli-accent: #2f5fd0;
+  --clifford-accent: #c2571a;
+  --parametrized-accent: #0b7a5a;
+  --controlled-accent: #7a2f8f;
 
 }
 
@@ -83,6 +87,97 @@ footer {
   max-width: 600px;
 }
 
+.gate-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px auto 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+.filter-hint {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-left: auto;
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+.filter-button {
+  border: 2px solid black;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: white;
+  color: black;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.filter-button.is-active {
+  color: black;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.filter-button[data-group="pauli"] {
+  border-color: var(--pauli-accent);
+}
+
+.filter-button[data-group="clifford"] {
+  border-color: var(--clifford-accent);
+}
+
+.filter-button[data-group="parametrized"] {
+  border-color: var(--parametrized-accent);
+}
+
+.filter-button[data-group="controlled"] {
+  border-color: var(--controlled-accent);
+}
+
+.filter-button.is-active[data-group="pauli"] {
+  background: color-mix(in srgb, var(--pauli-accent) 25%, white);
+}
+
+.filter-button.is-active[data-group="clifford"] {
+  background: color-mix(in srgb, var(--clifford-accent) 25%, white);
+}
+
+.filter-button.is-active[data-group="parametrized"] {
+  background: color-mix(in srgb, var(--parametrized-accent) 25%, white);
+}
+
+.filter-button.is-active[data-group="controlled"] {
+  background: color-mix(in srgb, var(--controlled-accent) 25%, white);
+}
+
+.filter-button.filter-clear {
+  border-style: dashed;
+}
+
+.filter-button.filter-clear:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  box-shadow: none;
+  transform: none;
+}
+
 .periodic-table a {
   text-decoration: none;
   color: black;
@@ -120,7 +215,8 @@ footer {
 }
 
 .periodic-cell {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease,
+    border-color 0.3s ease, background 0.3s ease;
 }
 
 .periodic-cell:nth-child(3n):hover {
@@ -131,4 +227,45 @@ footer {
 }
 .periodic-cell:nth-child(3n + 2):hover {
   transform: rotate(2deg) skew(-0.5deg, 1deg);
+}
+
+.periodic-cell.is-dimmed {
+  opacity: 0.35;
+  filter: grayscale(0.25);
+}
+
+.periodic-cell.is-dimmed:hover {
+  transform: none;
+}
+
+.periodic-cell.is-highlighted {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.periodic-cell.highlight-pauli {
+  border-color: var(--pauli-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pauli-accent) 35%, transparent);
+}
+
+.periodic-cell.highlight-clifford {
+  border-color: var(--clifford-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--clifford-accent) 35%, transparent);
+}
+
+.periodic-cell.highlight-parametrized {
+  border-color: var(--parametrized-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--parametrized-accent) 35%, transparent);
+}
+
+.periodic-cell.highlight-controlled {
+  border-color: var(--controlled-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--controlled-accent) 35%, transparent);
+}
+
+.periodic-cell.highlight-pauli.highlight-clifford {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--pauli-accent) 20%, white),
+    color-mix(in srgb, var(--clifford-accent) 20%, white)
+  );
 }
