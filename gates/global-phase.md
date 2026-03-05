@@ -1,21 +1,25 @@
 ---
 layout: gate
 title: Global Phase
-symbol: e^{i\phi}
+symbol: \mathrm{Ph}(\phi)
+alias:
+  - gphase
+  - ph
 notations:
-  - e^{i\phi} I
-  - \mathrm{Ph}(\phi)
+  - \mathrm{e}^{i\phi}
+  - \mathrm{e}^{i\phi} I
 arity: n
 description: Multiplies the entire quantum state by an overall phase factor.
 ---
 
 A global phase gate applies $e^{i\phi}$ to the entire state. It has no observable effect on measurement probabilities or expectation values.
+On a single qubit:
 
 $$
-G(\phi) = e^{i\phi} I = e^{i\phi}
+\mathrm{Ph}(\phi) = \mathrm{e}^{i\phi} I =
 \begin{bmatrix}
-  1 & 0 \\\\
-  0 & 1
+  \mathrm{e}^{i\phi} & 0 \\\\
+  0                  & \mathrm{e}^{i\phi}
 \end{bmatrix}
 $$
 
