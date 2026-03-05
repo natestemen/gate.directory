@@ -36,7 +36,7 @@
     <div class="column">
       <div class="symbol-row">
         <p>Symbol</p>
-        <div class="symbol-box">$e^{i&#92;phi}$</div>
+        <div class="symbol-box">$&#92;mathrm{Ph}(&#92;phi)$</div>
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
@@ -48,9 +48,9 @@
           <p><strong>Alternate notations:</strong></p>
           <ul>
             
-            <li>$e^{i&#92;phi} I$</li>
+            <li>$&#92;mathrm{e}^{i&#92;phi}$</li>
             
-            <li>$&#92;mathrm{Ph}(&#92;phi)$</li>
+            <li>$&#92;mathrm{e}^{i&#92;phi} I$</li>
             
           </ul>
         
@@ -58,12 +58,13 @@
     </div>
 
     <div class="column">
-      <p>A global phase gate applies $e^{i\phi}$ to the entire state. It has no observable effect on measurement probabilities or expectation values.</p>
+      <p>A global phase gate applies $e^{i\phi}$ to the entire state. It has no observable effect on measurement probabilities or expectation values.
+On a single qubit:</p>
 <p>$$
-G(\phi) = e^{i\phi} I = e^{i\phi}
+\mathrm{Ph}(\phi) = \mathrm{e}^{i\phi} I =
 \begin{bmatrix}
-1 &amp; 0 \\
-0 &amp; 1
+\mathrm{e}^{i\phi} &amp; 0 \\
+0                  &amp; \mathrm{e}^{i\phi}
 \end{bmatrix}
 $$</p>
 <h3>Properties</h3>
