@@ -15,7 +15,19 @@ description: Controlled swap of two target qubits conditioned on a single contro
 
 The Fredkin (CSWAP) gate swaps the two target qubits when the control qubit is in the $|1\rangle$ state, and acts as identity when the control is $|0\rangle$.
 
-$$\mathrm{CSWAP} = \begin{bmatrix} 1&0&0&0&0&0&0&0 \\\\ 0&1&0&0&0&0&0&0 \\\\ 0&0&1&0&0&0&0&0 \\\\ 0&0&0&1&0&0&0&0 \\\\ 0&0&0&0&1&0&0&0 \\\\ 0&0&0&0&0&0&1&0 \\\\ 0&0&0&0&0&1&0&0 \\\\ 0&0&0&0&0&0&0&1 \end{bmatrix}$$
+$$
+\mathrm{CSWAP} =
+\begin{bmatrix}
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\
+  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\
+  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\
+  0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\\\
+  0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+$$
 
 ### Properties
 
