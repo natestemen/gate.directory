@@ -1,25 +1,25 @@
 ---
 layout: gate
 title: Controlled Phase
-symbol: \mathrm{CP}(\phi)
+symbol: \mathrm{C}P(\phi)
 alias:
   - cphase
   - cp
 notations:
   - \mathrm{CPhase}(\phi)
 arity: 2
-description: Applies a phase $e^{i\phi}$ to $|11\rangle$ and leaves other basis states unchanged.
+description: Applies a phase $\mathrm{e}^{i\phi}$ to $|11\rangle$ and leaves other basis states unchanged.
 ---
 
 The controlled-phase gate is a two-qubit diagonal gate that adds a phase to the $|11\rangle$ component.
 
 $$
-\mathrm{CP}(\phi) =
+\mathrm{C}P(\phi) =
 \begin{bmatrix}
   1 & 0 & 0 & 0 \\\\
   0 & 1 & 0 & 0 \\\\
   0 & 0 & 1 & 0 \\\\
-  0 & 0 & 0 & e^{i\phi}
+  0 & 0 & 0 & \mathrm{e}^{i\phi}
 \end{bmatrix}
 $$
 
