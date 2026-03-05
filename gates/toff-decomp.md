@@ -29,4 +29,4 @@ $$
 
 ## References
 
-- [Shende, Markov, and Bullock (2003)](https://arxiv.org/abs/quant-ph/0312225)
+- [The simplified Toffoli gate implementation by Margolus is optimal](https://arxiv.org/abs/quant-ph/0312225)
