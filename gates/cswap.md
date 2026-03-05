@@ -2,11 +2,14 @@
 layout: gate
 title: Fredkin
 symbol: \mathrm{CSWAP}
+alias:
+  - fredkin
 notations:
   - \mathrm{CSWAP}
   - \text{Fredkin}
   - \text{controlled-}SWAP
 arity: 3
+controlled: swap
 description: Controlled swap of two target qubits conditioned on a single control qubit.
 ---
 

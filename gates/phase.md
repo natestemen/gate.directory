@@ -9,6 +9,7 @@ notations:
   - U_1(\phi)
 groups:
 arity: 1
+parameters: 1
 description: Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.
 ---
 

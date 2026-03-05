@@ -8,6 +8,7 @@ notations:
   - \mathrm{Rot}(\vec{n}, \theta)
   - R_{\vec{n}}(\theta)
 arity: 1
+parameters: 3
 description: Rotation by angle $\theta$ about the Bloch-sphere axis $\vec{n}$.
 ---
 

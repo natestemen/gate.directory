@@ -8,6 +8,7 @@ notations:
   - \Lambda(Z)
 groups:
   - clifford
+controlled: pauli-z
 arity: 2
 description: Applies a $-1$ phase to $|11\rangle$.
 ---

@@ -23,7 +23,7 @@ The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally
 | ----------- | ----------------------------------------------------------------------------------------------------- |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                           |
-| Group       | $\mathsf{U}(4)$                                                                                       |
+| Group       | $\mathsf{O}(4)$                                                                                       |
 
 ### Properties
 

@@ -8,6 +8,7 @@ notations:
   - Y(\theta)
   - Y_\theta
 arity: 1
+parameters: 1
 description: Rotation about the $y$ axis of the Bloch sphere.
 ---
 

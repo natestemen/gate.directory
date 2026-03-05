@@ -7,6 +7,11 @@ alias:
   - cp
 notations:
   - \mathrm{CPhase}(\phi)
+controlled: phase
+groups:
+  - diagonal
+  - unitary
+parameters: 1
 arity: 2
 description: Applies a phase $\mathrm{e}^{i\phi}$ to $|11\rangle$ and leaves other basis states unchanged.
 ---

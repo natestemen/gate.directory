@@ -13,9 +13,19 @@
 <p class="periodic-explanation">Each cell shows the gate symbol with its
 arity and quDit dimension in the top right (e.g. <code>2q2d</code> for a
 two-qubit gate).</p>
+<div class="gate-filters" data-filter-root>
+  <span class="filter-label">Highlight:</span>
+  <button class="filter-button" type="button" data-group="pauli" aria-pressed="false">Pauli</button>
+  <button class="filter-button" type="button" data-group="clifford" aria-pressed="false">Clifford</button>
+  <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
+  <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
+  <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
+  <span class="filter-hint">Hover or click a filter to emphasize matching gates.</span>
+</div>
 <div class="periodic-table">
   {% for gate in collections.gates %}
-  <a class="periodic-cell" href="{{ gate.url }}">
+  {% set groupList = gate.data.groups or [] %}
+  <a class="periodic-cell" href="{{ gate.url }}" data-groups="{{ groupList | join(' ') }}" data-parameters="{{ gate.data.parameters | default('') }}" data-controlled="{{ gate.data.controlled | default('') }}">
     <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
     <div class="symbol">${{ gate.data.symbol | safe }}$</div>
     <div class="name">{{ gate.data.title }}</div>
@@ -39,5 +49,134 @@ two-qubit gate).</p>
 Not finding a gate you're interested in?
 Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a> and we'll add it!
 </p>
+
+<script>
+  (function () {
+    const filterRoot = document.querySelector(".gate-filters");
+    if (!filterRoot) {
+      return;
+    }
+
+    const cells = Array.from(document.querySelectorAll(".periodic-cell"));
+    const filterButtons = Array.from(
+      filterRoot.querySelectorAll(".filter-button[data-group]")
+    );
+    const clearButton = filterRoot.querySelector(".filter-clear");
+    const trackedGroups = ["pauli", "clifford", "parametrized", "controlled"];
+    const activeGroups = new Set();
+
+    const normalizeGroup = (group) => (group || "").toLowerCase();
+    const getCellGroups = (cell) =>
+      (cell.dataset.groups || "")
+        .split(" ")
+        .map(normalizeGroup)
+        .filter(Boolean);
+    const hasParameters = (cell) => {
+      const raw = (cell.dataset.parameters || "").toString().trim();
+      if (!raw) {
+        return false;
+      }
+      const numericValue = Number(raw);
+      if (Number.isFinite(numericValue)) {
+        return numericValue > 0;
+      }
+      return raw !== "0";
+    };
+    const isControlled = (cell) => {
+      const raw = (cell.dataset.controlled || "").toString().trim();
+      return raw.length > 0;
+    };
+
+    const cellMatchesGroup = (cell, group) => {
+      if (group === "parametrized") {
+        return hasParameters(cell);
+      }
+      if (group === "controlled") {
+        return isControlled(cell);
+      }
+      return getCellGroups(cell).includes(group);
+    };
+
+    function applyHighlight(highlightGroups) {
+      const hasHighlights = highlightGroups && highlightGroups.size > 0;
+
+      cells.forEach((cell) => {
+        const matchedGroups = hasHighlights
+          ? Array.from(highlightGroups).filter((group) =>
+              cellMatchesGroup(cell, group)
+            )
+          : [];
+
+        cell.classList.toggle("is-highlighted", matchedGroups.length > 0);
+        cell.classList.toggle(
+          "is-dimmed",
+          hasHighlights && matchedGroups.length === 0
+        );
+
+        trackedGroups.forEach((group) => {
+          cell.classList.toggle(
+            `highlight-${group}`,
+            matchedGroups.includes(group)
+          );
+        });
+      });
+    }
+
+    function syncButtonState() {
+      filterButtons.forEach((button) => {
+        const group = normalizeGroup(button.dataset.group);
+        const isActive = activeGroups.has(group);
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      if (clearButton) {
+        clearButton.disabled = activeGroups.size === 0;
+      }
+    }
+
+    function applyPreview(group) {
+      if (activeGroups.size > 0) {
+        return;
+      }
+      applyHighlight(new Set([group]));
+    }
+
+    function clearPreview() {
+      if (activeGroups.size > 0) {
+        return;
+      }
+      applyHighlight(activeGroups);
+    }
+
+    filterButtons.forEach((button) => {
+      const group = normalizeGroup(button.dataset.group);
+      button.addEventListener("mouseenter", () => applyPreview(group));
+      button.addEventListener("mouseleave", clearPreview);
+      button.addEventListener("focus", () => applyPreview(group));
+      button.addEventListener("blur", clearPreview);
+      button.addEventListener("click", () => {
+        if (activeGroups.has(group)) {
+          activeGroups.delete(group);
+        } else {
+          activeGroups.add(group);
+        }
+        syncButtonState();
+        applyHighlight(activeGroups);
+      });
+    });
+
+    if (clearButton) {
+      clearButton.addEventListener("click", () => {
+        activeGroups.clear();
+        syncButtonState();
+        applyHighlight(activeGroups);
+      });
+    }
+
+    syncButtonState();
+    applyHighlight(activeGroups);
+  })();
+</script>
 
 {% endblock %}

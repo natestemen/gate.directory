@@ -13,8 +13,10 @@ notations:
   - \Lambda^2(X)
   - \text{Toffoli}
 groups:
+  - orthogonal
 properties:
   - hermitian
+controlled: cnot
 arity: 3
 description: Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\rangle$.
 ---
@@ -25,7 +27,7 @@ The Toffoli gate (Controlled-Controlled-NOT) flips a target qubit if and only if
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \end{bmatrix}$ |
 | Arity       | {{ arity }}                                                                                                                                                                                                                                                                                                       |
-| Group       | $\mathsf{U}(8)$                                                                                                                                                                                                                                                                                                   |
+| Group       | $\mathsf{O}(8)$                                                                                                                                                                                                                                                                                                   |
 
 ### Properties
 

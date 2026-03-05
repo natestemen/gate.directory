@@ -8,6 +8,7 @@ notations:
   - \mathrm{GMS}
 arity: n
 dimension: 2
+parameters: n(n-1)/2
 description: A native entangling interaction in ion-trap systems based on collective spin-motion coupling.
 citation:
   year: 1999
