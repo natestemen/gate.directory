@@ -57,11 +57,17 @@
 
     <div class="column">
       <p>The $T$ gate applies a phase of $e^{i\pi/4}$ to $|1\rangle$.</p>
-<p>$$T = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; e^{i\frac{\pi}{4}}\end{bmatrix} = \sqrt{S} = \sqrt[4]{Z}$$</p>
+<p>$$
+T = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \mathrm{e}^{i\frac{\pi}{4}}
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
 <li>Non-Clifford; together with Clifford gates yields universal quantum computation.</li>
 <li>$T^2 = S$, $T^4 = Z$, and $T^8 = I$.</li>
+<li>$P(\pi/8) = T$.</li>
 <li>Diagonal and unitary.</li>
 </ul>
 <h3>Usage</h3>
@@ -75,6 +81,14 @@
 
   <br/>
 
+  
+    <h3>Groups</h3>
+    <p>This gate is contained in the following groups:</p>
+    <ul>
+      
+      <li><a href="/groups/diagonal">diagonal</a></li>
+      
+    </ul>
   
 
   <a class="back-to-home" href="/">Back to home</a>

@@ -44,6 +44,7 @@ two-qubit gate).</p>
   <span class="filter-label">Highlight:</span>
   <button class="filter-button" type="button" data-group="pauli" aria-pressed="false">Pauli</button>
   <button class="filter-button" type="button" data-group="clifford" aria-pressed="false">Clifford</button>
+  <button class="filter-button" type="button" data-group="orthogonal" aria-pressed="false">Real</button>
   <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
   <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
   <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
@@ -80,9 +81,9 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/cz/" data-groups="clifford" data-parameters="" data-controlled="pauli-z">
+  <a class="periodic-cell" href="/gates/cz/" data-groups="clifford diagonal orthogonal" data-parameters="" data-controlled="pauli-z">
     <span class="arity-dim">2q2d</span>
-    <div class="symbol">$\mathrm{CZ}$</div>
+    <div class="symbol">$\mathrm{C}Z$</div>
     <div class="name">Controlled-Z</div>
   </a>
   
@@ -94,7 +95,7 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/givens/" data-groups="" data-parameters="1" data-controlled="">
+  <a class="periodic-cell" href="/gates/givens/" data-groups="orthogonal" data-parameters="1" data-controlled="">
     <span class="arity-dim">2q2d</span>
     <div class="symbol">$G(\theta)$</div>
     <div class="name">Givens Rotation</div>
@@ -178,7 +179,7 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/phase/" data-groups="" data-parameters="1" data-controlled="">
+  <a class="periodic-cell" href="/gates/phase/" data-groups="diagonal" data-parameters="1" data-controlled="">
     <span class="arity-dim">1q2d</span>
     <div class="symbol">$P(\phi)$</div>
     <div class="name">Phase Shift</div>
@@ -206,7 +207,7 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/ry/" data-groups="" data-parameters="1" data-controlled="">
+  <a class="periodic-cell" href="/gates/ry/" data-groups="orthogonal" data-parameters="1" data-controlled="">
     <span class="arity-dim">1q2d</span>
     <div class="symbol">$R_y$</div>
     <div class="name">$y$ Rotation</div>
@@ -220,14 +221,14 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/rz/" data-groups="" data-parameters="1" data-controlled="">
+  <a class="periodic-cell" href="/gates/rz/" data-groups="diagonal" data-parameters="1" data-controlled="">
     <span class="arity-dim">1q2d</span>
     <div class="symbol">$R_z$</div>
     <div class="name">$z$ Rotation</div>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/rzz/" data-groups="" data-parameters="1" data-controlled="">
+  <a class="periodic-cell" href="/gates/rzz/" data-groups="diagonal" data-parameters="1" data-controlled="">
     <span class="arity-dim">2q2d</span>
     <div class="symbol">$R_{zz}$</div>
     <div class="name">$zz$ Rotation</div>
@@ -248,7 +249,7 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/t/" data-groups="" data-parameters="" data-controlled="">
+  <a class="periodic-cell" href="/gates/t/" data-groups="diagonal" data-parameters="" data-controlled="">
     <span class="arity-dim">1q2d</span>
     <div class="symbol">$T$</div>
     <div class="name">T</div>
@@ -264,7 +265,7 @@ two-qubit gate).</p>
   
   <a class="periodic-cell" href="/gates/toffoli/" data-groups="orthogonal" data-parameters="" data-controlled="cnot">
     <span class="arity-dim">3q2d</span>
-    <div class="symbol">$\mathrm{CCX}$</div>
+    <div class="symbol">$\mathrm{CC}X$</div>
     <div class="name">Toffoli</div>
   </a>
   
@@ -276,7 +277,7 @@ two-qubit gate).</p>
   </a>
   
   
-  <a class="periodic-cell" href="/gates/virtual-distillation/" data-groups="" data-parameters="" data-controlled="">
+  <a class="periodic-cell" href="/gates/virtual-distillation/" data-groups="orthogonal" data-parameters="" data-controlled="">
     <span class="arity-dim">2q2d</span>
     <div class="symbol">$B^{(2)}_i$</div>
     <div class="name">Virtual Distillation</div>
@@ -321,7 +322,13 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       filterRoot.querySelectorAll(".filter-button[data-group]")
     );
     const clearButton = filterRoot.querySelector(".filter-clear");
-    const trackedGroups = ["pauli", "clifford", "parametrized", "controlled"];
+    const trackedGroups = [
+      "pauli",
+      "clifford",
+      "orthogonal",
+      "parametrized",
+      "controlled",
+    ];
     const activeGroups = new Set();
 
     const normalizeGroup = (group) => (group || "").toLowerCase();

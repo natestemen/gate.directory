@@ -57,40 +57,18 @@
 
     <div class="column">
       <p>The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiplying $|1\rangle$ by $e^{i\phi}$.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; e^{i\phi} \end{bmatrix}$</td>
-</tr>
-<tr>
-<td>Arity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>$\mathsf{U}(2)$</td>
-</tr>
-</tbody>
-</table>
+<p>$$
+P(\phi) = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \mathrm{e}^{i\phi}
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
 <li>Equivalent to $R_z(\phi)$ up to a global phase.</li>
 <li>Clifford when $\phi$ is an integer multiple of $\pi/2$.</li>
 </ul>
-<h3>Usage</h3>
-<ul>
-<li>Phase corrections and calibrated $Z$ rotations.</li>
-<li>Implementing controlled-phase operations and diagonal unitaries.</li>
-</ul>
 <h3>Special Cases</h3>
-<p>The phase shift gate corresponds to other well-known gates for specific values of $\phi$:</p>
 <table>
 <thead>
 <tr>
@@ -102,17 +80,22 @@
 <tbody>
 <tr>
 <td>$0$</td>
-<td>Identity ($I$)</td>
+<td><a href="/gates/identity">Identity</a></td>
 <td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; 1\end{bmatrix}$</td>
 </tr>
 <tr>
+<td>$\pi / 4$</td>
+<td><a href="/gates/t">$T$</a></td>
+<td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; \mathrm{e}^{i\pi/8}\end{bmatrix}$</td>
+</tr>
+<tr>
 <td>$\pi/2$</td>
-<td>Phase ($S$)</td>
+<td><a href="/gates/s">$S$</a></td>
 <td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; i\end{bmatrix}$</td>
 </tr>
 <tr>
 <td>$\pi$</td>
-<td>Pauli-Z ($Z$)</td>
+<td><a href="/gates/pauli-z">$Z$</a></td>
 <td>$\begin{bmatrix}1 &amp; 0 \\ 0 &amp; -1\end{bmatrix}$</td>
 </tr>
 <tr>
@@ -128,6 +111,14 @@
 
   <br/>
 
+  
+    <h3>Groups</h3>
+    <p>This gate is contained in the following groups:</p>
+    <ul>
+      
+      <li><a href="/groups/diagonal">diagonal</a></li>
+      
+    </ul>
   
 
   <a class="back-to-home" href="/">Back to home</a>

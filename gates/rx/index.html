@@ -63,17 +63,17 @@
 
     <div class="column">
       <p>The $R_x$ gate rotates a qubit by angle $\theta$ around the $x$ axis.</p>
-<p>$$R_x(\theta) = \exp\left(-i\frac{\theta}{2}X\right) = \begin{bmatrix}\cos\frac{\theta}{2}   &amp; -i\sin\frac{\theta}{2} \\ -i\sin{\frac{\theta}{2}} &amp; \cos\frac{\theta}{2}\end{bmatrix}$$</p>
+<p>$$
+R_x(\theta) = \exp\left(-i\frac{\theta}{2}X\right)
+= \begin{bmatrix}
+\cos\frac{\theta}{2}     &amp; -i\sin\frac{\theta}{2} \\
+-i\sin{\frac{\theta}{2}} &amp; \cos\frac{\theta}{2}
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
-<li>Unitary with generator $X$: $R_x(\theta) = e^{-i\theta X/2}$.</li>
-<li>$R_x(\pi)$ equals $-iX$ (global phase).</li>
+<li>$R_x(\pi) = -iX$ (global phase).</li>
 <li>Together with $R_z$ it forms a universal set for single-qubit rotations.</li>
-</ul>
-<h3>Usage</h3>
-<ul>
-<li>Physical drive rotations in many hardware platforms.</li>
-<li>Basis changes when conjugating two-qubit interactions.</li>
 </ul>
 
     </div>

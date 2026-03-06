@@ -63,17 +63,18 @@
 
     <div class="column">
       <p>The $R_z$ gate rotates a qubit by angle $\theta$ around the $z$ axis, adding a relative phase between $|0\rangle$ and $|1\rangle$.</p>
-<p>$$R_z(\theta) = \exp\left(-i\frac{\theta}{2}Z\right) = \begin{bmatrix}e^{-i\frac{\theta}{2}}   &amp; 0 \\ 0 &amp; e^{i\frac{\theta}{2}}\end{bmatrix}$$</p>
+<p>$$
+R_z(\theta) = \exp\left(-i\frac{\theta}{2}Z\right) =
+\begin{bmatrix}
+\mathrm{e}^{-i\frac{\theta}{2}}   &amp; 0 \\
+0                                 &amp; \mathrm{e}^{i\frac{\theta}{2}}
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
-<li>Diagonal in the computational basis.</li>
-<li>Equivalent to a phase shift up to a global phase.</li>
 <li>Often implemented virtually as a frame update in many platforms.</li>
-</ul>
-<h3>Usage</h3>
-<ul>
-<li>Fast phase corrections in compilation.</li>
 <li>Combined with $R_x$ or $R_y$ for universal single-qubit control.</li>
+<li>Equivalent to a phase shift up to a global phase.</li>
 </ul>
 
     </div>
@@ -81,6 +82,14 @@
 
   <br/>
 
+  
+    <h3>Groups</h3>
+    <p>This gate is contained in the following groups:</p>
+    <ul>
+      
+      <li><a href="/groups/diagonal">diagonal</a></li>
+      
+    </ul>
   
 
   <a class="back-to-home" href="/">Back to home</a>
