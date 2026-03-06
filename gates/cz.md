@@ -1,13 +1,16 @@
 ---
 layout: gate
 title: Controlled-Z
-symbol: \mathrm{CZ}
+symbol: \mathrm{C}Z
 alias:
   - cz
 notations:
   - \Lambda(Z)
+  - \text{controlled-}Z
 groups:
   - clifford
+  - diagonal
+  - orthogonal
 controlled: pauli-z
 arity: 2
 description: Applies a $-1$ phase to $|11\rangle$.
@@ -16,7 +19,7 @@ description: Applies a $-1$ phase to $|11\rangle$.
 The controlled-$Z$ gate is a two-qubit diagonal entangling gate.
 
 $$
-\mathrm{CZ} =
+\mathrm{C}Z =
 \begin{bmatrix}
   1 & 0 & 0 & 0 \\\\
   0 & 1 & 0 & 0 \\\\

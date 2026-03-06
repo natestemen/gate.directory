@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Toffoli
-symbol: \mathrm{CCX}
+symbol: \mathrm{CC}X
 alias:
   - toffoli
   - ccx
@@ -23,11 +23,19 @@ description: Controlled-controlled-NOT gate that flips a target qubit when both 
 
 The Toffoli gate (Controlled-Controlled-NOT) flips a target qubit if and only if two control qubits are in the $|1\rangle$ state. It is universal for classical reversible computation and is widely used in quantum algorithms.
 
-|             |                                                                                                                                                                                                                                                                                                                   |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \end{bmatrix}$ |
-| Arity       | {{ arity }}                                                                                                                                                                                                                                                                                                       |
-| Group       | $\mathsf{O}(8)$                                                                                                                                                                                                                                                                                                   |
+$$
+\mathrm{CC}X =
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}
+$$
 
 ### Properties
 

@@ -7,6 +7,8 @@ notations:
   - \mathrm{Ry}(\theta)
   - Y(\theta)
   - Y_\theta
+groups:
+  - orthogonal
 arity: 1
 parameters: 1
 description: Rotation about the $y$ axis of the Bloch sphere.
@@ -27,7 +29,7 @@ $$
 
 - Unitary with generator $Y$: $R_y(\theta) = e^{-i\theta Y/2}$.
 - Real-valued matrix; useful for preparing real-amplitude states.
-- $R_y(\pi)$ equals $-iY$ up to global phase.
+- $R_y(\pi) = -iY$.
 
 ### Usage
 
