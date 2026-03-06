@@ -17,6 +17,7 @@ two-qubit gate).</p>
   <span class="filter-label">Highlight:</span>
   <button class="filter-button" type="button" data-group="pauli" aria-pressed="false">Pauli</button>
   <button class="filter-button" type="button" data-group="clifford" aria-pressed="false">Clifford</button>
+  <button class="filter-button" type="button" data-group="orthogonal" aria-pressed="false">Real</button>
   <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
   <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
   <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
@@ -62,7 +63,13 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       filterRoot.querySelectorAll(".filter-button[data-group]")
     );
     const clearButton = filterRoot.querySelector(".filter-clear");
-    const trackedGroups = ["pauli", "clifford", "parametrized", "controlled"];
+    const trackedGroups = [
+      "pauli",
+      "clifford",
+      "orthogonal",
+      "parametrized",
+      "controlled",
+    ];
     const activeGroups = new Set();
 
     const normalizeGroup = (group) => (group || "").toLowerCase();

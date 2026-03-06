@@ -3,6 +3,8 @@ layout: gate
 title: Virtual Distillation
 symbol: B^{(2)}_i
 arity: 2
+groups:
+  - orthogonal
 description: A two-qubit entangling gate used in virtual distillation error-mitigation protocols.
 citation:
   year: 2020
@@ -15,10 +17,10 @@ The gate $B^{(2)}_i$ is the two-qubit case of a more general entangling gate app
 $$
 B^{(2)}_i =
 \begin{bmatrix}
-  1 & 0                  & 0                   & 0 \\\\
+  1 & 0                  & \phantom{+}0                   & 0 \\\\
   0 & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0 \\\\
-  0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  & 0 \\\\
-  0 & 0                  & 0                   & 1
+  0 & \frac{\sqrt{2}}{2} & \phantom{+}\frac{\sqrt{2}}{2}  & 0 \\\\
+  0 & 0                  & \phantom{+}0                   & 1
 \end{bmatrix}
 $$
 

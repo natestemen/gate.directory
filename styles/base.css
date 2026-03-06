@@ -6,6 +6,7 @@
   --gradient2: var(--color-b);
   --pauli-accent: #2f5fd0;
   --clifford-accent: #c2571a;
+  --orthogonal-accent: #1a8ec2;
   --parametrized-accent: #0b7a5a;
   --controlled-accent: #7a2f8f;
 
@@ -143,6 +144,10 @@ footer {
   border-color: var(--clifford-accent);
 }
 
+.filter-button[data-group="orthogonal"] {
+  border-color: var(--orthogonal-accent);
+}
+
 .filter-button[data-group="parametrized"] {
   border-color: var(--parametrized-accent);
 }
@@ -157,6 +162,10 @@ footer {
 
 .filter-button.is-active[data-group="clifford"] {
   background: color-mix(in srgb, var(--clifford-accent) 25%, white);
+}
+
+.filter-button.is-active[data-group="orthogonal"] {
+  background: color-mix(in srgb, var(--orthogonal-accent) 25%, white);
 }
 
 .filter-button.is-active[data-group="parametrized"] {
@@ -250,6 +259,12 @@ footer {
 .periodic-cell.highlight-clifford {
   border-color: var(--clifford-accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--clifford-accent) 35%, transparent);
+}
+
+.periodic-cell.highlight-orthogonal {
+  border-color: var(--orthogonal-accent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--orthogonal-accent) 35%, transparent);
 }
 
 .periodic-cell.highlight-parametrized {
