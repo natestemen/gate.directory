@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Diagonal Group</title>
+  <title>Square Root of X</title>
 </head>
 <body>
   <main>
@@ -29,105 +29,63 @@
       <div class="not-footer">
         
         
-<h2>Diagonal Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Square Root of X</h2>
 
-<div>
-  <p>All the matrices $\mathrm{diag}(x_1, x_2, \ldots, x_n) \subset \mathsf{U}(n)$.</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;sqrt{X}$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>A gate whose square is the Pauli-$X$ (NOT) gate.</p>
+</p>
+        <br>
 
-</div>
+        
+          <p><strong>Alternate notations:</strong></p>
+          <ul>
+            
+            <li>$&#92;sqrt{X}$</li>
+            
+            <li>$&#92;mathrm{S}X$</li>
+            
+            <li>$V$</li>
+            
+          </ul>
+        
+      </div>
+    </div>
 
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The $\sqrt{X}$ gate is a single-qubit unitary that squares to $X$.</p>
+<p>$$
+\sqrt{X} =
+\frac{1}{2}\begin{bmatrix}
+1 + i &amp; 1 - i \\
+1 - i &amp; 1 + i
+\end{bmatrix}
+$$</p>
+<h3>Properties</h3>
 <ul>
-
-  
-
-  
-
-  
-    <li><a href="/gates/controlled-phase/">Controlled Phase</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cz/">Controlled-Z</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/phase/">Phase Shift</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/rz/">$z$ Rotation</a></li>
-  
-
-  
-    <li><a href="/gates/rzz/">$zz$ Rotation</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/t/">T</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
+<li>$(\sqrt{X})^2 = X$.</li>
+<li>Equal to $R_x(\pi/2)$ up to a global phase.</li>
+<li>Used as the native gate in some superconducting platforms.</li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/sx.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>

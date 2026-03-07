@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Diagonal Group</title>
+  <title>Controlled sqrt(X)</title>
 </head>
 <body>
   <main>
@@ -29,105 +29,63 @@
       <div class="not-footer">
         
         
-<h2>Diagonal Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Controlled sqrt(X)</h2>
 
-<div>
-  <p>All the matrices $\mathrm{diag}(x_1, x_2, \ldots, x_n) \subset \mathsf{U}(n)$.</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;mathrm{C}&#92;sqrt{X}$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Applies $\sqrt{X}$ to the target when the control qubit is $|1\rangle$.</p>
+</p>
+        <br>
 
-</div>
+        
+          <p><strong>Alternate notations:</strong></p>
+          <ul>
+            
+            <li>$&#92;mathrm{CS}X$</li>
+            
+            <li>$&#92;mathrm{C}V$</li>
+            
+            <li>$&#92;text{controlled-}&#92;sqrt{X}$</li>
+            
+          </ul>
+        
+      </div>
+    </div>
 
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The controlled-$\sqrt{X}$ gate applies $\sqrt{X}$ to the target qubit conditioned on the control being $|1\rangle$.</p>
+<p>$$
+\mathrm{C}\sqrt{X} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0               &amp; 0 \\
+0 &amp; 1 &amp; 0               &amp; 0 \\
+0 &amp; 0 &amp; \frac{1 + i}{2} &amp; \frac{1 - i}{2} \\
+0 &amp; 0 &amp; \frac{1 - i}{2} &amp; \frac{1 + i}{2}
+\end{bmatrix}
+$$</p>
+<h3>Properties</h3>
 <ul>
-
-  
-
-  
-
-  
-    <li><a href="/gates/controlled-phase/">Controlled Phase</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cz/">Controlled-Z</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/phase/">Phase Shift</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/rz/">$z$ Rotation</a></li>
-  
-
-  
-    <li><a href="/gates/rzz/">$zz$ Rotation</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/t/">T</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
+<li>$(\mathrm{C}\sqrt{X})^2 = \mathrm{C}X$, but there are other gates $A$ that satisfy $A^2 = \mathrm{C}X$ such as $(\mathrm{C}\sqrt{X})^\dag$.</li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/csx.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>

@@ -65,38 +65,19 @@
 
     <div class="column">
       <p>The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally applies $X$ to the target.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Matrix</td>
-<td>$\begin{bmatrix}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}$</td>
-</tr>
-<tr>
-<td>Arity</td>
-<td>2</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>$\mathsf{O}(4)$</td>
-</tr>
-</tbody>
-</table>
+<p>$$
+\mathrm{C}X =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
 <li>Self-inverse and Hermitian: $\mathrm{CNOT}^\dagger = \mathrm{CNOT}$.</li>
-<li>Entangling; it can create Bell states from $|+0\rangle$.</li>
 <li>Equivalent to a controlled-$Z$ up to Hadamards on the target: $\mathrm{CNOT} = (I \otimes H),\mathrm{CZ},(I \otimes H)$.</li>
-</ul>
-<h3>Usage</h3>
-<ul>
-<li>Entanglement generation, parity checks, and stabilizer circuits.</li>
-<li>A standard two-qubit gate in Clifford and error-correction circuits.</li>
 </ul>
 <h2>References</h2>
 <ul>
