@@ -19,22 +19,20 @@ description: Flips the target qubit when the control qubit is in the $|1\rangle$
 
 The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally applies $X$ to the target.
 
-|             |                                                                                                       |
-| ----------- | ----------------------------------------------------------------------------------------------------- |
-| Matrix      | $\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix}$ |
-| Arity       | {{ arity }}                                                                                           |
-| Group       | $\mathsf{O}(4)$                                                                                       |
+$$
+\mathrm{C}X =
+\begin{bmatrix}
+  1 & 0 & 0 & 0 \\\\
+  0 & 1 & 0 & 0 \\\\
+  0 & 0 & 0 & 1 \\\\
+  0 & 0 & 1 & 0
+\end{bmatrix}
+$$
 
 ### Properties
 
 - Self-inverse and Hermitian: $\mathrm{CNOT}^\dagger = \mathrm{CNOT}$.
-- Entangling; it can create Bell states from $|+0\rangle$.
 - Equivalent to a controlled-$Z$ up to Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\,\mathrm{CZ}\,(I \otimes H)$.
-
-### Usage
-
-- Entanglement generation, parity checks, and stabilizer circuits.
-- A standard two-qubit gate in Clifford and error-correction circuits.
 
 ## References
 
