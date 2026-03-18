@@ -10,6 +10,7 @@ notations:
   - \mathrm{CNOT}_{ij}
   - \text{controlled-}X
   - \Lambda(X)
+  - \mathrm{XOR}[i, j]
 groups:
   - clifford
 arity: 2

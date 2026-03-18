@@ -7,6 +7,7 @@ notations:
   - \sqrt{Z}
   - Z^{1/2}
   - P(\pi/2)
+  - K
 arity: 1
 groups:
   - clifford

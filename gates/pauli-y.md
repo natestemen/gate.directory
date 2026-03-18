@@ -7,6 +7,7 @@ alias:
 notations:
   - Y
   - \sigma_y
+  - \sigma^y
   - \sigma_2
 groups:
   - pauli

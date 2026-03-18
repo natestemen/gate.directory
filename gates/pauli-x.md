@@ -7,6 +7,7 @@ alias:
 notations:
   - X
   - \sigma_x
+  - \sigma^x
   - \sigma_1
   - \mathrm{NOT}
 groups:

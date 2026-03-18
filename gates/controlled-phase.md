@@ -7,6 +7,7 @@ alias:
   - cp
 notations:
   - \mathrm{CPhase}(\phi)
+  - \Lambda(\mathrm{e}^{i\phi})
 controlled: phase
 groups:
   - diagonal
