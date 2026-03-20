@@ -59,6 +59,104 @@
           </ul>
         
       </div>
+
+      
+        <h3>SDK Support</h3>
+        <table class="sdk-table">
+          <thead>
+            <tr>
+              <th>SDK</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td>
+                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RYGate"><code>qiskit.circuit.library.RYGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td>
+                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.RY.html"><code>pennylane.RY</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td>
+                    <a href="https://quantumai.google/reference/python/cirq/Ry"><code>cirq.Ry</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td>
+                    <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RY"><code>pyquil.gates.RY</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Ry"><code>braket.circuits.gates.Ry</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYGate.html"><code>bqskit.ir.gates.RYGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/orthogonal">orthogonal</a></li>
+          
+        </ul>
+      
     </div>
 
     <div class="column">
@@ -68,7 +166,7 @@ It is the only purely real rotation matrix among $R_x$, $R_y$, and $R_z$.</p>
 R_y(\theta) = \exp\left(-i\frac{\theta}{2}Y\right) =
 \begin{bmatrix}
 \cos\frac{\theta}{2}    &amp; -\sin\frac{\theta}{2} \\
-\sin{\frac{\theta}{2}}            &amp; \phantom{+}\cos\frac{\theta}{2}
+\sin{\frac{\theta}{2}}  &amp; \phantom{+}\cos\frac{\theta}{2}
 \end{bmatrix}
 $$</p>
 <h3>Properties</h3>
@@ -82,31 +180,11 @@ $$</p>
 <li>State preparation and mixing amplitudes in variational circuits.</li>
 <li>Combined with $R_z$ for arbitrary single-qubit rotations.</li>
 </ul>
-<h2>References</h2>
-<ul>
-<li><a href="https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.RYGate"><code>qiskit.circuit.library.RYGate</code></a></li>
-<li><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#rotation-y-axis-ry"><code>qibo.gates.RY</code></a></li>
-<li><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RY"><code>pyquil.gates.RY</code></a></li>
-<li><a href="https://quantumai.google/reference/python/cirq/Ry"><code>cirq.Ry</code></a></li>
-<li><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.RY.html"><code>pennylane.RY</code></a></li>
-<li><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Ry"><code>braket.circuits.gates.Ry</code></a></li>
-<li><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYGate.html"><code>bqskit.ir.gates.RYGate</code></a></li>
-</ul>
 
     </div>
   </div>
 
   <br/>
-
-  
-    <h3>Groups</h3>
-    <p>This gate is contained in the following groups:</p>
-    <ul>
-      
-      <li><a href="/groups/orthogonal">orthogonal</a></li>
-      
-    </ul>
-  
 
   <a class="back-to-home" href="/">Back to home</a>
   

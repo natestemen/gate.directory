@@ -105,3 +105,38 @@ h2 {
 p a .katex { /* this is probably too specific? */
   border-bottom: 1px solid currentColor;
 }
+
+.sdk-note {
+  cursor: help;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-left: 4px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.sdk-note:hover {
+  opacity: 1;
+}
+
+.sdk-note::after {
+  content: attr(data-note);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.sdk-note:hover::after {
+  opacity: 1;
+}
