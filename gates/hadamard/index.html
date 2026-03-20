@@ -50,38 +50,17 @@
 
     <div class="column">
       <p>The Hadamard gate creates and removes superposition by mapping $|0\rangle \mapsto |+\rangle$ and $|1\rangle \mapsto |-\rangle$.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Matrix</td>
-<td>$\frac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}$</td>
-</tr>
-<tr>
-<td>Arity</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Group</td>
-<td>$\mathsf{O}(2)$</td>
-</tr>
-</tbody>
-</table>
+<p>$$
+H = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1
+\end{bmatrix}
+$$</p>
 <h3>Properties</h3>
 <ul>
 <li>Self-inverse and Hermitian: $H^\dagger = H$.</li>
 <li>Conjugates Pauli operators: $H X H = Z$ and $H Z H = X$.</li>
 <li>Real and symmetric.</li>
-</ul>
-<h3>Usage</h3>
-<ul>
-<li>Basis changes between $Z$ and $X$ measurements.</li>
-<li>State preparation and interference in algorithms like QFT and Grover.</li>
 </ul>
 
     </div>
@@ -95,6 +74,8 @@
     <ul>
       
       <li><a href="/groups/clifford">clifford</a></li>
+      
+      <li><a href="/groups/orthogonal">orthogonal</a></li>
       
     </ul>
   
