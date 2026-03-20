@@ -19,17 +19,14 @@ description: Bit-flip gate that swaps $|0\rangle$ and $|1\rangle$.
 
 The Pauli-$X$ gate is the quantum analog of a classical NOT.
 
-|             |                                                 |
-| ----------- | ----------------------------------------------- |
-| Matrix      | $\begin{bmatrix}0 & 1 \\\\ 1 & 0 \end{bmatrix}$ |
-| Arity       | {{ arity }}                                     |
-| Group       | $\mathsf{U}(2)$                                 |
+$$
+X = \begin{bmatrix}
+  0 & 1 \\\\
+  1 & 0
+\end{bmatrix}
+$$
 
 ### Properties
 
 - Hermitian and self-inverse: $X^\dagger = X$ and $X^2 = I$.
 - Equivalent to a $R_x(\pi)$ up to global phase.
-
-### Usage
-
-- Bit flips and toggling computational basis states.

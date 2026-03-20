@@ -13,17 +13,20 @@ notations:
 groups:
   - pauli
   - clifford
+  - diagonal
+  - orthogonal
 arity: n
 description: Leaves the quantum state unchanged.
 ---
 
 The identity gate $I_n$ acts on $n$ qubits and leaves all basis states unchanged.
 
-|             |                                                 |
-| ----------- | ----------------------------------------------- |
-| Matrix      | $\begin{bmatrix}1 & 0 \\\\ 0 & 1 \end{bmatrix}$ |
-| Arity       | {{ arity }}                                     |
-| Group       | $\mathsf{U}(2^n)$                               |
+$$
+I_2 = \begin{bmatrix}
+  1 & 0 \\\\
+  0 & 1
+\end{bmatrix}
+$$
 
 ### Properties
 
