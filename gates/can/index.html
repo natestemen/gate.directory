@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Orthogonal Group</title>
+  <title>Canonical entangling</title>
 </head>
 <body>
   <main>
@@ -29,119 +29,92 @@
       <div class="not-footer">
         
         
-<h2>Orthogonal Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Canonical entangling</h2>
 
-<div>
-  <p>coming soon</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;mathrm{CAN}$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Parameterizes every two-qubit interaction up to local unitaries.</p>
+</p>
+        <br>
 
-</div>
+        
+      </div>
+    </div>
 
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The canonical gate generates every two-qubit interaction (up to single-qubit rotations) through three real parameters $(a, b, c)$:</p>
+<p>$$
+\mathrm{CAN}(a, b, c) = \exp(i(a X{\otimes}X + b Y{\otimes}Y + c Z{\otimes}Z))
+$$</p>
+<p>In the computational basis:</p>
+<p>$$
+\begin{bmatrix}
+\mathrm{e}^{ic}\cos(a-b)    &amp; 0                    &amp; 0                    &amp; i\mathrm{e}^{ic}\sin(a-b)    \\
+0                   &amp; \mathrm{e}^{-ic}\cos(a+b)    &amp; i\mathrm{e}^{-ic}\sin(a+b)   &amp; 0                   \\
+0                   &amp; i\mathrm{e}^{-ic}\sin(a+b)   &amp; \mathrm{e}^{-ic}\cos(a+b)    &amp; 0                   \\
+i\mathrm{e}^{ic}\sin(a-b)   &amp; 0                    &amp; 0                    &amp; \mathrm{e}^{ic}\cos(a-b)
+\end{bmatrix}
+$$</p>
+<h3>Properties</h3>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cz/">Controlled-Z</a></li>
-  
-
-  
-    <li><a href="/gates/dcx/">Double CX</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/fswap/">fSWAP</a></li>
-  
-
-  
-    <li><a href="/gates/givens/">Givens Rotation</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/hadamard/">Hadamard</a></li>
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/ry/">$y$ Rotation</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/swap/">SWAP</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/toffoli/">Toffoli</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/virtual-distillation/">Virtual Distillation</a></li>
-  
-
+<li>Every $U \in SU(4)$ equals $\mathrm{CAN}(a,b,c)$ sandwiched by local single-qubit unitaries for some $a, b, c \in \mathbb{R}$ satisfying $\pi/4 \geq a \geq b \geq |c|$. This region defines the <strong>Weyl chamber</strong>.</li>
+<li>Two gates are locally equivalent if and only if they share the same $(a, b, c)$ coordinates.</li>
+<li>The Hamiltonian $aXX + bYY + cZZ$ block-diagonalizes in the Bell basis.</li>
 </ul>
+<h3>Special Cases</h3>
+<table>
+<thead>
+<tr>
+<th>$(a, b, c)$</th>
+<th>Locally equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(0, 0, 0)$</td>
+<td><a href="/gates/identity">Identity</a></td>
+</tr>
+<tr>
+<td>$(\pi/4, 0, 0)$</td>
+<td><a href="/gates/cnot">CNOT</a> / <a href="/gates/cz">CZ</a></td>
+</tr>
+<tr>
+<td>$(\pi/8, \pi/8, 0)$</td>
+<td>$\sqrt{i\mathrm{SWAP}}$</td>
+</tr>
+<tr>
+<td>$(\pi/4, \pi/4, 0)$</td>
+<td><a href="/gates/iswap">iSWAP</a></td>
+</tr>
+<tr>
+<td>$(\pi/8, \pi/8, \pi/8)$</td>
+<td><a href="/gates/sqrt-swap">$\sqrt{\mathrm{SWAP}}$</a></td>
+</tr>
+<tr>
+<td>$(\pi/4, \pi/4, \pi/4)$</td>
+<td><a href="/gates/swap">SWAP</a> (global phase)</td>
+</tr>
+</tbody>
+</table>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/can.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>

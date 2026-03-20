@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Orthogonal Group</title>
+  <title>Quantum Fourier Transform</title>
 </head>
 <body>
   <main>
@@ -29,119 +29,60 @@
       <div class="not-footer">
         
         
-<h2>Orthogonal Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Quantum Fourier Transform</h2>
 
-<div>
-  <p>coming soon</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;mathrm{QFT}_n$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.</p>
+</p>
+        <br>
 
-</div>
+        
+      </div>
+    </div>
 
-
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The quantum Fourier transform maps the computational basis state $|j\rangle$ to an equal superposition with phases determined by $j$.
+Let $N = 2^n$ and $\omega = \mathrm{e}^{2\pi i / N}$, then</p>
+<p>$$
+\mathrm{QFT}_{N} |j\rangle = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \omega^{jk} |k\rangle
+$$</p>
+<p>For two qubits ($N = 4$, $\omega = i$):</p>
+<p>$$
+\mathrm{QFT}_{4} = \frac{1}{2}
+\begin{bmatrix}
+1 &amp;  1 &amp;  1 &amp;  1 \\
+1 &amp;  i &amp; -1 &amp; -i \\
+1 &amp; -1 &amp;  1 &amp; -1 \\
+1 &amp; -i &amp; -1 &amp;  i
+\end{bmatrix}
+$$</p>
+<p>In general the matrix has entries $[\mathrm{QFT}_N]_{jk} = \frac{\omega^{jk}}{\sqrt{N}}$.</p>
+<h3>Properties</h3>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cz/">Controlled-Z</a></li>
-  
-
-  
-    <li><a href="/gates/dcx/">Double CX</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/fswap/">fSWAP</a></li>
-  
-
-  
-    <li><a href="/gates/givens/">Givens Rotation</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/hadamard/">Hadamard</a></li>
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/ry/">$y$ Rotation</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/swap/">SWAP</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/toffoli/">Toffoli</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/virtual-distillation/">Virtual Distillation</a></li>
-  
-
+<li>Unitary: $\mathrm{QFT}_{n}^\dagger = \mathrm{QFT}_{n}^{-1}$.</li>
+<li>The inverse QFT (used in phase estimation readout) has conjugated phases $\omega^{-jk}$.</li>
+<li>Achieves an exponential speedup over the classical FFT for in-place computation on a quantum state; however, the amplitudes cannot be read out directly without measurement.</li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/qft.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>
