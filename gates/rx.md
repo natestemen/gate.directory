@@ -10,6 +10,16 @@ notations:
 arity: 1
 parameters: 1
 description: Rotation about the $x$ axis of the Bloch sphere.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.RXGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RXGate
+  pennylane:
+    name: pennylane.RX
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.RX.html
+  cirq:
+    name: cirq.Rx
+    url: https://quantumai.google/reference/python/cirq/Rx
 ---
 
 The $R_x$ gate rotates a qubit by angle $\theta$ around the $x$ axis.

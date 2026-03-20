@@ -12,6 +12,15 @@ groups:
 arity: 2
 parameters: 1
 description: Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.
+sdks:
+  qiskit:
+    note: Not available natively as a named gate.
+  pennylane:
+    name: pennylane.GivensRotation
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.GivensRotation.html
+  cirq:
+    name: cirq.givens
+    url: https://quantumai.google/reference/python/cirq/givens
 ---
 
 A Givens rotation is a two-qubit gate that performs a real rotation in the single-excitation subspace spanned by $|01\rangle$ and $|10\rangle$, leaving $|00\rangle$ and $|11\rangle$ unchanged.

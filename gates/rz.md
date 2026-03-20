@@ -12,6 +12,16 @@ groups:
 arity: 1
 parameters: 1
 description: Rotation about the $z$ axis of the Bloch sphere.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.RZGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RZGate
+  pennylane:
+    name: pennylane.RZ
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.RZ.html
+  cirq:
+    name: cirq.Rz
+    url: https://quantumai.google/reference/python/cirq/Rz
 ---
 
 The $R_z$ gate rotates a qubit by angle $\theta$ around the $z$ axis, adding a relative phase between $|0\rangle$ and $|1\rangle$.

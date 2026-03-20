@@ -1,0 +1,9 @@
+[
+  { "key": "qiskit",    "label": "Qiskit"         },
+  { "key": "pennylane", "label": "PennyLane"      },
+  { "key": "cirq",      "label": "Cirq"           },
+  { "key": "qsharp",    "label": "Q#"             },
+  { "key": "pyquil",    "label": "PyQuil"         },
+  { "key": "braket",    "label": "Braket"         },
+  { "key": "bqskit",    "label": "BQSKit"         }
+]

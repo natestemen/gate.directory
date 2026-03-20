@@ -15,6 +15,16 @@ groups:
   - diagonal
 arity: 1
 description: Phase-flip gate that leaves $|0\rangle$ unchanged and flips the phase of $|1\rangle$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.ZGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZGate
+  pennylane:
+    name: pennylane.PauliZ
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliZ.html
+  cirq:
+    name: cirq.Z
+    url: https://quantumai.google/reference/python/cirq/Z
 ---
 
 The Pauli-$Z$ gate applies a relative phase of $-1$ to the $|1\rangle$ component.

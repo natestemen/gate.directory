@@ -19,6 +19,16 @@ properties:
 controlled: cnot
 arity: 3
 description: Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\rangle$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.CCXGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CCXGate
+  pennylane:
+    name: pennylane.Toffoli
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.Toffoli.html
+  cirq:
+    name: cirq.CCNOT
+    url: https://quantumai.google/reference/python/cirq/CCNOT
 ---
 
 The Toffoli gate (Controlled-Controlled-NOT) flips a target qubit if and only if two control qubits are in the $|1\rangle$ state. It is universal for classical reversible computation and is widely used in quantum algorithms.

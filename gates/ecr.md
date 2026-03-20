@@ -6,6 +6,19 @@ groups:
   - clifford
 arity: 2
 description: A native two-qubit Clifford gate for cross-resonance hardware, locally equivalent to CNOT.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.ECRGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ECRGate
+  pennylane:
+    name: pennylane.ECR
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.ECR.html
+    note: PennyLane's ECR uses the opposite qubit ordering convention from Qiskit.
+  cirq:
+    note: Not available natively.
+  bqskit:
+    name: bqskit.ir.gates.ECRGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ECRGate.html
 ---
 
 The echoed cross-resonance (ECR) gate is an entangling operation used on superconducting processors based on the cross-resonance interaction.
@@ -30,9 +43,3 @@ $$
 
 - Native two-qubit gate on cross-resonance superconducting devices.
 - Compiled to or from CNOT in Clifford circuits.
-
-## References
-
-- [`qiskit.circuit.library.ECRGate`](https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.ECRGate)
-- [`bqskit.ir.gates.ECRGate`](https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ECRGate.html)
-- [`pennylane.ECR`](https://docs.pennylane.ai/en/stable/code/api/pennylane.ECR.html) (**note**: PennyLane uses a different endian than the matrix provided above.)

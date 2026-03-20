@@ -6,6 +6,21 @@ alias:
   - qft
 arity: n
 description: Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.QFT
+    url: https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.QFT
+  pennylane:
+    name: pennylane.QFT
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.QFT.html
+  qsharp:
+    name: Std.Canon.ApplyQFT
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/applyqft
+  cirq:
+    name: cirq.qft
+    ufl: https://quantumai.google/reference/python/cirq/qft
+  pyquil:
+  braket:
 ---
 
 The quantum Fourier transform maps the computational basis state $|j\rangle$ to an equal superposition with phases determined by $j$.

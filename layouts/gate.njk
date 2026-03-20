@@ -24,6 +24,45 @@
           </ul>
         {% endif %}
       </div>
+
+      {% if sdks %}
+        <h3>SDK Support</h3>
+        <table class="sdk-table">
+          <thead>
+            <tr>
+              <th>SDK</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for sdk in sdk_list %}
+              {% set entry = sdks[sdk.key] %}
+              <tr>
+                <td>{{ sdk.label }}</td>
+                {% if entry and entry.name %}
+                  <td>
+                    <a href="{{ entry.url }}"><code>{{ entry.name }}</code></a>
+                    {% if entry.note %}
+                      <span class="sdk-note" data-note="{{ entry.note }}">ⓘ</span>
+                    {% endif %}
+                  </td>
+                {% else %}
+                  <td class="sdk-unavailable">—</td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+      {% if groups %}
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          {% for group in groups %}
+          <li><a href="{{ ('/groups/' + group) | url }}">{{ group }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
 
     <div class="column">
@@ -32,16 +71,6 @@
   </div>
 
   <br/>
-
-  {% if groups %}
-    <h3>Groups</h3>
-    <p>This gate is contained in the following groups:</p>
-    <ul>
-      {% for group in groups %}
-      <li><a href="{{ ('/groups/' + group) | url }}">{{ group }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
 
   <a class="back-to-home" href="{{ '/' | url }}">Back to home</a>
   {% set githubPath = page.inputPath | replace('./', '') %}

@@ -10,6 +10,16 @@ groups:
   - orthogonal
 arity: 2
 description: Exchanges the quantum states of two qubits.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.SwapGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.SwapGate
+  pennylane:
+    name: pennylane.SWAP
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.SWAP.html
+  cirq:
+    name: cirq.SWAP
+    url: https://quantumai.google/reference/python/cirq/SWAP
 ---
 
 The SWAP gate exchanges the states of two qubits and is commonly used to reorder qubits or mediate interactions between distant qubits.

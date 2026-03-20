@@ -11,6 +11,16 @@ notations:
 arity: n
 parameters: 1
 description: Multiplies the entire quantum state by an overall phase factor.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.GlobalPhaseGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.GlobalPhaseGate
+  pennylane:
+    name: pennylane.GlobalPhase
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.GlobalPhase.html
+  cirq:
+    name: cirq.GlobalPhaseGate
+    url: https://quantumai.google/reference/python/cirq/GlobalPhaseGate
 ---
 
 A global phase gate applies $e^{i\phi}$ to the entire state. It has no observable effect on measurement probabilities or expectation values.

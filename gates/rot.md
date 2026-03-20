@@ -10,6 +10,14 @@ notations:
 arity: 1
 parameters: 3
 description: Rotation by angle $\theta$ about the Bloch-sphere axis $\vec{n}$.
+sdks:
+  qiskit:
+    note: Not available natively. Decompose into RZGate and RYGate.
+  pennylane:
+    name: pennylane.Rot
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.Rot.html
+  cirq:
+    note: Not available natively. Decompose into cirq.Rz and cirq.Ry.
 ---
 
 The $\mathrm{Rot}(\vec{n}, \theta)$ gate performs a rotation by angle $\theta$ about the unit vector $\vec{n} = (n_x, n_y, n_z)$ on the Bloch sphere.

@@ -13,6 +13,15 @@ description: A native entangling interaction in ion-trap systems based on collec
 citation:
   year: 1999
   url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.MSGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.MSGate
+  pennylane:
+    note: Not available in core PennyLane. Available as pennylane_ionq.MS in the IonQ plugin.
+  cirq:
+    name: cirq.MSGate
+    url: https://quantumai.google/reference/python/cirq/MSGate
 ---
 
 The Mølmer-Sørensen (MS) gate acts on $n$ qubits and, for $n = 2$, reduces to an $XX$ rotation. In full generality the MS gate (sometimes referred to as global MS or GMS) takes $n(n-1)/2$ parameters $\chi_{ij}$.
@@ -36,5 +45,4 @@ Where $X_i$ denotes a [Pauli X](/gates/pauli-x) on qubit $i$.
 
 ## References
 
-- [`qiskit.circuit.library.MSGate`](https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.MSGate)
 - [Use of global interactions in efficient quantum circuit constructions](https://arxiv.org/abs/1707.06356)

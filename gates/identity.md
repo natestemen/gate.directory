@@ -17,6 +17,16 @@ groups:
   - orthogonal
 arity: n
 description: Leaves the quantum state unchanged.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.IGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.IGate
+  pennylane:
+    name: pennylane.Identity
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.Identity.html
+  cirq:
+    name: cirq.I
+    url: https://quantumai.google/reference/python/cirq/I
 ---
 
 The identity gate $I_n$ acts on $n$ qubits and leaves all basis states unchanged.

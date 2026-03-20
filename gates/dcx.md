@@ -11,6 +11,14 @@ groups:
   - orthogonal
 arity: 2
 description: Two back-to-back CNOTs with alternating control and target qubits.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.DCXGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.DCXGate
+  pennylane:
+    note: Not available natively.
+  cirq:
+    note: Not available natively.
 ---
 
 The DCNOT gate applies a CNOT from qubit 1 to 2 and then a CNOT from qubit 2 to 1.

@@ -11,6 +11,16 @@ notations:
 arity: 3
 controlled: swap
 description: Controlled swap of two target qubits conditioned on a single control qubit.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.CSwapGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSwapGate
+  pennylane:
+    name: pennylane.CSWAP
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.CSWAP.html
+  cirq:
+    name: cirq.CSWAP
+    url: https://quantumai.google/reference/python/cirq/CSWAP
 ---
 
 The Fredkin (CSWAP) gate swaps the two target qubits when the control qubit is in the $|1\rangle$ state, and acts as identity when the control is $|0\rangle$.

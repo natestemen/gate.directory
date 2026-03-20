@@ -9,6 +9,13 @@ groups:
 arity: 2
 parameters: 3
 description: Parameterizes every two-qubit interaction up to local unitaries.
+sdks:
+  qiskit:
+    note: Not available natively.
+  pennylane:
+    note: Not available natively.
+  cirq:
+    note: Not available natively.
 ---
 
 The canonical gate generates every two-qubit interaction (up to single-qubit rotations) through three real parameters $(a, b, c)$:

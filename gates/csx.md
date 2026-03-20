@@ -12,6 +12,14 @@ notations:
 controlled: sx
 arity: 2
 description: Applies $\sqrt{X}$ to the target when the control qubit is $|1\rangle$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.CSXGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSXGate
+  pennylane:
+    note: Not available natively. Use qml.ctrl(qml.SX, control=0).
+  cirq:
+    note: Not available natively.
 ---
 
 The controlled-$\sqrt{X}$ gate applies $\sqrt{X}$ to the target qubit conditioned on the control being $|1\rangle$.

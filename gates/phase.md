@@ -12,6 +12,17 @@ groups:
 arity: 1
 parameters: 1
 description: Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.PhaseGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PhaseGate
+  pennylane:
+    name: pennylane.PhaseShift
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.PhaseShift.html
+  cirq:
+    name: cirq.ZPowGate
+    url: https://quantumai.google/reference/python/cirq/ZPowGate
+    note: No dedicated P gate. Use cirq.ZPowGate(exponent=φ/π) or cirq.Z**t.
 ---
 
 The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiplying $|1\rangle$ by $e^{i\phi}$.

@@ -4,6 +4,16 @@ title: iSWAP
 symbol: i\mathrm{SWAP}
 arity: 2
 description: Swaps $|01\rangle$ and $|10\rangle$ and adds a phase of $i$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.iSwapGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.iSwapGate
+  pennylane:
+    name: pennylane.ISWAP
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.ISWAP.html
+  cirq:
+    name: cirq.ISWAP
+    url: https://quantumai.google/reference/python/cirq/ISWAP
 ---
 
 The iSWAP gate exchanges the $|01\rangle$ and $|10\rangle$ states with a phase $i$, leaving $|00\rangle$ and $|11\rangle$ unchanged.

@@ -8,6 +8,16 @@ groups:
   - diagonal
 arity: 1
 description: A $\pi/8$ phase gate which is a non-Clifford rotation about $Z$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.TGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.TGate
+  pennylane:
+    name: pennylane.T
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.T.html
+  cirq:
+    name: cirq.T
+    url: https://quantumai.google/reference/python/cirq/T
 ---
 
 The $T$ gate applies a phase of $\mathrm{e}^{i\pi/4}$ to $|1\rangle$.

@@ -7,6 +7,15 @@ alias:
 groups:
 arity: 2
 description: Applies half of a SWAP interaction, creating maximal entanglement from a product state.
+sdks:
+  qiskit:
+    note: Not available as a named gate. Use SwapGate().power(0.5).
+  pennylane:
+    note: Not available natively. Note that pennylane.SISWAP is sqrt(iSWAP), a different gate.
+  cirq:
+    name: cirq.SwapPowGate
+    url: https://quantumai.google/reference/python/cirq/SwapPowGate
+    note: No named constant. Use cirq.SWAP**0.5 (SwapPowGate with exponent=0.5). Note that cirq.SQRT_ISWAP is a different gate.
 ---
 
 The $\sqrt{\mathrm{SWAP}}$ gate is the canonical maximally entangling two-qubit gate: a single application takes a product state to a maximally entangled state, and two applications recover the full [SWAP](/gates/swap).

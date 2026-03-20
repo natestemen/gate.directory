@@ -10,6 +10,13 @@ notations:
   - E
 arity: 2
 description: Changes from the computational basis to the magic (Bell) basis used in two-qubit local invariants.
+sdks:
+  qiskit:
+    note: Not available natively.
+  pennylane:
+    note: Not available natively.
+  cirq:
+    note: Not available natively.
 ---
 
 The magic gate is a fixed two-qubit unitary that performs a basis change to the magic basis (a Bell basis with specific phases).

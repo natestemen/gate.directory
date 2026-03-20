@@ -7,6 +7,13 @@ description: Two-qubit entangling gate that can synthesize arbitrary elements of
 citation:
   year: 2004
   url: https://arxiv.org/abs/quant-ph/0312193
+sdks:
+  qiskit:
+    note: Not available natively.
+  pennylane:
+    note: Not available natively.
+  cirq:
+    note: Not available natively.
 ---
 
 The B gate introduced in Zhang, Vala, Sastry, and Whaley is

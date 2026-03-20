@@ -14,6 +14,16 @@ groups:
 controlled: pauli-z
 arity: 2
 description: Applies a $-1$ phase to $|11\rangle$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.CZGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CZGate
+  pennylane:
+    name: pennylane.CZ
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.CZ.html
+  cirq:
+    name: cirq.CZ
+    url: https://quantumai.google/reference/python/cirq/CZ
 ---
 
 The controlled-$Z$ gate is a two-qubit diagonal entangling gate.

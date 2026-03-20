@@ -12,6 +12,16 @@ arity: 1
 groups:
   - clifford
 description: $\pi/2$ phase gate, equal to $\sqrt{Z}$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.SGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.SGate
+  pennylane:
+    name: pennylane.S
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.S.html
+  cirq:
+    name: cirq.S
+    url: https://quantumai.google/reference/python/cirq/S
 ---
 
 The $S$ gate applies a relative phase of $i$ to the $|1\rangle$ component.
