@@ -82,7 +82,7 @@ footer {
 .periodic-table {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 10px;
+  gap: 7px;
   margin: 20px auto 0;
   width: 100%;
   max-width: 600px;
@@ -195,7 +195,7 @@ footer {
 .periodic-cell {
   border: 2px solid black;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   background: var(--gradient2);
   text-align: center;
   display: flex;
@@ -205,20 +205,20 @@ footer {
 }
 
 .periodic-cell .arity-dim {
-  font-size: 10px;
+  font-size: 8px;
   position: absolute;
   top: 2px;
   right: 2px;
 }
 
 .periodic-cell .symbol {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 6px;
 }
 
 .periodic-cell .name {
-  font-size: 12px;
+  font-size: 10px;
   margin-top: auto;
   margin-bottom: 4px;
 }
