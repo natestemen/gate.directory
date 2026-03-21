@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Pauli Group</title>
+  <title>Fermionic Simulator</title>
 </head>
 <body>
   <main>
@@ -29,115 +29,142 @@
       <div class="not-footer">
         
         
-<h2>Pauli Group</h2>
+<div class="gate">
+  <h2 class="gate-title">Fermionic Simulator</h2>
 
-<div>
-  <p>The Pauli group on one qubit is defined as $\mathcal{P}_1 := \{ i^n \sigma_j \mid n, j \in \{0, 1, 2, 3\} \}$.
-The $n$-qubit Pauli group is defined by all of the tensor products of elements of $\mathcal{P}_1$.</p>
-<p>$$\mathcal{P}_n = \left\{ \bigotimes\limits_{i=0}^{n-1} P_i \mid P_i \in \mathcal{P}_1 \right\}$$</p>
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;mathrm{FSim}$</div>
+      </div>
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.</p>
+</p>
+        <br>
 
-</div>
+        
+      </div>
 
+      
+        <h3>SDK Support</h3>
+        <table class="sdk-table">
+          <thead>
+            <tr>
+              <th>SDK</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td>
+                    <a href="https://quantumai.google/reference/python/cirq/FSimGate"><code>cirq.FSimGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td>
+                    <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.FSIM"><code>pyquil.simulation.matrices.FSIM</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.FSIMGate.html"><code>bqskit.ir.gates.FSIMGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      
+      
+    </div>
 
-<p>The following gates are contained in this group:</p>
+    <div class="column">
+      <p>The fermionic simulator gate is a two-parameter family that unifies the <a href="/gates/iswap">iSWAP</a> and <a href="/gates/cz">CZ</a> interactions.</p>
+<p>$$
+\mathrm{FSim}(\theta, \phi) =
+\begin{bmatrix}
+1 &amp; 0            &amp; 0            &amp; 0 \\
+0 &amp; \cos\theta   &amp; -i\sin\theta &amp; 0 \\
+0 &amp; -i\sin\theta &amp; \cos\theta   &amp; 0 \\
+0 &amp; 0            &amp; 0            &amp; \mathrm{e}^{-i\phi}
+\end{bmatrix}
+$$</p>
+<h3>Special cases</h3>
 <ul>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-x/">Pauli-X</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-y/">Pauli-Y</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<li>$\mathrm{FSim}(\pi/2, 0) = i\mathrm{SWAP}$</li>
+<li>$\mathrm{FSim}(\pi/4, 0) = \sqrt{i\mathrm{SWAP}}$</li>
+<li>$\mathrm{FSim}(\pi/2, \pi) = \mathrm{fSWAP}$</li>
+<li>$\mathrm{FSim}(0, \phi) = \mathrm{C}P(\phi)$</li>
+<li>$\mathrm{FSim}(0, \pi) = \mathrm{CZ}$</li>
+<li>$\mathrm{FSim}(\pi/2, \pi/6)$ approximates the <a href="https://doi.org/10.1038/s41586-019-1666-5">Sycamore gate</a> used in Google's quantum supremacy experiment.</li>
+</ul>
+<h3>Properties</h3>
+<ul>
+<li>The $\theta$ parameter controls the swap angle in the ${|01\rangle, |10\rangle}$ subspace.</li>
+<li>The $\phi$ parameter is a controlled phase on $|11\rangle$.</li>
+<li>Reduces to a product of single-qubit gates at $\theta = 0, \phi = 0$.</li>
 </ul>
 
+    </div>
+  </div>
+
+  <br/>
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/fsim.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
 
       </div>
       <footer>
