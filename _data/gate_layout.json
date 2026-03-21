@@ -1,0 +1,11 @@
+[
+  ["identity",  "pauli-x",     "pauli-y",  "pauli-z",          null,    "hadamard",        "s",          "t"],
+  ["rx",        "ry",          "rz",       "rot",               null,    "phase",           "sx",         "u3"],
+  ["b",         "toff-decomp", null,      null,                null,    null,              null,         null],
+  ["cnot",      "cz",          "csx",      "controlled-phase",  "swap",  "iswap",           "dcx",        "ecr"],
+  ["can",       "fsim",        "fswap",    "givens",            "magic", "molmer-sorenson",  "sqrt-iswap", "sqrt-swap"],
+  ["rxx",       "ryy",         "rzz",      null,                null,    null,              null,         null],
+  ["cswap",     "ccz",         "toffoli",  null,       null,    null,              null,         null],
+  ["global-phase", "qft", null,        null,       null,                null,    null,              null,         "virtual-distillation"],
+  ["oracle",    "phase-oracle",           null,                null,    null,              null,         null]
+]

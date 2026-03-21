@@ -13,6 +13,10 @@ module.exports = function (eleventyConfig) {
   const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs);
   eleventyConfig.setLibrary("md", markdownLib);
   eleventyConfig.addFilter("markdown", (str) => markdownLib.render(str || ""));
+  eleventyConfig.addFilter("gateBySlug", function (gates, slug) {
+    if (!slug) return null;
+    return gates.find((g) => g.fileSlug === slug) || null;
+  });
   eleventyConfig.addFilter("stripMath", (str = "") => {
     if (!str) {
       return "";

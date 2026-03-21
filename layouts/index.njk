@@ -24,13 +24,24 @@ two-qubit gate).</p>
   <span class="filter-hint">Hover or click a filter to emphasize matching gates.</span>
 </div>
 <div class="periodic-table">
-  {% for gate in collections.gates %}
-  {% set groupList = gate.data.groups or [] %}
-  <a class="periodic-cell" href="{{ gate.url }}" data-groups="{{ groupList | join(' ') }}" data-parameters="{{ gate.data.parameters | default('') }}" data-controlled="{{ gate.data.controlled | default('') }}">
-    <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
-    <div class="symbol">${{ gate.data.symbol | safe }}$</div>
-    <div class="name">{{ gate.data.title }}</div>
-  </a>
+  {% for row in gate_layout %}
+    {% for slug in row %}
+      {% if slug == null %}
+        <div class="periodic-cell-empty"></div>
+      {% else %}
+        {% set gate = collections.gates | gateBySlug(slug) %}
+        {% if gate %}
+          {% set groupList = gate.data.groups or [] %}
+          <a class="periodic-cell" href="{{ gate.url }}" data-groups="{{ groupList | join(' ') }}" data-parameters="{{ gate.data.parameters | default('') }}" data-controlled="{{ gate.data.controlled | default('') }}">
+            <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
+            <div class="symbol">${{ gate.data.symbol | safe }}$</div>
+            <div class="name">{{ gate.data.title }}</div>
+          </a>
+        {% else %}
+          <div class="periodic-cell-empty" title="unknown: {{ slug }}"></div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 </div>
 

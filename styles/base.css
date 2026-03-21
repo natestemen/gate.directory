@@ -81,11 +81,15 @@ footer {
 
 .periodic-table {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-template-columns: repeat(8, 1fr);
   gap: 7px;
   margin: 20px auto 0;
   width: 100%;
-  max-width: 600px;
+  max-width: 720px;
+}
+
+.periodic-cell-empty {
+  visibility: hidden;
 }
 
 .gate-filters {
