@@ -9,6 +9,7 @@ notations:
   - \Lambda^2(Z)
 groups:
   - diagonal
+  - orthogonal
 properties:
   - hermitian
 controlled: cz
