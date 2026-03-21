@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Global Phase
-symbol: \mathrm{Ph}(\phi)
+symbol: \mathrm{Ph}
 alias:
   - gphase
   - ph

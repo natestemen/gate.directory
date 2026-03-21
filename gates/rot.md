@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Arbitrary Rotation
-symbol: R_{\mathbf{n}}(\theta)
+symbol: R_{\mathbf{n}}
 alias:
   - rot
 notations:

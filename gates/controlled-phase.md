@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Controlled Phase
-symbol: \mathrm{C}P(\phi)
+symbol: \mathrm{C}P
 alias:
   - cphase
   - cp

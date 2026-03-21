@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Givens Rotation
-symbol: G(\theta)
+symbol: G_{ij}
 alias:
   - givens
 notations:

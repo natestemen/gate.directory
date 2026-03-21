@@ -1,7 +1,7 @@
 ---
 layout: gate
 title: Phase Shift
-symbol: P(\phi)
+symbol: P
 alias:
   - phase
   - p
