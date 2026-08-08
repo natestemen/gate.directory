@@ -290,3 +290,59 @@ footer {
     color-mix(in srgb, var(--clifford-accent) 20%, white)
   );
 }
+
+.gate-search {
+  position: relative;
+  max-width: 520px;
+  margin-top: 20px;
+}
+
+.gate-search input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "TASA Orbiter", sans-serif;
+  background: white;
+}
+
+.gate-search ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.gate-search li {
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.gate-search li:last-child {
+  border-bottom: none;
+}
+
+.search-match {
+  font-family: monospace;
+  font-size: 12px;
+  opacity: 0.6;
+  align-self: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-empty {
+  color: #777;
+}

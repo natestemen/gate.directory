@@ -17,6 +17,21 @@ module.exports = function (eleventyConfig) {
     if (!slug) return null;
     return gates.find((g) => g.fileSlug === slug) || null;
   });
+  eleventyConfig.addFilter("searchIndex", function (gates) {
+    const stripMath = (s) => (s || "").replace(/\$/g, "");
+    return JSON.stringify(
+      gates.map((g) => ({
+        title: stripMath(g.data.title),
+        url: g.url,
+        aliases: g.data.alias || [],
+        notations: g.data.notations || [],
+        description: stripMath(g.data.description),
+        sdks: Object.entries(g.data.sdks || {}).flatMap(([sdk, entry]) =>
+          entry && entry.name ? [{ sdk, name: entry.name }] : []
+        ),
+      }))
+    );
+  });
   eleventyConfig.addFilter("stripMath", (str = "") => {
     if (!str) {
       return "";

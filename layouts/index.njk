@@ -7,6 +7,11 @@
   This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
 </p>
 
+<div class="gate-search">
+  <input type="search" id="gate-search-input" placeholder="Search gates by name, alias, or SDK name (e.g. CU1, XXPlusYY, fredkin)…" autocomplete="off" aria-label="Search gates" />
+  <ul id="gate-search-results" hidden></ul>
+</div>
+
 <br/>
 
 <h2>Periodic Table of Gates</h2>
@@ -71,6 +76,83 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
 </p>
 
 <script>
+  (function () {
+    const input = document.getElementById("gate-search-input");
+    const list = document.getElementById("gate-search-results");
+    if (!input || !list) {
+      return;
+    }
+
+    let indexPromise = null;
+    const loadIndex = () => {
+      if (!indexPromise) {
+        indexPromise = fetch("{{ '/search-index.json' | url }}").then((r) => r.json());
+      }
+      return indexPromise;
+    };
+    input.addEventListener("focus", loadIndex, { once: true });
+
+    input.addEventListener("input", async () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) {
+        list.hidden = true;
+        list.innerHTML = "";
+        return;
+      }
+
+      const gates = await loadIndex();
+      const results = [];
+      for (const g of gates) {
+        let best = null;
+        const consider = (text, rank, label) => {
+          if (!text) return;
+          const t = text.toLowerCase();
+          if (t === q) rank -= 0.5;
+          else if (t.startsWith(q)) rank += 0;
+          else if (t.includes(q)) rank += 0.25;
+          else return;
+          if (!best || rank < best.rank) best = { rank, label };
+        };
+        consider(g.title, 1, null);
+        for (const a of g.aliases) consider(a, 1, null);
+        for (const s of g.sdks) consider(s.name, 2, s.name);
+        for (const n of g.notations) consider(n.replace(/\\/g, ""), 3, null);
+        consider(g.description, 4, null);
+        if (best) results.push({ gate: g, rank: best.rank, label: best.label });
+      }
+      results.sort((a, b) => a.rank - b.rank || a.gate.title.localeCompare(b.gate.title));
+
+      list.innerHTML = "";
+      for (const r of results.slice(0, 10)) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = r.gate.url;
+        a.textContent = r.gate.title;
+        li.appendChild(a);
+        if (r.label) {
+          const match = document.createElement("span");
+          match.className = "search-match";
+          match.textContent = r.label;
+          li.appendChild(match);
+        }
+        list.appendChild(li);
+      }
+      if (!results.length) {
+        const li = document.createElement("li");
+        li.className = "search-empty";
+        li.textContent = "No gates found";
+        list.appendChild(li);
+      }
+      list.hidden = false;
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".gate-search")) {
+        list.hidden = true;
+      }
+    });
+  })();
+
   (function () {
     const filterRoot = document.querySelector(".gate-filters");
     if (!filterRoot) {
