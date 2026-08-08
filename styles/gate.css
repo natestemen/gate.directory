@@ -140,3 +140,14 @@ p a .katex { /* this is probably too specific? */
 .sdk-note:hover::after {
   opacity: 1;
 }
+
+.gate-facts {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.gate-citation {
+  font-size: 14px;
+}

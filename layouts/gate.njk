@@ -10,6 +10,11 @@
         <p>Symbol</p>
         <div class="symbol-box">${{ symbol }}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> ${{ arity }}$</span>
+        {% if dimension and dimension != 2 %}<span><strong>Dimension:</strong> ${{ dimension }}$</span>{% endif %}
+        {% if parameters %}<span><strong>Parameters:</strong> ${{ parameters }}$</span>{% endif %}
+      </p>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p>{{ description | markdown | safe }}</p>
@@ -47,7 +52,11 @@
                     {% endif %}
                   </td>
                 {% else %}
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    {% if entry.note %}
+                      <span class="sdk-note" data-note="{{ entry.note }}">ⓘ</span>
+                    {% endif %}
+                  </td>
                 {% endif %}
               </tr>
             {% endfor %}
@@ -62,6 +71,12 @@
           <li><a href="{{ ('/groups/' + group) | url }}">{{ group }}</a></li>
           {% endfor %}
         </ul>
+      {% endif %}
+      {% if citation %}
+        <h3>Reference</h3>
+        <p class="gate-citation">
+          <a href="{{ citation.url }}">{{ citation.title or citation.url }}</a>{% if citation.year %} ({{ citation.year }}){% endif %}
+        </p>
       {% endif %}
     </div>
 

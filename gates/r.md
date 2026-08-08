@@ -1,0 +1,53 @@
+---
+layout: gate
+title: Phased Rotation
+symbol: R(\theta, \phi)
+alias:
+  - r
+  - phased-x
+notations:
+  - R(\theta, \phi)
+  - R_\phi(\theta)
+  - \mathrm{PhasedX}
+arity: 1
+parameters: 2
+description: Rotation by $\theta$ about the equatorial Bloch-sphere axis at azimuthal angle $\phi$.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.RGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RGate
+  pennylane:
+    note: Not available natively. Decompose into qml.RZ and qml.RX.
+  cirq:
+    name: cirq.PhasedXPowGate
+    url: https://quantumai.google/reference/python/cirq/PhasedXPowGate
+    note: Parameterized as exponents of π, PhasedXPowGate(exponent=θ/π, phase_exponent=φ/π).
+---
+
+The phased rotation generalizes [$R_x$](/gates/rx) and [$R_y$](/gates/ry) to an arbitrary axis in the equatorial ($xy$) plane of the Bloch sphere:
+
+$$
+R(\theta, \phi) = \exp\left(-i \frac{\theta}{2} (\cos\phi \\, X + \sin\phi \\, Y)\right)
+= \begin{bmatrix}
+  \cos\frac{\theta}{2} & -i\mathrm{e}^{-i\phi}\sin\frac{\theta}{2} \\\\
+  -i\mathrm{e}^{i\phi}\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
+\end{bmatrix}
+$$
+
+### Special values
+
+| Parameters | Gate |
+| --- | --- |
+| $\phi = 0$ | [$R_x(\theta)$](/gates/rx) |
+| $\phi = \pi/2$ | [$R_y(\theta)$](/gates/ry) |
+| $\theta = \pi$ | [GPi](/gates/gpi)$(\phi)$ up to global phase |
+| $\theta = \pi/2$ | [GPi2](/gates/gpi2)$(\phi)$ |
+
+### Properties
+
+- Sandwich form: $R(\theta, \phi) = R_z(\phi) \\, R_x(\theta) \\, R_z(-\phi)$ — the phase $\phi$ just rotates the frame in which the $x$ rotation happens.
+- Covers half of the Bloch sphere's rotation axes with one pulse shape, which is why it is the native single-qubit gate on ion traps (as GPi/GPi2) and on Google hardware (as PhasedX).
+
+### Usage
+
+- On hardware with *virtual* $z$ rotations, any single-qubit unitary becomes two phased rotations: the compiler tracks $\phi$ offsets in software and only the equatorial pulses are physically played.

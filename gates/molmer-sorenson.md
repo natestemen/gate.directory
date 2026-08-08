@@ -11,6 +11,7 @@ dimension: 2
 parameters: n(n-1)/2
 description: A native entangling interaction in ion-trap systems based on collective spin-motion coupling.
 citation:
+  title: Multiparticle Entanglement of Hot Trapped Ions
   year: 1999
   url: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835
 sdks:

@@ -5,6 +5,7 @@ symbol: B
 arity: 2
 description: Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.
 citation:
+  title: Minimum construction of two-qubit quantum operations
   year: 2004
   url: https://arxiv.org/abs/quant-ph/0312193
 sdks:

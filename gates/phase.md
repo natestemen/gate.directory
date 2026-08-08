@@ -5,6 +5,7 @@ symbol: P
 alias:
   - phase
   - p
+  - u1
 notations:
   - U_1(\phi)
 groups:

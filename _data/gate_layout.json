@@ -1,11 +1,13 @@
 [
-  ["identity",  "pauli-x",     "pauli-y",  "pauli-z",          null,    "hadamard",        "s",          "t"],
-  ["rx",        "ry",          "rz",       "rot",               null,    "phase",           "sx",         "u3"],
-  ["b",         "toff-decomp", null,      null,                null,    null,              null,         null],
-  ["cnot",      "cy",          "cz",       "csx",               "controlled-phase", "swap", "iswap",      "dcx"],
-  ["ecr",       "can",         "fsim",     "fswap",             "givens", "magic",  "molmer-sorenson",    "sqrt-iswap"],
-  ["rxx",       "ryy",         "rzz",      null,                null,    null,              null,         "sqrt-swap"],
-  ["cswap",     "ccz",         "toffoli",  null,       null,    null,              null,         null],
-  ["global-phase", "qft", null,        null,       null,                null,    null,              null,         "virtual-distillation"],
-  ["oracle",    "phase-oracle",           null,                null,    null,              null,         null]
+  ["identity",     "pauli-x", "pauli-y",     "pauli-z",      null,               "hadamard",        "s",    "t"],
+  ["rx",           "ry",      "rz",          "rot",          "r",                "phase",           "sx",   "u3"],
+  ["gpi",          "gpi2",    "toff-decomp", null,           null,               null,              null,   "u2"],
+  ["cnot",         "cy",      "cz",          "ch",           "cs",               "csx",             "controlled-phase", null],
+  ["crx",          "cry",     "crz",         null,           null,               null,              null,   null],
+  ["swap",         "iswap",   "sqrt-swap",   "sqrt-iswap",   "fswap",            "dcx",             "ecr",  null],
+  ["can",          "b",       "magic",       "givens",       "fsim",             "sycamore",        "xy",   "xx-minus-yy"],
+  ["rxx",          "ryy",     "rzz",         "rzx",          "molmer-sorenson",  null,              null,   null],
+  ["toffoli",      "ccz",     "cswap",       "rccx",         "mcx",              "deutsch",         null,   null],
+  ["shift",        "clock",   null,          null,           null,               null,              null,   null],
+  ["global-phase", "qft",     "oracle",      "phase-oracle", "grover-diffuser",  null,              null,   "virtual-distillation"]
 ]

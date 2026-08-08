@@ -18,7 +18,7 @@ sdks:
     url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/applyqft
   cirq:
     name: cirq.qft
-    ufl: https://quantumai.google/reference/python/cirq/qft
+    url: https://quantumai.google/reference/python/cirq/qft
   pyquil:
   braket:
 ---
