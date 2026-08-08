@@ -2,6 +2,8 @@
 layout: gate
 title: unnamed
 symbol: G
+groups:
+  - orthogonal
 arity: 1
 description: A single-qubit rotation used in optimal Toffoli decompositions.
 citation:

@@ -5,6 +5,9 @@ symbol: O_f^\pm
 notations:
   - U_f^\pm
   - \mathcal{O}_f^\pm
+groups:
+  - diagonal
+  - orthogonal
 arity: n
 dimension: p
 description: Encodes a Boolean function as phases on computational basis states.

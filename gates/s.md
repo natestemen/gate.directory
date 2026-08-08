@@ -11,6 +11,7 @@ notations:
 arity: 1
 groups:
   - clifford
+  - diagonal
 description: $\pi/2$ phase gate, equal to $\sqrt{Z}$.
 sdks:
   qiskit:

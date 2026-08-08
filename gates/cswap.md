@@ -8,6 +8,8 @@ notations:
   - \mathrm{CSWAP}
   - \text{Fredkin}
   - \text{controlled-}SWAP
+groups:
+  - orthogonal
 arity: 3
 controlled: swap
 description: Controlled swap of two target qubits conditioned on a single control qubit.

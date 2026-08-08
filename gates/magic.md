@@ -8,6 +8,8 @@ notations:
   - \mathcal{M}
   - Q
   - E
+groups:
+  - clifford
 arity: 2
 description: Changes from the computational basis to the magic (Bell) basis used in two-qubit local invariants.
 sdks:

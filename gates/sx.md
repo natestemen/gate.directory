@@ -10,6 +10,8 @@ notations:
   - \sqrt{X}
   - \mathrm{S}X
   - V
+groups:
+  - clifford
 arity: 1
 description: A gate whose square is the Pauli-$X$ (NOT) gate.
 sdks:

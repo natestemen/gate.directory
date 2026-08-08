@@ -9,6 +9,9 @@
 </div>
 
 {% set groupSlug = page.fileSlug %}
+{% if all_gates %}
+<p>Every gate in this directory is a member of this group.</p>
+{% else %}
 <p>The following gates are contained in this group:</p>
 <ul>
 {% for gate in collections.gates %}
@@ -17,5 +20,6 @@
   {% endif %}
 {% endfor %}
 </ul>
+{% endif %}
 
 {% endblock %}

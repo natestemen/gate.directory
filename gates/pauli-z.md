@@ -13,6 +13,7 @@ groups:
   - pauli
   - clifford
   - diagonal
+  - orthogonal
 arity: 1
 description: Phase-flip gate that leaves $|0\rangle$ unchanged and flips the phase of $|1\rangle$.
 sdks:

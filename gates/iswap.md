@@ -2,6 +2,8 @@
 layout: gate
 title: iSWAP
 symbol: i\mathrm{SWAP}
+groups:
+  - clifford
 arity: 2
 description: Swaps $|01\rangle$ and $|10\rangle$ and adds a phase of $i$.
 sdks:
