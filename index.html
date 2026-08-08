@@ -42,988 +42,1751 @@
 <br/>
 
 <h2>Periodic Table of Gates</h2>
-<p class="periodic-explanation">Each cell shows the gate symbol with its
-arity and quDit dimension in the top right (e.g. <code>2q2d</code> for a
-two-qubit gate).</p>
-<div class="gate-filters" data-filter-root>
-  <span class="filter-label">Highlight:</span>
-  <button class="filter-button" type="button" data-group="pauli" aria-pressed="false">Pauli</button>
-  <button class="filter-button" type="button" data-group="clifford" aria-pressed="false">Clifford</button>
-  <button class="filter-button" type="button" data-group="orthogonal" aria-pressed="false">Real</button>
-  <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
-  <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
-  <button class="filter-button" type="button" data-group="hermitian" aria-pressed="false">Hermitian</button>
-  <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
-  <span class="filter-hint">Hover or click a filter to emphasize matching gates.</span>
-</div>
-<div class="periodic-table">
+<p class="periodic-explanation">
+  Columns 1–3 are the X, Y, and Z axis columns — reading down a column goes flip → root →
+  rotation → controlled → coupling. Each cell shows its qubit count (top left) and parameter
+  count (top right). Families are drawn as woven regions: gates belonging to several families sit
+  where the outlines overlap — hover any gate to light up its families. Qudit and circuit-level
+  entries live in the pull-out strip below, and the dashed cell is a gap the table predicts:
+  a gate with no page yet.
+</p>
+
+<div class="pt-table">
+  <div class="pt-headrow">
+    
+      <div class="pt-colhead">X</div>
+    
+      <div class="pt-colhead">Y</div>
+    
+      <div class="pt-colhead">Z</div>
+    
+      <div class="pt-colhead"></div>
+    
+      <div class="pt-colhead"></div>
+    
+      <div class="pt-colhead"></div>
+    
+      <div class="pt-colhead"></div>
+    
+      <div class="pt-colhead"></div>
+    
+  </div>
+
+  
+  <div class="pt-wrap" id="pt-main">
+    <svg class="pt-outlines" aria-hidden="true"></svg>
+    <div class="pt-grid2">
+      
+        
+        
+          
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/identity/" data-groups="pauli clifford diagonal orthogonal permutation number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">nq2d</span>
-            <div class="symbol">$I$</div>
-            <div class="name">Identity</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/pauli-x/" data-groups="pauli clifford orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$X$</div>
-            <div class="name">Pauli-X</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="0" data-col="0" data-fams="paulis"
+         href="/gates/pauli-x/"
+         
+           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
-        
-          
-          
-          <a class="periodic-cell" href="/gates/pauli-y/" data-groups="pauli clifford" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$Y$</div>
-            <div class="name">Pauli-Y</div>
-          </a>
-        
-      
+        <div class="pt-symbol">$X$</div>
+        <div class="pt-name">Pauli-X</div>
+      </a>
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/pauli-z/" data-groups="pauli clifford diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$Z$</div>
-            <div class="name">Pauli-Z</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/hadamard/" data-groups="clifford orthogonal" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$H$</div>
-            <div class="name">Hadamard</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/s/" data-groups="clifford diagonal number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$S$</div>
-            <div class="name">Phase</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/t/" data-groups="diagonal number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$T$</div>
-            <div class="name">T</div>
-          </a>
-        
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/rx/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$R_x$</div>
-            <div class="name">$x$ Rotation</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/ry/" data-groups="orthogonal" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$R_y$</div>
-            <div class="name">$y$ Rotation</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="0" data-col="1" data-fams="paulis"
+         href="/gates/pauli-y/"
+         
+           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
-        
-          
-          
-          <a class="periodic-cell" href="/gates/rz/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$R_z$</div>
-            <div class="name">$z$ Rotation</div>
-          </a>
-        
-      
+        <div class="pt-symbol">$Y$</div>
+        <div class="pt-name">Pauli-Y</div>
+      </a>
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/rot/" data-groups="" data-properties="" data-parameters="3" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$R_{\mathbf{n}}$</div>
-            <div class="name">Arbitrary Rotation</div>
-          </a>
-        
-      
-    
-      
-        
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/r/" data-groups="" data-properties="" data-parameters="2" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$R(\theta, \phi)$</div>
-            <div class="name">Phased Rotation</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/phase/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$P$</div>
-            <div class="name">Phase Shift</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/sx/" data-groups="clifford" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$\sqrt{X}$</div>
-            <div class="name">Square Root of X</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/u3/" data-groups="" data-properties="" data-parameters="3" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$U_3$</div>
-            <div class="name">U3</div>
-          </a>
-        
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/gpi/" data-groups="" data-properties="hermitian" data-parameters="1" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$\mathrm{GPi}$</div>
-            <div class="name">GPi</div>
-          </a>
-        
       
     
+    
+    
       
+      <a class="pt-cell" data-row="0" data-col="2" data-fams="paulis"
+         href="/gates/pauli-z/"
+         
+           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
+        <div class="pt-symbol">$Z$</div>
+        <div class="pt-name">Pauli-Z</div>
+      </a>
+    
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/gpi2/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$\mathrm{GPi2}$</div>
-            <div class="name">GPi2</div>
-          </a>
-        
-      
-    
-      
-        
+  
+    <div class="pt-empty"></div>
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/toff-decomp/" data-groups="orthogonal" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$G$</div>
-            <div class="name">unnamed</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/u2/" data-groups="" data-properties="" data-parameters="2" data-controlled="">
-            <span class="arity-dim">1q2d</span>
-            <div class="symbol">$U_2$</div>
-            <div class="name">U2</div>
-          </a>
-        
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/cnot/" data-groups="clifford orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="pauli-x">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}X$</div>
-            <div class="name">Controlled Not</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/cy/" data-groups="clifford" data-properties="hermitian" data-parameters="" data-controlled="pauli-y">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}Y$</div>
-            <div class="name">Controlled-Y</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="0" data-col="4" data-fams="paulis"
+         href="/gates/identity/"
+         
+           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
+         >
+        <span class="pt-arity">n</span>
         
-        
-          
-          
-          <a class="periodic-cell" href="/gates/cz/" data-groups="clifford diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="pauli-z">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}Z$</div>
-            <div class="name">Controlled-Z</div>
-          </a>
-        
-      
+        <div class="pt-symbol">$I$</div>
+        <div class="pt-name">Identity</div>
+      </a>
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/ch/" data-groups="orthogonal" data-properties="hermitian" data-parameters="" data-controlled="hadamard">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}H$</div>
-            <div class="name">Controlled-Hadamard</div>
-          </a>
-        
-      
-    
-      
-        
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/cs/" data-groups="diagonal number-preserving" data-properties="" data-parameters="" data-controlled="s">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}S$</div>
-            <div class="name">Controlled-S</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/csx/" data-groups="" data-properties="" data-parameters="" data-controlled="sx">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}\sqrt{X}$</div>
-            <div class="name">Controlled sqrt(X)</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/controlled-phase/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="phase">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}P$</div>
-            <div class="name">Controlled Phase</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/crx/" data-groups="" data-properties="" data-parameters="1" data-controlled="rx">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}R_x$</div>
-            <div class="name">Controlled $x$ Rotation</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/cry/" data-groups="orthogonal" data-properties="" data-parameters="1" data-controlled="ry">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}R_y$</div>
-            <div class="name">Controlled $y$ Rotation</div>
-          </a>
-        
-      
     
+    
+      
+      <a class="pt-cell" data-row="0" data-col="5" data-fams="paulis"
+         href="/gates/hadamard/"
+         
+           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        
+        <div class="pt-symbol">$H$</div>
+        <div class="pt-name">Hadamard</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div>
+        
       
         
         
           
-          
-          <a class="periodic-cell" href="/gates/crz/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="rz">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{C}R_z$</div>
-            <div class="name">Controlled $z$ Rotation</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/swap/" data-groups="clifford orthogonal permutation number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{SWAP}$</div>
-            <div class="name">SWAP</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/iswap/" data-groups="clifford matchgate number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$i\mathrm{SWAP}$</div>
-            <div class="name">iSWAP</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="1" data-col="0" data-fams="roots"
+         href="/gates/sx/"
+         
+           style="background: color-mix(in srgb, #1a8ec2 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
-        
-          
-          
-          <a class="periodic-cell" href="/gates/sqrt-swap/" data-groups="number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\sqrt{\mathrm{SWAP}}$</div>
-            <div class="name">Square Root SWAP</div>
-          </a>
-        
-      
+        <div class="pt-symbol">$\sqrt{X}$</div>
+        <div class="pt-name">Square Root of X</div>
+      </a>
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/sqrt-iswap/" data-groups="matchgate number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\sqrt{i\mathrm{SWAP}}$</div>
-            <div class="name">Square Root iSWAP</div>
-          </a>
-        
-      
-    
-      
-        
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/fswap/" data-groups="clifford orthogonal matchgate number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{fSWAP}$</div>
-            <div class="name">fSWAP</div>
-          </a>
-        
-      
-    
-      
-        
+  
+    <a class="pt-cell pt-ghost" data-row="1" data-col="1" data-fams="roots"
+       href="https://github.com/natestemen/gate.directory/issues/new"
+       title="Predicted by the table, but undocumented — open an issue!">
+      <div class="pt-symbol">$&#92;sqrt{Y}$</div>
+      <div class="pt-name">unclaimed</div>
+    </a>
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/dcx/" data-groups="clifford orthogonal permutation" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{DC}X$</div>
-            <div class="name">Double CX</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/ecr/" data-groups="clifford" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$ECR$</div>
-            <div class="name">Echoed Cross-Resonance</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/can/" data-groups="" data-properties="" data-parameters="3" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{CAN}$</div>
-            <div class="name">Canonical entangling</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/b/" data-groups="matchgate" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$B$</div>
-            <div class="name">B Gate</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="1" data-col="2" data-fams="roots"
+         href="/gates/s/"
+         
+           style="background: color-mix(in srgb, #1a8ec2 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
-        
-          
-          
-          <a class="periodic-cell" href="/gates/magic/" data-groups="clifford" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$M$</div>
-            <div class="name">Magic</div>
-          </a>
-        
-      
+        <div class="pt-symbol">$S$</div>
+        <div class="pt-name">Phase</div>
+      </a>
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/givens/" data-groups="orthogonal matchgate number-preserving" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$G_{ij}$</div>
-            <div class="name">Givens Rotation</div>
-          </a>
-        
-      
-    
-      
-        
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/fsim/" data-groups="number-preserving" data-properties="" data-parameters="2" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{FSim}$</div>
-            <div class="name">Fermionic Simulator</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/sycamore/" data-groups="number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{SYC}$</div>
-            <div class="name">Sycamore</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/xy/" data-groups="matchgate number-preserving" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{XY}$</div>
-            <div class="name">XY Interaction</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/xx-minus-yy/" data-groups="matchgate" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$R_{xx-yy}$</div>
-            <div class="name">XX−YY Interaction</div>
-          </a>
-        
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/rxx/" data-groups="matchgate" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$R_{xx}$</div>
-            <div class="name">$xx$ Rotation</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/ryy/" data-groups="matchgate" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$R_{yy}$</div>
-            <div class="name">$yy$ Rotation</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="1" data-col="3" data-fams="roots"
+         href="/gates/t/"
+         
+           style="background: color-mix(in srgb, #1a8ec2 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
+        <div class="pt-symbol">$T$</div>
+        <div class="pt-name">T</div>
+      </a>
+    
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/rzz/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$R_{zz}$</div>
-            <div class="name">$zz$ Rotation</div>
-          </a>
-        
-      
-    
-      
-        
+  
+    <div class="pt-empty"></div>
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/rzx/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$R_{zx}$</div>
-            <div class="name">$zx$ Rotation</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/molmer-sorenson/" data-groups="" data-properties="" data-parameters="n(n-1)/2" data-controlled="">
-            <span class="arity-dim">nq2d</span>
-            <div class="symbol">$MS$</div>
-            <div class="name">Mølmer-Sørensen</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/toffoli/" data-groups="orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="cnot">
-            <span class="arity-dim">3q2d</span>
-            <div class="symbol">$\mathrm{CC}X$</div>
-            <div class="name">Toffoli</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/ccz/" data-groups="diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="cz">
-            <span class="arity-dim">3q2d</span>
-            <div class="symbol">$\mathrm{CC}Z$</div>
-            <div class="name">Controlled-CZ</div>
-          </a>
-        
-      
+    
     
       
+      <a class="pt-cell" data-row="1" data-col="5" data-fams="misc"
+         href="/gates/toff-decomp/"
+         
+           style="background: color-mix(in srgb, #8a5a44 24%, white);"
+         >
+        <span class="pt-arity">1</span>
         
-        
-          
-          
-          <a class="periodic-cell" href="/gates/cswap/" data-groups="orthogonal permutation number-preserving" data-properties="hermitian" data-parameters="" data-controlled="swap">
-            <span class="arity-dim">3q2d</span>
-            <div class="symbol">$\mathrm{CSWAP}$</div>
-            <div class="name">Fredkin</div>
-          </a>
-        
-      
+        <div class="pt-symbol">$G$</div>
+        <div class="pt-name">unnamed</div>
+      </a>
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/rccx/" data-groups="orthogonal" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">3q2d</span>
-            <div class="symbol">$\mathrm{RCC}X$</div>
-            <div class="name">Margolus</div>
-          </a>
-        
-      
-    
-      
-        
+  
+
         
           
-          
-          <a class="periodic-cell" href="/gates/mcx/" data-groups="orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="toffoli">
-            <span class="arity-dim">n+1q2d</span>
-            <div class="symbol">$\mathrm{C}^nX$</div>
-            <div class="name">Multi-Controlled X</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/deutsch/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">3q2d</span>
-            <div class="symbol">$D(\theta)$</div>
-            <div class="name">Deutsch</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
   
     
       
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="6" data-fams="misc"
+         href="/gates/u2/"
+         
+           style="background: color-mix(in srgb, #8a5a44 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">2</span>
+        <div class="pt-symbol">$U_2$</div>
+        <div class="pt-name">U2</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div>
+        
+      
         
         
           
-          
-          <a class="periodic-cell" href="/gates/shift/" data-groups="orthogonal permutation" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">1qdd</span>
-            <div class="symbol">$X_d$</div>
-            <div class="name">Shift</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/clock/" data-groups="diagonal number-preserving" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">1qdd</span>
-            <div class="symbol">$Z_d$</div>
-            <div class="name">Clock</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
   
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/global-phase/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
-            <span class="arity-dim">nq2d</span>
-            <div class="symbol">$\mathrm{Ph}$</div>
-            <div class="name">Global Phase</div>
-          </a>
-        
       
     
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/qft/" data-groups="" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">nq2d</span>
-            <div class="symbol">$\mathrm{QFT}_n$</div>
-            <div class="name">Quantum Fourier Transform</div>
-          </a>
-        
-      
+    
     
       
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/oracle/" data-groups="orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">nqpd</span>
-            <div class="symbol">$O_f$</div>
-            <div class="name">Oracle</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/phase-oracle/" data-groups="diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">nqpd</span>
-            <div class="symbol">$O_f^\pm$</div>
-            <div class="name">Phase Oracle</div>
-          </a>
-        
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/grover-diffuser/" data-groups="orthogonal" data-properties="hermitian" data-parameters="" data-controlled="">
-            <span class="arity-dim">nq2d</span>
-            <div class="symbol">$U_s$</div>
-            <div class="name">Grover Diffuser</div>
-          </a>
-        
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        
-        
-          
-          
-          <a class="periodic-cell" href="/gates/virtual-distillation/" data-groups="orthogonal" data-properties="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$B^{(2)}_i$</div>
-            <div class="name">Virtual Distillation</div>
-          </a>
-        
-      
+      <a class="pt-cell" data-row="2" data-col="0" data-fams="rotations"
+         href="/gates/rx/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_x$</div>
+        <div class="pt-name">x Rotation</div>
+      </a>
     
   
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="2" data-col="1" data-fams="rotations"
+         href="/gates/ry/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_y$</div>
+        <div class="pt-name">y Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="2" data-col="2" data-fams="rotations"
+         href="/gates/rz/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_z$</div>
+        <div class="pt-name">z Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="2" data-col="3" data-fams="rotations"
+         href="/gates/phase/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$P$</div>
+        <div class="pt-name">Phase Shift</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="2" data-col="4" data-fams="rotations"
+         href="/gates/r/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">2</span>
+        <div class="pt-symbol">$R(\theta, \phi)$</div>
+        <div class="pt-name">Phased Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="2" data-col="5" data-fams="rotations"
+         href="/gates/rot/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">3</span>
+        <div class="pt-symbol">$R_{\mathbf{n}}$</div>
+        <div class="pt-name">Arbitrary Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="2" data-col="6" data-fams="rotations"
+         href="/gates/u3/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">3</span>
+        <div class="pt-symbol">$U_3$</div>
+        <div class="pt-name">U3</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="3" data-col="0" data-fams="rotations"
+         href="/gates/rxx/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_{xx}$</div>
+        <div class="pt-name">xx Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="3" data-col="1" data-fams="rotations"
+         href="/gates/ryy/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_{yy}$</div>
+        <div class="pt-name">yy Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="3" data-col="2" data-fams="rotations"
+         href="/gates/rzz/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_{zz}$</div>
+        <div class="pt-name">zz Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="3" data-col="3" data-fams="rotations"
+         href="/gates/rzx/"
+         
+           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_{zx}$</div>
+        <div class="pt-name">zx Rotation</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="4" data-col="0" data-fams="rotations controlled"
+         href="/gates/crx/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #0b7a5a 25%, white), color-mix(in srgb, #7a2f8f 25%, white));"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{C}R_x$</div>
+        <div class="pt-name">Controlled x Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="4" data-col="1" data-fams="rotations controlled"
+         href="/gates/cry/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #0b7a5a 25%, white), color-mix(in srgb, #7a2f8f 25%, white));"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{C}R_y$</div>
+        <div class="pt-name">Controlled y Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="4" data-col="2" data-fams="rotations controlled"
+         href="/gates/crz/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #0b7a5a 25%, white), color-mix(in srgb, #7a2f8f 25%, white));"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{C}R_z$</div>
+        <div class="pt-name">Controlled z Rotation</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="0" data-fams="controlled"
+         href="/gates/cnot/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{C}X$</div>
+        <div class="pt-name">Controlled Not</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="1" data-fams="controlled"
+         href="/gates/cy/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{C}Y$</div>
+        <div class="pt-name">Controlled-Y</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="2" data-fams="controlled"
+         href="/gates/cz/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{C}Z$</div>
+        <div class="pt-name">Controlled-Z</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="3" data-fams="controlled"
+         href="/gates/controlled-phase/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{C}P$</div>
+        <div class="pt-name">Controlled Phase</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="4" data-fams="controlled"
+         href="/gates/ch/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{C}H$</div>
+        <div class="pt-name">Controlled-Hadamard</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="5" data-fams="controlled"
+         href="/gates/cs/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{C}S$</div>
+        <div class="pt-name">Controlled-S</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="5" data-col="6" data-fams="controlled"
+         href="/gates/csx/"
+         
+           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{C}\sqrt{X}$</div>
+        <div class="pt-name">Controlled sqrt(X)</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="6" data-col="0" data-fams="controlled multi"
+         href="/gates/toffoli/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
+         >
+        <span class="pt-arity">3</span>
+        
+        <div class="pt-symbol">$\mathrm{CC}X$</div>
+        <div class="pt-name">Toffoli</div>
+      </a>
+    
+  
+
+        
+          
+  
+    <div class="pt-empty"></div>
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="6" data-col="2" data-fams="controlled multi"
+         href="/gates/ccz/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
+         >
+        <span class="pt-arity">3</span>
+        
+        <div class="pt-symbol">$\mathrm{CC}Z$</div>
+        <div class="pt-name">Controlled-CZ</div>
+      </a>
+    
+  
+
+        
+          
+  
+    <div class="pt-empty"></div>
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="6" data-col="4" data-fams="controlled multi swap"
+         href="/gates/cswap/"
+         
+           
+           
+             
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white), color-mix(in srgb, #b3315f 25%, white));"
+         >
+        <span class="pt-arity">3</span>
+        
+        <div class="pt-symbol">$\mathrm{CSWAP}$</div>
+        <div class="pt-name">Fredkin</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="6" data-col="5" data-fams="controlled multi"
+         href="/gates/mcx/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
+         >
+        <span class="pt-arity">n+1</span>
+        
+        <div class="pt-symbol">$\mathrm{C}^nX$</div>
+        <div class="pt-name">Multi-Controlled X</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="6" data-col="6" data-fams="controlled multi"
+         href="/gates/deutsch/"
+         
+           
+           
+             
+           
+             
+           
+           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
+         >
+        <span class="pt-arity">3</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$D(\theta)$</div>
+        <div class="pt-name">Deutsch</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="6" data-col="7" data-fams="multi"
+         href="/gates/rccx/"
+         
+           style="background: color-mix(in srgb, #8f2f2f 24%, white);"
+         >
+        <span class="pt-arity">3</span>
+        
+        <div class="pt-symbol">$\mathrm{RCC}X$</div>
+        <div class="pt-name">Margolus</div>
+      </a>
+    
+  
+
+        
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="7" data-col="0" data-fams="swap"
+         href="/gates/swap/"
+         
+           style="background: color-mix(in srgb, #b3315f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{SWAP}$</div>
+        <div class="pt-name">SWAP</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="7" data-col="1" data-fams="swap"
+         href="/gates/iswap/"
+         
+           style="background: color-mix(in srgb, #b3315f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$i\mathrm{SWAP}$</div>
+        <div class="pt-name">iSWAP</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="7" data-col="2" data-fams="swap"
+         href="/gates/sqrt-swap/"
+         
+           style="background: color-mix(in srgb, #b3315f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\sqrt{\mathrm{SWAP}}$</div>
+        <div class="pt-name">Square Root SWAP</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="7" data-col="3" data-fams="swap"
+         href="/gates/sqrt-iswap/"
+         
+           style="background: color-mix(in srgb, #b3315f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\sqrt{i\mathrm{SWAP}}$</div>
+        <div class="pt-name">Square Root iSWAP</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="7" data-col="4" data-fams="swap"
+         href="/gates/fswap/"
+         
+           style="background: color-mix(in srgb, #b3315f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{fSWAP}$</div>
+        <div class="pt-name">fSWAP</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="7" data-col="5" data-fams="swap"
+         href="/gates/dcx/"
+         
+           style="background: color-mix(in srgb, #b3315f 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{DC}X$</div>
+        <div class="pt-name">Double CX</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="8" data-col="0" data-fams="natives"
+         href="/gates/gpi/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{GPi}$</div>
+        <div class="pt-name">GPi</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="8" data-col="1" data-fams="natives"
+         href="/gates/gpi2/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{GPi2}$</div>
+        <div class="pt-name">GPi2</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="9" data-col="0" data-fams="natives"
+         href="/gates/molmer-sorenson/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">n</span>
+        <span class="pt-params">n(n-1)/2</span>
+        <div class="pt-symbol">$MS$</div>
+        <div class="pt-name">Mølmer-Sørensen</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="9" data-col="1" data-fams="natives"
+         href="/gates/ecr/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$ECR$</div>
+        <div class="pt-name">Echoed Cross-Resonance</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="9" data-col="2" data-fams="natives"
+         href="/gates/sycamore/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$\mathrm{SYC}$</div>
+        <div class="pt-name">Sycamore</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="9" data-col="3" data-fams="natives"
+         href="/gates/xy/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{XY}$</div>
+        <div class="pt-name">XY Interaction</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="9" data-col="4" data-fams="natives"
+         href="/gates/fsim/"
+         
+           style="background: color-mix(in srgb, #c2571a 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">2</span>
+        <div class="pt-symbol">$\mathrm{FSim}$</div>
+        <div class="pt-name">Fermionic Simulator</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="10" data-col="0" data-fams="interactions"
+         href="/gates/can/"
+         
+           style="background: color-mix(in srgb, #8a6d00 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">3</span>
+        <div class="pt-symbol">$\mathrm{CAN}$</div>
+        <div class="pt-name">Canonical entangling</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="10" data-col="1" data-fams="interactions"
+         href="/gates/b/"
+         
+           style="background: color-mix(in srgb, #8a6d00 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$B$</div>
+        <div class="pt-name">B Gate</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="10" data-col="2" data-fams="interactions"
+         href="/gates/magic/"
+         
+           style="background: color-mix(in srgb, #8a6d00 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$M$</div>
+        <div class="pt-name">Magic</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="10" data-col="3" data-fams="interactions"
+         href="/gates/givens/"
+         
+           style="background: color-mix(in srgb, #8a6d00 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$G_{ij}$</div>
+        <div class="pt-name">Givens Rotation</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="10" data-col="4" data-fams="interactions"
+         href="/gates/xx-minus-yy/"
+         
+           style="background: color-mix(in srgb, #8a6d00 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$R_{xx-yy}$</div>
+        <div class="pt-name">XX−YY Interaction</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+    </div>
+  </div>
+
+
+  <div class="pt-pullout">
+    
+  <div class="pt-wrap" id="pt-pullout-grid">
+    <svg class="pt-outlines" aria-hidden="true"></svg>
+    <div class="pt-grid2">
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="0" data-col="0" data-fams="qudits"
+         href="/gates/shift/"
+         
+           style="background: color-mix(in srgb, #556b2f 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        
+        <div class="pt-symbol">$X_d$</div>
+        <div class="pt-name">Shift</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="0" data-col="1" data-fams="qudits"
+         href="/gates/clock/"
+         
+           style="background: color-mix(in srgb, #556b2f 24%, white);"
+         >
+        <span class="pt-arity">1</span>
+        
+        <div class="pt-symbol">$Z_d$</div>
+        <div class="pt-name">Clock</div>
+      </a>
+    
+  
+
+        
+        
+          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
+        
+      
+        
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="0" data-fams="circuit"
+         href="/gates/global-phase/"
+         
+           style="background: color-mix(in srgb, #666666 24%, white);"
+         >
+        <span class="pt-arity">n</span>
+        <span class="pt-params">1</span>
+        <div class="pt-symbol">$\mathrm{Ph}$</div>
+        <div class="pt-name">Global Phase</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="1" data-fams="circuit"
+         href="/gates/qft/"
+         
+           style="background: color-mix(in srgb, #666666 24%, white);"
+         >
+        <span class="pt-arity">n</span>
+        
+        <div class="pt-symbol">$\mathrm{QFT}_n$</div>
+        <div class="pt-name">Quantum Fourier Transform</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="2" data-fams="circuit"
+         href="/gates/oracle/"
+         
+           style="background: color-mix(in srgb, #666666 24%, white);"
+         >
+        <span class="pt-arity">n</span>
+        
+        <div class="pt-symbol">$O_f$</div>
+        <div class="pt-name">Oracle</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="3" data-fams="circuit"
+         href="/gates/phase-oracle/"
+         
+           style="background: color-mix(in srgb, #666666 24%, white);"
+         >
+        <span class="pt-arity">n</span>
+        
+        <div class="pt-symbol">$O_f^\pm$</div>
+        <div class="pt-name">Phase Oracle</div>
+      </a>
+    
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="4" data-fams="circuit"
+         href="/gates/grover-diffuser/"
+         
+           style="background: color-mix(in srgb, #666666 24%, white);"
+         >
+        <span class="pt-arity">n</span>
+        
+        <div class="pt-symbol">$U_s$</div>
+        <div class="pt-name">Grover Diffuser</div>
+      </a>
+    
+  
+
+        
+          
+  
+    <div class="pt-empty"></div>
+  
+
+        
+          
+  
+    <div class="pt-empty"></div>
+  
+
+        
+          
+  
+    
+      
+      
+    
+    
+    
+      
+      <a class="pt-cell" data-row="1" data-col="7" data-fams="circuit"
+         href="/gates/virtual-distillation/"
+         
+           style="background: color-mix(in srgb, #666666 24%, white);"
+         >
+        <span class="pt-arity">2</span>
+        
+        <div class="pt-symbol">$B^{(2)}_i$</div>
+        <div class="pt-name">Virtual Distillation</div>
+      </a>
+    
+  
+
+        
+        
+      
+    </div>
+  </div>
+
+  </div>
 </div>
 
 <br/>
 
 <h2>Groups</h2>
-<p>Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
-<ul>
-  
-  <li><a href="/groups/clifford/">Clifford Group</a></li>
-  
-  <li><a href="/groups/diagonal/">Diagonal Group</a></li>
-  
-  <li><a href="/groups/matchgate/">Matchgate Group</a></li>
-  
-  <li><a href="/groups/number-preserving/">Number-Preserving Group</a></li>
-  
-  <li><a href="/groups/orthogonal/">Orthogonal Group</a></li>
-  
-  <li><a href="/groups/pauli/">Pauli Group</a></li>
-  
-  <li><a href="/groups/permutation/">Permutation Group</a></li>
-  
-  <li><a href="/groups/unitary/">Unitary Group</a></li>
-  
-</ul>
+<p>
+  Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
+  Every gate lives inside the unitary group; click a region to read about that subgroup.
+</p>
+
+<div class="group-venn-wrap">
+  <svg class="group-venn" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
+    <a href="/groups/unitary/">
+      <rect class="venn-shape" x="8" y="8" width="744" height="424" rx="14" fill="#666666" stroke="#666666"/>
+      <text x="740" y="30" text-anchor="end" fill="#666666">unitary</text>
+    </a>
+    <a href="/groups/clifford/">
+      <rect class="venn-shape" x="40" y="40" width="430" height="260" rx="10" fill="#c2571a" stroke="#c2571a"/>
+      <text x="52" y="62" text-anchor="start" fill="#c2571a">clifford</text>
+    </a>
+    <a href="/groups/orthogonal/">
+      <rect class="venn-shape" x="120" y="150" width="480" height="250" rx="10" fill="#1a8ec2" stroke="#1a8ec2"/>
+      <text x="590" y="393" text-anchor="end" fill="#1a8ec2">orthogonal</text>
+    </a>
+    <a href="/groups/number-preserving/">
+      <rect class="venn-shape" x="300" y="70" width="420" height="290" rx="10" fill="#8a6d00" stroke="#8a6d00"/>
+      <text x="570" y="350" text-anchor="end" fill="#8a6d00">number-preserving</text>
+    </a>
+    <a href="/groups/diagonal/">
+      <rect class="venn-shape" x="310" y="105" width="250" height="141" rx="8" fill="#0b7a5a" stroke="#0b7a5a"/>
+      <text x="548" y="118" text-anchor="end" fill="#0b7a5a">diagonal</text>
+    </a>
+    <a href="/groups/pauli/">
+      <rect class="venn-shape" x="70" y="76" width="260" height="154" rx="8" fill="#2f5fd0" stroke="#2f5fd0"/>
+      <text x="78" y="92" text-anchor="start" fill="#2f5fd0">Pauli</text>
+    </a>
+    <a href="/groups/permutation/">
+      <rect class="venn-shape" x="150" y="210" width="190" height="170" rx="8" fill="#7a2f8f" stroke="#7a2f8f"/>
+      <text x="158" y="370" text-anchor="start" fill="#7a2f8f">permutation</text>
+    </a>
+    <a href="/groups/matchgate/">
+      <path class="venn-shape"
+        d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z"
+        fill="#b3315f" stroke="#b3315f" stroke-linejoin="round"/>
+      <text x="640" y="175" text-anchor="middle" fill="#b3315f" transform="rotate(-90 640 175)">matchgate</text>
+    </a>
+
+    <g class="venn-gates" aria-hidden="true">
+      <text x="180" y="118">Y</text>
+      <text x="222" y="224">X</text>
+      <text x="317" y="186">Z</text>
+      <text x="317" y="223">I</text>
+      <text x="400" y="58">H</text>
+      <text x="222" y="280">CNOT</text>
+      <text x="320" y="280" text-anchor="middle">SWAP</text>
+      <text x="222" y="342">Toffoli</text>
+      <text x="320" y="338" text-anchor="middle">CSWAP</text>
+      <text x="400" y="128">S</text>
+      <text x="510" y="140">T</text>
+      <text x="404" y="200">CZ</text>
+      <text x="512" y="200">CCZ</text>
+      <text x="400" y="90">iSWAP</text>
+      <text x="548" y="90">XY</text>
+      <text x="447" y="277" text-anchor="middle">fSWAP</text>
+      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text>
+      <text x="134" y="330" text-anchor="middle">Ry</text>
+      <text x="682" y="200">FSim</text>
+      <text x="62" y="412">Rx</text>
+      <text x="624" y="374">Rxx</text>
+    </g>
+  </svg>
+</div>
+
+<p class="venn-caption">
+  The small grey labels mark one example gate per intersection.
+</p>
 
 <br/>
 
@@ -1117,151 +1880,120 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       }
     });
   })();
-
-  (function () {
-    const filterRoot = document.querySelector(".gate-filters");
-    if (!filterRoot) {
-      return;
-    }
-
-    const cells = Array.from(document.querySelectorAll(".periodic-cell"));
-    const filterButtons = Array.from(
-      filterRoot.querySelectorAll(".filter-button[data-group]")
-    );
-    const clearButton = filterRoot.querySelector(".filter-clear");
-    const trackedGroups = [
-      "pauli",
-      "clifford",
-      "orthogonal",
-      "parametrized",
-      "controlled",
-      "hermitian",
-    ];
-    const activeGroups = new Set();
-
-    const normalizeGroup = (group) => (group || "").toLowerCase();
-    const getCellGroups = (cell) =>
-      (cell.dataset.groups || "")
-        .split(" ")
-        .map(normalizeGroup)
-        .filter(Boolean);
-    const hasParameters = (cell) => {
-      const raw = (cell.dataset.parameters || "").toString().trim();
-      if (!raw) {
-        return false;
-      }
-      const numericValue = Number(raw);
-      if (Number.isFinite(numericValue)) {
-        return numericValue > 0;
-      }
-      return raw !== "0";
-    };
-    const isControlled = (cell) => {
-      const raw = (cell.dataset.controlled || "").toString().trim();
-      return raw.length > 0;
-    };
-
-    const getCellProperties = (cell) =>
-      (cell.dataset.properties || "")
-        .split(" ")
-        .map(normalizeGroup)
-        .filter(Boolean);
-
-    const cellMatchesGroup = (cell, group) => {
-      if (group === "parametrized") {
-        return hasParameters(cell);
-      }
-      if (group === "controlled") {
-        return isControlled(cell);
-      }
-      if (group === "hermitian") {
-        return getCellProperties(cell).includes(group);
-      }
-      return getCellGroups(cell).includes(group);
-    };
-
-    function applyHighlight(highlightGroups) {
-      const hasHighlights = highlightGroups && highlightGroups.size > 0;
-
-      cells.forEach((cell) => {
-        const matchedGroups = hasHighlights
-          ? Array.from(highlightGroups).filter((group) =>
-              cellMatchesGroup(cell, group)
-            )
-          : [];
-
-        cell.classList.toggle("is-highlighted", matchedGroups.length > 0);
-        cell.classList.toggle(
-          "is-dimmed",
-          hasHighlights && matchedGroups.length === 0
-        );
-
-        trackedGroups.forEach((group) => {
-          cell.classList.toggle(
-            `highlight-${group}`,
-            matchedGroups.includes(group)
-          );
-        });
-      });
-    }
-
-    function syncButtonState() {
-      filterButtons.forEach((button) => {
-        const group = normalizeGroup(button.dataset.group);
-        const isActive = activeGroups.has(group);
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-
-      if (clearButton) {
-        clearButton.disabled = activeGroups.size === 0;
-      }
-    }
-
-    function applyPreview(group) {
-      if (activeGroups.size > 0) {
-        return;
-      }
-      applyHighlight(new Set([group]));
-    }
-
-    function clearPreview() {
-      if (activeGroups.size > 0) {
-        return;
-      }
-      applyHighlight(activeGroups);
-    }
-
-    filterButtons.forEach((button) => {
-      const group = normalizeGroup(button.dataset.group);
-      button.addEventListener("mouseenter", () => applyPreview(group));
-      button.addEventListener("mouseleave", clearPreview);
-      button.addEventListener("focus", () => applyPreview(group));
-      button.addEventListener("blur", clearPreview);
-      button.addEventListener("click", () => {
-        if (activeGroups.has(group)) {
-          activeGroups.delete(group);
-        } else {
-          activeGroups.add(group);
-        }
-        syncButtonState();
-        applyHighlight(activeGroups);
-      });
-    });
-
-    if (clearButton) {
-      clearButton.addEventListener("click", () => {
-        activeGroups.clear();
-        syncButtonState();
-        applyHighlight(activeGroups);
-      });
-    }
-
-    syncButtonState();
-    applyHighlight(activeGroups);
-  })();
 </script>
 
+<script>
+  const PT_FAMILIES = {"paulis":{"label":"Paulis & basics","color":"#2f5fd0","inset":6},"roots":{"label":"roots","color":"#1a8ec2","inset":6},"misc":{"label":"misc & legacy","color":"#8a5a44","inset":6},"rotations":{"label":"rotations","color":"#0b7a5a","inset":5},"natives":{"label":"hardware natives","color":"#c2571a","inset":6},"controlled":{"label":"controlled","color":"#7a2f8f","inset":12},"swap":{"label":"swap family","color":"#b3315f","inset":4},"interactions":{"label":"interactions","color":"#8a6d00","inset":6},"multi":{"label":"multi-qubit","color":"#8f2f2f","inset":20},"qudits":{"label":"qudits","color":"#556b2f","inset":6},"circuit":{"label":"circuit-level","color":"#666666","inset":6}};
+
+  function drawRegions(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const svg = container.querySelector("svg.pt-outlines");
+    svg.innerHTML = "";
+    container.querySelectorAll(".pt-region-label").forEach((el) => el.remove());
+
+    // cell offsets are grid-relative; the svg overlay is wrap-relative
+    const grid = container.querySelector(".pt-grid2");
+    const ox = grid.offsetLeft, oy = grid.offsetTop;
+
+    const fams = {};
+    for (const cell of container.querySelectorAll("[data-fams]")) {
+      const r = +cell.dataset.row;
+      const L = cell.offsetLeft + ox, T = cell.offsetTop + oy;
+      const R = L + cell.offsetWidth, B = T + cell.offsetHeight;
+      for (const f of cell.dataset.fams.split(" ")) {
+        const rows = (fams[f] ??= new Map());
+        const e = rows.get(r) || { L: 1e9, R: -1e9, T: 1e9, B: -1e9 };
+        e.L = Math.min(e.L, L); e.R = Math.max(e.R, R);
+        e.T = Math.min(e.T, T); e.B = Math.max(e.B, B);
+        rows.set(r, e);
+      }
+    }
+
+    svg.setAttribute("width", container.scrollWidth);
+    svg.setAttribute("height", container.scrollHeight);
+
+    Object.keys(fams).forEach((f) => {
+      const meta = PT_FAMILIES[f];
+      const rows = [...fams[f].entries()].sort((a, b) => a[0] - b[0]).map((e) => e[1]);
+      const inset = meta.inset || 6;
+      const n = rows.length;
+      const ys = [rows[0].T - inset];
+      for (let i = 0; i < n; i++) {
+        ys.push(i < n - 1 ? (rows[i].B + rows[i + 1].T) / 2 + (inset - 8) * 0.5 : rows[i].B + inset);
+      }
+      let d = `M ${rows[0].L - inset} ${ys[0]} L ${rows[0].R + inset} ${ys[0]}`;
+      for (let i = 0; i < n; i++) {
+        d += ` L ${rows[i].R + inset} ${ys[i + 1]}`;
+        if (i < n - 1) d += ` L ${rows[i + 1].R + inset} ${ys[i + 1]}`;
+      }
+      for (let i = n - 1; i >= 0; i--) {
+        d += ` L ${rows[i].L - inset} ${ys[i + 1]}`;
+        if (i > 0) {
+          d += ` L ${rows[i].L - inset} ${ys[i]}`;
+          d += ` L ${rows[i - 1].L - inset} ${ys[i]}`;
+        }
+      }
+      d += " Z";
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", d);
+      path.setAttribute("fill", meta.color);
+      path.setAttribute("fill-opacity", "0.05");
+      path.setAttribute("stroke", meta.color);
+      path.setAttribute("stroke-width", "2.2");
+      path.setAttribute("stroke-linejoin", "round");
+      path.dataset.fam = f;
+      svg.appendChild(path);
+
+      /* pin the label to the topmost row that starts at the region's left
+         edge — narrow overlap tongues (e.g. swap reaching up to CSWAP)
+         start indented, so they never carry the label */
+      const minL = Math.min(...rows.map((r) => r.L));
+      const labelRow = rows.find((r) => Math.abs(r.L - minL) < 2) || rows[0];
+      const label = document.createElement("span");
+      label.className = "pt-region-label";
+      label.textContent = meta.label;
+      label.style.borderColor = meta.color;
+      label.style.color = meta.color;
+      label.style.left = labelRow.L - inset + 8 + "px";
+      label.style.top = labelRow.T - inset - 8 + "px";
+      container.appendChild(label);
+    });
+  }
+
+  function setupHover() {
+    document.querySelectorAll(".pt-wrap").forEach((container) => {
+      const cells = container.querySelectorAll(".pt-cell[data-fams]");
+      const setActive = (fams) => {
+        container.querySelectorAll(".pt-outlines path").forEach((p) =>
+          p.classList.toggle("pt-region-active", fams.includes(p.dataset.fam))
+        );
+        cells.forEach((c) =>
+          c.classList.toggle(
+            "pt-cell-kin",
+            fams.length > 0 && c.dataset.fams.split(" ").some((f) => fams.includes(f))
+          )
+        );
+      };
+      cells.forEach((cell) => {
+        cell.addEventListener("mouseenter", () => setActive(cell.dataset.fams.split(" ")));
+        cell.addEventListener("mouseleave", () => setActive([]));
+      });
+    });
+  }
+
+  function drawAll() {
+    drawRegions("pt-main");
+    drawRegions("pt-pullout-grid");
+  }
+  window.addEventListener("load", () => {
+    drawAll();
+    setTimeout(drawAll, 600); /* re-measure after KaTeX renders */
+    setupHover();
+  });
+  window.addEventListener("resize", drawAll);
+</script>
 
       </div>
       <footer>
