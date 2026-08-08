@@ -1,0 +1,256 @@
+{
+  "columns": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "rows": [
+    {
+      "fams": [
+        "paulis"
+      ],
+      "cells": [
+        "pauli-x",
+        "pauli-y",
+        "pauli-z",
+        null,
+        "identity",
+        "hadamard"
+      ]
+    },
+    {
+      "fams": [
+        "roots"
+      ],
+      "cells": [
+        "sx",
+        {
+          "ghost": "\\sqrt{Y}",
+          "name": "unclaimed"
+        },
+        "s",
+        "t",
+        null,
+        {
+          "slug": "toff-decomp",
+          "fams": [
+            "misc"
+          ]
+        },
+        {
+          "slug": "u2",
+          "fams": [
+            "misc"
+          ]
+        }
+      ]
+    },
+    {
+      "fams": [
+        "rotations"
+      ],
+      "cells": [
+        "rx",
+        "ry",
+        "rz",
+        "phase",
+        "r",
+        "rot",
+        "u3"
+      ]
+    },
+    {
+      "fams": [
+        "rotations"
+      ],
+      "cells": [
+        "rxx",
+        "ryy",
+        "rzz",
+        "rzx"
+      ]
+    },
+    {
+      "fams": [
+        "rotations",
+        "controlled"
+      ],
+      "cells": [
+        "crx",
+        "cry",
+        "crz"
+      ]
+    },
+    {
+      "fams": [
+        "controlled"
+      ],
+      "cells": [
+        "cnot",
+        "cy",
+        "cz",
+        "controlled-phase",
+        "ch",
+        "cs",
+        "csx"
+      ]
+    },
+    {
+      "fams": [
+        "controlled",
+        "multi"
+      ],
+      "cells": [
+        "toffoli",
+        null,
+        "ccz",
+        null,
+        {
+          "slug": "cswap",
+          "fams": [
+            "controlled",
+            "multi",
+            "swap"
+          ]
+        },
+        "mcx",
+        "deutsch",
+        {
+          "slug": "rccx",
+          "fams": [
+            "multi"
+          ]
+        }
+      ]
+    },
+    {
+      "fams": [
+        "swap"
+      ],
+      "cells": [
+        "swap",
+        "iswap",
+        "sqrt-swap",
+        "sqrt-iswap",
+        "fswap",
+        "dcx"
+      ]
+    },
+    {
+      "fams": [
+        "natives"
+      ],
+      "cells": [
+        "gpi",
+        "gpi2"
+      ]
+    },
+    {
+      "fams": [
+        "natives"
+      ],
+      "cells": [
+        "molmer-sorenson",
+        "ecr",
+        "sycamore",
+        "xy",
+        "fsim"
+      ]
+    },
+    {
+      "fams": [
+        "interactions"
+      ],
+      "cells": [
+        "can",
+        "b",
+        "magic",
+        "givens",
+        "xx-minus-yy"
+      ]
+    }
+  ],
+  "pullout": [
+    {
+      "fams": [
+        "qudits"
+      ],
+      "cells": [
+        "shift",
+        "clock"
+      ]
+    },
+    {
+      "fams": [
+        "circuit"
+      ],
+      "cells": [
+        "global-phase",
+        "qft",
+        "oracle",
+        "phase-oracle",
+        "grover-diffuser",
+        null,
+        null,
+        "virtual-distillation"
+      ]
+    }
+  ],
+  "families": {
+    "paulis": {
+      "label": "Paulis & basics",
+      "color": "#2f5fd0",
+      "inset": 6
+    },
+    "roots": {
+      "label": "roots",
+      "color": "#1a8ec2",
+      "inset": 6
+    },
+    "misc": {
+      "label": "misc & legacy",
+      "color": "#8a5a44",
+      "inset": 6
+    },
+    "rotations": {
+      "label": "rotations",
+      "color": "#0b7a5a",
+      "inset": 5
+    },
+    "natives": {
+      "label": "hardware natives",
+      "color": "#c2571a",
+      "inset": 6
+    },
+    "controlled": {
+      "label": "controlled",
+      "color": "#7a2f8f",
+      "inset": 12
+    },
+    "swap": {
+      "label": "swap family",
+      "color": "#b3315f",
+      "inset": 4
+    },
+    "interactions": {
+      "label": "interactions",
+      "color": "#8a6d00",
+      "inset": 6
+    },
+    "multi": {
+      "label": "multi-qubit",
+      "color": "#8f2f2f",
+      "inset": 20
+    },
+    "qudits": {
+      "label": "qudits",
+      "color": "#556b2f",
+      "inset": 6
+    },
+    "circuit": {
+      "label": "circuit-level",
+      "color": "#666666",
+      "inset": 6
+    }
+  }
+}

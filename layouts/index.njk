@@ -1,5 +1,64 @@
 {% extends "base.njk" %}
 
+{% macro cellFor(cell, rowFams, rowIndex, colIndex) %}
+  {% if cell === null %}
+    <div class="pt-empty"></div>
+  {% elif cell.ghost %}
+    <a class="pt-cell pt-ghost" data-row="{{ rowIndex }}" data-col="{{ colIndex }}" data-fams="{{ rowFams | join(' ') }}"
+       href="https://github.com/natestemen/gate.directory/issues/new"
+       title="Predicted by the table, but undocumented — open an issue!">
+      <div class="pt-symbol">${{ cell.ghost }}$</div>
+      <div class="pt-name">{{ cell.name }}</div>
+    </a>
+  {% else %}
+    {% if cell.slug %}
+      {% set slug = cell.slug %}
+      {% set fams = cell.fams %}
+    {% else %}
+      {% set slug = cell %}
+      {% set fams = rowFams %}
+    {% endif %}
+    {% set gate = collections.gates | gateBySlug(slug) %}
+    {% if gate %}
+      {% set c1 = periodic_layout.families[fams[0]].color %}
+      <a class="pt-cell" data-row="{{ rowIndex }}" data-col="{{ colIndex }}" data-fams="{{ fams | join(' ') }}"
+         href="{{ gate.url | url }}"
+         {% if fams.length > 1 %}
+           {% set stops = [] %}
+           {% for f in fams %}
+             {% set stops = (stops.push("color-mix(in srgb, " + periodic_layout.families[f].color + " 25%, white)"), stops) %}
+           {% endfor %}
+           style="background: linear-gradient(135deg, {{ stops | join(', ') }});"
+         {% else %}
+           style="background: color-mix(in srgb, {{ c1 }} 24%, white);"
+         {% endif %}>
+        <span class="pt-arity">{{ gate.data.arity }}</span>
+        {% if gate.data.parameters %}<span class="pt-params">{{ gate.data.parameters }}</span>{% endif %}
+        <div class="pt-symbol">${{ gate.data.symbol | safe }}$</div>
+        <div class="pt-name">{{ gate.data.title | stripMath }}</div>
+      </a>
+    {% else %}
+      <div class="pt-empty" title="unknown: {{ slug }}"></div>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% macro gridFor(rows, id) %}
+  <div class="pt-wrap" id="{{ id }}">
+    <svg class="pt-outlines" aria-hidden="true"></svg>
+    <div class="pt-grid2">
+      {% for row in rows %}
+        {% set rowIndex = loop.index0 %}
+        {% for cell in row.cells %}
+          {{ cellFor(cell, row.fams, rowIndex, loop.index0) }}
+        {% endfor %}
+        {% if row.cells.length < 8 %}
+          {% for i in range(row.cells.length, 8) %}<div class="pt-empty"></div>{% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %}
 
 {% block content %}
 <p>
@@ -15,52 +74,103 @@
 <br/>
 
 <h2>Periodic Table of Gates</h2>
-<p class="periodic-explanation">Each cell shows the gate symbol with its
-arity and quDit dimension in the top right (e.g. <code>2q2d</code> for a
-two-qubit gate).</p>
-<div class="gate-filters" data-filter-root>
-  <span class="filter-label">Highlight:</span>
-  <button class="filter-button" type="button" data-group="pauli" aria-pressed="false">Pauli</button>
-  <button class="filter-button" type="button" data-group="clifford" aria-pressed="false">Clifford</button>
-  <button class="filter-button" type="button" data-group="orthogonal" aria-pressed="false">Real</button>
-  <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
-  <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
-  <button class="filter-button" type="button" data-group="hermitian" aria-pressed="false">Hermitian</button>
-  <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
-  <span class="filter-hint">Hover or click a filter to emphasize matching gates.</span>
-</div>
-<div class="periodic-table">
-  {% for row in gate_layout %}
-    {% for slug in row %}
-      {% if slug == null %}
-        <div class="periodic-cell-empty"></div>
-      {% else %}
-        {% set gate = collections.gates | gateBySlug(slug) %}
-        {% if gate %}
-          {% set groupList = gate.data.groups or [] %}
-          {% set propList = gate.data.properties or [] %}
-          <a class="periodic-cell" href="{{ gate.url }}" data-groups="{{ groupList | join(' ') }}" data-properties="{{ propList | join(' ') }}" data-parameters="{{ gate.data.parameters | default('') }}" data-controlled="{{ gate.data.controlled | default('') }}">
-            <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
-            <div class="symbol">${{ gate.data.symbol | safe }}$</div>
-            <div class="name">{{ gate.data.title }}</div>
-          </a>
-        {% else %}
-          <div class="periodic-cell-empty" title="unknown: {{ slug }}"></div>
-        {% endif %}
-      {% endif %}
+<p class="periodic-explanation">
+  Columns 1–3 are the X, Y, and Z axis columns — reading down a column goes flip → root →
+  rotation → controlled → coupling. Each cell shows its qubit count (top left) and parameter
+  count (top right). Families are drawn as woven regions: gates belonging to several families sit
+  where the outlines overlap — hover any gate to light up its families. Qudit and circuit-level
+  entries live in the pull-out strip below, and the dashed cell is a gap the table predicts:
+  a gate with no page yet.
+</p>
+
+<div class="pt-table">
+  <div class="pt-headrow">
+    {% for i in range(0, 8) %}
+      <div class="pt-colhead">{{ periodic_layout.columns[i] }}</div>
     {% endfor %}
-  {% endfor %}
+  </div>
+
+  {{ gridFor(periodic_layout.rows, "pt-main") }}
+
+  <div class="pt-pullout">
+    {{ gridFor(periodic_layout.pullout, "pt-pullout-grid") }}
+  </div>
 </div>
 
 <br/>
 
 <h2>Groups</h2>
-<p>Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
-<ul>
-  {% for group in collections.groups %}
-  <li><a href="{{ group.url }}">{{ group.data.title }}</a></li>
-  {% endfor %}
-</ul>
+<p>
+  Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
+  Every gate lives inside the unitary group; click a region to read about that subgroup.
+</p>
+
+<div class="group-venn-wrap">
+  <svg class="group-venn" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
+    <a href="{{ '/groups/unitary/' | url }}">
+      <rect class="venn-shape" x="8" y="8" width="744" height="424" rx="14" fill="#666666" stroke="#666666"/>
+      <text x="740" y="30" text-anchor="end" fill="#666666">unitary</text>
+    </a>
+    <a href="{{ '/groups/clifford/' | url }}">
+      <rect class="venn-shape" x="40" y="40" width="430" height="260" rx="10" fill="#c2571a" stroke="#c2571a"/>
+      <text x="52" y="62" text-anchor="start" fill="#c2571a">clifford</text>
+    </a>
+    <a href="{{ '/groups/orthogonal/' | url }}">
+      <rect class="venn-shape" x="120" y="150" width="480" height="250" rx="10" fill="#1a8ec2" stroke="#1a8ec2"/>
+      <text x="590" y="393" text-anchor="end" fill="#1a8ec2">orthogonal</text>
+    </a>
+    <a href="{{ '/groups/number-preserving/' | url }}">
+      <rect class="venn-shape" x="300" y="70" width="420" height="290" rx="10" fill="#8a6d00" stroke="#8a6d00"/>
+      <text x="570" y="350" text-anchor="end" fill="#8a6d00">number-preserving</text>
+    </a>
+    <a href="{{ '/groups/diagonal/' | url }}">
+      <rect class="venn-shape" x="310" y="105" width="250" height="141" rx="8" fill="#0b7a5a" stroke="#0b7a5a"/>
+      <text x="548" y="118" text-anchor="end" fill="#0b7a5a">diagonal</text>
+    </a>
+    <a href="{{ '/groups/pauli/' | url }}">
+      <rect class="venn-shape" x="70" y="76" width="260" height="154" rx="8" fill="#2f5fd0" stroke="#2f5fd0"/>
+      <text x="78" y="92" text-anchor="start" fill="#2f5fd0">Pauli</text>
+    </a>
+    <a href="{{ '/groups/permutation/' | url }}">
+      <rect class="venn-shape" x="150" y="210" width="190" height="170" rx="8" fill="#7a2f8f" stroke="#7a2f8f"/>
+      <text x="158" y="370" text-anchor="start" fill="#7a2f8f">permutation</text>
+    </a>
+    <a href="{{ '/groups/matchgate/' | url }}">
+      <path class="venn-shape"
+        d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z"
+        fill="#b3315f" stroke="#b3315f" stroke-linejoin="round"/>
+      <text x="640" y="175" text-anchor="middle" fill="#b3315f" transform="rotate(-90 640 175)">matchgate</text>
+    </a>
+
+    <g class="venn-gates" aria-hidden="true">
+      <text x="180" y="118">Y</text>
+      <text x="222" y="224">X</text>
+      <text x="317" y="186">Z</text>
+      <text x="317" y="223">I</text>
+      <text x="400" y="58">H</text>
+      <text x="222" y="280">CNOT</text>
+      <text x="320" y="280" text-anchor="middle">SWAP</text>
+      <text x="222" y="342">Toffoli</text>
+      <text x="320" y="338" text-anchor="middle">CSWAP</text>
+      <text x="400" y="128">S</text>
+      <text x="510" y="140">T</text>
+      <text x="404" y="200">CZ</text>
+      <text x="512" y="200">CCZ</text>
+      <text x="400" y="90">iSWAP</text>
+      <text x="548" y="90">XY</text>
+      <text x="447" y="277" text-anchor="middle">fSWAP</text>
+      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text>
+      <text x="134" y="330" text-anchor="middle">Ry</text>
+      <text x="682" y="200">FSim</text>
+      <text x="62" y="412">Rx</text>
+      <text x="624" y="374">Rxx</text>
+    </g>
+  </svg>
+</div>
+
+<p class="venn-caption">
+  The small grey labels mark one example gate per intersection.
+</p>
 
 <br/>
 
@@ -154,149 +264,118 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       }
     });
   })();
-
-  (function () {
-    const filterRoot = document.querySelector(".gate-filters");
-    if (!filterRoot) {
-      return;
-    }
-
-    const cells = Array.from(document.querySelectorAll(".periodic-cell"));
-    const filterButtons = Array.from(
-      filterRoot.querySelectorAll(".filter-button[data-group]")
-    );
-    const clearButton = filterRoot.querySelector(".filter-clear");
-    const trackedGroups = [
-      "pauli",
-      "clifford",
-      "orthogonal",
-      "parametrized",
-      "controlled",
-      "hermitian",
-    ];
-    const activeGroups = new Set();
-
-    const normalizeGroup = (group) => (group || "").toLowerCase();
-    const getCellGroups = (cell) =>
-      (cell.dataset.groups || "")
-        .split(" ")
-        .map(normalizeGroup)
-        .filter(Boolean);
-    const hasParameters = (cell) => {
-      const raw = (cell.dataset.parameters || "").toString().trim();
-      if (!raw) {
-        return false;
-      }
-      const numericValue = Number(raw);
-      if (Number.isFinite(numericValue)) {
-        return numericValue > 0;
-      }
-      return raw !== "0";
-    };
-    const isControlled = (cell) => {
-      const raw = (cell.dataset.controlled || "").toString().trim();
-      return raw.length > 0;
-    };
-
-    const getCellProperties = (cell) =>
-      (cell.dataset.properties || "")
-        .split(" ")
-        .map(normalizeGroup)
-        .filter(Boolean);
-
-    const cellMatchesGroup = (cell, group) => {
-      if (group === "parametrized") {
-        return hasParameters(cell);
-      }
-      if (group === "controlled") {
-        return isControlled(cell);
-      }
-      if (group === "hermitian") {
-        return getCellProperties(cell).includes(group);
-      }
-      return getCellGroups(cell).includes(group);
-    };
-
-    function applyHighlight(highlightGroups) {
-      const hasHighlights = highlightGroups && highlightGroups.size > 0;
-
-      cells.forEach((cell) => {
-        const matchedGroups = hasHighlights
-          ? Array.from(highlightGroups).filter((group) =>
-              cellMatchesGroup(cell, group)
-            )
-          : [];
-
-        cell.classList.toggle("is-highlighted", matchedGroups.length > 0);
-        cell.classList.toggle(
-          "is-dimmed",
-          hasHighlights && matchedGroups.length === 0
-        );
-
-        trackedGroups.forEach((group) => {
-          cell.classList.toggle(
-            `highlight-${group}`,
-            matchedGroups.includes(group)
-          );
-        });
-      });
-    }
-
-    function syncButtonState() {
-      filterButtons.forEach((button) => {
-        const group = normalizeGroup(button.dataset.group);
-        const isActive = activeGroups.has(group);
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-
-      if (clearButton) {
-        clearButton.disabled = activeGroups.size === 0;
-      }
-    }
-
-    function applyPreview(group) {
-      if (activeGroups.size > 0) {
-        return;
-      }
-      applyHighlight(new Set([group]));
-    }
-
-    function clearPreview() {
-      if (activeGroups.size > 0) {
-        return;
-      }
-      applyHighlight(activeGroups);
-    }
-
-    filterButtons.forEach((button) => {
-      const group = normalizeGroup(button.dataset.group);
-      button.addEventListener("mouseenter", () => applyPreview(group));
-      button.addEventListener("mouseleave", clearPreview);
-      button.addEventListener("focus", () => applyPreview(group));
-      button.addEventListener("blur", clearPreview);
-      button.addEventListener("click", () => {
-        if (activeGroups.has(group)) {
-          activeGroups.delete(group);
-        } else {
-          activeGroups.add(group);
-        }
-        syncButtonState();
-        applyHighlight(activeGroups);
-      });
-    });
-
-    if (clearButton) {
-      clearButton.addEventListener("click", () => {
-        activeGroups.clear();
-        syncButtonState();
-        applyHighlight(activeGroups);
-      });
-    }
-
-    syncButtonState();
-    applyHighlight(activeGroups);
-  })();
 </script>
 
+<script>
+  const PT_FAMILIES = {{ periodic_layout.families | dump | safe }};
+
+  function drawRegions(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const svg = container.querySelector("svg.pt-outlines");
+    svg.innerHTML = "";
+    container.querySelectorAll(".pt-region-label").forEach((el) => el.remove());
+
+    // cell offsets are grid-relative; the svg overlay is wrap-relative
+    const grid = container.querySelector(".pt-grid2");
+    const ox = grid.offsetLeft, oy = grid.offsetTop;
+
+    const fams = {};
+    for (const cell of container.querySelectorAll("[data-fams]")) {
+      const r = +cell.dataset.row;
+      const L = cell.offsetLeft + ox, T = cell.offsetTop + oy;
+      const R = L + cell.offsetWidth, B = T + cell.offsetHeight;
+      for (const f of cell.dataset.fams.split(" ")) {
+        const rows = (fams[f] ??= new Map());
+        const e = rows.get(r) || { L: 1e9, R: -1e9, T: 1e9, B: -1e9 };
+        e.L = Math.min(e.L, L); e.R = Math.max(e.R, R);
+        e.T = Math.min(e.T, T); e.B = Math.max(e.B, B);
+        rows.set(r, e);
+      }
+    }
+
+    svg.setAttribute("width", container.scrollWidth);
+    svg.setAttribute("height", container.scrollHeight);
+
+    Object.keys(fams).forEach((f) => {
+      const meta = PT_FAMILIES[f];
+      const rows = [...fams[f].entries()].sort((a, b) => a[0] - b[0]).map((e) => e[1]);
+      const inset = meta.inset || 6;
+      const n = rows.length;
+      const ys = [rows[0].T - inset];
+      for (let i = 0; i < n; i++) {
+        ys.push(i < n - 1 ? (rows[i].B + rows[i + 1].T) / 2 + (inset - 8) * 0.5 : rows[i].B + inset);
+      }
+      let d = `M ${rows[0].L - inset} ${ys[0]} L ${rows[0].R + inset} ${ys[0]}`;
+      for (let i = 0; i < n; i++) {
+        d += ` L ${rows[i].R + inset} ${ys[i + 1]}`;
+        if (i < n - 1) d += ` L ${rows[i + 1].R + inset} ${ys[i + 1]}`;
+      }
+      for (let i = n - 1; i >= 0; i--) {
+        d += ` L ${rows[i].L - inset} ${ys[i + 1]}`;
+        if (i > 0) {
+          d += ` L ${rows[i].L - inset} ${ys[i]}`;
+          d += ` L ${rows[i - 1].L - inset} ${ys[i]}`;
+        }
+      }
+      d += " Z";
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", d);
+      path.setAttribute("fill", meta.color);
+      path.setAttribute("fill-opacity", "0.05");
+      path.setAttribute("stroke", meta.color);
+      path.setAttribute("stroke-width", "2.2");
+      path.setAttribute("stroke-linejoin", "round");
+      path.dataset.fam = f;
+      svg.appendChild(path);
+
+      /* pin the label to the topmost row that starts at the region's left
+         edge — narrow overlap tongues (e.g. swap reaching up to CSWAP)
+         start indented, so they never carry the label */
+      const minL = Math.min(...rows.map((r) => r.L));
+      const labelRow = rows.find((r) => Math.abs(r.L - minL) < 2) || rows[0];
+      const label = document.createElement("span");
+      label.className = "pt-region-label";
+      label.textContent = meta.label;
+      label.style.borderColor = meta.color;
+      label.style.color = meta.color;
+      label.style.left = labelRow.L - inset + 8 + "px";
+      label.style.top = labelRow.T - inset - 8 + "px";
+      container.appendChild(label);
+    });
+  }
+
+  function setupHover() {
+    document.querySelectorAll(".pt-wrap").forEach((container) => {
+      const cells = container.querySelectorAll(".pt-cell[data-fams]");
+      const setActive = (fams) => {
+        container.querySelectorAll(".pt-outlines path").forEach((p) =>
+          p.classList.toggle("pt-region-active", fams.includes(p.dataset.fam))
+        );
+        cells.forEach((c) =>
+          c.classList.toggle(
+            "pt-cell-kin",
+            fams.length > 0 && c.dataset.fams.split(" ").some((f) => fams.includes(f))
+          )
+        );
+      };
+      cells.forEach((cell) => {
+        cell.addEventListener("mouseenter", () => setActive(cell.dataset.fams.split(" ")));
+        cell.addEventListener("mouseleave", () => setActive([]));
+      });
+    });
+  }
+
+  function drawAll() {
+    drawRegions("pt-main");
+    drawRegions("pt-pullout-grid");
+  }
+  window.addEventListener("load", () => {
+    drawAll();
+    setTimeout(drawAll, 600); /* re-measure after KaTeX renders */
+    setupHover();
+  });
+  window.addEventListener("resize", drawAll);
+</script>
 {% endblock %}

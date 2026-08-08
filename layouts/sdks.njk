@@ -24,10 +24,10 @@
       </tr>
     </thead>
     <tbody>
-      {% for row in gate_layout %}
-        {% for slug in row %}
-          {% if slug %}
-            {% set gate = collections.gates | gateBySlug(slug) %}
+      {% for row in periodic_layout.rows.concat(periodic_layout.pullout) %}
+        {% for cell in row.cells %}
+          {% if cell and not cell.ghost %}
+            {% set gate = collections.gates | gateBySlug(cell.slug or cell) %}
             {% if gate %}
               <tr>
                 <th scope="row"><a href="{{ gate.url | url }}">{{ gate.data.title | stripMath }}</a></th>

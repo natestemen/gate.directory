@@ -4,12 +4,6 @@
 
   --gradient1: linear-gradient(130deg, var(--color-a) 0%, var(--color-b) 100%);
   --gradient2: var(--color-b);
-  --pauli-accent: #2f5fd0;
-  --clifford-accent: #c2571a;
-  --orthogonal-accent: #1a8ec2;
-  --parametrized-accent: #0b7a5a;
-  --controlled-accent: #7a2f8f;
-  --hermitian-accent: #b3315f;
 
 }
 
@@ -82,229 +76,6 @@ footer {
   background: var(--gradient2);
 }
 
-.periodic-table {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 7px;
-  margin: 20px auto 0;
-  width: 100%;
-  max-width: 720px;
-}
-
-.periodic-cell-empty {
-  visibility: hidden;
-}
-
-.gate-filters {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin: 12px auto 0;
-  width: 100%;
-  max-width: 600px;
-}
-
-.filter-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-family: "TASA Orbiter", sans-serif;
-}
-
-.filter-hint {
-  font-size: 12px;
-  opacity: 0.75;
-  margin-left: auto;
-  font-family: "TASA Orbiter", sans-serif;
-}
-
-.filter-button {
-  border: 2px solid black;
-  border-radius: 999px;
-  padding: 6px 12px;
-  background: white;
-  color: black;
-  font-family: "TASA Orbiter", sans-serif;
-  font-size: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.filter-button:hover,
-.filter-button:focus-visible {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-}
-
-.filter-button.is-active {
-  color: black;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
-}
-
-.filter-button[data-group="pauli"] {
-  border-color: var(--pauli-accent);
-}
-
-.filter-button[data-group="clifford"] {
-  border-color: var(--clifford-accent);
-}
-
-.filter-button[data-group="orthogonal"] {
-  border-color: var(--orthogonal-accent);
-}
-
-.filter-button[data-group="parametrized"] {
-  border-color: var(--parametrized-accent);
-}
-
-.filter-button[data-group="controlled"] {
-  border-color: var(--controlled-accent);
-}
-
-.filter-button[data-group="hermitian"] {
-  border-color: var(--hermitian-accent);
-}
-
-.filter-button.is-active[data-group="pauli"] {
-  background: color-mix(in srgb, var(--pauli-accent) 25%, white);
-}
-
-.filter-button.is-active[data-group="clifford"] {
-  background: color-mix(in srgb, var(--clifford-accent) 25%, white);
-}
-
-.filter-button.is-active[data-group="orthogonal"] {
-  background: color-mix(in srgb, var(--orthogonal-accent) 25%, white);
-}
-
-.filter-button.is-active[data-group="parametrized"] {
-  background: color-mix(in srgb, var(--parametrized-accent) 25%, white);
-}
-
-.filter-button.is-active[data-group="controlled"] {
-  background: color-mix(in srgb, var(--controlled-accent) 25%, white);
-}
-
-.filter-button.is-active[data-group="hermitian"] {
-  background: color-mix(in srgb, var(--hermitian-accent) 25%, white);
-}
-
-.filter-button.filter-clear {
-  border-style: dashed;
-}
-
-.filter-button.filter-clear:disabled {
-  cursor: not-allowed;
-  opacity: 0.45;
-  box-shadow: none;
-  transform: none;
-}
-
-.periodic-table a {
-  text-decoration: none;
-  color: black;
-}
-
-.periodic-cell {
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  background: var(--gradient2);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.periodic-cell .arity-dim {
-  font-size: 8px;
-  position: absolute;
-  top: 2px;
-  right: 2px;
-}
-
-.periodic-cell .symbol {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 6px;
-}
-
-.periodic-cell .name {
-  font-size: 10px;
-  margin-top: auto;
-  margin-bottom: 4px;
-}
-
-.periodic-cell {
-  transition: transform 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease,
-    border-color 0.3s ease, background 0.3s ease;
-}
-
-.periodic-cell:nth-child(3n):hover {
-  transform: rotate(-1deg) skew(0.5deg, -0.75deg);
-}
-.periodic-cell:nth-child(3n + 1):hover {
-  transform: rotate(-1.5deg) skew(1deg, 0.2deg);
-}
-.periodic-cell:nth-child(3n + 2):hover {
-  transform: rotate(2deg) skew(-0.5deg, 1deg);
-}
-
-.periodic-cell.is-dimmed {
-  opacity: 0.35;
-  filter: grayscale(0.25);
-}
-
-.periodic-cell.is-dimmed:hover {
-  transform: none;
-}
-
-.periodic-cell.is-highlighted {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
-}
-
-.periodic-cell.highlight-pauli {
-  border-color: var(--pauli-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pauli-accent) 35%, transparent);
-}
-
-.periodic-cell.highlight-clifford {
-  border-color: var(--clifford-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--clifford-accent) 35%, transparent);
-}
-
-.periodic-cell.highlight-orthogonal {
-  border-color: var(--orthogonal-accent);
-  box-shadow: 0 0 0 3px
-    color-mix(in srgb, var(--orthogonal-accent) 35%, transparent);
-}
-
-.periodic-cell.highlight-parametrized {
-  border-color: var(--parametrized-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--parametrized-accent) 35%, transparent);
-}
-
-.periodic-cell.highlight-controlled {
-  border-color: var(--controlled-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--controlled-accent) 35%, transparent);
-}
-
-.periodic-cell.highlight-hermitian {
-  border-color: var(--hermitian-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hermitian-accent) 35%, transparent);
-}
-
-.periodic-cell.highlight-pauli.highlight-clifford {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--pauli-accent) 20%, white),
-    color-mix(in srgb, var(--clifford-accent) 20%, white)
-  );
-}
-
 .gate-search {
   position: relative;
   max-width: 520px;
@@ -359,4 +130,203 @@ footer {
 
 .search-empty {
   color: #777;
+}
+
+/* periodic-table redesign prototype */
+.pt-table {
+  --pt-cell-w: 82px;
+  margin-top: 18px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pt-headrow {
+  display: grid;
+  grid-template-columns: repeat(8, var(--pt-cell-w));
+  gap: 8px;
+  padding: 0 24px;
+  margin-bottom: 2px;
+}
+
+.pt-colhead {
+  text-align: center;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.pt-wrap {
+  position: relative;
+  width: fit-content;
+  padding: 24px;
+}
+
+.pt-outlines path {
+  transition: fill-opacity 0.18s ease, stroke-width 0.18s ease;
+}
+
+.pt-outlines path.pt-region-active {
+  fill-opacity: 0.13;
+  stroke-width: 3.4;
+}
+
+.pt-cell {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.18s ease;
+}
+
+.pt-cell-kin {
+  filter: saturate(1.45) brightness(1.02);
+}
+
+.pt-outlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pt-grid2 {
+  display: grid;
+  grid-template-columns: repeat(8, var(--pt-cell-w));
+  column-gap: 8px;
+  row-gap: 38px;
+  position: relative;
+  z-index: 1;
+}
+
+.pt-region-label {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  border: 1.5px solid black;
+  border-radius: 999px;
+  padding: 0 9px;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 15px;
+}
+
+.pt-cell {
+  border: 1.5px solid rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  padding: 4px 2px 3px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 72px;
+  text-decoration: none;
+  color: black;
+  background: #f5d395;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pt-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  z-index: 3;
+}
+
+.pt-arity {
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+.pt-params {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 9px;
+  opacity: 0.7;
+  font-family: "TASA Orbiter", sans-serif;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pt-symbol {
+  font-size: 15px;
+  overflow: hidden;
+  font-weight: bold;
+  margin-top: 13px;
+}
+
+.pt-name {
+  font-size: 8.5px;
+  margin-top: auto;
+  padding-top: 3px;
+  font-family: "TASA Orbiter", sans-serif;
+  line-height: 1.25;
+}
+
+.pt-ghost {
+  border-style: dashed;
+  border-color: #777;
+  background: rgba(255, 255, 255, 0.6) !important;
+  opacity: 0.85;
+}
+
+.pt-pullout {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 2px dashed rgba(0, 0, 0, 0.25);
+}
+
+.group-venn-wrap {
+  margin-top: 14px;
+}
+
+.group-venn {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.group-venn .venn-shape {
+  fill-opacity: 0.07;
+  stroke-width: 2.5;
+  transition: fill-opacity 0.18s ease, stroke-width 0.18s ease;
+}
+
+.group-venn text {
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.group-venn a:hover .venn-shape,
+.group-venn a:focus .venn-shape {
+  fill-opacity: 0.22;
+  stroke-width: 4;
+}
+
+.group-venn a:hover text {
+  text-decoration: underline;
+}
+
+.venn-caption {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+.group-venn .venn-gates text {
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  fill: #333;
+  opacity: 0.75;
+  text-transform: none;
+  letter-spacing: 0;
+  pointer-events: none;
 }
