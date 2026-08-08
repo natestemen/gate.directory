@@ -9,6 +9,7 @@
   --orthogonal-accent: #1a8ec2;
   --parametrized-accent: #0b7a5a;
   --controlled-accent: #7a2f8f;
+  --hermitian-accent: #b3315f;
 
 }
 
@@ -162,6 +163,10 @@ footer {
   border-color: var(--controlled-accent);
 }
 
+.filter-button[data-group="hermitian"] {
+  border-color: var(--hermitian-accent);
+}
+
 .filter-button.is-active[data-group="pauli"] {
   background: color-mix(in srgb, var(--pauli-accent) 25%, white);
 }
@@ -180,6 +185,10 @@ footer {
 
 .filter-button.is-active[data-group="controlled"] {
   background: color-mix(in srgb, var(--controlled-accent) 25%, white);
+}
+
+.filter-button.is-active[data-group="hermitian"] {
+  background: color-mix(in srgb, var(--hermitian-accent) 25%, white);
 }
 
 .filter-button.filter-clear {
@@ -281,6 +290,11 @@ footer {
 .periodic-cell.highlight-controlled {
   border-color: var(--controlled-accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--controlled-accent) 35%, transparent);
+}
+
+.periodic-cell.highlight-hermitian {
+  border-color: var(--hermitian-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hermitian-accent) 35%, transparent);
 }
 
 .periodic-cell.highlight-pauli.highlight-clifford {

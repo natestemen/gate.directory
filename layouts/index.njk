@@ -25,6 +25,7 @@ two-qubit gate).</p>
   <button class="filter-button" type="button" data-group="orthogonal" aria-pressed="false">Real</button>
   <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
   <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
+  <button class="filter-button" type="button" data-group="hermitian" aria-pressed="false">Hermitian</button>
   <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
   <span class="filter-hint">Hover or click a filter to emphasize matching gates.</span>
 </div>
@@ -37,7 +38,8 @@ two-qubit gate).</p>
         {% set gate = collections.gates | gateBySlug(slug) %}
         {% if gate %}
           {% set groupList = gate.data.groups or [] %}
-          <a class="periodic-cell" href="{{ gate.url }}" data-groups="{{ groupList | join(' ') }}" data-parameters="{{ gate.data.parameters | default('') }}" data-controlled="{{ gate.data.controlled | default('') }}">
+          {% set propList = gate.data.properties or [] %}
+          <a class="periodic-cell" href="{{ gate.url }}" data-groups="{{ groupList | join(' ') }}" data-properties="{{ propList | join(' ') }}" data-parameters="{{ gate.data.parameters | default('') }}" data-controlled="{{ gate.data.controlled | default('') }}">
             <span class="arity-dim">{{ gate.data.arity }}q{{ gate.data.dimension | default(2) }}d</span>
             <div class="symbol">${{ gate.data.symbol | safe }}$</div>
             <div class="name">{{ gate.data.title }}</div>
@@ -170,6 +172,7 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       "orthogonal",
       "parametrized",
       "controlled",
+      "hermitian",
     ];
     const activeGroups = new Set();
 
@@ -195,12 +198,21 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       return raw.length > 0;
     };
 
+    const getCellProperties = (cell) =>
+      (cell.dataset.properties || "")
+        .split(" ")
+        .map(normalizeGroup)
+        .filter(Boolean);
+
     const cellMatchesGroup = (cell, group) => {
       if (group === "parametrized") {
         return hasParameters(cell);
       }
       if (group === "controlled") {
         return isControlled(cell);
+      }
+      if (group === "hermitian") {
+        return getCellProperties(cell).includes(group);
       }
       return getCellGroups(cell).includes(group);
     };
