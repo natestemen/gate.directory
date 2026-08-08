@@ -24,7 +24,32 @@ sdks:
   cirq:
     name: cirq.XPowGate
     url: https://quantumai.google/reference/python/cirq/XPowGate
-    note: No named constant. Use cirq.X**0.5 (XPowGate with exponent=0.5).
+    note: "No named constant. SX = cirq.X**0.5 exactly (XPowGate with exponent 0.5)."
+  qsharp:
+    name: Std.Intrinsic.SX
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/sx
+  pyquil:
+    note: Not available natively. RX(pi/2) is equal up to global phase.
+  braket:
+    name: braket.circuits.gates.V
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.V
+    note: "Braket names sqrt(X) 'V'; Vi is its inverse"
+  bqskit:
+    name: bqskit.ir.gates.SXGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SXGate.html
+    note: Also exported as SqrtXGate
+  qibo:
+    name: qibo.gates.SX
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SX
+  pytket:
+    name: pytket.circuit.OpType.SX
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.SX
+  stim:
+    name: SQRT_X
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_X
+  qasm:
+    name: "stdgates.inc: sx"
+    url: https://openqasm.com/language/standard_library.html#sx
 ---
 
 The $\sqrt{X}$ gate is a single-qubit unitary that squares to $X$.

@@ -21,6 +21,17 @@ sdks:
   braket:
     name: braket.circuits.gates.GPi2
     url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.GPi2
+  bqskit:
+    name: bqskit.ir.gates.U1qPi2Gate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1qPi2Gate.html
+    note: Quantinuum U1qPi2 = R(pi/2, phi), identical to GPi2(phi)
+  qibo:
+    name: qibo.gates.GPI2
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GPI2
+  pytket:
+    name: pytket.circuit.OpType.GPI2
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.GPI2
+    note: "Phase phi in half-turns: GPI2(phi/pi)"
 ---
 
 The GPi2 gate is the half-pulse counterpart of [GPi](/gates/gpi): a $\pi/2$ rotation about the equatorial axis at azimuthal angle $\phi$. It is exactly the general [phased rotation](/gates/r) at $\theta = \pi/2$: $\mathrm{GPi2}(\phi) = R(\pi/2, \phi)$.

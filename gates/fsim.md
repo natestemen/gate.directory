@@ -10,15 +10,29 @@ arity: 2
 parameters: 2
 description: Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.
 sdks:
+  qiskit:
+    note: Not available natively. Compose XXPlusYYGate with CPhaseGate.
+  pennylane:
+    note: Not available natively. Compose from qml.IsingXY and qml.ControlledPhaseShift.
   cirq:
     name: cirq.FSimGate
     url: https://quantumai.google/reference/python/cirq/FSimGate
   pyquil:
     name: pyquil.simulation.matrices.FSIM
     url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.FSIM
+    note: Matrix only; wrap with DefGate to use in programs.
+  braket:
+    note: No fSim class; compose XY and CPhaseShift
   bqskit:
     name: bqskit.ir.gates.FSIMGate
     url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.FSIMGate.html
+  qibo:
+    name: qibo.gates.fSim
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.fSim
+  pytket:
+    name: pytket.circuit.OpType.FSim
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.FSim
+    note: fSim(theta,phi) = FSim(theta/pi, phi/pi); angles in half-turns
 ---
 
 The fermionic simulator gate is a two-parameter family that unifies the [iSWAP](/gates/iswap) and [CZ](/gates/cz) interactions.

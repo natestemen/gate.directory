@@ -14,6 +14,17 @@ groups:
 arity: 1
 dimension: d
 description: Qudit generalization of Pauli-$Z$ that tags each basis state with a root-of-unity phase, $|j\rangle \mapsto \omega^j |j\rangle$.
+sdks:
+  pennylane:
+    name: pennylane.TClock
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.TClock.html
+    note: Qutrit (d=3) case only; no general qudit clock in PennyLane.
+  cirq:
+    note: Not available natively. Cirq supports qudits; define a custom gate with _qid_shape_.
+  bqskit:
+    name: bqskit.ir.gates.ClockGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ClockGate.html
+    note: Qudit clock gate; radix defaults to 3 (qutrit)
 ---
 
 The clock gate generalizes [Pauli-$Z$](/gates/pauli-z) from qubits to $d$-level qudits, advancing the phase of each basis state like the hand of a clock:

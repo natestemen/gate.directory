@@ -22,6 +22,30 @@ sdks:
   cirq:
     name: cirq.SWAP
     url: https://quantumai.google/reference/python/cirq/SWAP
+  qsharp:
+    name: Std.Intrinsic.SWAP
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/swap
+  pyquil:
+    name: pyquil.gates.SWAP
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.SWAP
+  braket:
+    name: braket.circuits.gates.Swap
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Swap
+  bqskit:
+    name: bqskit.ir.gates.SwapGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SwapGate.html
+  qibo:
+    name: qibo.gates.SWAP
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SWAP
+  pytket:
+    name: pytket.circuit.OpType.SWAP
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.SWAP
+  stim:
+    name: SWAP
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SWAP
+  qasm:
+    name: "stdgates.inc: swap"
+    url: https://openqasm.com/language/standard_library.html#swap
 ---
 
 The SWAP gate exchanges the states of two qubits and is commonly used to reorder qubits or mediate interactions between distant qubits.

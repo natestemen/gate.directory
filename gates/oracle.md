@@ -11,6 +11,15 @@ groups:
 arity: n
 dimension: p
 description: Implements a classical function as a reversible black-box unitary that can be queried coherently.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.BitFlipOracleGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.BitFlipOracleGate
+    note: Bit-flip oracle built from a Boolean expression.
+  braket:
+    note: No oracle builder; wrap a matrix with braket.circuits.gates.Unitary
+  pytket:
+    note: ToffoliBox encodes a classical basis-state permutation
 ---
 
 An oracle is a quantum operation that implements a classical function $f: \\{0, 1\\}^n \to \\{0, 1\\}^m$ as a reversible, unitary operation. Given an input register $|x\rangle$ and output register $|y\rangle$ the gate acts as

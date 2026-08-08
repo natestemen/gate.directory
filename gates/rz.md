@@ -23,6 +23,28 @@ sdks:
   cirq:
     name: cirq.Rz
     url: https://quantumai.google/reference/python/cirq/Rz
+  qsharp:
+    name: Std.Intrinsic.Rz
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rz
+  pyquil:
+    name: pyquil.gates.RZ
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RZ
+  braket:
+    name: braket.circuits.gates.Rz
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Rz
+  bqskit:
+    name: bqskit.ir.gates.RZGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RZGate.html
+  qibo:
+    name: qibo.gates.RZ
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RZ
+  pytket:
+    name: pytket.circuit.OpType.Rz
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Rz
+    note: "Angle in half-turns: Rz(theta/pi)"
+  qasm:
+    name: "stdgates.inc: rz"
+    url: https://openqasm.com/language/standard_library.html#rz
 ---
 
 The $R_z$ gate rotates a qubit by angle $\theta$ around the $z$ axis, adding a relative phase between $|0\rangle$ and $|1\rangle$.

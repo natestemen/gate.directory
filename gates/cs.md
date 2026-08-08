@@ -19,9 +19,27 @@ sdks:
     name: qiskit.circuit.library.CSGate
     url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSGate
   pennylane:
-    note: Not available natively. Construct with qml.ctrl(qml.S(wire), control).
+    note: Not available natively. Construct with qml.ctrl(qml.S(0), 1).
   cirq:
-    note: Not available natively. Construct as cirq.CZ ** 0.5.
+    name: cirq.CZPowGate
+    url: https://quantumai.google/reference/python/cirq/CZPowGate
+    note: "No named constant. CS = cirq.CZ**0.5 (CZPowGate with exponent 0.5)."
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled S([control], target)."
+  pyquil:
+    note: Equal to CPHASE(pi/2, control, target), or use S(target).controlled(control).
+  braket:
+    note: No CS class; CPhaseShift(pi/2) or s(target, control=q)
+  bqskit:
+    name: bqskit.ir.gates.CSGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CSGate.html
+  qibo:
+    note: Construct as qibo.gates.S(q1).controlled_by(q0) or qibo.gates.CU1(q0, q1, pi/2)
+  pytket:
+    name: pytket.circuit.OpType.CS
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CS
+  qasm:
+    note: "Not in stdgates.inc; write ctrl @ s q0, q1."
 ---
 
 The controlled-$S$ gate is a two-qubit diagonal gate, and the special case $\phi = \pi/2$ of the [controlled phase](/gates/controlled-phase) gate.

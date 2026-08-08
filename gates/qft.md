@@ -8,19 +8,28 @@ arity: n
 description: Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.
 sdks:
   qiskit:
-    name: qiskit.circuit.library.QFT
-    url: https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.QFT
+    name: qiskit.circuit.library.QFTGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.QFTGate
+    note: Replaces the deprecated QFT class.
   pennylane:
     name: pennylane.QFT
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.QFT.html
-  qsharp:
-    name: Std.Canon.ApplyQFT
-    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/applyqft
   cirq:
     name: cirq.qft
     url: https://quantumai.google/reference/python/cirq/qft
+    note: "cirq.qft(*qubits) op; underlying class cirq.QuantumFourierTransformGate."
+  qsharp:
+    name: Std.Canon.ApplyQFT
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/applyqft
+    note: Applies only the rotation part; add SwapReverseRegister for the full QFT.
   pyquil:
-  braket:
+    note: No built-in QFT; construct from H and CPHASE gates.
+  qibo:
+    name: qibo.models.QFT
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.models.qft.QFT
+    note: Circuit model, not a gate class
+  pytket:
+    note: CircBox of H plus CU1 ladder and final swaps
 ---
 
 The quantum Fourier transform maps the computational basis state $|j\rangle$ to an equal superposition with phases determined by $j$.

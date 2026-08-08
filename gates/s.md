@@ -24,6 +24,31 @@ sdks:
   cirq:
     name: cirq.S
     url: https://quantumai.google/reference/python/cirq/S
+  qsharp:
+    name: Std.Intrinsic.S
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/s
+  pyquil:
+    name: pyquil.gates.S
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.S
+  braket:
+    name: braket.circuits.gates.S
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.S
+  bqskit:
+    name: bqskit.ir.gates.SGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SGate.html
+  qibo:
+    name: qibo.gates.S
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.S
+  pytket:
+    name: pytket.circuit.OpType.S
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.S
+  stim:
+    name: S
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#S
+    note: Stim also accepts the alternate name SQRT_Z.
+  qasm:
+    name: "stdgates.inc: s"
+    url: https://openqasm.com/language/standard_library.html#s
 ---
 
 The $S$ gate applies a relative phase of $i$ to the $|1\rangle$ component.

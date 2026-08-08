@@ -25,6 +25,30 @@ sdks:
   cirq:
     name: cirq.CZ
     url: https://quantumai.google/reference/python/cirq/CZ
+  qsharp:
+    name: Std.Canon.CZ
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cz
+  pyquil:
+    name: pyquil.gates.CZ
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CZ
+  braket:
+    name: braket.circuits.gates.CZ
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CZ
+  bqskit:
+    name: bqskit.ir.gates.CZGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CZGate.html
+  qibo:
+    name: qibo.gates.CZ
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CZ
+  pytket:
+    name: pytket.circuit.OpType.CZ
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CZ
+  stim:
+    name: CZ
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CZ
+  qasm:
+    name: "stdgates.inc: cz"
+    url: https://openqasm.com/language/standard_library.html#cz
 ---
 
 The controlled-$Z$ gate is a two-qubit diagonal entangling gate.

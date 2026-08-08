@@ -25,9 +25,26 @@ sdks:
   qsharp:
     name: Std.Canon.CY
     url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cy
+  pyquil:
+    note: "Not available natively. Use the CONTROLLED modifier: Y(target).controlled(control)."
   braket:
     name: braket.circuits.gates.CY
     url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CY
+  bqskit:
+    name: bqskit.ir.gates.CYGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CYGate.html
+  qibo:
+    name: qibo.gates.CY
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CY
+  pytket:
+    name: pytket.circuit.OpType.CY
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CY
+  stim:
+    name: CY
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CY
+  qasm:
+    name: "stdgates.inc: cy"
+    url: https://openqasm.com/language/standard_library.html#cy
 ---
 
 The controlled-$Y$ gate is a two-qubit entangling gate that conditionally applies $Y$ to the target.

@@ -11,12 +11,11 @@ citation:
   year: 2004
   url: https://arxiv.org/abs/quant-ph/0312193
 sdks:
-  qiskit:
-    note: Not available natively.
-  pennylane:
-    note: Not available natively.
-  cirq:
-    note: Not available natively.
+  bqskit:
+    name: bqskit.ir.gates.BGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.BGate.html
+  pytket:
+    note: Locally equivalent to TK2(0.5, 0.25, 0); TK2 angles in half-turns
 ---
 
 The B gate introduced in Zhang, Vala, Sastry, and Whaley is

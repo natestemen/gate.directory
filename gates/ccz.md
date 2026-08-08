@@ -26,6 +26,23 @@ sdks:
   cirq:
     name: cirq.CCZ
     url: https://quantumai.google/reference/python/cirq/CCZ
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled Z([c1, c2], target)."
+  pyquil:
+    note: "Not available natively. Use the CONTROLLED modifier: CZ(q1, q2).controlled(q0)."
+  braket:
+    note: "No CCZ class; use z with two controls: Circuit().z(t, control=[c0,c1])"
+  bqskit:
+    note: No CCZGate; build with ControlledGate(ZGate(), 2)
+  qibo:
+    name: qibo.gates.CCZ
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CCZ
+  pytket:
+    name: pytket.circuit.OpType.CnZ
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CnZ
+    note: Use CnZ with two controls
+  qasm:
+    note: "Not in stdgates.inc; write ctrl @ ctrl @ z q0, q1, q2."
 ---
 
 The controlled-controlled-$Z$ gate applies a phase of $-1$ to the $|111\rangle$ state and acts as the identity on all others.

@@ -24,7 +24,32 @@ sdks:
   cirq:
     name: cirq.ZPowGate
     url: https://quantumai.google/reference/python/cirq/ZPowGate
-    note: No dedicated P gate. Use cirq.ZPowGate(exponent=φ/π) or cirq.Z**t.
+    note: "P(φ) = cirq.Z**(φ/π) (ZPowGate with exponent φ/π)."
+  qsharp:
+    name: Std.Intrinsic.R1
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/r1
+    note: R1(theta, q) applies the phase exp(i theta) to the one-state.
+  pyquil:
+    name: pyquil.gates.PHASE
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.PHASE
+  braket:
+    name: braket.circuits.gates.PhaseShift
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.PhaseShift
+  bqskit:
+    name: bqskit.ir.gates.U1Gate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1Gate.html
+    note: Named U1Gate; diag(1, e^(i theta))
+  qibo:
+    name: qibo.gates.U1
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U1
+    note: "Named U1 in Qibo, diag(1, e^{iθ})"
+  pytket:
+    name: pytket.circuit.OpType.U1
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U1
+    note: P(phi) = U1(phi/pi); angle in half-turns
+  qasm:
+    name: "stdgates.inc: p"
+    url: https://openqasm.com/language/standard_library.html#p
 ---
 
 The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiplying $|1\rangle$ by $e^{i\phi}$.

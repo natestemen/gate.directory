@@ -23,6 +23,24 @@ sdks:
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.CH.html
   cirq:
     note: Not available natively. Construct with cirq.H.controlled().
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled H([control], target)."
+  pyquil:
+    note: "Not available natively. Use the CONTROLLED modifier: H(target).controlled(control)."
+  braket:
+    note: No CH class; use h(target, control=q) control modifier
+  bqskit:
+    name: bqskit.ir.gates.CHGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CHGate.html
+  qibo:
+    name: qibo.gates.CH
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CH
+  pytket:
+    name: pytket.circuit.OpType.CH
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CH
+  qasm:
+    name: "stdgates.inc: ch"
+    url: https://openqasm.com/language/standard_library.html#ch
 ---
 
 The controlled-Hadamard gate performs a conditional change of basis, moving the target between the computational basis and the Hadamard basis only when the control is $|1\rangle$.

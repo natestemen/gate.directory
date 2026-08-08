@@ -22,18 +22,28 @@ sdks:
   cirq:
     name: cirq.Ry
     url: https://quantumai.google/reference/python/cirq/Ry
+  qsharp:
+    name: Std.Intrinsic.Ry
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/ry
   pyquil:
     name: pyquil.gates.RY
     url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RY
   braket:
     name: braket.circuits.gates.Ry
     url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Ry
-  qibo:
-    name: qibo.gates.RY
-    url: https://qibo.science/qibo/stable/api-reference/qibo.html#rotation-y-axis-ry
   bqskit:
     name: bqskit.ir.gates.RYGate
     url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYGate.html
+  qibo:
+    name: qibo.gates.RY
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RY
+  pytket:
+    name: pytket.circuit.OpType.Ry
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Ry
+    note: "Angle in half-turns: Ry(theta/pi)"
+  qasm:
+    name: "stdgates.inc: ry"
+    url: https://openqasm.com/language/standard_library.html#ry
 ---
 
 The $R_y$ gate rotates a qubit by angle $\theta$ around the $y$ axis.

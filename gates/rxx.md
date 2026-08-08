@@ -23,7 +23,31 @@ sdks:
   cirq:
     name: cirq.XXPowGate
     url: https://quantumai.google/reference/python/cirq/XXPowGate
-    note: Uses exponent t where θ = πt, not radians. cirq.XX is the t=1 constant.
+    note: "Rxx(θ) = cirq.XX**(θ/π) up to global phase."
+  qsharp:
+    name: Std.Intrinsic.Rxx
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rxx
+  pyquil:
+    name: pyquil.simulation.matrices.RXX
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.RXX
+    note: Matrix only; wrap with DefGate to use in programs.
+  braket:
+    name: braket.circuits.gates.XX
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.XX
+  bqskit:
+    name: bqskit.ir.gates.RXXGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RXXGate.html
+  qibo:
+    name: qibo.gates.RXX
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RXX
+  pytket:
+    name: pytket.circuit.OpType.XXPhase
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.XXPhase
+    note: Rxx(theta) = XXPhase(theta/pi); angle in half-turns
+  stim:
+    name: SQRT_XX
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_XX
+    note: "Only the Clifford point: SQRT_XX = RXX(pi/2) up to global phase."
 ---
 
 The $R_{xx}$ gate rotates in the $XX$ interaction basis by angle $\theta$.

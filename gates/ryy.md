@@ -23,7 +23,31 @@ sdks:
   cirq:
     name: cirq.YYPowGate
     url: https://quantumai.google/reference/python/cirq/YYPowGate
-    note: Uses exponent t where θ = πt, not radians. cirq.YY is the t=1 constant.
+    note: "Ryy(θ) = cirq.YY**(θ/π) up to global phase."
+  qsharp:
+    name: Std.Intrinsic.Ryy
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/ryy
+  pyquil:
+    name: pyquil.simulation.matrices.RYY
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.RYY
+    note: Matrix only; wrap with DefGate to use in programs.
+  braket:
+    name: braket.circuits.gates.YY
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.YY
+  bqskit:
+    name: bqskit.ir.gates.RYYGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYYGate.html
+  qibo:
+    name: qibo.gates.RYY
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RYY
+  pytket:
+    name: pytket.circuit.OpType.YYPhase
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.YYPhase
+    note: Ryy(theta) = YYPhase(theta/pi); angle in half-turns
+  stim:
+    name: SQRT_YY
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_YY
+    note: "Only the Clifford point: SQRT_YY = RYY(pi/2) up to global phase."
 ---
 
 The $R_{yy}$ gate rotates in the $YY$ interaction basis by angle $\theta$.

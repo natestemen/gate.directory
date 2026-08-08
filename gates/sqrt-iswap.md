@@ -20,9 +20,23 @@ sdks:
   pennylane:
     name: pennylane.SISWAP
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.SISWAP.html
+    note: Also available under the alias qml.SQISW.
   cirq:
     name: cirq.SQRT_ISWAP
     url: https://quantumai.google/reference/python/cirq/SQRT_ISWAP
+  pyquil:
+    note: Equal to pyquil.gates.XY(pi/2); a dedicated SQISW gate exists only on master.
+  braket:
+    note: No named class; XY(pi/2) realizes sqrt-iSWAP
+  bqskit:
+    name: bqskit.ir.gates.SqrtISwapGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SqrtISwapGate.html
+  qibo:
+    name: qibo.gates.SiSWAP
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SiSWAP
+    note: Dagger available as qibo.gates.SiSWAPDG
+  pytket:
+    note: ISWAP(0.5) in pytket; ISWAP angle is in half-turns
 ---
 
 The $\sqrt{i\mathrm{SWAP}}$ gate is the square root of [iSWAP](/gates/iswap): applying it twice recovers the full iSWAP gate.

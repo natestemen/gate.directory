@@ -34,6 +34,19 @@ sdks:
     note: Not available natively. Construct with cirq.X.controlled(n).
   qsharp:
     note: Apply via the Controlled functor, Controlled X(controls, target).
+  pyquil:
+    note: "Not available natively. Chain CONTROLLED modifiers: X(t).controlled(c1).controlled(c2)."
+  braket:
+    note: "No MCX class; use x(target, control=[...]) with any number of controls"
+  bqskit:
+    note: No MCXGate; build with ControlledGate(XGate(), num_controls=n)
+  qibo:
+    note: "Construct as qibo.gates.X(target).controlled_by(*controls)"
+  pytket:
+    name: pytket.circuit.OpType.CnX
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CnX
+  qasm:
+    note: "Not in stdgates.inc; write ctrl @ ctrl @ x q0, q1, q2."
 ---
 
 The multi-controlled $X$ gate extends the family [$X$](/gates/pauli-x) → [CNOT](/gates/cnot) → [Toffoli](/gates/toffoli) to $n$ controls:

@@ -16,13 +16,20 @@ parameters: 1
 description: Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.
 sdks:
   qiskit:
-    note: Not available natively as a named gate.
+    note: Not a named gate. XXPlusYYGate acts as a Givens rotation up to angle convention.
   pennylane:
-    name: pennylane.GivensRotation
-    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.GivensRotation.html
+    name: pennylane.SingleExcitation
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.SingleExcitation.html
+    note: "Half-angle convention: SingleExcitation(θ) is the Givens rotation by θ/2."
   cirq:
     name: cirq.givens
     url: https://quantumai.google/reference/python/cirq/givens
+    note: cirq.givens(θ) returns a PhasedISwapPowGate.
+  qibo:
+    name: qibo.gates.GIVENS
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GIVENS
+  pytket:
+    note: "PhasedISWAP(0.25, 2*theta/pi) implements Givens(theta)"
 ---
 
 A Givens rotation is a two-qubit gate that performs a real rotation in the single-excitation subspace spanned by $|01\rangle$ and $|10\rangle$, leaving $|00\rangle$ and $|11\rangle$ unchanged.

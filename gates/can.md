@@ -10,12 +10,16 @@ arity: 2
 parameters: 3
 description: Parameterizes every two-qubit interaction up to local unitaries.
 sdks:
-  qiskit:
-    note: Not available natively.
   pennylane:
-    note: Not available natively.
-  cirq:
-    note: Not available natively.
+    note: Not available natively. Compose from qml.IsingXX/IsingYY/IsingZZ.
+  braket:
+    note: No Can class; compose XX, YY, ZZ Ising gates
+  bqskit:
+    note: No CanonicalGate; compose RXXGate, RYYGate, RZZGate or use PauliGate(2)
+  pytket:
+    name: pytket.circuit.OpType.TK2
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.TK2
+    note: "TK2(a,b,c) = e^{-i(pi/2)(aXX+bYY+cZZ)}; angles in half-turns"
 ---
 
 The canonical gate generates every two-qubit interaction (up to single-qubit rotations) through three real parameters $(a, b, c)$:

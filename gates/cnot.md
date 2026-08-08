@@ -34,6 +34,26 @@ sdks:
   pyquil:
     name: pyquil.gates.CNOT
     url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CNOT
+  braket:
+    name: braket.circuits.gates.CNot
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CNot
+  bqskit:
+    name: bqskit.ir.gates.CNOTGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CNOTGate.html
+    note: Also exported as CXGate
+  qibo:
+    name: qibo.gates.CNOT
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CNOT
+  pytket:
+    name: pytket.circuit.OpType.CX
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CX
+  stim:
+    name: CX
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CX
+    note: Stim also accepts the alternate name CNOT.
+  qasm:
+    name: "stdgates.inc: cx"
+    url: https://openqasm.com/language/standard_library.html#cx
 ---
 
 The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally applies $X$ to the target.

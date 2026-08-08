@@ -23,6 +23,17 @@ sdks:
   braket:
     name: braket.circuits.gates.GPi
     url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.GPi
+  bqskit:
+    name: bqskit.ir.gates.U1qPiGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1qPiGate.html
+    note: U1qPi = R(pi, phi); equals GPi(phi) up to a global phase of -i
+  qibo:
+    name: qibo.gates.GPI
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GPI
+  pytket:
+    name: pytket.circuit.OpType.GPI
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.GPI
+    note: "Phase phi in half-turns: GPI(phi/pi)"
 ---
 
 The GPi gate is one of IonQ's native gates: a $\pi$ rotation about an axis in the equatorial plane of the Bloch sphere, at azimuthal angle $\phi$. Physically it is a resonant Rabi pulse whose phase sets $\phi$.

@@ -14,6 +14,12 @@ citation:
   title: Quantum computational networks
   year: 1989
   url: https://doi.org/10.1098/rspa.1989.0099
+sdks:
+  qibo:
+    name: qibo.gates.DEUTSCH
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.DEUTSCH
+  pytket:
+    note: "QControlBox with 2 controls on a Unitary1qBox of iRx(2*theta)"
 ---
 
 The Deutsch gate is the doubly-controlled rotation David Deutsch introduced in 1989 to prove that a *single* three-qubit gate can be universal for quantum computation. When both controls are set it applies $i R_x(2\theta)$ to the target; otherwise it does nothing:

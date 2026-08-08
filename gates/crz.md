@@ -22,7 +22,26 @@ sdks:
     name: pennylane.CRZ
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.CRZ.html
   cirq:
-    note: Not available natively. Construct with cirq.rz(theta).controlled().
+    note: Not available natively. Construct with cirq.rz(θ).controlled().
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled Rz([control], (theta, target))."
+  pyquil:
+    note: Not available natively. Use RZ(theta, target).controlled(control).
+  braket:
+    note: No CRz class; use rz(target, angle, control=q)
+  bqskit:
+    name: bqskit.ir.gates.CRZGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRZGate.html
+  qibo:
+    name: qibo.gates.CRZ
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRZ
+  pytket:
+    name: pytket.circuit.OpType.CRz
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRz
+    note: "Angle in half-turns: CRz(theta/pi)"
+  qasm:
+    name: "stdgates.inc: crz"
+    url: https://openqasm.com/language/standard_library.html#crz
 ---
 
 The controlled-$R_z$ gate applies the single-qubit rotation [$R_z(\theta)$](/gates/rz) to the target, conditioned on the control.

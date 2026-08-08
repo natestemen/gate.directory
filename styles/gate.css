@@ -151,3 +151,102 @@ p a .katex { /* this is probably too specific? */
 .gate-citation {
   font-size: 14px;
 }
+
+.sdk-matrix-wrap {
+  margin-top: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+  .sdk-matrix-wrap {
+    overflow-x: auto;
+  }
+}
+
+.sdk-matrix {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sdk-matrix th:first-child {
+  width: 190px;
+}
+
+.sdk-matrix th,
+.sdk-matrix td {
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #eee;
+  padding: 3px 5px;
+  text-align: center;
+}
+
+.sdk-matrix tr:last-child th,
+.sdk-matrix tr:last-child td {
+  border-bottom: none;
+}
+
+.sdk-matrix thead th {
+  position: sticky;
+  top: 0;
+  background: var(--gradient2);
+  border-bottom: 2px solid black;
+  vertical-align: bottom;
+  padding: 8px 5px;
+  z-index: 2;
+}
+
+.sdk-matrix thead th .rot {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: inline-block;
+  line-height: 1.1;
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+.sdk-matrix tbody th {
+  position: sticky;
+  left: 0;
+  background: white;
+  text-align: left;
+  border-right: 2px solid black;
+  font-weight: 400;
+  white-space: normal;
+  z-index: 1;
+}
+
+.sdk-matrix thead th:first-child {
+  left: 0;
+  text-align: left;
+  z-index: 3;
+  border-right: 2px solid black;
+}
+
+.sdk-matrix .cell-yes a {
+  text-decoration: none;
+  color: #1a7f37;
+}
+
+.sdk-matrix .cell-note .sdk-note {
+  margin-left: 0;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.sdk-matrix .cell-note .sdk-note::after {
+  white-space: normal;
+  width: max-content;
+  max-width: 280px;
+}
+
+.sdk-matrix .cell-no {
+  color: #ccc;
+}
+
+.matrix-legend-yes { color: #1a7f37; }
+.matrix-legend-note { opacity: 0.65; }
+.matrix-legend-no { color: #999; }

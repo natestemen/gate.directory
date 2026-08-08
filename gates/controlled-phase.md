@@ -25,7 +25,30 @@ sdks:
   cirq:
     name: cirq.CZPowGate
     url: https://quantumai.google/reference/python/cirq/CZPowGate
-    note: Use cirq.CZPowGate(exponent=φ/π). The helper cirq.cphase(rads) also works.
+    note: CPhase(φ) = cirq.CZPowGate(exponent=φ/π); helper cirq.cphase(φ).
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled R1([control], (phi, target))."
+  pyquil:
+    name: pyquil.gates.CPHASE
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CPHASE
+  braket:
+    name: braket.circuits.gates.CPhaseShift
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CPhaseShift
+    note: CPhaseShift00/01/10 variants also available
+  bqskit:
+    name: bqskit.ir.gates.CPGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CPGate.html
+  qibo:
+    name: qibo.gates.CU1
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CU1
+    note: "Named CU1 (a.k.a. CPhase); applies e^{iθ} to |11⟩"
+  pytket:
+    name: pytket.circuit.OpType.CU1
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CU1
+    note: CP(phi) = CU1(phi/pi); angle in half-turns
+  qasm:
+    name: "stdgates.inc: cp"
+    url: https://openqasm.com/language/standard_library.html#cp
 ---
 
 The controlled-phase gate is a two-qubit diagonal gate that adds a phase to the $|11\rangle$ component.

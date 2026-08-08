@@ -24,7 +24,31 @@ sdks:
   cirq:
     name: cirq.ZZPowGate
     url: https://quantumai.google/reference/python/cirq/ZZPowGate
-    note: Uses exponent t where θ = πt, not radians. cirq.ZZ is the t=1 constant.
+    note: "Rzz(θ) = cirq.ZZ**(θ/π) up to global phase."
+  qsharp:
+    name: Std.Intrinsic.Rzz
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rzz
+  pyquil:
+    name: pyquil.simulation.matrices.RZZ
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.RZZ
+    note: Matrix only; wrap with DefGate to use in programs.
+  braket:
+    name: braket.circuits.gates.ZZ
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.ZZ
+  bqskit:
+    name: bqskit.ir.gates.RZZGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RZZGate.html
+  qibo:
+    name: qibo.gates.RZZ
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RZZ
+  pytket:
+    name: pytket.circuit.OpType.ZZPhase
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ZZPhase
+    note: Rzz(theta) = ZZPhase(theta/pi); angle in half-turns
+  stim:
+    name: SQRT_ZZ
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_ZZ
+    note: "Only the Clifford point: SQRT_ZZ = RZZ(pi/2) up to global phase."
 ---
 
 The $R_{zz}$ gate implements an Ising-type interaction with rotation angle $\theta$.

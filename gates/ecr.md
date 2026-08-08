@@ -13,12 +13,20 @@ sdks:
   pennylane:
     name: pennylane.ECR
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.ECR.html
-    note: PennyLane's ECR uses the opposite qubit ordering convention from Qiskit.
-  cirq:
-    note: Not available natively.
+    note: Opposite qubit-ordering convention from Qiskit.
+  braket:
+    name: braket.circuits.gates.ECR
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.ECR
   bqskit:
     name: bqskit.ir.gates.ECRGate
     url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ECRGate.html
+  qibo:
+    name: qibo.gates.ECR
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.ECR
+    note: Qubit-ordering conventions may differ from other SDKs
+  pytket:
+    name: pytket.circuit.OpType.ECR
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ECR
 ---
 
 The echoed cross-resonance (ECR) gate is an entangling operation used on superconducting processors based on the cross-resonance interaction.

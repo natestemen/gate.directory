@@ -68,6 +68,8 @@ header {
   background: var(--gradient1);
   flex-grow: 1;
   padding: 20px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 footer {

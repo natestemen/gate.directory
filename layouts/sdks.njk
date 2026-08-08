@@ -1,0 +1,54 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<h2>SDK Support Matrix</h2>
+
+<p>
+  Which frameworks implement which gates. A <span class="matrix-legend-yes">✓</span> links to the
+  SDK's documentation for its native implementation (hover to see the gate's name in that SDK).
+  A <span class="matrix-legend-note">~</span> means the gate isn't built in but there is a standard
+  way to construct it — hover for the recipe. A <span class="matrix-legend-no">—</span> means the
+  SDK has no reasonable direct equivalent.
+</p>
+
+{{ content | safe }}
+
+<div class="sdk-matrix-wrap">
+  <table class="sdk-matrix">
+    <thead>
+      <tr>
+        <th>Gate</th>
+        {% for sdk in sdk_list %}
+          <th><span class="rot">{% if sdk.url %}<a href="{{ sdk.url }}">{{ sdk.label }}</a>{% else %}{{ sdk.label }}{% endif %}</span></th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in gate_layout %}
+        {% for slug in row %}
+          {% if slug %}
+            {% set gate = collections.gates | gateBySlug(slug) %}
+            {% if gate %}
+              <tr>
+                <th scope="row"><a href="{{ gate.url | url }}">{{ gate.data.title | stripMath }}</a></th>
+                {% for sdk in sdk_list %}
+                  {% set entry = gate.data.sdks[sdk.key] %}
+                  {% if entry and entry.name %}
+                    <td class="cell-yes"><a href="{{ entry.url }}" title="{{ entry.name }}">✓</a></td>
+                  {% elif entry and entry.note %}
+                    <td class="cell-note"><span class="sdk-note" data-note="{{ entry.note }}">~</span></td>
+                  {% else %}
+                    <td class="cell-no">—</td>
+                  {% endif %}
+                {% endfor %}
+              </tr>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<a class="back-to-home" href="{{ '/' | url }}">Back to home</a>
+{% endblock %}

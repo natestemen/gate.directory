@@ -19,7 +19,26 @@ sdks:
     name: pennylane.CRX
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.CRX.html
   cirq:
-    note: Not available natively. Construct with cirq.rx(theta).controlled().
+    note: Not available natively. Construct with cirq.rx(θ).controlled().
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled Rx([control], (theta, target))."
+  pyquil:
+    note: Not available natively. Use RX(theta, target).controlled(control).
+  braket:
+    note: No CRx class; use rx(target, angle, control=q)
+  bqskit:
+    name: bqskit.ir.gates.CRXGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRXGate.html
+  qibo:
+    name: qibo.gates.CRX
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRX
+  pytket:
+    name: pytket.circuit.OpType.CRx
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRx
+    note: "Angle in half-turns: CRx(theta/pi)"
+  qasm:
+    name: "stdgates.inc: crx"
+    url: https://openqasm.com/language/standard_library.html#crx
 ---
 
 The controlled-$R_x$ gate applies the single-qubit rotation [$R_x(\theta)$](/gates/rx) to the target, conditioned on the control.

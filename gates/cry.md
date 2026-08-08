@@ -21,7 +21,26 @@ sdks:
     name: pennylane.CRY
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.CRY.html
   cirq:
-    note: Not available natively. Construct with cirq.ry(theta).controlled().
+    note: Not available natively. Construct with cirq.ry(θ).controlled().
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled Ry([control], (theta, target))."
+  pyquil:
+    note: Not available natively. Use RY(theta, target).controlled(control).
+  braket:
+    note: No CRy class; use ry(target, angle, control=q)
+  bqskit:
+    name: bqskit.ir.gates.CRYGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRYGate.html
+  qibo:
+    name: qibo.gates.CRY
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRY
+  pytket:
+    name: pytket.circuit.OpType.CRy
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRy
+    note: "Angle in half-turns: CRy(theta/pi)"
+  qasm:
+    name: "stdgates.inc: cry"
+    url: https://openqasm.com/language/standard_library.html#cry
 ---
 
 The controlled-$R_y$ gate applies the single-qubit rotation [$R_y(\theta)$](/gates/ry) to the target, conditioned on the control.

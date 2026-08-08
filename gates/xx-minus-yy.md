@@ -17,10 +17,8 @@ sdks:
     name: qiskit.circuit.library.XXMinusYYGate
     url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.XXMinusYYGate
     note: Includes an extra phase parameter β.
-  pennylane:
-    note: Not available natively.
-  cirq:
-    note: Not available natively.
+  pytket:
+    note: "TK2(a, -a, 0) with a in half-turns gives e^{-i(pi/2)a(XX-YY)}"
 ---
 
 The $XX - YY$ gate is the counterpart of the [XY gate](/gates/xy): where XY rotates the single-excitation subspace $\\{|01\rangle, |10\rangle\\}$, this gate rotates the even-parity subspace $\\{|00\rangle, |11\rangle\\}$ and leaves the rest alone.

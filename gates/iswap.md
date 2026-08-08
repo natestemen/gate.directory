@@ -18,6 +18,25 @@ sdks:
   cirq:
     name: cirq.ISWAP
     url: https://quantumai.google/reference/python/cirq/ISWAP
+  pyquil:
+    name: pyquil.gates.ISWAP
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.ISWAP
+  braket:
+    name: braket.circuits.gates.ISwap
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.ISwap
+  bqskit:
+    name: bqskit.ir.gates.ISwapGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ISwapGate.html
+  qibo:
+    name: qibo.gates.iSWAP
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.iSWAP
+  pytket:
+    name: pytket.circuit.OpType.ISWAPMax
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ISWAPMax
+    note: "ISWAPMax = ISWAP(1); pytket's ISWAP(a) is the partial version"
+  stim:
+    name: ISWAP
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#ISWAP
 ---
 
 The iSWAP gate exchanges the $|01\rangle$ and $|10\rangle$ states with a phase $i$, leaving $|00\rangle$ and $|11\rangle$ unchanged.

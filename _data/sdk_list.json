@@ -1,9 +1,13 @@
 [
-  { "key": "qiskit",    "label": "Qiskit"         },
-  { "key": "pennylane", "label": "PennyLane"      },
-  { "key": "cirq",      "label": "Cirq"           },
-  { "key": "qsharp",    "label": "Q#"             },
-  { "key": "pyquil",    "label": "PyQuil"         },
-  { "key": "braket",    "label": "Braket"         },
-  { "key": "bqskit",    "label": "BQSKit"         }
+  { "key": "qiskit",    "label": "Qiskit",    "url": "https://docs.quantum.ibm.com/api/qiskit" },
+  { "key": "pennylane", "label": "PennyLane", "url": "https://docs.pennylane.ai" },
+  { "key": "cirq",      "label": "Cirq",      "url": "https://quantumai.google/cirq" },
+  { "key": "qsharp",    "label": "Q#",        "url": "https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview" },
+  { "key": "pyquil",    "label": "PyQuil",    "url": "https://pyquil-docs.rigetti.com" },
+  { "key": "braket",    "label": "Braket",    "url": "https://amazon-braket-sdk-python.readthedocs.io" },
+  { "key": "bqskit",    "label": "BQSKit",    "url": "https://bqskit.readthedocs.io" },
+  { "key": "qibo",      "label": "Qibo",      "url": "https://qibo.science" },
+  { "key": "pytket",    "label": "pytket",    "url": "https://docs.quantinuum.com/tket" },
+  { "key": "stim",      "label": "Stim",      "url": "https://github.com/quantumlib/Stim" },
+  { "key": "qasm",      "label": "OpenQASM",  "url": "https://openqasm.com" }
 ]

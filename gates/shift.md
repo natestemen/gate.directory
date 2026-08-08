@@ -14,6 +14,17 @@ groups:
 arity: 1
 dimension: d
 description: Qudit generalization of Pauli-$X$ that cyclically increments the basis state, $|j\rangle \mapsto |j+1 \bmod d\rangle$.
+sdks:
+  pennylane:
+    name: pennylane.TShift
+    url: https://docs.pennylane.ai/en/stable/code/api/pennylane.TShift.html
+    note: Qutrit (d=3) case only; no general qudit shift in PennyLane.
+  cirq:
+    note: Not available natively. Cirq supports qudits; define a custom gate with _qid_shape_.
+  bqskit:
+    name: bqskit.ir.gates.ShiftGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ShiftGate.html
+    note: Qudit shift gate; ShiftGate(radix)
 ---
 
 The shift gate generalizes [Pauli-$X$](/gates/pauli-x) from qubits to $d$-level qudits. Instead of flipping between two states, it cycles through all $d$ of them:

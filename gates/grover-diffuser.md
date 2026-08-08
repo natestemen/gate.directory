@@ -21,12 +21,16 @@ citation:
   url: https://arxiv.org/abs/quant-ph/9605043
 sdks:
   qiskit:
-    name: qiskit.circuit.library.GroverOperator
-    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.GroverOperator
-    note: Constructs the full Grover iterate, oracle included, not the diffuser alone.
+    name: qiskit.circuit.library.grover_operator
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.grover_operator
+    note: Builds the full Grover iterate, oracle included.
   pennylane:
     name: pennylane.GroverOperator
     url: https://docs.pennylane.ai/en/stable/code/api/pennylane.GroverOperator.html
+  qibo:
+    note: Built inside qibo.models.grover.Grover (diffusion step); no standalone gate
+  pytket:
+    note: "CircBox: H on all, X on all, CnZ, X on all, H on all"
 ---
 
 The Grover diffuser is the reflection about the uniform superposition $|s\rangle = \frac{1}{\sqrt{N}}\sum_{x=0}^{N-1} |x\rangle$ over $n$ qubits ($N = 2^n$):

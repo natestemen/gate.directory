@@ -12,6 +12,15 @@ groups:
 arity: n
 dimension: p
 description: Encodes a Boolean function as phases on computational basis states.
+sdks:
+  qiskit:
+    name: qiskit.circuit.library.PhaseOracleGate
+    url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PhaseOracleGate
+    note: Builds the phase oracle from a Boolean expression.
+  pennylane:
+    note: Not available natively. qml.FlipSign flips the sign of a chosen basis state.
+  pytket:
+    note: DiagonalBox synthesises the +/-1 phase diagonal of f
 ---
 
 A phase oracle is a variant of the [standard oracle](/gates/oracle) that acts on a single register $|x\rangle$, encoding the value of a classical Boolean function $f: \\{0, 1\\}^n \to \\{0, 1\\}$ as a relative phase:

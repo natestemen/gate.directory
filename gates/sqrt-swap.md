@@ -12,11 +12,15 @@ sdks:
   qiskit:
     note: Not available as a named gate. Use SwapGate().power(0.5).
   pennylane:
-    note: Not available natively. Note that pennylane.SISWAP is sqrt(iSWAP), a different gate.
+    note: Not available natively. Note that qml.SISWAP is √iSWAP, a different gate.
   cirq:
     name: cirq.SwapPowGate
     url: https://quantumai.google/reference/python/cirq/SwapPowGate
-    note: No named constant. Use cirq.SWAP**0.5 (SwapPowGate with exponent=0.5). Note that cirq.SQRT_ISWAP is a different gate.
+    note: "No named constant. √SWAP = cirq.SWAP**0.5 (SwapPowGate with exponent 0.5)."
+  pytket:
+    note: "ESWAP(0.5) equals sqrt(SWAP) up to global phase e^{i*pi/4}"
+  qasm:
+    note: "Not in stdgates.inc; write pow(0.5) @ swap q0, q1."
 ---
 
 The $\sqrt{\mathrm{SWAP}}$ gate is the canonical maximally entangling two-qubit gate: a single application takes a product state to a maximally entangled state, and two applications recover the full [SWAP](/gates/swap).

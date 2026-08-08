@@ -19,6 +19,27 @@ sdks:
   cirq:
     name: cirq.T
     url: https://quantumai.google/reference/python/cirq/T
+  qsharp:
+    name: Std.Intrinsic.T
+    url: https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/t
+  pyquil:
+    name: pyquil.gates.T
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.T
+  braket:
+    name: braket.circuits.gates.T
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.T
+  bqskit:
+    name: bqskit.ir.gates.TGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.TGate.html
+  qibo:
+    name: qibo.gates.T
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.T
+  pytket:
+    name: pytket.circuit.OpType.T
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.T
+  qasm:
+    name: "stdgates.inc: t"
+    url: https://openqasm.com/language/standard_library.html#t
 ---
 
 The $T$ gate applies a phase of $\mathrm{e}^{i\pi/4}$ to $|1\rangle$.

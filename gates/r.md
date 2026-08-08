@@ -21,7 +21,25 @@ sdks:
   cirq:
     name: cirq.PhasedXPowGate
     url: https://quantumai.google/reference/python/cirq/PhasedXPowGate
-    note: Parameterized as exponents of π, PhasedXPowGate(exponent=θ/π, phase_exponent=φ/π).
+    note: R(θ,φ) = PhasedXPowGate(exponent=θ/π, phase_exponent=φ/π) up to global phase.
+  qsharp:
+    note: "No single op; apply Rz(-phi), Rx(theta), Rz(phi). Q#'s R rotates about Pauli axes only."
+  braket:
+    name: braket.circuits.gates.PRx
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.PRx
+    note: Braket names this PRx(theta, phi)
+  bqskit:
+    name: bqskit.ir.gates.U1qGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1qGate.html
+    note: Quantinuum U1q(theta, phi) is identical to R(theta, phi)
+  qibo:
+    name: qibo.gates.PRX
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.PRX
+    note: Named PRX (phased-RX); matches the standard R(θ, φ) matrix
+  pytket:
+    name: pytket.circuit.OpType.PhasedX
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.PhasedX
+    note: R(theta,phi) = PhasedX(theta/pi, phi/pi); angles in half-turns
 ---
 
 The phased rotation generalizes [$R_x$](/gates/rx) and [$R_y$](/gates/ry) to an arbitrary axis in the equatorial ($xy$) plane of the Bloch sphere:

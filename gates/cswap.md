@@ -25,6 +25,25 @@ sdks:
   cirq:
     name: cirq.CSWAP
     url: https://quantumai.google/reference/python/cirq/CSWAP
+    note: "Alias: cirq.FREDKIN."
+  qsharp:
+    note: "Apply via the Controlled functor, Controlled SWAP([control], (q1, q2))."
+  pyquil:
+    name: pyquil.gates.CSWAP
+    url: https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CSWAP
+  braket:
+    name: braket.circuits.gates.CSwap
+    url: https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CSwap
+  bqskit:
+    note: No CSwapGate; build with ControlledGate(SwapGate())
+  qibo:
+    note: Construct as qibo.gates.SWAP(q1, q2).controlled_by(q0)
+  pytket:
+    name: pytket.circuit.OpType.CSWAP
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CSWAP
+  qasm:
+    name: "stdgates.inc: cswap"
+    url: https://openqasm.com/language/standard_library.html#cswap
 ---
 
 The Fredkin (CSWAP) gate swaps the two target qubits when the control qubit is in the $|1\rangle$ state, and acts as identity when the control is $|0\rangle$.

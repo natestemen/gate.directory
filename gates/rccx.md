@@ -22,10 +22,12 @@ sdks:
   qiskit:
     name: qiskit.circuit.library.RCCXGate
     url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RCCXGate
-  pennylane:
-    note: Not available natively.
-  cirq:
-    note: Not available natively.
+  bqskit:
+    name: bqskit.ir.gates.MargolusGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.MargolusGate.html
+    note: "Alias of RCCXGate; relative phases differ from Qiskit's RCCX"
+  qibo:
+    note: "qibo.gates.TOFFOLI.congruent() yields this gate (Toffoli with |101⟩ phase reversed)"
 ---
 
 The Margolus gate (Qiskit's "relative-phase" or "simplified" Toffoli, RCCX) acts exactly like the [Toffoli](/gates/toffoli) on every computational basis state except one, where it picks up a harmless-looking sign:

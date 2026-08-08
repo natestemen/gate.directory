@@ -17,13 +17,22 @@ citation:
   year: 2019
   url: https://doi.org/10.1038/s41586-019-1666-5
 sdks:
-  qiskit:
-    note: Not available natively.
-  pennylane:
-    note: Not available natively.
   cirq:
     name: cirq_google.SYC
     url: https://quantumai.google/reference/python/cirq_google/SYC
+  pyquil:
+    note: Not available natively. Build from pyquil.simulation.matrices.FSIM with DefGate.
+  bqskit:
+    name: bqskit.ir.gates.SycamoreGate
+    url: https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SycamoreGate.html
+  qibo:
+    name: qibo.gates.SYC
+    url: https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SYC
+    note: Named SYC
+  pytket:
+    name: pytket.circuit.OpType.Sycamore
+    url: https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Sycamore
+    note: Equals FSim(0.5, 1/6) in half-turns
 ---
 
 The Sycamore gate is the native entangling gate of Google's Sycamore processor, used in the 2019 quantum-supremacy experiment. It is the [FSim gate](/gates/fsim) at the specific angles $\theta = \pi/2$, $\phi = \pi/6$.

@@ -16,10 +16,18 @@ sdks:
   qiskit:
     name: qiskit.circuit.library.DCXGate
     url: https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.DCXGate
-  pennylane:
-    note: Not available natively.
   cirq:
-    note: Not available natively.
+    note: Not available natively. Compose cirq.CNOT(a, b) then cirq.CNOT(b, a).
+  pyquil:
+    note: Not available natively. Compose CNOT(q0, q1) then CNOT(q1, q0).
+  qibo:
+    note: Compose qibo.gates.CNOT(q0, q1) then qibo.gates.CNOT(q1, q0)
+  pytket:
+    note: Compose CX(0,1) then CX(1,0); wrap in a CircBox if reused
+  stim:
+    name: SWAPCX
+    url: https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SWAPCX
+    note: SWAPCX is exactly DCX; CXSWAP is the same gate with qubit order reversed.
 ---
 
 The DCNOT gate applies a CNOT from qubit 1 to 2 and then a CNOT from qubit 2 to 1.
