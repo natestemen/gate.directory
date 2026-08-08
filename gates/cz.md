@@ -41,7 +41,7 @@ $$
 ### Properties
 
 - Clifford, Hermitian, and self-inverse.
-- Related to CNOT by Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\,\mathrm{CZ}\,(I \otimes H)$.
+- Related to CNOT by Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\\,\mathrm{CZ}\\,(I \otimes H)$.
 - Symmetric under exchange of the two qubits.
 
 ### Usage

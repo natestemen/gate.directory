@@ -36,4 +36,4 @@ $$
 ### Properties
 
 - Self-inverse: $\mathrm{fSWAP}^2 = I$.
-- Equals SWAP on the $\{|01\rangle, |10\rangle\}$ subspace.
+- Equals SWAP on the $\\{|01\rangle, |10\rangle\\}$ subspace.

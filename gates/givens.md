@@ -38,7 +38,7 @@ $$
 ### Properties
 
 - Conserves excitation number (acts nontrivially only on the single-excitation subspace).
-- Real orthogonal rotation on $\{|01\rangle, |10\rangle\}$.
+- Real orthogonal rotation on $\\{|01\rangle, |10\rangle\\}$.
 - Often combined with single-qubit phases to form a general complex Givens rotation.
 
 ### Usage

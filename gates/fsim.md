@@ -42,6 +42,6 @@ $$
 
 ### Properties
 
-- The $\theta$ parameter controls the swap angle in the $\{|01\rangle, |10\rangle\}$ subspace.
+- The $\theta$ parameter controls the swap angle in the $\\{|01\rangle, |10\rangle\\}$ subspace.
 - The $\phi$ parameter is a controlled phase on $|11\rangle$.
 - Reduces to a product of single-qubit gates at $\theta = 0, \phi = 0$.
