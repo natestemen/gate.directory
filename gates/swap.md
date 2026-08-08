@@ -10,6 +10,8 @@ groups:
   - orthogonal
   - permutation
   - number-preserving
+properties:
+  - hermitian
 arity: 2
 description: Exchanges the quantum states of two qubits.
 sdks:

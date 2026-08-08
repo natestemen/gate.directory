@@ -12,6 +12,8 @@ groups:
   - orthogonal
   - permutation
   - number-preserving
+properties:
+  - hermitian
 arity: 3
 controlled: swap
 description: Controlled swap of two target qubits conditioned on a single control qubit.

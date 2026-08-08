@@ -10,6 +10,8 @@ notations:
 groups:
   - clifford
 controlled: pauli-y
+properties:
+  - hermitian
 arity: 2
 description: Applies $Y$ to the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:

@@ -9,6 +9,8 @@ groups:
   - diagonal
   - orthogonal
   - number-preserving
+properties:
+  - hermitian
 arity: n
 dimension: p
 description: Encodes a Boolean function as phases on computational basis states.

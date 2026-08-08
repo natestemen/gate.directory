@@ -13,6 +13,8 @@ groups:
   - orthogonal
   - number-preserving
 controlled: pauli-z
+properties:
+  - hermitian
 arity: 2
 description: Applies a $-1$ phase to $|11\rangle$.
 sdks:

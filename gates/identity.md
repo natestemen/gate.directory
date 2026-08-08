@@ -17,6 +17,8 @@ groups:
   - orthogonal
   - permutation
   - number-preserving
+properties:
+  - hermitian
 arity: n
 description: Leaves the quantum state unchanged.
 sdks:

@@ -10,6 +10,8 @@ groups:
   - orthogonal
   - matchgate
   - number-preserving
+properties:
+  - hermitian
 arity: 2
 description: Swaps $|01\rangle$ and $|10\rangle$ while applying a $-1$ phase to $|11\rangle$.
 sdks:

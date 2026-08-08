@@ -7,6 +7,8 @@ alias:
 groups:
   - clifford
   - orthogonal
+properties:
+  - hermitian
 arity: 1
 description: Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.
 sdks:

@@ -8,6 +8,8 @@ notations:
 groups:
   - orthogonal
   - permutation
+properties:
+  - hermitian
 arity: n
 dimension: p
 description: Implements a classical function as a reversible black-box unitary that can be queried coherently.

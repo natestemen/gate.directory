@@ -4,6 +4,8 @@ title: Echoed Cross-Resonance
 symbol: ECR
 groups:
   - clifford
+properties:
+  - hermitian
 arity: 2
 description: A native two-qubit Clifford gate for cross-resonance hardware, locally equivalent to CNOT.
 sdks:

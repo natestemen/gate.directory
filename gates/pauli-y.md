@@ -12,6 +12,8 @@ notations:
 groups:
   - pauli
   - clifford
+properties:
+  - hermitian
 arity: 1
 description: Bit-and-phase flip combining $X$ and $Z$ with a phase.
 sdks:

@@ -15,6 +15,8 @@ groups:
   - clifford
   - orthogonal
   - permutation
+properties:
+  - hermitian
 arity: 2
 controlled: pauli-x
 description: Flips the target qubit when the control qubit is in the $|1\rangle$ state.
