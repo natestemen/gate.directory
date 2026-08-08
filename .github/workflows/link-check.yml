@@ -1,0 +1,37 @@
+name: link check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday morning
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check external links
+        run: python3 scripts/check_links.py --report failures.md
+
+      - name: Open or update issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --label link-rot --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "$GITHUB_REPOSITORY" --body-file failures.md
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "Broken external links detected" \
+              --body-file failures.md \
+              --label link-rot ||
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "Broken external links detected" \
+              --body-file failures.md
+          fi
