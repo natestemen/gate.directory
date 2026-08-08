@@ -2,6 +2,8 @@
 layout: gate
 title: B Gate
 symbol: B
+groups:
+  - matchgate
 arity: 2
 description: Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.
 citation:

@@ -5,6 +5,7 @@ symbol: \sqrt{\mathrm{SWAP}}
 alias:
   - sqrtswap
 groups:
+  - number-preserving
 arity: 2
 description: Applies half of a SWAP interaction, creating maximal entanglement from a product state.
 sdks:

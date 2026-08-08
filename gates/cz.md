@@ -11,6 +11,7 @@ groups:
   - clifford
   - diagonal
   - orthogonal
+  - number-preserving
 controlled: pauli-z
 arity: 2
 description: Applies a $-1$ phase to $|11\rangle$.

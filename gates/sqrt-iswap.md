@@ -9,6 +9,9 @@ alias:
 notations:
   - \mathrm{SISWAP}
   - \mathrm{SQISW}
+groups:
+  - matchgate
+  - number-preserving
 arity: 2
 description: Applies half of an iSWAP interaction, native to superconducting hardware with $XY$ coupling.
 sdks:

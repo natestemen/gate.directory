@@ -8,6 +8,8 @@ notations:
 groups:
   - clifford
   - orthogonal
+  - permutation
+  - number-preserving
 arity: 2
 description: Exchanges the quantum states of two qubits.
 sdks:

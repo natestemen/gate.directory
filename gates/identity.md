@@ -15,6 +15,8 @@ groups:
   - clifford
   - diagonal
   - orthogonal
+  - permutation
+  - number-preserving
 arity: n
 description: Leaves the quantum state unchanged.
 sdks:

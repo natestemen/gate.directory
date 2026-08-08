@@ -4,6 +4,8 @@ title: Fermionic Simulator
 symbol: \mathrm{FSim}
 alias:
   - fsim
+groups:
+  - number-preserving
 arity: 2
 parameters: 2
 description: Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.

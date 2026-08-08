@@ -14,6 +14,7 @@ groups:
   - pauli
   - clifford
   - orthogonal
+  - permutation
 arity: 1
 description: Bit-flip gate that swaps $|0\rangle$ and $|1\rangle$.
 sdks:

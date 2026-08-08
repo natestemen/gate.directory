@@ -10,6 +10,7 @@ notations:
   - \mathrm{CP}(\pi/2)
 groups:
   - diagonal
+  - number-preserving
 controlled: s
 arity: 2
 description: Applies a phase of $i$ to the $|11\rangle$ state, the square root of controlled-$Z$.

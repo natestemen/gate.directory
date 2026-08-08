@@ -10,6 +10,7 @@ notations:
   - \sigma
 groups:
   - diagonal
+  - number-preserving
 arity: 1
 dimension: d
 description: Qudit generalization of Pauli-$Z$ that tags each basis state with a root-of-unity phase, $|j\rangle \mapsto \omega^j |j\rangle$.

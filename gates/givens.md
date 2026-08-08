@@ -9,6 +9,8 @@ notations:
   - G_{ij}(\theta)
 groups:
   - orthogonal
+  - matchgate
+  - number-preserving
 arity: 2
 parameters: 1
 description: Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.

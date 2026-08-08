@@ -10,6 +10,7 @@ notations:
   - \tau
 groups:
   - orthogonal
+  - permutation
 arity: 1
 dimension: d
 description: Qudit generalization of Pauli-$X$ that cyclically increments the basis state, $|j\rangle \mapsto |j+1 \bmod d\rangle$.

@@ -8,6 +8,7 @@ notations:
 groups:
   - diagonal
   - orthogonal
+  - number-preserving
 arity: n
 dimension: p
 description: Encodes a Boolean function as phases on computational basis states.

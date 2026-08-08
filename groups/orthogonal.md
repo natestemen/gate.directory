@@ -11,7 +11,7 @@ $$\mathsf{O}(n) := \left\\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}}
 
 - Every orthogonal matrix has $\det O = \pm 1$. The $+1$ component $\mathsf{SO}(n)$ contains the *rotations*, such as [$R_y(\theta)$](/gates/ry) and [Givens rotations](/gates/givens); determinant $-1$ elements are *reflections*, such as the [Grover diffuser](/gates/grover-diffuser).
 - Orthogonal gates are exactly the gates invariant under complex conjugation — quantum operations indistinguishable from their own "time-reversed-frame" copies.
-- Permutation matrices form a finite subgroup: [$X$](/gates/pauli-x), [CNOT](/gates/cnot), [Toffoli](/gates/toffoli), [SWAP](/gates/swap), and the qudit [shift](/gates/shift) all just shuffle basis states. All of classical reversible logic lives here.
+- [Permutation matrices](/groups/permutation) form a finite subgroup: [$X$](/gates/pauli-x), [CNOT](/gates/cnot), [Toffoli](/gates/toffoli), [SWAP](/gates/swap), and the qudit [shift](/gates/shift) all just shuffle basis states. All of classical reversible logic lives here.
 
 ### Why real amplitudes suffice
 

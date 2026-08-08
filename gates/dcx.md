@@ -9,6 +9,7 @@ notations:
 groups:
   - clifford
   - orthogonal
+  - permutation
 arity: 2
 description: Two back-to-back CNOTs with alternating control and target qubits.
 sdks:

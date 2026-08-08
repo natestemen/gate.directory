@@ -29,3 +29,4 @@ A matrix $U$ is unitary if and only if any of the following hold:
 ### Relations to other groups
 
 - The [orthogonal group](/groups/orthogonal) is its real slice, the [diagonal group](/groups/diagonal) is a maximal abelian subgroup, and the [Pauli](/groups/pauli) and [Clifford](/groups/clifford) groups are its most important finite (modulo phase) subgroups.
+- Further structured subgroups collect the classical gates ([permutation](/groups/permutation)), the free-fermion gates ([matchgate](/groups/matchgate)), and the excitation-conserving gates ([number-preserving](/groups/number-preserving)).

@@ -10,6 +10,7 @@ notations:
   - \mathrm{e}^{i\phi} I
 groups:
   - diagonal
+  - number-preserving
 arity: n
 parameters: 1
 description: Multiplies the entire quantum state by an overall phase factor.

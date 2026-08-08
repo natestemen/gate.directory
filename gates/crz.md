@@ -9,6 +9,7 @@ notations:
   - \Lambda(R_z(\theta))
 groups:
   - diagonal
+  - number-preserving
 controlled: rz
 arity: 2
 parameters: 1

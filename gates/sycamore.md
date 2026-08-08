@@ -8,6 +8,8 @@ alias:
 notations:
   - \mathrm{SYC}
   - \mathrm{fSim}(\pi/2, \pi/6)
+groups:
+  - number-preserving
 arity: 2
 description: Google's native two-qubit gate, the fSim gate at $\theta = \pi/2$, $\phi = \pi/6$.
 citation:

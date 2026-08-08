@@ -9,6 +9,7 @@ notations:
   - Z_\theta
 groups:
   - diagonal
+  - number-preserving
 arity: 1
 parameters: 1
 description: Rotation about the $z$ axis of the Bloch sphere.

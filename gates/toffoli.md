@@ -14,6 +14,7 @@ notations:
   - \text{Toffoli}
 groups:
   - orthogonal
+  - permutation
 properties:
   - hermitian
 controlled: cnot

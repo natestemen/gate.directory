@@ -6,6 +6,7 @@ notations:
   - \pi/8
 groups:
   - diagonal
+  - number-preserving
 arity: 1
 description: A $\pi/8$ phase gate which is a non-Clifford rotation about $Z$.
 sdks:

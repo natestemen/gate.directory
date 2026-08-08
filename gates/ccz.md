@@ -10,6 +10,7 @@ notations:
 groups:
   - diagonal
   - orthogonal
+  - number-preserving
 properties:
   - hermitian
 controlled: cz

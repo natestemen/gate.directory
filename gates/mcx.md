@@ -13,6 +13,7 @@ notations:
   - \mathrm{C}^3X
 groups:
   - orthogonal
+  - permutation
 properties:
   - hermitian
 controlled: toffoli

@@ -10,6 +10,8 @@ notations:
   - \text{controlled-}SWAP
 groups:
   - orthogonal
+  - permutation
+  - number-preserving
 arity: 3
 controlled: swap
 description: Controlled swap of two target qubits conditioned on a single control qubit.
