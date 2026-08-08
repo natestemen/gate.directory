@@ -38,6 +38,16 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;mathrm{C}X$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        
+      </p>
+      
+      <p class="gate-badges">
+        <span class="gate-badge">hermitian</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Flips the target qubit when the control qubit is in the $|1\rangle$ state.</p>
@@ -63,6 +73,152 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+            
+            
+              <p><strong>Controlled version of:</strong> <a href="/gates/pauli-x/">Pauli-X</a></p>
+            
+          
+          
+            <p><strong>Controlled variant:</strong>
+              <a href="/gates/toffoli/">Toffoli</a>
+            </p>
+          
+        </div>
+      
 
       
         <h3>SDK Support</h3>
@@ -134,7 +290,10 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CNot"><code>braket.circuits.gates.CNot</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -142,7 +301,58 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CNOTGate.html"><code>bqskit.ir.gates.CNOTGate</code></a>
+                    
+                      <span class="sdk-note" data-note="Also exported as CXGate">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CNOT"><code>qibo.gates.CNOT</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CX"><code>pytket.circuit.OpType.CX</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td>
+                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CX"><code>CX</code></a>
+                    
+                      <span class="sdk-note" data-note="Stim also accepts the alternate name CNOT.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#cx"><code>stdgates.inc: cx</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -156,7 +366,12 @@
           
           <li><a href="/groups/clifford">clifford</a></li>
           
+          <li><a href="/groups/orthogonal">orthogonal</a></li>
+          
+          <li><a href="/groups/permutation">permutation</a></li>
+          
         </ul>
+      
       
     </div>
 

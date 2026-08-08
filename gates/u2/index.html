@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Della+Respira&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <title>U2</title>
+</head>
+<body>
+  <main>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
+        </header>
+      <div class="not-footer">
+        
+        
+<div class="gate">
+  <h2 class="gate-title">U2</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$U_2$</div>
+      </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $1$</span>
+        
+        <span><strong>Parameters:</strong> $2$</span>
+      </p>
+      
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Legacy IBM gate performing a fixed $\pi/2$ rotation dressed by two $z$ rotations, $U_2(\phi, \lambda) = U_3(\pi/2, \phi, \lambda)$.</p>
+</p>
+        <br>
+
+        
+          <p><strong>Alternate notations:</strong></p>
+          <ul>
+            
+            <li>$U_2(&#92;phi, &#92;lambda)$</li>
+            
+            <li>$&#92;mathrm{U2}(&#92;phi, &#92;lambda)$</li>
+            
+          </ul>
+        
+      </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+
+      
+        <h3>SDK Support</h3>
+        <table class="sdk-table">
+          <thead>
+            <tr>
+              <th>SDK</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td>
+                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.U2Gate"><code>qiskit.circuit.library.U2Gate</code></a>
+                    
+                      <span class="sdk-note" data-note="Deprecated; use UGate(π/2, φ, λ) instead.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td>
+                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.U2.html"><code>pennylane.U2</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Decompose into rz/ry rotations.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Equal to U3 with theta=pi/2; see pyquil.simulation.matrices.U.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No U2 class; U(pi/2, phi, lambda) reproduces it">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U2Gate.html"><code>bqskit.ir.gates.U2Gate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U2"><code>qibo.gates.U2</code></a>
+                    
+                      <span class="sdk-note" data-note="Differs from OpenQASM u2 by a global phase">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U2"><code>pytket.circuit.OpType.U2</code></a>
+                    
+                      <span class="sdk-note" data-note="Angles in half-turns: U2(phi/pi, lambda/pi)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#u2"><code>stdgates.inc: u2</code></a>
+                    
+                      <span class="sdk-note" data-note="Legacy OpenQASM 2 compatibility gate.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      
+      
+      
+    </div>
+
+    <div class="column">
+      <p>The $U_2$ gate is the two-parameter member of the legacy OpenQASM 2 family $u_1, u_2, u_3$: a rotation with the angle frozen at $\pi/2$, sandwiched between two independent $z$ rotations:</p>
+<p>$$
+U_2(\phi, \lambda) = R_z(\phi) \, R_y(\pi/2) \, R_z(\lambda)
+= \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 &amp; -\mathrm{e}^{i\lambda} \\
+\mathrm{e}^{i\phi} &amp; \mathrm{e}^{i(\phi+\lambda)}
+\end{bmatrix}
+$$</p>
+<p>Historically it exposed IBM's hardware calibration in gate form: the $R_y(\pi/2)$ is the one physical microwave pulse, and $\phi$, $\lambda$ are <em>virtual</em> $z$ rotations implemented as frame changes that cost nothing.</p>
+<h3>Special values</h3>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\phi = 0$, $\lambda = \pi$</td>
+<td><a href="/gates/hadamard">Hadamard</a></td>
+</tr>
+<tr>
+<td>$\phi = 0$, $\lambda = 0$</td>
+<td>$R_y(\pi/2)$</td>
+</tr>
+<tr>
+<td>$\lambda = -\phi$</td>
+<td><a href="/gates/r">Phased rotation</a> $R(\pi/2, \phi + \pi/2)$, up to global phase</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<ul>
+<li>The fixed-$\theta$ slice of <a href="/gates/u3">$U_3$</a>: $U_2(\phi, \lambda) = U_3(\pi/2, \phi, \lambda)$. The one-parameter sibling $u_1$ is simply the <a href="/gates/phase">phase gate</a>.</li>
+<li>Since $\phi$ and $\lambda$ are independent, $U_2$ generally includes a <em>net</em> $z$ rotation — unlike the <a href="/gates/r">phased rotation</a> $R(\theta, \phi)$, whose frame change cancels. The two families overlap exactly on the $\lambda = -\phi$ slice.</li>
+<li>Any single-qubit unitary is expressible with two $U_2$ gates and virtual phases, which is why one calibrated $\pi/2$ pulse per gate was enough for universality.</li>
+</ul>
+<h3>Usage</h3>
+<ul>
+<li>Legacy: OpenQASM 2 and early Qiskit compiled everything to $u_1, u_2, u_3$. Modern stacks target $\{R_z, \sqrt{X}, X\}$ or pulse-level natives instead, and Qiskit has deprecated the gate in favor of $U(\theta, \phi, \lambda)$. Kept here as reference material — the gate still appears throughout older papers, textbooks, and QASM files.</li>
+</ul>
+
+    </div>
+  </div>
+
+  <br/>
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/u2.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    function renderPageMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          trust: true
+        });
+      }
+    }
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
+  </script>
+</body>
+</html>

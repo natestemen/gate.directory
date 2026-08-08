@@ -1,0 +1,4389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Della+Respira&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <title>SDK Support Matrix</title>
+</head>
+<body>
+  <main>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
+        </header>
+      <div class="not-footer">
+        
+        
+<h2>SDK Support Matrix</h2>
+
+<p>
+  Which frameworks implement which gates. A <span class="matrix-legend-yes">✓</span> links to the
+  SDK's documentation for its native implementation (hover to see the gate's name in that SDK).
+  A <span class="matrix-legend-note">~</span> means the gate isn't built in but there is a standard
+  way to construct it — hover for the recipe. A <span class="matrix-legend-no">—</span> means the
+  SDK has no reasonable direct equivalent.
+</p>
+
+<p>Every link in this table is verified against the SDK's current stable documentation.
+Spotted a gap or a new release we missed?
+Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a>.</p>
+
+
+<div class="sdk-matrix-wrap">
+  <table class="sdk-matrix">
+    <thead>
+      <tr>
+        <th>Gate</th>
+        
+          <th><span class="rot"><a href="https://docs.quantum.ibm.com/api/qiskit">Qiskit</a></span></th>
+        
+          <th><span class="rot"><a href="https://docs.pennylane.ai">PennyLane</a></span></th>
+        
+          <th><span class="rot"><a href="https://quantumai.google/cirq">Cirq</a></span></th>
+        
+          <th><span class="rot"><a href="https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview">Q#</a></span></th>
+        
+          <th><span class="rot"><a href="https://pyquil-docs.rigetti.com">PyQuil</a></span></th>
+        
+          <th><span class="rot"><a href="https://amazon-braket-sdk-python.readthedocs.io">Braket</a></span></th>
+        
+          <th><span class="rot"><a href="https://bqskit.readthedocs.io">BQSKit</a></span></th>
+        
+          <th><span class="rot"><a href="https://qibo.science">Qibo</a></span></th>
+        
+          <th><span class="rot"><a href="https://docs.quantinuum.com/tket">pytket</a></span></th>
+        
+          <th><span class="rot"><a href="https://github.com/quantumlib/Stim">Stim</a></span></th>
+        
+          <th><span class="rot"><a href="https://openqasm.com">OpenQASM</a></span></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/identity/">Identity</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.IGate" title="qiskit.circuit.library.IGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.Identity.html" title="pennylane.Identity">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/I" title="cirq.I">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/i" title="Std.Intrinsic.I">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.I" title="pyquil.gates.I">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.I" title="braket.circuits.gates.I">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.IdentityGate.html" title="bqskit.ir.gates.IdentityGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.I" title="qibo.gates.I">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.noop" title="pytket.circuit.OpType.noop">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#I" title="I">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#id" title="stdgates.inc: id">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/pauli-x/">Pauli-X</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.XGate" title="qiskit.circuit.library.XGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliX.html" title="pennylane.PauliX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/X" title="cirq.X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/x" title="Std.Intrinsic.X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.X" title="pyquil.gates.X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.X" title="braket.circuits.gates.X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.XGate.html" title="bqskit.ir.gates.XGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.X" title="qibo.gates.X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.X" title="pytket.circuit.OpType.X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#X" title="X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#x" title="stdgates.inc: x">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/pauli-y/">Pauli-Y</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.YGate" title="qiskit.circuit.library.YGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliY.html" title="pennylane.PauliY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/Y" title="cirq.Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/y" title="Std.Intrinsic.Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.Y" title="pyquil.gates.Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Y" title="braket.circuits.gates.Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.YGate.html" title="bqskit.ir.gates.YGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.Y" title="qibo.gates.Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Y" title="pytket.circuit.OpType.Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#Y" title="Y">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#y" title="stdgates.inc: y">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/pauli-z/">Pauli-Z</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ZGate" title="qiskit.circuit.library.ZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.PauliZ.html" title="pennylane.PauliZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/Z" title="cirq.Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/z" title="Std.Intrinsic.Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.Z" title="pyquil.gates.Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Z" title="braket.circuits.gates.Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ZGate.html" title="bqskit.ir.gates.ZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.Z" title="qibo.gates.Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Z" title="pytket.circuit.OpType.Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#Z" title="Z">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#z" title="stdgates.inc: z">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/hadamard/">Hadamard</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.HGate" title="qiskit.circuit.library.HGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.Hadamard.html" title="pennylane.Hadamard">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/H" title="cirq.H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/h" title="Std.Intrinsic.H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.H" title="pyquil.gates.H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.H" title="braket.circuits.gates.H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.HGate.html" title="bqskit.ir.gates.HGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.H" title="qibo.gates.H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.H" title="pytket.circuit.OpType.H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#H" title="H">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#h" title="stdgates.inc: h">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/s/">Phase</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.SGate" title="qiskit.circuit.library.SGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.S.html" title="pennylane.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/S" title="cirq.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/s" title="Std.Intrinsic.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.S" title="pyquil.gates.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.S" title="braket.circuits.gates.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SGate.html" title="bqskit.ir.gates.SGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.S" title="qibo.gates.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.S" title="pytket.circuit.OpType.S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#S" title="S">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#s" title="stdgates.inc: s">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/t/">T</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.TGate" title="qiskit.circuit.library.TGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.T.html" title="pennylane.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/T" title="cirq.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/t" title="Std.Intrinsic.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.T" title="pyquil.gates.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.T" title="braket.circuits.gates.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.TGate.html" title="bqskit.ir.gates.TGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.T" title="qibo.gates.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.T" title="pytket.circuit.OpType.T">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#t" title="stdgates.inc: t">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rx/">x Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RXGate" title="qiskit.circuit.library.RXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.RX.html" title="pennylane.RX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/Rx" title="cirq.Rx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rx" title="Std.Intrinsic.Rx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RX" title="pyquil.gates.RX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Rx" title="braket.circuits.gates.Rx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RXGate.html" title="bqskit.ir.gates.RXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RX" title="qibo.gates.RX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Rx" title="pytket.circuit.OpType.Rx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#rx" title="stdgates.inc: rx">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/ry/">y Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RYGate" title="qiskit.circuit.library.RYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.RY.html" title="pennylane.RY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/Ry" title="cirq.Ry">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/ry" title="Std.Intrinsic.Ry">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RY" title="pyquil.gates.RY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Ry" title="braket.circuits.gates.Ry">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYGate.html" title="bqskit.ir.gates.RYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RY" title="qibo.gates.RY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Ry" title="pytket.circuit.OpType.Ry">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#ry" title="stdgates.inc: ry">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rz/">z Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RZGate" title="qiskit.circuit.library.RZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.RZ.html" title="pennylane.RZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/Rz" title="cirq.Rz">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rz" title="Std.Intrinsic.Rz">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.RZ" title="pyquil.gates.RZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Rz" title="braket.circuits.gates.Rz">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RZGate.html" title="bqskit.ir.gates.RZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RZ" title="qibo.gates.RZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Rz" title="pytket.circuit.OpType.Rz">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#rz" title="stdgates.inc: rz">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rot/">Arbitrary Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RVGate" title="qiskit.circuit.library.RVGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.Rot.html" title="pennylane.Rot">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Decompose into cirq.rz/cirq.ry or use cirq.MatrixGate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/r" title="Std.Intrinsic.R">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No axis-angle class; U(theta, phi, lambda) covers any 1-qubit unitary">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.PauliGate.html" title="bqskit.ir.gates.PauliGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No axis-angle gate; use qibo.gates.U3 with equivalent Euler angles">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Any 1-qubit rotation via TK1 Euler angles (half-turns) or Unitary1qBox">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/r/">Phased Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RGate" title="qiskit.circuit.library.RGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Decompose into qml.RZ and qml.RX.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/PhasedXPowGate" title="cirq.PhasedXPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No single op; apply Rz(-phi), Rx(theta), Rz(phi). Q#&#39;s R rotates about Pauli axes only.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.PRx" title="braket.circuits.gates.PRx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1qGate.html" title="bqskit.ir.gates.U1qGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.PRX" title="qibo.gates.PRX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.PhasedX" title="pytket.circuit.OpType.PhasedX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/phase/">Phase Shift</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PhaseGate" title="qiskit.circuit.library.PhaseGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.PhaseShift.html" title="pennylane.PhaseShift">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/ZPowGate" title="cirq.ZPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/r1" title="Std.Intrinsic.R1">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.PHASE" title="pyquil.gates.PHASE">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.PhaseShift" title="braket.circuits.gates.PhaseShift">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1Gate.html" title="bqskit.ir.gates.U1Gate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U1" title="qibo.gates.U1">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U1" title="pytket.circuit.OpType.U1">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#p" title="stdgates.inc: p">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/sx/">Square Root of X</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.SXGate" title="qiskit.circuit.library.SXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SX.html" title="pennylane.SX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/XPowGate" title="cirq.XPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/sx" title="Std.Intrinsic.SX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. RX(pi/2) is equal up to global phase.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.V" title="braket.circuits.gates.V">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SXGate.html" title="bqskit.ir.gates.SXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SX" title="qibo.gates.SX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.SX" title="pytket.circuit.OpType.SX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_X" title="SQRT_X">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#sx" title="stdgates.inc: sx">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/u3/">U3</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.UGate" title="qiskit.circuit.library.UGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.U3.html" title="pennylane.U3">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use cirq.MatrixGate or decompose into rz/ry.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.U" title="pyquil.simulation.matrices.U">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.U" title="braket.circuits.gates.U">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U3Gate.html" title="bqskit.ir.gates.U3Gate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U3" title="qibo.gates.U3">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U3" title="pytket.circuit.OpType.U3">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#u3" title="stdgates.inc: u3">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/gpi/">GPi</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Available through the qiskit-ionq provider as GPIGate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Available through the PennyLane-IonQ plugin as GPI.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq_ionq/GPIGate" title="cirq_ionq.GPIGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.GPi" title="braket.circuits.gates.GPi">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1qPiGate.html" title="bqskit.ir.gates.U1qPiGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GPI" title="qibo.gates.GPI">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.GPI" title="pytket.circuit.OpType.GPI">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/gpi2/">GPi2</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Available through the qiskit-ionq provider as GPI2Gate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Available through the PennyLane-IonQ plugin as GPI2.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq_ionq/GPI2Gate" title="cirq_ionq.GPI2Gate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.GPi2" title="braket.circuits.gates.GPi2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1qPi2Gate.html" title="bqskit.ir.gates.U1qPi2Gate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GPI2" title="qibo.gates.GPI2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.GPI2" title="pytket.circuit.OpType.GPI2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/toff-decomp/">unnamed</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/u2/">U2</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.U2Gate" title="qiskit.circuit.library.U2Gate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.U2.html" title="pennylane.U2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Decompose into rz/ry rotations.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Equal to U3 with theta=pi/2; see pyquil.simulation.matrices.U.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No U2 class; U(pi/2, phi, lambda) reproduces it">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U2Gate.html" title="bqskit.ir.gates.U2Gate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U2" title="qibo.gates.U2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U2" title="pytket.circuit.OpType.U2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#u2" title="stdgates.inc: u2">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/cnot/">Controlled Not</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CXGate" title="qiskit.circuit.library.CXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CNOT.html" title="pennylane.CNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CNOT" title="cirq.CNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/cnot" title="Std.Intrinsic.CNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CNOT" title="pyquil.gates.CNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CNot" title="braket.circuits.gates.CNot">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CNOTGate.html" title="bqskit.ir.gates.CNOTGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CNOT" title="qibo.gates.CNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CX" title="pytket.circuit.OpType.CX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CX" title="CX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#cx" title="stdgates.inc: cx">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/cy/">Controlled-Y</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CYGate" title="qiskit.circuit.library.CYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CY.html" title="pennylane.CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CY" title="cirq.CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cy" title="Std.Canon.CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: Y(target).controlled(control).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CY" title="braket.circuits.gates.CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CYGate.html" title="bqskit.ir.gates.CYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CY" title="qibo.gates.CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CY" title="pytket.circuit.OpType.CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CY" title="CY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#cy" title="stdgates.inc: cy">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/cz/">Controlled-Z</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CZGate" title="qiskit.circuit.library.CZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CZ.html" title="pennylane.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CZ" title="cirq.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cz" title="Std.Canon.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CZ" title="pyquil.gates.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CZ" title="braket.circuits.gates.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CZGate.html" title="bqskit.ir.gates.CZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CZ" title="qibo.gates.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CZ" title="pytket.circuit.OpType.CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CZ" title="CZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#cz" title="stdgates.inc: cz">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/ch/">Controlled-Hadamard</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CHGate" title="qiskit.circuit.library.CHGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CH.html" title="pennylane.CH">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with cirq.H.controlled().">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled H([control], target).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: H(target).controlled(control).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CH class; use h(target, control=q) control modifier">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CHGate.html" title="bqskit.ir.gates.CHGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CH" title="qibo.gates.CH">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CH" title="pytket.circuit.OpType.CH">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#ch" title="stdgates.inc: ch">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/cs/">Controlled-S</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSGate" title="qiskit.circuit.library.CSGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with qml.ctrl(qml.S(0), 1).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CZPowGate" title="cirq.CZPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled S([control], target).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Equal to CPHASE(pi/2, control, target), or use S(target).controlled(control).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CS class; CPhaseShift(pi/2) or s(target, control=q)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CSGate.html" title="bqskit.ir.gates.CSGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Construct as qibo.gates.S(q1).controlled_by(q0) or qibo.gates.CU1(q0, q1, pi/2)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CS" title="pytket.circuit.OpType.CS">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ s q0, q1.">~</span></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/csx/">Controlled sqrt(X)</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSXGate" title="qiskit.circuit.library.CSXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with qml.ctrl(qml.SX(0), 1).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CNotPowGate" title="cirq.CNotPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled SX([control], target).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CV" title="braket.circuits.gates.CV">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SqrtCNOTGate.html" title="bqskit.ir.gates.SqrtCNOTGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CSX" title="qibo.gates.CSX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CSX" title="pytket.circuit.OpType.CSX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ sx q0, q1.">~</span></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/controlled-phase/">Controlled Phase</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CPhaseGate" title="qiskit.circuit.library.CPhaseGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.ControlledPhaseShift.html" title="pennylane.ControlledPhaseShift">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CZPowGate" title="cirq.CZPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled R1([control], (phi, target)).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CPHASE" title="pyquil.gates.CPHASE">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CPhaseShift" title="braket.circuits.gates.CPhaseShift">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CPGate.html" title="bqskit.ir.gates.CPGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CU1" title="qibo.gates.CU1">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CU1" title="pytket.circuit.OpType.CU1">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#cp" title="stdgates.inc: cp">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/crx/">Controlled x Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CRXGate" title="qiskit.circuit.library.CRXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CRX.html" title="pennylane.CRX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with cirq.rx(θ).controlled().">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled Rx([control], (theta, target)).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use RX(theta, target).controlled(control).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CRx class; use rx(target, angle, control=q)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRXGate.html" title="bqskit.ir.gates.CRXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRX" title="qibo.gates.CRX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRx" title="pytket.circuit.OpType.CRx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#crx" title="stdgates.inc: crx">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/cry/">Controlled y Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CRYGate" title="qiskit.circuit.library.CRYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CRY.html" title="pennylane.CRY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with cirq.ry(θ).controlled().">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled Ry([control], (theta, target)).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use RY(theta, target).controlled(control).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CRy class; use ry(target, angle, control=q)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRYGate.html" title="bqskit.ir.gates.CRYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRY" title="qibo.gates.CRY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRy" title="pytket.circuit.OpType.CRy">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#cry" title="stdgates.inc: cry">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/crz/">Controlled z Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CRZGate" title="qiskit.circuit.library.CRZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CRZ.html" title="pennylane.CRZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with cirq.rz(θ).controlled().">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled Rz([control], (theta, target)).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use RZ(theta, target).controlled(control).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CRz class; use rz(target, angle, control=q)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRZGate.html" title="bqskit.ir.gates.CRZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRZ" title="qibo.gates.CRZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRz" title="pytket.circuit.OpType.CRz">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#crz" title="stdgates.inc: crz">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/swap/">SWAP</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.SwapGate" title="qiskit.circuit.library.SwapGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SWAP.html" title="pennylane.SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/SWAP" title="cirq.SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/swap" title="Std.Intrinsic.SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.SWAP" title="pyquil.gates.SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.Swap" title="braket.circuits.gates.Swap">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SwapGate.html" title="bqskit.ir.gates.SwapGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SWAP" title="qibo.gates.SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.SWAP" title="pytket.circuit.OpType.SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SWAP" title="SWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#swap" title="stdgates.inc: swap">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/iswap/">iSWAP</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.iSwapGate" title="qiskit.circuit.library.iSwapGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.ISWAP.html" title="pennylane.ISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/ISWAP" title="cirq.ISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.ISWAP" title="pyquil.gates.ISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.ISwap" title="braket.circuits.gates.ISwap">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ISwapGate.html" title="bqskit.ir.gates.ISwapGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.iSWAP" title="qibo.gates.iSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ISWAPMax" title="pytket.circuit.OpType.ISWAPMax">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#ISWAP" title="ISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/sqrt-swap/">Square Root SWAP</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available as a named gate. Use SwapGate().power(0.5).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Note that qml.SISWAP is √iSWAP, a different gate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/SwapPowGate" title="cirq.SwapPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="ESWAP(0.5) equals sqrt(SWAP) up to global phase e^{i*pi/4}">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not in stdgates.inc; write pow(0.5) @ swap q0, q1.">~</span></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/sqrt-iswap/">Square Root iSWAP</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available as a named gate. Use iSwapGate().power(0.5).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SISWAP.html" title="pennylane.SISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/SQRT_ISWAP" title="cirq.SQRT_ISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Equal to pyquil.gates.XY(pi/2); a dedicated SQISW gate exists only on master.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No named class; XY(pi/2) realizes sqrt-iSWAP">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SqrtISwapGate.html" title="bqskit.ir.gates.SqrtISwapGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SiSWAP" title="qibo.gates.SiSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="ISWAP(0.5) in pytket; ISWAP angle is in half-turns">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/fswap/">fSWAP</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Compose SwapGate with CZGate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.FermionicSWAP.html" title="pennylane.FermionicSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available in core Cirq; openfermion.circuits.FSWAP provides it.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No fSwap class; compose Swap and CZ">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.FSWAP" title="qibo.gates.FSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Compose SWAP and CZ (they commute)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CZSWAP" title="CZSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/dcx/">Double CX</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.DCXGate" title="qiskit.circuit.library.DCXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Compose cirq.CNOT(a, b) then cirq.CNOT(b, a).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Compose CNOT(q0, q1) then CNOT(q1, q0).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Compose qibo.gates.CNOT(q0, q1) then qibo.gates.CNOT(q1, q0)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Compose CX(0,1) then CX(1,0); wrap in a CircBox if reused">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SWAPCX" title="SWAPCX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/ecr/">Echoed Cross-Resonance</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.ECRGate" title="qiskit.circuit.library.ECRGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.ECR.html" title="pennylane.ECR">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.ECR" title="braket.circuits.gates.ECR">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ECRGate.html" title="bqskit.ir.gates.ECRGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.ECR" title="qibo.gates.ECR">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ECR" title="pytket.circuit.OpType.ECR">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/can/">Canonical entangling</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Compose from qml.IsingXX/IsingYY/IsingZZ.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No Can class; compose XX, YY, ZZ Ising gates">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CanonicalGate; compose RXXGate, RYYGate, RZZGate or use PauliGate(2)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.TK2" title="pytket.circuit.OpType.TK2">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/b/">B Gate</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.BGate.html" title="bqskit.ir.gates.BGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Locally equivalent to TK2(0.5, 0.25, 0); TK2 angles in half-turns">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/magic/">Magic</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Unitary2qBox with the 4x4 magic-basis matrix">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/givens/">Givens Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not a named gate. XXPlusYYGate acts as a Givens rotation up to angle convention.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SingleExcitation.html" title="pennylane.SingleExcitation">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/givens" title="cirq.givens">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GIVENS" title="qibo.gates.GIVENS">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="PhasedISWAP(0.25, 2*theta/pi) implements Givens(theta)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/fsim/">Fermionic Simulator</a></th>
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Compose XXPlusYYGate with CPhaseGate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Compose from qml.IsingXY and qml.ControlledPhaseShift.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/FSimGate" title="cirq.FSimGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.FSIM" title="pyquil.simulation.matrices.FSIM">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No fSim class; compose XY and CPhaseShift">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.FSIMGate.html" title="bqskit.ir.gates.FSIMGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.fSim" title="qibo.gates.fSim">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.FSim" title="pytket.circuit.OpType.FSim">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/sycamore/">Sycamore</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq_google/SYC" title="cirq_google.SYC">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Build from pyquil.simulation.matrices.FSIM with DefGate.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SycamoreGate.html" title="bqskit.ir.gates.SycamoreGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SYC" title="qibo.gates.SYC">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Sycamore" title="pytket.circuit.OpType.Sycamore">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/xy/">XY Interaction</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.XXPlusYYGate" title="qiskit.circuit.library.XXPlusYYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.IsingXY.html" title="pennylane.IsingXY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/ISwapPowGate" title="cirq.ISwapPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.XY" title="pyquil.gates.XY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.XY" title="braket.circuits.gates.XY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No XYGate; FSIMGate(theta, 0) gives the XY coupling (full angle theta, not theta/2)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RXXYY" title="qibo.gates.RXXYY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ISWAP" title="pytket.circuit.OpType.ISWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/xx-minus-yy/">XX−YY Interaction</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.XXMinusYYGate" title="qiskit.circuit.library.XXMinusYYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="TK2(a, -a, 0) with a in half-turns gives e^{-i(pi/2)a(XX-YY)}">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rxx/">xx Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RXXGate" title="qiskit.circuit.library.RXXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.IsingXX.html" title="pennylane.IsingXX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/XXPowGate" title="cirq.XXPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rxx" title="Std.Intrinsic.Rxx">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.RXX" title="pyquil.simulation.matrices.RXX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.XX" title="braket.circuits.gates.XX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RXXGate.html" title="bqskit.ir.gates.RXXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RXX" title="qibo.gates.RXX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.XXPhase" title="pytket.circuit.OpType.XXPhase">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_XX" title="SQRT_XX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/ryy/">yy Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RYYGate" title="qiskit.circuit.library.RYYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.IsingYY.html" title="pennylane.IsingYY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/YYPowGate" title="cirq.YYPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/ryy" title="Std.Intrinsic.Ryy">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.RYY" title="pyquil.simulation.matrices.RYY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.YY" title="braket.circuits.gates.YY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RYYGate.html" title="bqskit.ir.gates.RYYGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RYY" title="qibo.gates.RYY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.YYPhase" title="pytket.circuit.OpType.YYPhase">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_YY" title="SQRT_YY">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rzz/">zz Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RZZGate" title="qiskit.circuit.library.RZZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.IsingZZ.html" title="pennylane.IsingZZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/ZZPowGate" title="cirq.ZZPowGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/rzz" title="Std.Intrinsic.Rzz">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.RZZ" title="pyquil.simulation.matrices.RZZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.ZZ" title="braket.circuits.gates.ZZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.RZZGate.html" title="bqskit.ir.gates.RZZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RZZ" title="qibo.gates.RZZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.ZZPhase" title="pytket.circuit.OpType.ZZPhase">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_ZZ" title="SQRT_ZZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rzx/">zx Rotation</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RZXGate" title="qiskit.circuit.library.RZXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use qml.PauliRot(θ, &quot;ZX&quot;, wires).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Exponentiate a Pauli string: (cirq.Z(a)*cirq.X(b))**(θ/π).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Use Std.Intrinsic.Exp([PauliZ, PauliX], -theta / 2.0, [q0, q1]).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.RZX" title="qibo.gates.RZX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Conjugate ZZPhase(theta/pi) with H on the target qubit">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/molmer-sorenson/">Mølmer-Sørensen</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.MSGate" title="qiskit.circuit.library.MSGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not in core PennyLane. Available through the PennyLane-IonQ plugin as MS.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/MSGate" title="cirq.MSGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.MS" title="braket.circuits.gates.MS">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.XXGate.html" title="bqskit.ir.gates.XXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.MS" title="qibo.gates.MS">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.AAMS" title="pytket.circuit.OpType.AAMS">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_XX" title="SQRT_XX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/toffoli/">Toffoli</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CCXGate" title="qiskit.circuit.library.CCXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.Toffoli.html" title="pennylane.Toffoli">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CCNOT" title="cirq.CCNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/ccnot" title="Std.Intrinsic.CCNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CCNOT" title="pyquil.gates.CCNOT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CCNot" title="braket.circuits.gates.CCNot">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ToffoliGate.html" title="bqskit.ir.gates.ToffoliGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.TOFFOLI" title="qibo.gates.TOFFOLI">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CCX" title="pytket.circuit.OpType.CCX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#ccx" title="stdgates.inc: ccx">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/ccz/">Controlled-CZ</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CCZGate" title="qiskit.circuit.library.CCZGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CCZ.html" title="pennylane.CCZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CCZ" title="cirq.CCZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled Z([c1, c2], target).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: CZ(q1, q2).controlled(q0).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CCZ class; use z with two controls: Circuit().z(t, control=[c0,c1])">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CCZGate; build with ControlledGate(ZGate(), 2)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CCZ" title="qibo.gates.CCZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CnZ" title="pytket.circuit.OpType.CnZ">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ ctrl @ z q0, q1, q2.">~</span></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/cswap/">Fredkin</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSwapGate" title="qiskit.circuit.library.CSwapGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CSWAP.html" title="pennylane.CSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/CSWAP" title="cirq.CSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled SWAP([control], (q1, q2)).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.CSWAP" title="pyquil.gates.CSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CSwap" title="braket.circuits.gates.CSwap">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No CSwapGate; build with ControlledGate(SwapGate())">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Construct as qibo.gates.SWAP(q1, q2).controlled_by(q0)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CSWAP" title="pytket.circuit.OpType.CSWAP">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/standard_library.html#cswap" title="stdgates.inc: cswap">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/rccx/">Margolus</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RCCXGate" title="qiskit.circuit.library.RCCXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.MargolusGate.html" title="bqskit.ir.gates.MargolusGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="qibo.gates.TOFFOLI.congruent() yields this gate (Toffoli with |101⟩ phase reversed)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/mcx/">Multi-Controlled X</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.MCXGate" title="qiskit.circuit.library.MCXGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.MultiControlledX.html" title="pennylane.MultiControlledX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Construct with cirq.X.controlled(n).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Apply via the Controlled functor, Controlled X(controls, target).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Chain CONTROLLED modifiers: X(t).controlled(c1).controlled(c2).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No MCX class; use x(target, control=[...]) with any number of controls">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No MCXGate; build with ControlledGate(XGate(), num_controls=n)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Construct as qibo.gates.X(target).controlled_by(*controls)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CnX" title="pytket.circuit.OpType.CnX">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ ctrl @ x q0, q1, q2.">~</span></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/deutsch/">Deutsch</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.DEUTSCH" title="qibo.gates.DEUTSCH">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="QControlBox with 2 controls on a Unitary1qBox of iRx(2*theta)">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/shift/">Shift</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.TShift.html" title="pennylane.TShift">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Cirq supports qudits; define a custom gate with _qid_shape_.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ShiftGate.html" title="bqskit.ir.gates.ShiftGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/clock/">Clock</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.TClock.html" title="pennylane.TClock">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. Cirq supports qudits; define a custom gate with _qid_shape_.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.ClockGate.html" title="bqskit.ir.gates.ClockGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/global-phase/">Global Phase</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.GlobalPhaseGate" title="qiskit.circuit.library.GlobalPhaseGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.GlobalPhase.html" title="pennylane.GlobalPhase">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/GlobalPhaseGate" title="cirq.GlobalPhaseGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Use R(PauliI, theta, q) from Std.Intrinsic; applies global phase exp(-i theta/2).">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Quil has no global-phase gate; programs are defined up to global phase.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.GPhase" title="braket.circuits.gates.GPhase">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No gate class; apply exp(iφ)·I via qibo.gates.Unitary on any qubit">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Phase" title="pytket.circuit.OpType.Phase">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://openqasm.com/language/gates.html#gphase" title="gphase">✓</a></td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/qft/">Quantum Fourier Transform</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.QFTGate" title="qiskit.circuit.library.QFTGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.QFT.html" title="pennylane.QFT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://quantumai.google/reference/python/cirq/qft" title="cirq.qft">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/applyqft" title="Std.Canon.ApplyQFT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No built-in QFT; construct from H and CPHASE gates.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.models.qft.QFT" title="qibo.models.QFT">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="CircBox of H plus CU1 ladder and final swaps">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/oracle/">Oracle</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.BitFlipOracleGate" title="qiskit.circuit.library.BitFlipOracleGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="No oracle builder; wrap a matrix with braket.circuits.gates.Unitary">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="ToffoliBox encodes a classical basis-state permutation">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/phase-oracle/">Phase Oracle</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.PhaseOracleGate" title="qiskit.circuit.library.PhaseOracleGate">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Not available natively. qml.FlipSign flips the sign of a chosen basis state.">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="DiagonalBox synthesises the +/-1 phase diagonal of f">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/grover-diffuser/">Grover Diffuser</a></th>
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.grover_operator" title="qiskit.circuit.library.grover_operator">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-yes"><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.GroverOperator.html" title="pennylane.GroverOperator">✓</a></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="Built inside qibo.models.grover.Grover (diffusion step); no standalone gate">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-note"><span class="sdk-note" data-note="CircBox: H on all, X on all, CnZ, X on all, H on all">~</span></td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+          
+        
+          
+        
+          
+            
+            
+              <tr>
+                <th scope="row"><a href="/gates/virtual-distillation/">Virtual Distillation</a></th>
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+                  
+                  
+                    <td class="cell-no">—</td>
+                  
+                
+              </tr>
+            
+          
+        
+      
+    </tbody>
+  </table>
+</div>
+
+<a class="back-to-home" href="/">Back to home</a>
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    function renderPageMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          trust: true
+        });
+      }
+    }
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
+  </script>
+</body>
+</html>

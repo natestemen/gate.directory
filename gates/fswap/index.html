@@ -38,6 +38,16 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;mathrm{fSWAP}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        
+      </p>
+      
+      <p class="gate-badges">
+        <span class="gate-badge">hermitian</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Swaps $|01\rangle$ and $|10\rangle$ while applying a $-1$ phase to $|11\rangle$.</p>
@@ -46,6 +56,136 @@
 
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
 
       
         <h3>SDK Support</h3>
@@ -62,7 +202,11 @@
               <tr>
                 <td>Qiskit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Compose SwapGate with CZGate.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -83,7 +227,11 @@
               <tr>
                 <td>Cirq</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available in core Cirq; openfermion.circuits.FSWAP provides it.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -91,7 +239,9 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -99,7 +249,9 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -107,7 +259,11 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No fSwap class; compose Swap and CZ">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -115,7 +271,55 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.FSWAP"><code>qibo.gates.FSWAP</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Compose SWAP and CZ (they commute)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td>
+                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CZSWAP"><code>CZSWAP</code></a>
+                    
+                      <span class="sdk-note" data-note="CZSWAP (alias SWAPCZ) is exactly the fSWAP gate.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -127,9 +331,16 @@
         <p>This gate is contained in the following groups:</p>
         <ul>
           
+          <li><a href="/groups/clifford">clifford</a></li>
+          
           <li><a href="/groups/orthogonal">orthogonal</a></li>
           
+          <li><a href="/groups/matchgate">matchgate</a></li>
+          
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
         </ul>
+      
       
     </div>
 

@@ -32,9 +32,19 @@
 <h2>Orthogonal Group</h2>
 
 <div>
-  <p>coming soon</p>
+  <p>The orthogonal group consists of the <em>real</em> unitaries — gates whose matrices have no imaginary entries (the homepage filter calls this group &quot;Real&quot;). Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.</p>
+<p>$$\mathsf{O}(n) := \left\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}} O = I \right\} = \mathsf{U}(n) \cap \mathrm{GL}(n, \mathbb{R})$$</p>
+<h3>Properties</h3>
+<ul>
+<li>Every orthogonal matrix has $\det O = \pm 1$. The $+1$ component $\mathsf{SO}(n)$ contains the <em>rotations</em>, such as <a href="/gates/ry">$R_y(\theta)$</a> and <a href="/gates/givens">Givens rotations</a>; determinant $-1$ elements are <em>reflections</em>, such as the <a href="/gates/grover-diffuser">Grover diffuser</a>.</li>
+<li>Orthogonal gates are exactly the gates invariant under complex conjugation — quantum operations indistinguishable from their own &quot;time-reversed-frame&quot; copies.</li>
+<li><a href="/groups/permutation">Permutation matrices</a> form a finite subgroup: <a href="/gates/pauli-x">$X$</a>, <a href="/gates/cnot">CNOT</a>, <a href="/gates/toffoli">Toffoli</a>, <a href="/gates/swap">SWAP</a>, and the qudit <a href="/gates/shift">shift</a> all just shuffle basis states. All of classical reversible logic lives here.</li>
+</ul>
+<h3>Why real amplitudes suffice</h3>
+<p>Restricting to real amplitudes costs almost nothing: a single extra qubit can carry the role of the imaginary unit, and real gates on $n+1$ qubits then simulate arbitrary complex circuits on $n$ qubits (<a href="https://arxiv.org/abs/quant-ph/0210187">Rudolph and Grover</a> showed a single two-qubit real gate suffices for universality). Many textbook algorithms — Grover search among them — never produce a complex amplitude in the first place.</p>
 
 </div>
+
 
 
 <p>The following gates are contained in this group:</p>
@@ -49,9 +59,29 @@
   
 
   
+    <li><a href="/gates/ch/">Controlled-Hadamard</a></li>
+  
 
   
 
+  
+    <li><a href="/gates/cnot/">Controlled Not</a></li>
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/cry/">Controlled $y$ Rotation</a></li>
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/cswap/">Fredkin</a></li>
   
 
   
@@ -71,6 +101,8 @@
   
 
   
+
+  
     <li><a href="/gates/fswap/">fSWAP</a></li>
   
 
@@ -78,6 +110,14 @@
     <li><a href="/gates/givens/">Givens Rotation</a></li>
   
 
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/grover-diffuser/">Grover Diffuser</a></li>
   
 
   
@@ -93,7 +133,27 @@
   
 
   
+    <li><a href="/gates/mcx/">Multi-Controlled X</a></li>
+  
 
+  
+
+  
+    <li><a href="/gates/oracle/">Oracle</a></li>
+  
+
+  
+    <li><a href="/gates/pauli-x/">Pauli-X</a></li>
+  
+
+  
+
+  
+    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
+  
+
+  
+    <li><a href="/gates/phase-oracle/">Phase Oracle</a></li>
   
 
   
@@ -103,9 +163,7 @@
   
 
   
-
-  
-
+    <li><a href="/gates/rccx/">Margolus</a></li>
   
 
   
@@ -129,6 +187,12 @@
   
 
   
+    <li><a href="/gates/shift/">Shift</a></li>
+  
+
+  
+
+  
 
   
     <li><a href="/gates/swap/">SWAP</a></li>
@@ -141,7 +205,13 @@
   
 
   
+    <li><a href="/gates/toff-decomp/">unnamed</a></li>
+  
+
+  
     <li><a href="/gates/toffoli/">Toffoli</a></li>
+  
+
   
 
   
@@ -150,7 +220,12 @@
     <li><a href="/gates/virtual-distillation/">Virtual Distillation</a></li>
   
 
+  
+
+  
+
 </ul>
+
 
 
       </div>

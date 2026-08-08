@@ -34,6 +34,11 @@
   This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
 </p>
 
+<div class="gate-search">
+  <input type="search" id="gate-search-input" placeholder="Search gates by name, alias, or SDK name (e.g. CU1, XXPlusYY, fredkin)…" autocomplete="off" aria-label="Search gates" />
+  <ul id="gate-search-results" hidden></ul>
+</div>
+
 <br/>
 
 <h2>Periodic Table of Gates</h2>
@@ -47,6 +52,7 @@ two-qubit gate).</p>
   <button class="filter-button" type="button" data-group="orthogonal" aria-pressed="false">Real</button>
   <button class="filter-button" type="button" data-group="parametrized" aria-pressed="false">Parametrized</button>
   <button class="filter-button" type="button" data-group="controlled" aria-pressed="false">Controlled</button>
+  <button class="filter-button" type="button" data-group="hermitian" aria-pressed="false">Hermitian</button>
   <button class="filter-button filter-clear" type="button" data-clear>Clear</button>
   <span class="filter-hint">Hover or click a filter to emphasize matching gates.</span>
 </div>
@@ -57,7 +63,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/identity/" data-groups="pauli clifford diagonal orthogonal" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/identity/" data-groups="pauli clifford diagonal orthogonal permutation number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">nq2d</span>
             <div class="symbol">$I$</div>
             <div class="name">Identity</div>
@@ -69,7 +76,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/pauli-x/" data-groups="pauli clifford" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/pauli-x/" data-groups="pauli clifford orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$X$</div>
             <div class="name">Pauli-X</div>
@@ -81,7 +89,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/pauli-y/" data-groups="pauli clifford" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/pauli-y/" data-groups="pauli clifford" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$Y$</div>
             <div class="name">Pauli-Y</div>
@@ -93,7 +102,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/pauli-z/" data-groups="pauli clifford diagonal" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/pauli-z/" data-groups="pauli clifford diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$Z$</div>
             <div class="name">Pauli-Z</div>
@@ -109,7 +119,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/hadamard/" data-groups="clifford orthogonal" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/hadamard/" data-groups="clifford orthogonal" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$H$</div>
             <div class="name">Hadamard</div>
@@ -121,7 +132,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/s/" data-groups="clifford" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/s/" data-groups="clifford diagonal number-preserving" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$S$</div>
             <div class="name">Phase</div>
@@ -133,7 +145,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/t/" data-groups="diagonal" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/t/" data-groups="diagonal number-preserving" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$T$</div>
             <div class="name">T</div>
@@ -147,7 +160,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/rx/" data-groups="" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/rx/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$R_x$</div>
             <div class="name">$x$ Rotation</div>
@@ -159,7 +173,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/ry/" data-groups="orthogonal" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/ry/" data-groups="orthogonal" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$R_y$</div>
             <div class="name">$y$ Rotation</div>
@@ -171,7 +186,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/rz/" data-groups="diagonal" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/rz/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$R_z$</div>
             <div class="name">$z$ Rotation</div>
@@ -183,7 +199,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/rot/" data-groups="" data-parameters="3" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/rot/" data-groups="" data-properties="" data-parameters="3" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$R_{\mathbf{n}}$</div>
             <div class="name">Arbitrary Rotation</div>
@@ -192,14 +209,24 @@ two-qubit gate).</p>
       
     
       
-        <div class="periodic-cell-empty"></div>
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/r/" data-groups="" data-properties="" data-parameters="2" data-controlled="">
+            <span class="arity-dim">1q2d</span>
+            <div class="symbol">$R(\theta, \phi)$</div>
+            <div class="name">Phased Rotation</div>
+          </a>
+        
       
     
       
         
         
           
-          <a class="periodic-cell" href="/gates/phase/" data-groups="diagonal" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/phase/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$P$</div>
             <div class="name">Phase Shift</div>
@@ -211,7 +238,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/sx/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/sx/" data-groups="clifford" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$\sqrt{X}$</div>
             <div class="name">Square Root of X</div>
@@ -223,7 +251,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/u3/" data-groups="" data-parameters="3" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/u3/" data-groups="" data-properties="" data-parameters="3" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$U_3$</div>
             <div class="name">U3</div>
@@ -237,10 +266,11 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/b/" data-groups="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$B$</div>
-            <div class="name">B Gate</div>
+          
+          <a class="periodic-cell" href="/gates/gpi/" data-groups="" data-properties="hermitian" data-parameters="1" data-controlled="">
+            <span class="arity-dim">1q2d</span>
+            <div class="symbol">$\mathrm{GPi}$</div>
+            <div class="name">GPi</div>
           </a>
         
       
@@ -249,7 +279,21 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/toff-decomp/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/gpi2/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
+            <span class="arity-dim">1q2d</span>
+            <div class="symbol">$\mathrm{GPi2}$</div>
+            <div class="name">GPi2</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/toff-decomp/" data-groups="orthogonal" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">1q2d</span>
             <div class="symbol">$G$</div>
             <div class="name">unnamed</div>
@@ -274,11 +318,16 @@ two-qubit gate).</p>
       
     
       
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/u2/" data-groups="" data-properties="" data-parameters="2" data-controlled="">
+            <span class="arity-dim">1q2d</span>
+            <div class="symbol">$U_2$</div>
+            <div class="name">U2</div>
+          </a>
+        
       
     
   
@@ -287,7 +336,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/cnot/" data-groups="clifford" data-parameters="" data-controlled="pauli-x">
+          
+          <a class="periodic-cell" href="/gates/cnot/" data-groups="clifford orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="pauli-x">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{C}X$</div>
             <div class="name">Controlled Not</div>
@@ -299,7 +349,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/cy/" data-groups="clifford" data-parameters="" data-controlled="pauli-y">
+          
+          <a class="periodic-cell" href="/gates/cy/" data-groups="clifford" data-properties="hermitian" data-parameters="" data-controlled="pauli-y">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{C}Y$</div>
             <div class="name">Controlled-Y</div>
@@ -311,7 +362,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/cz/" data-groups="clifford diagonal orthogonal" data-parameters="" data-controlled="pauli-z">
+          
+          <a class="periodic-cell" href="/gates/cz/" data-groups="clifford diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="pauli-z">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{C}Z$</div>
             <div class="name">Controlled-Z</div>
@@ -323,7 +375,34 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/csx/" data-groups="" data-parameters="" data-controlled="sx">
+          
+          <a class="periodic-cell" href="/gates/ch/" data-groups="orthogonal" data-properties="hermitian" data-parameters="" data-controlled="hadamard">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{C}H$</div>
+            <div class="name">Controlled-Hadamard</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/cs/" data-groups="diagonal number-preserving" data-properties="" data-parameters="" data-controlled="s">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{C}S$</div>
+            <div class="name">Controlled-S</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/csx/" data-groups="" data-properties="" data-parameters="" data-controlled="sx">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{C}\sqrt{X}$</div>
             <div class="name">Controlled sqrt(X)</div>
@@ -335,7 +414,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/controlled-phase/" data-groups="diagonal unitary" data-parameters="1" data-controlled="phase">
+          
+          <a class="periodic-cell" href="/gates/controlled-phase/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="phase">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{C}P$</div>
             <div class="name">Controlled Phase</div>
@@ -344,10 +424,78 @@ two-qubit gate).</p>
       
     
       
+        <div class="periodic-cell-empty"></div>
+      
+    
+  
+    
+      
         
         
           
-          <a class="periodic-cell" href="/gates/swap/" data-groups="clifford orthogonal" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/crx/" data-groups="" data-properties="" data-parameters="1" data-controlled="rx">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{C}R_x$</div>
+            <div class="name">Controlled $x$ Rotation</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/cry/" data-groups="orthogonal" data-properties="" data-parameters="1" data-controlled="ry">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{C}R_y$</div>
+            <div class="name">Controlled $y$ Rotation</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/crz/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="rz">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{C}R_z$</div>
+            <div class="name">Controlled $z$ Rotation</div>
+          </a>
+        
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+  
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/swap/" data-groups="clifford orthogonal permutation number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{SWAP}$</div>
             <div class="name">SWAP</div>
@@ -359,7 +507,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/iswap/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/iswap/" data-groups="clifford matchgate number-preserving" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$i\mathrm{SWAP}$</div>
             <div class="name">iSWAP</div>
@@ -371,24 +520,11 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/dcx/" data-groups="clifford orthogonal" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{DC}X$</div>
-            <div class="name">Double CX</div>
-          </a>
-        
-      
-    
-  
-    
-      
-        
-        
           
-          <a class="periodic-cell" href="/gates/ecr/" data-groups="clifford" data-parameters="" data-controlled="">
+          <a class="periodic-cell" href="/gates/sqrt-swap/" data-groups="number-preserving" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
-            <div class="symbol">$ECR$</div>
-            <div class="name">Echoed Cross-Resonance</div>
+            <div class="symbol">$\sqrt{\mathrm{SWAP}}$</div>
+            <div class="name">Square Root SWAP</div>
           </a>
         
       
@@ -397,10 +533,11 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/can/" data-groups="" data-parameters="3" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/sqrt-iswap/" data-groups="matchgate number-preserving" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{CAN}$</div>
-            <div class="name">Canonical entangling</div>
+            <div class="symbol">$\sqrt{i\mathrm{SWAP}}$</div>
+            <div class="name">Square Root iSWAP</div>
           </a>
         
       
@@ -409,19 +546,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/fsim/" data-groups="" data-parameters="2" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\mathrm{FSim}$</div>
-            <div class="name">Fermionic Simulator</div>
-          </a>
-        
-      
-    
-      
-        
-        
           
-          <a class="periodic-cell" href="/gates/fswap/" data-groups="orthogonal" data-parameters="" data-controlled="">
+          <a class="periodic-cell" href="/gates/fswap/" data-groups="clifford orthogonal matchgate number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$\mathrm{fSWAP}$</div>
             <div class="name">fSWAP</div>
@@ -433,10 +559,11 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/givens/" data-groups="orthogonal" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/dcx/" data-groups="clifford orthogonal permutation" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
-            <div class="symbol">$G_{ij}$</div>
-            <div class="name">Givens Rotation</div>
+            <div class="symbol">$\mathrm{DC}X$</div>
+            <div class="name">Double CX</div>
           </a>
         
       
@@ -445,7 +572,53 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/magic/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/ecr/" data-groups="clifford" data-properties="hermitian" data-parameters="" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$ECR$</div>
+            <div class="name">Echoed Cross-Resonance</div>
+          </a>
+        
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+  
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/can/" data-groups="" data-properties="" data-parameters="3" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{CAN}$</div>
+            <div class="name">Canonical entangling</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/b/" data-groups="matchgate" data-properties="" data-parameters="" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$B$</div>
+            <div class="name">B Gate</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/magic/" data-groups="clifford" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$M$</div>
             <div class="name">Magic</div>
@@ -457,10 +630,11 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/molmer-sorenson/" data-groups="" data-parameters="n(n-1)/2" data-controlled="">
-            <span class="arity-dim">nq2d</span>
-            <div class="symbol">$MS$</div>
-            <div class="name">Mølmer-Sørensen</div>
+          
+          <a class="periodic-cell" href="/gates/givens/" data-groups="orthogonal matchgate number-preserving" data-properties="" data-parameters="1" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$G_{ij}$</div>
+            <div class="name">Givens Rotation</div>
           </a>
         
       
@@ -469,10 +643,50 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/sqrt-iswap/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/fsim/" data-groups="number-preserving" data-properties="" data-parameters="2" data-controlled="">
             <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\sqrt{i\mathrm{SWAP}}$</div>
-            <div class="name">Square Root iSWAP</div>
+            <div class="symbol">$\mathrm{FSim}$</div>
+            <div class="name">Fermionic Simulator</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/sycamore/" data-groups="number-preserving" data-properties="" data-parameters="" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{SYC}$</div>
+            <div class="name">Sycamore</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/xy/" data-groups="matchgate number-preserving" data-properties="" data-parameters="1" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$\mathrm{XY}$</div>
+            <div class="name">XY Interaction</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/xx-minus-yy/" data-groups="matchgate" data-properties="" data-parameters="1" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$R_{xx-yy}$</div>
+            <div class="name">XX−YY Interaction</div>
           </a>
         
       
@@ -483,7 +697,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/rxx/" data-groups="" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/rxx/" data-groups="matchgate" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$R_{xx}$</div>
             <div class="name">$xx$ Rotation</div>
@@ -495,7 +710,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/ryy/" data-groups="" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/ryy/" data-groups="matchgate" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$R_{yy}$</div>
             <div class="name">$yy$ Rotation</div>
@@ -507,7 +723,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/rzz/" data-groups="diagonal" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/rzz/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">2q2d</span>
             <div class="symbol">$R_{zz}$</div>
             <div class="name">$zz$ Rotation</div>
@@ -516,31 +733,41 @@ two-qubit gate).</p>
       
     
       
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/rzx/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$R_{zx}$</div>
+            <div class="name">$zx$ Rotation</div>
+          </a>
+        
       
     
       
         
         
           
-          <a class="periodic-cell" href="/gates/sqrt-swap/" data-groups="" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$\sqrt{\mathrm{SWAP}}$</div>
-            <div class="name">Square Root SWAP</div>
+          
+          <a class="periodic-cell" href="/gates/molmer-sorenson/" data-groups="" data-properties="" data-parameters="n(n-1)/2" data-controlled="">
+            <span class="arity-dim">nq2d</span>
+            <div class="symbol">$MS$</div>
+            <div class="name">Mølmer-Sørensen</div>
           </a>
         
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
       
     
   
@@ -549,10 +776,11 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/cswap/" data-groups="" data-parameters="" data-controlled="swap">
+          
+          <a class="periodic-cell" href="/gates/toffoli/" data-groups="orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="cnot">
             <span class="arity-dim">3q2d</span>
-            <div class="symbol">$\mathrm{CSWAP}$</div>
-            <div class="name">Fredkin</div>
+            <div class="symbol">$\mathrm{CC}X$</div>
+            <div class="name">Toffoli</div>
           </a>
         
       
@@ -561,7 +789,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/ccz/" data-groups="diagonal orthogonal" data-parameters="" data-controlled="cz">
+          
+          <a class="periodic-cell" href="/gates/ccz/" data-groups="diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="cz">
             <span class="arity-dim">3q2d</span>
             <div class="symbol">$\mathrm{CC}Z$</div>
             <div class="name">Controlled-CZ</div>
@@ -573,12 +802,92 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/toffoli/" data-groups="orthogonal" data-parameters="" data-controlled="cnot">
+          
+          <a class="periodic-cell" href="/gates/cswap/" data-groups="orthogonal permutation number-preserving" data-properties="hermitian" data-parameters="" data-controlled="swap">
             <span class="arity-dim">3q2d</span>
-            <div class="symbol">$\mathrm{CC}X$</div>
-            <div class="name">Toffoli</div>
+            <div class="symbol">$\mathrm{CSWAP}$</div>
+            <div class="name">Fredkin</div>
           </a>
         
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/rccx/" data-groups="orthogonal" data-properties="hermitian" data-parameters="" data-controlled="">
+            <span class="arity-dim">3q2d</span>
+            <div class="symbol">$\mathrm{RCC}X$</div>
+            <div class="name">Margolus</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/mcx/" data-groups="orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="toffoli">
+            <span class="arity-dim">n+1q2d</span>
+            <div class="symbol">$\mathrm{C}^nX$</div>
+            <div class="name">Multi-Controlled X</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/deutsch/" data-groups="" data-properties="" data-parameters="1" data-controlled="">
+            <span class="arity-dim">3q2d</span>
+            <div class="symbol">$D(\theta)$</div>
+            <div class="name">Deutsch</div>
+          </a>
+        
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
+      
+    
+  
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/shift/" data-groups="orthogonal permutation" data-properties="" data-parameters="" data-controlled="">
+            <span class="arity-dim">1qdd</span>
+            <div class="symbol">$X_d$</div>
+            <div class="name">Shift</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/clock/" data-groups="diagonal number-preserving" data-properties="" data-parameters="" data-controlled="">
+            <span class="arity-dim">1qdd</span>
+            <div class="symbol">$Z_d$</div>
+            <div class="name">Clock</div>
+          </a>
+        
+      
+    
+      
+        <div class="periodic-cell-empty"></div>
       
     
       
@@ -607,7 +916,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/global-phase/" data-groups="" data-parameters="1" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/global-phase/" data-groups="diagonal number-preserving" data-properties="" data-parameters="1" data-controlled="">
             <span class="arity-dim">nq2d</span>
             <div class="symbol">$\mathrm{Ph}$</div>
             <div class="name">Global Phase</div>
@@ -619,7 +929,8 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/qft/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/qft/" data-groups="" data-properties="" data-parameters="" data-controlled="">
             <span class="arity-dim">nq2d</span>
             <div class="symbol">$\mathrm{QFT}_n$</div>
             <div class="name">Quantum Fourier Transform</div>
@@ -628,48 +939,11 @@ two-qubit gate).</p>
       
     
       
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
         
         
           
-          <a class="periodic-cell" href="/gates/virtual-distillation/" data-groups="orthogonal" data-parameters="" data-controlled="">
-            <span class="arity-dim">2q2d</span>
-            <div class="symbol">$B^{(2)}_i$</div>
-            <div class="name">Virtual Distillation</div>
-          </a>
-        
-      
-    
-  
-    
-      
-        
-        
           
-          <a class="periodic-cell" href="/gates/oracle/" data-groups="" data-parameters="" data-controlled="">
+          <a class="periodic-cell" href="/gates/oracle/" data-groups="orthogonal permutation" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">nqpd</span>
             <div class="symbol">$O_f$</div>
             <div class="name">Oracle</div>
@@ -681,10 +955,24 @@ two-qubit gate).</p>
         
         
           
-          <a class="periodic-cell" href="/gates/phase-oracle/" data-groups="" data-parameters="" data-controlled="">
+          
+          <a class="periodic-cell" href="/gates/phase-oracle/" data-groups="diagonal orthogonal number-preserving" data-properties="hermitian" data-parameters="" data-controlled="">
             <span class="arity-dim">nqpd</span>
             <div class="symbol">$O_f^\pm$</div>
             <div class="name">Phase Oracle</div>
+          </a>
+        
+      
+    
+      
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/grover-diffuser/" data-groups="orthogonal" data-properties="hermitian" data-parameters="" data-controlled="">
+            <span class="arity-dim">nq2d</span>
+            <div class="symbol">$U_s$</div>
+            <div class="name">Grover Diffuser</div>
           </a>
         
       
@@ -698,15 +986,16 @@ two-qubit gate).</p>
       
     
       
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
-      
-    
-      
-        <div class="periodic-cell-empty"></div>
+        
+        
+          
+          
+          <a class="periodic-cell" href="/gates/virtual-distillation/" data-groups="orthogonal" data-properties="" data-parameters="" data-controlled="">
+            <span class="arity-dim">2q2d</span>
+            <div class="symbol">$B^{(2)}_i$</div>
+            <div class="name">Virtual Distillation</div>
+          </a>
+        
       
     
   
@@ -722,13 +1011,27 @@ two-qubit gate).</p>
   
   <li><a href="/groups/diagonal/">Diagonal Group</a></li>
   
+  <li><a href="/groups/matchgate/">Matchgate Group</a></li>
+  
+  <li><a href="/groups/number-preserving/">Number-Preserving Group</a></li>
+  
   <li><a href="/groups/orthogonal/">Orthogonal Group</a></li>
   
   <li><a href="/groups/pauli/">Pauli Group</a></li>
   
+  <li><a href="/groups/permutation/">Permutation Group</a></li>
+  
   <li><a href="/groups/unitary/">Unitary Group</a></li>
   
 </ul>
+
+<br/>
+
+<h2>SDK Support</h2>
+<p>
+Wondering which framework implements a gate natively?
+The <a href="/sdks/">SDK support matrix</a> shows every gate against Qiskit, PennyLane, Cirq, Q#, PyQuil, Braket, BQSKit, Qibo, pytket, Stim, and OpenQASM, with links into each SDK's documentation.
+</p>
 
 <br/>
 
@@ -738,6 +1041,83 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
 </p>
 
 <script>
+  (function () {
+    const input = document.getElementById("gate-search-input");
+    const list = document.getElementById("gate-search-results");
+    if (!input || !list) {
+      return;
+    }
+
+    let indexPromise = null;
+    const loadIndex = () => {
+      if (!indexPromise) {
+        indexPromise = fetch("/search-index.json").then((r) => r.json());
+      }
+      return indexPromise;
+    };
+    input.addEventListener("focus", loadIndex, { once: true });
+
+    input.addEventListener("input", async () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) {
+        list.hidden = true;
+        list.innerHTML = "";
+        return;
+      }
+
+      const gates = await loadIndex();
+      const results = [];
+      for (const g of gates) {
+        let best = null;
+        const consider = (text, rank, label) => {
+          if (!text) return;
+          const t = text.toLowerCase();
+          if (t === q) rank -= 0.5;
+          else if (t.startsWith(q)) rank += 0;
+          else if (t.includes(q)) rank += 0.25;
+          else return;
+          if (!best || rank < best.rank) best = { rank, label };
+        };
+        consider(g.title, 1, null);
+        for (const a of g.aliases) consider(a, 1, null);
+        for (const s of g.sdks) consider(s.name, 2, s.name);
+        for (const n of g.notations) consider(n.replace(/\\/g, ""), 3, null);
+        consider(g.description, 4, null);
+        if (best) results.push({ gate: g, rank: best.rank, label: best.label });
+      }
+      results.sort((a, b) => a.rank - b.rank || a.gate.title.localeCompare(b.gate.title));
+
+      list.innerHTML = "";
+      for (const r of results.slice(0, 10)) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = r.gate.url;
+        a.textContent = r.gate.title;
+        li.appendChild(a);
+        if (r.label) {
+          const match = document.createElement("span");
+          match.className = "search-match";
+          match.textContent = r.label;
+          li.appendChild(match);
+        }
+        list.appendChild(li);
+      }
+      if (!results.length) {
+        const li = document.createElement("li");
+        li.className = "search-empty";
+        li.textContent = "No gates found";
+        list.appendChild(li);
+      }
+      list.hidden = false;
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".gate-search")) {
+        list.hidden = true;
+      }
+    });
+  })();
+
   (function () {
     const filterRoot = document.querySelector(".gate-filters");
     if (!filterRoot) {
@@ -755,6 +1135,7 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       "orthogonal",
       "parametrized",
       "controlled",
+      "hermitian",
     ];
     const activeGroups = new Set();
 
@@ -780,12 +1161,21 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
       return raw.length > 0;
     };
 
+    const getCellProperties = (cell) =>
+      (cell.dataset.properties || "")
+        .split(" ")
+        .map(normalizeGroup)
+        .filter(Boolean);
+
     const cellMatchesGroup = (cell, group) => {
       if (group === "parametrized") {
         return hasParameters(cell);
       }
       if (group === "controlled") {
         return isControlled(cell);
+      }
+      if (group === "hermitian") {
+        return getCellProperties(cell).includes(group);
       }
       return getCellGroups(cell).includes(group);
     };

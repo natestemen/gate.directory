@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;sqrt{i&#92;mathrm{SWAP}}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Applies half of an iSWAP interaction, native to superconducting hardware with $XY$ coupling.</p>
@@ -57,6 +63,136 @@
       </div>
 
       
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+
+      
         <h3>SDK Support</h3>
         <table class="sdk-table">
           <thead>
@@ -71,7 +207,11 @@
               <tr>
                 <td>Qiskit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available as a named gate. Use iSwapGate().power(0.5).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -81,6 +221,8 @@
                 
                   <td>
                     <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SISWAP.html"><code>pennylane.SISWAP</code></a>
+                    
+                      <span class="sdk-note" data-note="Also available under the alias qml.SQISW.">ⓘ</span>
                     
                   </td>
                 
@@ -101,7 +243,9 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -109,7 +253,11 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Equal to pyquil.gates.XY(pi/2); a dedicated SQISW gate exists only on master.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -117,7 +265,11 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No named class; XY(pi/2) realizes sqrt-iSWAP">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -125,12 +277,71 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SqrtISwapGate.html"><code>bqskit.ir.gates.SqrtISwapGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SiSWAP"><code>qibo.gates.SiSWAP</code></a>
+                    
+                      <span class="sdk-note" data-note="Dagger available as qibo.gates.SiSWAPDG">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="ISWAP(0.5) in pytket; ISWAP angle is in half-turns">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/matchgate">matchgate</a></li>
+          
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
+        </ul>
       
       
     </div>

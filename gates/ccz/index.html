@@ -38,6 +38,16 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;mathrm{CC}Z$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $3$</span>
+        
+        
+      </p>
+      
+      <p class="gate-badges">
+        <span class="gate-badge">hermitian</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Applies a $-1$ phase to $|111\rangle$ and leaves all other basis states unchanged.</p>
@@ -55,6 +65,146 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+            
+            
+              <p><strong>Controlled version of:</strong> <a href="/gates/cz/">Controlled-Z</a></p>
+            
+          
+          
+        </div>
+      
 
       
         <h3>SDK Support</h3>
@@ -104,7 +254,11 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Apply via the Controlled functor, Controlled Z([c1, c2], target).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -112,7 +266,11 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: CZ(q1, q2).controlled(q0).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -120,7 +278,11 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No CCZ class; use z with two controls: Circuit().z(t, control=[c0,c1])">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -128,7 +290,57 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No CCZGate; build with ControlledGate(ZGate(), 2)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CCZ"><code>qibo.gates.CCZ</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CnZ"><code>pytket.circuit.OpType.CnZ</code></a>
+                    
+                      <span class="sdk-note" data-note="Use CnZ with two controls">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ ctrl @ z q0, q1, q2.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -144,7 +356,10 @@
           
           <li><a href="/groups/orthogonal">orthogonal</a></li>
           
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
         </ul>
+      
       
     </div>
 

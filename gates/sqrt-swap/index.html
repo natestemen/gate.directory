@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;sqrt{&#92;mathrm{SWAP}}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Applies half of a SWAP interaction, creating maximal entanglement from a product state.</p>
@@ -46,6 +52,136 @@
 
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
 
       
         <h3>SDK Support</h3>
@@ -62,7 +198,11 @@
               <tr>
                 <td>Qiskit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available as a named gate. Use SwapGate().power(0.5).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -70,7 +210,11 @@
               <tr>
                 <td>PennyLane</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Note that qml.SISWAP is √iSWAP, a different gate.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -81,7 +225,7 @@
                   <td>
                     <a href="https://quantumai.google/reference/python/cirq/SwapPowGate"><code>cirq.SwapPowGate</code></a>
                     
-                      <span class="sdk-note" data-note="No named constant. Use cirq.SWAP**0.5 (SwapPowGate with exponent=0.5). Note that cirq.SQRT_ISWAP is a different gate.">ⓘ</span>
+                      <span class="sdk-note" data-note="No named constant. √SWAP = cirq.SWAP**0.5 (SwapPowGate with exponent 0.5).">ⓘ</span>
                     
                   </td>
                 
@@ -91,7 +235,9 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -99,7 +245,9 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -107,7 +255,9 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -115,12 +265,67 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="ESWAP(0.5) equals sqrt(SWAP) up to global phase e^{i*pi/4}">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not in stdgates.inc; write pow(0.5) @ swap q0, q1.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
+        </ul>
       
       
     </div>

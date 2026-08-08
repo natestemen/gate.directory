@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Della+Respira&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <title>Number-Preserving Group</title>
+</head>
+<body>
+  <main>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
+        </header>
+      <div class="not-footer">
+        
+        
+<h2>Number-Preserving Group</h2>
+
+<div>
+  <p>Number-preserving (or <em>excitation-preserving</em>) gates conserve the total number of $|1\rangle$s: they never create or destroy excitations, only move them around and adjust phases. Formally, they are the unitaries commuting with the total number operator $\hat{N} = \sum_i (I - Z_i)/2$ — the gates with a global $\mathsf{U}(1)$ symmetry.</p>
+<p>$$\mathcal{N}_n := \left\{ U \in \mathsf{U}(2^n) \mid U \hat{N} U^\dag = \hat{N} \right\}$$</p>
+<p>Equivalently, $U$ is block-diagonal with respect to Hamming weight: it decomposes as $\bigoplus_{k=0}^{n} U_k$ with $U_k$ acting on the $\binom{n}{k}$-dimensional weight-$k$ sector.</p>
+<h3>Properties</h3>
+<ul>
+<li>The whole <a href="/groups/diagonal">diagonal group</a> is contained here: a gate that fixes every basis state certainly fixes its Hamming weight. The interesting members are the ones that <em>move</em> excitations — <a href="/gates/swap">SWAP</a>, <a href="/gates/iswap">iSWAP</a>, the <a href="/gates/xy">XY interaction</a>, <a href="/gates/givens">Givens rotations</a>, <a href="/gates/fsim">FSim</a>.</li>
+<li>On two qubits, a number-preserving gate is a phase on $|00\rangle$, a phase on $|11\rangle$, and an arbitrary $\mathsf{U}(2)$ rotation of the single-excitation subspace — exactly the FSim family and its relatives. The contrast case is the <a href="/gates/xx-minus-yy">$XX - YY$ interaction</a>, which coherently converts $|00\rangle \leftrightarrow |11\rangle$ and breaks the symmetry.</li>
+</ul>
+<h3>Why it matters</h3>
+<ul>
+<li><strong>Chemistry and fermions.</strong> Molecular Hamiltonians conserve electron number, so chemistry ansätze are built from number-preserving blocks: ladders of Givens rotations tiled across a register can prepare <em>any</em> state of fixed particle number.</li>
+<li><strong>Hardware.</strong> Energy-conserving interactions (exchange couplings, beam splitters) are natively number-preserving, which is why the iSWAP/FSim families are what superconducting hardware actually implements.</li>
+<li><strong>Error mitigation.</strong> If a circuit should conserve $\hat{N}$, measuring the total excitation number and discarding violating shots (symmetry verification) catches any error that changes the weight — bit flips in particular.</li>
+</ul>
+
+</div>
+
+
+
+<p>The following gates are contained in this group:</p>
+<ul>
+
+  
+
+  
+
+  
+    <li><a href="/gates/ccz/">Controlled-CZ</a></li>
+  
+
+  
+
+  
+    <li><a href="/gates/clock/">Clock</a></li>
+  
+
+  
+
+  
+    <li><a href="/gates/controlled-phase/">Controlled Phase</a></li>
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/crz/">Controlled $z$ Rotation</a></li>
+  
+
+  
+    <li><a href="/gates/cs/">Controlled-S</a></li>
+  
+
+  
+    <li><a href="/gates/cswap/">Fredkin</a></li>
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/cz/">Controlled-Z</a></li>
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/fsim/">Fermionic Simulator</a></li>
+  
+
+  
+    <li><a href="/gates/fswap/">fSWAP</a></li>
+  
+
+  
+    <li><a href="/gates/givens/">Givens Rotation</a></li>
+  
+
+  
+    <li><a href="/gates/global-phase/">Global Phase</a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/identity/">Identity</a></li>
+  
+
+  
+    <li><a href="/gates/iswap/">iSWAP</a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
+  
+
+  
+    <li><a href="/gates/phase-oracle/">Phase Oracle</a></li>
+  
+
+  
+    <li><a href="/gates/phase/">Phase Shift</a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/rz/">$z$ Rotation</a></li>
+  
+
+  
+
+  
+    <li><a href="/gates/rzz/">$zz$ Rotation</a></li>
+  
+
+  
+    <li><a href="/gates/s/">Phase</a></li>
+  
+
+  
+
+  
+    <li><a href="/gates/sqrt-iswap/">Square Root iSWAP</a></li>
+  
+
+  
+    <li><a href="/gates/sqrt-swap/">Square Root SWAP</a></li>
+  
+
+  
+    <li><a href="/gates/swap/">SWAP</a></li>
+  
+
+  
+
+  
+    <li><a href="/gates/sycamore/">Sycamore</a></li>
+  
+
+  
+    <li><a href="/gates/t/">T</a></li>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/gates/xy/">XY Interaction</a></li>
+  
+
+</ul>
+
+
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    function renderPageMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          trust: true
+        });
+      }
+    }
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
+  </script>
+</body>
+</html>

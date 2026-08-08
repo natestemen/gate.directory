@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Della+Respira&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <title>Controlled-Hadamard</title>
+</head>
+<body>
+  <main>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
+        </header>
+      <div class="not-footer">
+        
+        
+<div class="gate">
+  <h2 class="gate-title">Controlled-Hadamard</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;mathrm{C}H$</div>
+      </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        
+      </p>
+      
+      <p class="gate-badges">
+        <span class="gate-badge">hermitian</span>
+      </p>
+      
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Applies a Hadamard to the target qubit when the control qubit is in the $|1\rangle$ state.</p>
+</p>
+        <br>
+
+        
+          <p><strong>Alternate notations:</strong></p>
+          <ul>
+            
+            <li>$&#92;Lambda(H)$</li>
+            
+            <li>$&#92;text{controlled-}H$</li>
+            
+          </ul>
+        
+      </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+            
+            
+              <p><strong>Controlled version of:</strong> <a href="/gates/hadamard/">Hadamard</a></p>
+            
+          
+          
+        </div>
+      
+
+      
+        <h3>SDK Support</h3>
+        <table class="sdk-table">
+          <thead>
+            <tr>
+              <th>SDK</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td>
+                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CHGate"><code>qiskit.circuit.library.CHGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td>
+                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CH.html"><code>pennylane.CH</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Construct with cirq.H.controlled().">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Apply via the Controlled functor, Controlled H([control], target).">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: H(target).controlled(control).">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No CH class; use h(target, control=q) control modifier">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CHGate.html"><code>bqskit.ir.gates.CHGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CH"><code>qibo.gates.CH</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CH"><code>pytket.circuit.OpType.CH</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#ch"><code>stdgates.inc: ch</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/orthogonal">orthogonal</a></li>
+          
+        </ul>
+      
+      
+    </div>
+
+    <div class="column">
+      <p>The controlled-Hadamard gate performs a conditional change of basis, moving the target between the computational basis and the Hadamard basis only when the control is $|1\rangle$.</p>
+<p>$$
+\mathrm{C}H =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \tfrac{1}{\sqrt{2}} &amp; \tfrac{1}{\sqrt{2}} \\
+0 &amp; 0 &amp; \tfrac{1}{\sqrt{2}} &amp; -\tfrac{1}{\sqrt{2}}
+\end{bmatrix}
+$$</p>
+<h3>Properties</h3>
+<ul>
+<li>Hermitian and self-inverse, like the <a href="/gates/hadamard">Hadamard</a> itself.</li>
+<li>Real, so it lies in the orthogonal group.</li>
+<li>Although $H$ is Clifford, $\mathrm{C}H$ is <em>not</em>. Adding a control to a Clifford gate does not preserve Clifford-ness in general (compare <a href="/gates/cnot">CNOT</a>, which stays Clifford, versus $\mathrm{C}H$ and <a href="/gates/cs">$\mathrm{C}S$</a>, which do not).</li>
+</ul>
+<h3>Decompositions</h3>
+<ul>
+<li>A single entangling gate suffices:
+$\mathrm{C}H = (I \otimes R_y(\pi/4)) \, \mathrm{C}Z \, (I \otimes R_y(-\pi/4))$,
+which works because $R_y(\pi/4) \, Z \, R_y(-\pi/4) = H$.</li>
+</ul>
+
+    </div>
+  </div>
+
+  <br/>
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/ch.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    function renderPageMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          trust: true
+        });
+      }
+    }
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
+  </script>
+</body>
+</html>

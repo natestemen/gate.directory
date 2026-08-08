@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$G_{ij}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        <span><strong>Parameters:</strong> $1$</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.</p>
@@ -57,6 +63,136 @@
       </div>
 
       
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+
+      
         <h3>SDK Support</h3>
         <table class="sdk-table">
           <thead>
@@ -71,7 +207,11 @@
               <tr>
                 <td>Qiskit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not a named gate. XXPlusYYGate acts as a Givens rotation up to angle convention.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -80,7 +220,9 @@
                 <td>PennyLane</td>
                 
                   <td>
-                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.GivensRotation.html"><code>pennylane.GivensRotation</code></a>
+                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SingleExcitation.html"><code>pennylane.SingleExcitation</code></a>
+                    
+                      <span class="sdk-note" data-note="Half-angle convention: SingleExcitation(θ) is the Givens rotation by θ/2.">ⓘ</span>
                     
                   </td>
                 
@@ -93,6 +235,8 @@
                   <td>
                     <a href="https://quantumai.google/reference/python/cirq/givens"><code>cirq.givens</code></a>
                     
+                      <span class="sdk-note" data-note="cirq.givens(θ) returns a PhasedISwapPowGate.">ⓘ</span>
+                    
                   </td>
                 
               </tr>
@@ -101,7 +245,9 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -109,7 +255,9 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -117,7 +265,9 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -125,7 +275,52 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GIVENS"><code>qibo.gates.GIVENS</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="PhasedISWAP(0.25, 2*theta/pi) implements Givens(theta)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -139,7 +334,12 @@
           
           <li><a href="/groups/orthogonal">orthogonal</a></li>
           
+          <li><a href="/groups/matchgate">matchgate</a></li>
+          
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
         </ul>
+      
       
     </div>
 

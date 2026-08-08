@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Della+Respira&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <title>Controlled y Rotation</title>
+</head>
+<body>
+  <main>
+    <div class="content-container">
+      <header>
+          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
+        </header>
+      <div class="not-footer">
+        
+        
+<div class="gate">
+  <h2 class="gate-title">Controlled $y$ Rotation</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <div class="symbol-row">
+        <p>Symbol</p>
+        <div class="symbol-box">$&#92;mathrm{C}R_y$</div>
+      </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        <span><strong>Parameters:</strong> $1$</span>
+      </p>
+      
+      <div class="gate-description">
+        <p><strong>Description:</strong></p>
+        <p><p>Rotates the target about the $y$ axis by $\theta$ when the control qubit is in the $|1\rangle$ state.</p>
+</p>
+        <br>
+
+        
+          <p><strong>Alternate notations:</strong></p>
+          <ul>
+            
+            <li>$&#92;mathrm{CR}_y(&#92;theta)$</li>
+            
+            <li>$&#92;Lambda(R_y(&#92;theta))$</li>
+            
+          </ul>
+        
+      </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+            
+            
+              <p><strong>Controlled version of:</strong> <a href="/gates/ry/">$y$ Rotation</a></p>
+            
+          
+          
+        </div>
+      
+
+      
+        <h3>SDK Support</h3>
+        <table class="sdk-table">
+          <thead>
+            <tr>
+              <th>SDK</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td>
+                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CRYGate"><code>qiskit.circuit.library.CRYGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td>
+                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CRY.html"><code>pennylane.CRY</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Construct with cirq.ry(θ).controlled().">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Apply via the Controlled functor, Controlled Ry([control], (theta, target)).">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Use RY(theta, target).controlled(control).">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No CRy class; use ry(target, angle, control=q)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CRYGate.html"><code>bqskit.ir.gates.CRYGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CRY"><code>qibo.gates.CRY</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CRy"><code>pytket.circuit.OpType.CRy</code></a>
+                    
+                      <span class="sdk-note" data-note="Angle in half-turns: CRy(theta/pi)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#cry"><code>stdgates.inc: cry</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/orthogonal">orthogonal</a></li>
+          
+        </ul>
+      
+      
+    </div>
+
+    <div class="column">
+      <p>The controlled-$R_y$ gate applies the single-qubit rotation <a href="/gates/ry">$R_y(\theta)$</a> to the target, conditioned on the control.</p>
+<p>$$
+\mathrm{C}R_y(\theta) =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \cos\frac{\theta}{2} &amp; -\sin\frac{\theta}{2} \\
+0 &amp; 0 &amp; \sin\frac{\theta}{2} &amp; \cos\frac{\theta}{2}
+\end{bmatrix}
+$$</p>
+<h3>Special values</h3>
+<table>
+<thead>
+<tr>
+<th>$\theta$</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$0$</td>
+<td><a href="/gates/identity">Identity</a></td>
+</tr>
+<tr>
+<td>$\pi$</td>
+<td><a href="/gates/cy">Controlled-$Y$</a>, up to a phase of $-i$ on the control's $</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<ul>
+<li>Real, so it lies in the orthogonal group — the only one of the three controlled rotations with this property.</li>
+<li>Inverse: $\mathrm{C}R_y(\theta)^\dagger = \mathrm{C}R_y(-\theta)$.</li>
+<li>Related to <a href="/gates/crx">$\mathrm{C}R_x$</a> by conjugating the target with <a href="/gates/s">$S$</a>: $\mathrm{C}R_y(\theta) = (I \otimes S) \, \mathrm{C}R_x(\theta) \, (I \otimes S^\dagger)$.</li>
+</ul>
+<h3>Decompositions</h3>
+<ul>
+<li>Two CNOTs and two rotations: $\mathrm{C}R_y(\theta) = (I \otimes R_y(\theta/2)) \, \mathrm{CNOT} \, (I \otimes R_y(-\theta/2)) \, \mathrm{CNOT}$.</li>
+</ul>
+<h3>Usage</h3>
+<ul>
+<li>Ubiquitous in state preparation: cascades of $\mathrm{C}R_y$ gates load arbitrary real amplitudes, and it is the standard entangler in many variational ansätze.</li>
+</ul>
+
+    </div>
+  </div>
+
+  <br/>
+
+  <a class="back-to-home" href="/">Back to home</a>
+  
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cry.md" target="_blank">Edit this page on GitHub</a></p>
+</div>
+
+      </div>
+      <footer>
+        <p><code>gate.directory</code> made by <a href="https://nates.place">nts</a> $\oplus$ <a href="https://rafaeldelossantos.com/">rdls</a></p>
+      </footer>
+    </div>
+  </main>
+  <script>
+    function renderPageMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          trust: true
+        });
+      }
+    }
+
+    function copyTextToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise((resolve, reject) => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textarea);
+          if (successful) {
+            resolve();
+          } else {
+            reject(new Error("Copy failed"));
+          }
+        } catch (error) {
+          document.body.removeChild(textarea);
+          reject(error);
+        }
+      });
+    }
+
+    function findMatrixLatex(root) {
+      const matrixRegex = /\\begin\{[bBpPvV]?matrix\}/;
+      const annotations = root.querySelectorAll(
+        'annotation[encoding="application/x-tex"]'
+      );
+
+      for (const annotation of annotations) {
+        const tex = (annotation.textContent || "").trim();
+        if (tex && matrixRegex.test(tex)) {
+          return { tex, annotation };
+        }
+      }
+
+      return null;
+    }
+
+    function setupMatrixCopyButton() {
+      const gate = document.querySelector(".gate");
+      if (!gate) {
+        return;
+      }
+
+      const matrixMatch = findMatrixLatex(gate);
+      if (!matrixMatch) {
+        return;
+      }
+
+      const matrixLatex = matrixMatch.tex;
+      const matrixAnnotation = matrixMatch.annotation;
+
+      const matrixContainer =
+        matrixAnnotation.closest(".katex-display") ||
+        matrixAnnotation.closest(".katex");
+
+      const container = document.createElement("div");
+      container.className = "matrix-copy";
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy-matrix-button";
+      button.textContent = "Copy LaTeX";
+      button.setAttribute("aria-label", "Copy matrix LaTeX");
+
+      const status = document.createElement("span");
+      status.className = "copy-matrix-status";
+      status.setAttribute("aria-live", "polite");
+
+      container.appendChild(button);
+      container.appendChild(status);
+      if (matrixContainer && matrixContainer.parentNode) {
+        matrixContainer.insertAdjacentElement("afterend", container);
+      } else {
+        const columns = gate.querySelectorAll(".two-column .column");
+        const targetColumn = columns[1] || gate;
+        targetColumn.appendChild(container);
+      }
+
+      let resetTimer;
+
+      button.addEventListener("click", async () => {
+        if (resetTimer) {
+          window.clearTimeout(resetTimer);
+        }
+
+        button.disabled = true;
+
+        try {
+          await copyTextToClipboard(matrixLatex);
+          button.textContent = "Copied";
+          status.textContent = "Matrix LaTeX copied.";
+        } catch (error) {
+          button.textContent = "Copy failed";
+          status.textContent = "Unable to copy.";
+        } finally {
+          resetTimer = window.setTimeout(() => {
+            button.textContent = "Copy LaTeX";
+            status.textContent = "";
+            button.disabled = false;
+          }, 1800);
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      renderPageMath();
+      setupMatrixCopyButton();
+    });
+  </script>
+</body>
+</html>

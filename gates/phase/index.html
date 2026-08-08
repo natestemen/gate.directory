@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$P$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $1$</span>
+        
+        <span><strong>Parameters:</strong> $1$</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.</p>
@@ -53,6 +59,147 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+          
+            <p><strong>Controlled variant:</strong>
+              <a href="/gates/controlled-phase/">Controlled Phase</a>
+            </p>
+          
+        </div>
+      
 
       
         <h3>SDK Support</h3>
@@ -94,7 +241,7 @@
                   <td>
                     <a href="https://quantumai.google/reference/python/cirq/ZPowGate"><code>cirq.ZPowGate</code></a>
                     
-                      <span class="sdk-note" data-note="No dedicated P gate. Use cirq.ZPowGate(exponent=φ/π) or cirq.Z**t.">ⓘ</span>
+                      <span class="sdk-note" data-note="P(φ) = cirq.Z**(φ/π) (ZPowGate with exponent φ/π).">ⓘ</span>
                     
                   </td>
                 
@@ -104,7 +251,12 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/r1"><code>Std.Intrinsic.R1</code></a>
+                    
+                      <span class="sdk-note" data-note="R1(theta, q) applies the phase exp(i theta) to the one-state.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -112,7 +264,10 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.PHASE"><code>pyquil.gates.PHASE</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -120,7 +275,10 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.PhaseShift"><code>braket.circuits.gates.PhaseShift</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -128,7 +286,59 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U1Gate.html"><code>bqskit.ir.gates.U1Gate</code></a>
+                    
+                      <span class="sdk-note" data-note="Named U1Gate; diag(1, e^(i theta))">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U1"><code>qibo.gates.U1</code></a>
+                    
+                      <span class="sdk-note" data-note="Named U1 in Qibo, diag(1, e^{iθ})">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U1"><code>pytket.circuit.OpType.U1</code></a>
+                    
+                      <span class="sdk-note" data-note="P(phi) = U1(phi/pi); angle in half-turns">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#p"><code>stdgates.inc: p</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -142,7 +352,10 @@
           
           <li><a href="/groups/diagonal">diagonal</a></li>
           
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
         </ul>
+      
       
     </div>
 

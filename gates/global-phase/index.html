@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;mathrm{Ph}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $n$</span>
+        
+        <span><strong>Parameters:</strong> $1$</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Multiplies the entire quantum state by an overall phase factor.</p>
@@ -55,6 +61,136 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
 
       
         <h3>SDK Support</h3>
@@ -85,6 +221,8 @@
                   <td>
                     <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.GlobalPhase.html"><code>pennylane.GlobalPhase</code></a>
                     
+                      <span class="sdk-note" data-note="GlobalPhase(φ) multiplies the state by e^{-iφ} (note the minus sign).">ⓘ</span>
+                    
                   </td>
                 
               </tr>
@@ -104,7 +242,11 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Use R(PauliI, theta, q) from Std.Intrinsic; applies global phase exp(-i theta/2).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -112,7 +254,11 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Quil has no global-phase gate; programs are defined up to global phase.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -120,7 +266,12 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.GPhase"><code>braket.circuits.gates.GPhase</code></a>
+                    
+                      <span class="sdk-note" data-note="Zero-qubit gate applying e^{i gamma} to the whole state">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -128,12 +279,71 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No gate class; apply exp(iφ)·I via qibo.gates.Unitary on any qubit">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.Phase"><code>pytket.circuit.OpType.Phase</code></a>
+                    
+                      <span class="sdk-note" data-note="Phase(a) applies e^{i*pi*a}; a in half-turns">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/gates.html#gphase"><code>gphase</code></a>
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/diagonal">diagonal</a></li>
+          
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
+        </ul>
       
       
     </div>

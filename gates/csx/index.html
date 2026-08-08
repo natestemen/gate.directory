@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;mathrm{C}&#92;sqrt{X}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $2$</span>
+        
+        
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Applies $\sqrt{X}$ to the target when the control qubit is $|1\rangle$.</p>
@@ -57,6 +63,146 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+            
+            
+              <p><strong>Controlled version of:</strong> <a href="/gates/sx/">Square Root of X</a></p>
+            
+          
+          
+        </div>
+      
 
       
         <h3>SDK Support</h3>
@@ -84,7 +230,11 @@
               <tr>
                 <td>PennyLane</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Construct with qml.ctrl(qml.SX(0), 1).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -92,7 +242,12 @@
               <tr>
                 <td>Cirq</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://quantumai.google/reference/python/cirq/CNotPowGate"><code>cirq.CNotPowGate</code></a>
+                    
+                      <span class="sdk-note" data-note="No named constant. CSX = cirq.CNOT**0.5 (CNotPowGate with exponent 0.5).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -100,7 +255,11 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Apply via the Controlled functor, Controlled SX([control], target).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -108,7 +267,9 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -116,7 +277,12 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CV"><code>braket.circuits.gates.CV</code></a>
+                    
+                      <span class="sdk-note" data-note="CV is Braket&#39;s controlled sqrt(X)">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -124,12 +290,62 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SqrtCNOTGate.html"><code>bqskit.ir.gates.SqrtCNOTGate</code></a>
+                    
+                      <span class="sdk-note" data-note="Named SqrtCNOTGate; identical matrix to CSX">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CSX"><code>qibo.gates.CSX</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CSX"><code>pytket.circuit.OpType.CSX</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ sx q0, q1.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
       
       
     </div>

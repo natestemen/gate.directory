@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$U_3$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $1$</span>
+        
+        <span><strong>Parameters:</strong> $3$</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>General single-qubit gate parameterized by three Euler angles.</p>
@@ -57,6 +63,136 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
 
       
         <h3>SDK Support</h3>
@@ -97,7 +233,11 @@
               <tr>
                 <td>Cirq</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Use cirq.MatrixGate or decompose into rz/ry.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -105,7 +245,9 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -113,7 +255,12 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.U"><code>pyquil.simulation.matrices.U</code></a>
+                    
+                      <span class="sdk-note" data-note="Matrix only; wrap with DefGate to use in programs.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -121,7 +268,10 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.U"><code>braket.circuits.gates.U</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -129,12 +279,65 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U3Gate.html"><code>bqskit.ir.gates.U3Gate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U3"><code>qibo.gates.U3</code></a>
+                    
+                      <span class="sdk-note" data-note="Differs from OpenQASM u3 by a global phase">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U3"><code>pytket.circuit.OpType.U3</code></a>
+                    
+                      <span class="sdk-note" data-note="Angles in half-turns: U3(theta/pi, phi/pi, lambda/pi)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#u3"><code>stdgates.inc: u3</code></a>
+                    
+                      <span class="sdk-note" data-note="Also the built-in U(θ, φ, λ).">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
       
       
     </div>

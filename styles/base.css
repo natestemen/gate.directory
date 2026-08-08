@@ -9,6 +9,7 @@
   --orthogonal-accent: #1a8ec2;
   --parametrized-accent: #0b7a5a;
   --controlled-accent: #7a2f8f;
+  --hermitian-accent: #b3315f;
 
 }
 
@@ -68,6 +69,8 @@ header {
   background: var(--gradient1);
   flex-grow: 1;
   padding: 20px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 footer {
@@ -160,6 +163,10 @@ footer {
   border-color: var(--controlled-accent);
 }
 
+.filter-button[data-group="hermitian"] {
+  border-color: var(--hermitian-accent);
+}
+
 .filter-button.is-active[data-group="pauli"] {
   background: color-mix(in srgb, var(--pauli-accent) 25%, white);
 }
@@ -178,6 +185,10 @@ footer {
 
 .filter-button.is-active[data-group="controlled"] {
   background: color-mix(in srgb, var(--controlled-accent) 25%, white);
+}
+
+.filter-button.is-active[data-group="hermitian"] {
+  background: color-mix(in srgb, var(--hermitian-accent) 25%, white);
 }
 
 .filter-button.filter-clear {
@@ -281,10 +292,71 @@ footer {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--controlled-accent) 35%, transparent);
 }
 
+.periodic-cell.highlight-hermitian {
+  border-color: var(--hermitian-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hermitian-accent) 35%, transparent);
+}
+
 .periodic-cell.highlight-pauli.highlight-clifford {
   background: linear-gradient(
     135deg,
     color-mix(in srgb, var(--pauli-accent) 20%, white),
     color-mix(in srgb, var(--clifford-accent) 20%, white)
   );
+}
+
+.gate-search {
+  position: relative;
+  max-width: 520px;
+  margin-top: 20px;
+}
+
+.gate-search input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: "TASA Orbiter", sans-serif;
+  background: white;
+}
+
+.gate-search ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: white;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.gate-search li {
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.gate-search li:last-child {
+  border-bottom: none;
+}
+
+.search-match {
+  font-family: monospace;
+  font-size: 12px;
+  opacity: 0.6;
+  align-self: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-empty {
+  color: #777;
 }

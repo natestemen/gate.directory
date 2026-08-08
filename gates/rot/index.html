@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$R_{&#92;mathbf{n}}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $1$</span>
+        
+        <span><strong>Parameters:</strong> $3$</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Rotation by angle $\theta$ about the Bloch-sphere axis $\vec{n}$.</p>
@@ -57,6 +63,136 @@
       </div>
 
       
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+
+      
         <h3>SDK Support</h3>
         <table class="sdk-table">
           <thead>
@@ -71,7 +207,12 @@
               <tr>
                 <td>Qiskit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.RVGate"><code>qiskit.circuit.library.RVGate</code></a>
+                    
+                      <span class="sdk-note" data-note="Rotation axis given as a vector whose norm is the rotation angle.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -82,6 +223,8 @@
                   <td>
                     <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.Rot.html"><code>pennylane.Rot</code></a>
                     
+                      <span class="sdk-note" data-note="ZYZ Euler convention, not axis-angle: Rot(ϕ,θ,ω)=RZ(ω)RY(θ)RZ(ϕ).">ⓘ</span>
+                    
                   </td>
                 
               </tr>
@@ -90,7 +233,11 @@
               <tr>
                 <td>Cirq</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. Decompose into cirq.rz/cirq.ry or use cirq.MatrixGate.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -98,7 +245,12 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/r"><code>Std.Intrinsic.R</code></a>
+                    
+                      <span class="sdk-note" data-note="Rotates about a chosen Pauli axis; arbitrary axes require composition.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -106,7 +258,9 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -114,7 +268,11 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No axis-angle class; U(theta, phi, lambda) covers any 1-qubit unitary">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -122,12 +280,62 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.PauliGate.html"><code>bqskit.ir.gates.PauliGate</code></a>
+                    
+                      <span class="sdk-note" data-note="PauliGate(1) = exp(i a.sigma); params are Pauli coefficients, not (theta, axis)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="No axis-angle gate; use qibo.gates.U3 with equivalent Euler angles">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Any 1-qubit rotation via TK1 Euler angles (half-turns) or Unitary1qBox">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
       
       
     </div>

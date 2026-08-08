@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$&#92;sqrt{X}$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $1$</span>
+        
+        
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>A gate whose square is the Pauli-$X$ (NOT) gate.</p>
@@ -57,6 +63,147 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+        <div class="gate-relations">
+          
+          
+            <p><strong>Controlled variant:</strong>
+              <a href="/gates/csx/">Controlled sqrt(X)</a>
+            </p>
+          
+        </div>
+      
 
       
         <h3>SDK Support</h3>
@@ -98,7 +245,7 @@
                   <td>
                     <a href="https://quantumai.google/reference/python/cirq/XPowGate"><code>cirq.XPowGate</code></a>
                     
-                      <span class="sdk-note" data-note="No named constant. Use cirq.X**0.5 (XPowGate with exponent=0.5).">ⓘ</span>
+                      <span class="sdk-note" data-note="No named constant. SX = cirq.X**0.5 exactly (XPowGate with exponent 0.5).">ⓘ</span>
                     
                   </td>
                 
@@ -108,7 +255,10 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/sx"><code>Std.Intrinsic.SX</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -116,7 +266,11 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not available natively. RX(pi/2) is equal up to global phase.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -124,7 +278,12 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.V"><code>braket.circuits.gates.V</code></a>
+                    
+                      <span class="sdk-note" data-note="Braket names sqrt(X) &#39;V&#39;; Vi is its inverse">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -132,12 +291,70 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.SXGate.html"><code>bqskit.ir.gates.SXGate</code></a>
+                    
+                      <span class="sdk-note" data-note="Also exported as SqrtXGate">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.SX"><code>qibo.gates.SX</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.SX"><code>pytket.circuit.OpType.SX</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td>
+                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_X"><code>SQRT_X</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#sx"><code>stdgates.inc: sx</code></a>
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
+      
+      
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/clifford">clifford</a></li>
+          
+        </ul>
       
       
     </div>

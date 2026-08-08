@@ -38,6 +38,16 @@
         <p>Symbol</p>
         <div class="symbol-box">$I$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $n$</span>
+        
+        
+      </p>
+      
+      <p class="gate-badges">
+        <span class="gate-badge">hermitian</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>Leaves the quantum state unchanged.</p>
@@ -61,6 +71,136 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
 
       
         <h3>SDK Support</h3>
@@ -102,6 +242,8 @@
                   <td>
                     <a href="https://quantumai.google/reference/python/cirq/I"><code>cirq.I</code></a>
                     
+                      <span class="sdk-note" data-note="cirq.I is single-qubit; use cirq.IdentityGate(n) for n qubits.">ⓘ</span>
+                    
                   </td>
                 
               </tr>
@@ -110,7 +252,10 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.intrinsic/i"><code>Std.Intrinsic.I</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -118,7 +263,10 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.gates.html#pyquil.gates.I"><code>pyquil.gates.I</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -126,7 +274,10 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.I"><code>braket.circuits.gates.I</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -134,7 +285,60 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.IdentityGate.html"><code>bqskit.ir.gates.IdentityGate</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.I"><code>qibo.gates.I</code></a>
+                    
+                      <span class="sdk-note" data-note="Accepts any number of qubits, I(*q)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.noop"><code>pytket.circuit.OpType.noop</code></a>
+                    
+                      <span class="sdk-note" data-note="Stripped automatically by the compiler">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td>
+                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#I"><code>I</code></a>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td>
+                    <a href="https://openqasm.com/language/standard_library.html#id"><code>stdgates.inc: id</code></a>
+                    
+                      <span class="sdk-note" data-note="Single-qubit only; apply per qubit.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -154,7 +358,12 @@
           
           <li><a href="/groups/orthogonal">orthogonal</a></li>
           
+          <li><a href="/groups/permutation">permutation</a></li>
+          
+          <li><a href="/groups/number-preserving">number-preserving</a></li>
+          
         </ul>
+      
       
     </div>
 

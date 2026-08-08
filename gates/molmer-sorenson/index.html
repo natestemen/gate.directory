@@ -38,6 +38,12 @@
         <p>Symbol</p>
         <div class="symbol-box">$MS$</div>
       </div>
+      <p class="gate-facts">
+        <span><strong>Qubits:</strong> $n$</span>
+        
+        <span><strong>Parameters:</strong> $n(n-1)/2$</span>
+      </p>
+      
       <div class="gate-description">
         <p><strong>Description:</strong></p>
         <p><p>A native entangling interaction in ion-trap systems based on collective spin-motion coupling.</p>
@@ -57,6 +63,136 @@
           </ul>
         
       </div>
+
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
 
       
         <h3>SDK Support</h3>
@@ -84,7 +220,11 @@
               <tr>
                 <td>PennyLane</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                      <span class="sdk-note" data-note="Not in core PennyLane. Available through the PennyLane-IonQ plugin as MS.">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -95,6 +235,8 @@
                   <td>
                     <a href="https://quantumai.google/reference/python/cirq/MSGate"><code>cirq.MSGate</code></a>
                     
+                      <span class="sdk-note" data-note="Two-qubit MS via cirq.ms(rads); cirq_ionq.MSGate is the IonQ native version.">ⓘ</span>
+                    
                   </td>
                 
               </tr>
@@ -103,7 +245,9 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -111,7 +255,9 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
@@ -119,7 +265,12 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.MS"><code>braket.circuits.gates.MS</code></a>
+                    
+                      <span class="sdk-note" data-note="IonQ 2-qubit phased MS(phi0, phi1, theta); theta defaults to pi/2">ⓘ</span>
+                    
+                  </td>
                 
               </tr>
             
@@ -127,13 +278,73 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.XXGate.html"><code>bqskit.ir.gates.XXGate</code></a>
+                    
+                      <span class="sdk-note" data-note="Fixed 2-qubit MS gate exp(-i pi XX/4); no n-qubit MS gate">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td>
+                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.MS"><code>qibo.gates.MS</code></a>
+                    
+                      <span class="sdk-note" data-note="Two-qubit MS(q0, q1, phi0, phi1, theta); theta defaults to π/2">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td>
+                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.AAMS"><code>pytket.circuit.OpType.AAMS</code></a>
+                    
+                      <span class="sdk-note" data-note="2-qubit phased MS, angles in half-turns; plain MS(pi/2) = XXPhase(0.5)">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td>
+                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_XX"><code>SQRT_XX</code></a>
+                    
+                      <span class="sdk-note" data-note="Only the Clifford point: the 2-qubit MS at theta = pi/2 equals SQRT_XX up to phase.">ⓘ</span>
+                    
+                  </td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—
+                    
+                  </td>
                 
               </tr>
             
           </tbody>
         </table>
       
+      
+      
+        <h3>Reference</h3>
+        <p class="gate-citation">
+          <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835">Multiparticle Entanglement of Hot Trapped Ions</a> (1999)
+        </p>
       
     </div>
 
