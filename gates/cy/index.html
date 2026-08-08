@@ -18,7 +18,7 @@
 
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
-  <title>Fermionic Simulator</title>
+  <title>Controlled-Y</title>
 </head>
 <body>
   <main>
@@ -30,20 +30,29 @@
         
         
 <div class="gate">
-  <h2 class="gate-title">Fermionic Simulator</h2>
+  <h2 class="gate-title">Controlled-Y</h2>
 
   <div class="two-column">
     <div class="column">
       <div class="symbol-row">
         <p>Symbol</p>
-        <div class="symbol-box">$&#92;mathrm{FSim}$</div>
+        <div class="symbol-box">$&#92;mathrm{C}Y$</div>
       </div>
       <div class="gate-description">
         <p><strong>Description:</strong></p>
-        <p><p>Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.</p>
+        <p><p>Applies $Y$ to the target qubit when the control qubit is in the $|1\rangle$ state.</p>
 </p>
         <br>
 
+        
+          <p><strong>Alternate notations:</strong></p>
+          <ul>
+            
+            <li>$&#92;Lambda(Y)$</li>
+            
+            <li>$&#92;text{controlled-}Y$</li>
+            
+          </ul>
         
       </div>
 
@@ -62,7 +71,10 @@
               <tr>
                 <td>Qiskit</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CYGate"><code>qiskit.circuit.library.CYGate</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -70,7 +82,10 @@
               <tr>
                 <td>PennyLane</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CY.html"><code>pennylane.CY</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -79,7 +94,7 @@
                 <td>Cirq</td>
                 
                   <td>
-                    <a href="https://quantumai.google/reference/python/cirq/FSimGate"><code>cirq.FSimGate</code></a>
+                    <a href="https://quantumai.google/reference/python/cirq/CY"><code>cirq.CY</code></a>
                     
                   </td>
                 
@@ -89,7 +104,10 @@
               <tr>
                 <td>Q#</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cy"><code>Std.Canon.CY</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -97,10 +115,7 @@
               <tr>
                 <td>PyQuil</td>
                 
-                  <td>
-                    <a href="https://pyquil-docs.rigetti.com/en/stable/apidocs/pyquil.simulation.matrices.html#pyquil.simulation.matrices.FSIM"><code>pyquil.simulation.matrices.FSIM</code></a>
-                    
-                  </td>
+                  <td class="sdk-unavailable">—</td>
                 
               </tr>
             
@@ -108,7 +123,10 @@
               <tr>
                 <td>Braket</td>
                 
-                  <td class="sdk-unavailable">—</td>
+                  <td>
+                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CY"><code>braket.circuits.gates.CY</code></a>
+                    
+                  </td>
                 
               </tr>
             
@@ -116,10 +134,7 @@
               <tr>
                 <td>BQSKit</td>
                 
-                  <td>
-                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.FSIMGate.html"><code>bqskit.ir.gates.FSIMGate</code></a>
-                    
-                  </td>
+                  <td class="sdk-unavailable">—</td>
                 
               </tr>
             
@@ -127,33 +142,31 @@
         </table>
       
       
+        <h3>Groups</h3>
+        <p>This gate is contained in the following groups:</p>
+        <ul>
+          
+          <li><a href="/groups/clifford">clifford</a></li>
+          
+        </ul>
+      
     </div>
 
     <div class="column">
-      <p>The fermionic simulator gate is a two-parameter family that unifies the <a href="/gates/iswap">iSWAP</a> and <a href="/gates/cz">CZ</a> interactions.</p>
+      <p>The controlled-$Y$ gate is a two-qubit entangling gate that conditionally applies $Y$ to the target.</p>
 <p>$$
-\mathrm{FSim}(\theta, \phi) =
+\mathrm{C}Y =
 \begin{bmatrix}
-1 &amp; 0            &amp; 0            &amp; 0 \\
-0 &amp; \cos\theta   &amp; -i\sin\theta &amp; 0 \\
-0 &amp; -i\sin\theta &amp; \cos\theta   &amp; 0 \\
-0 &amp; 0            &amp; 0            &amp; \mathrm{e}^{-i\phi}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -i \\
+0 &amp; 0 &amp; i &amp; 0
 \end{bmatrix}
 $$</p>
-<h3>Special cases</h3>
-<ul>
-<li>$\mathrm{FSim}(\pi/2, 0) = i\mathrm{SWAP}$</li>
-<li>$\mathrm{FSim}(\pi/4, 0) = \sqrt{i\mathrm{SWAP}}$</li>
-<li>$\mathrm{FSim}(\pi/2, \pi) = \mathrm{fSWAP}$</li>
-<li>$\mathrm{FSim}(0, \phi) = \mathrm{C}P(\phi)$</li>
-<li>$\mathrm{FSim}(0, \pi) = \mathrm{CZ}$</li>
-<li>$\mathrm{FSim}(\pi/2, \pi/6)$ approximates the <a href="https://doi.org/10.1038/s41586-019-1666-5">Sycamore gate</a> used in Google's quantum supremacy experiment.</li>
-</ul>
 <h3>Properties</h3>
 <ul>
-<li>The $\theta$ parameter controls the swap angle in the $\{|01\rangle, |10\rangle\}$ subspace.</li>
-<li>The $\phi$ parameter is a controlled phase on $|11\rangle$.</li>
-<li>Reduces to a product of single-qubit gates at $\theta = 0, \phi = 0$.</li>
+<li>Clifford, Hermitian, and self-inverse.</li>
+<li>Related to CNOT by $S$ gates on the target: $\mathrm{C}Y = (I \otimes S)\,\mathrm{CNOT}\,(I \otimes S^\dagger)$.</li>
 </ul>
 
     </div>
@@ -163,7 +176,7 @@ $$</p>
 
   <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/fsim.md" target="_blank">Edit this page on GitHub</a></p>
+  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cy.md" target="_blank">Edit this page on GitHub</a></p>
 </div>
 
       </div>
