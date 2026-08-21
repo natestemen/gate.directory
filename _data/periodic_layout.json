@@ -177,7 +177,10 @@
       ],
       "cells": [
         "shift",
-        "clock"
+        "clock",
+        "chrestenson",
+        "controlled-shift",
+        "controlled-clock"
       ]
     },
     {
