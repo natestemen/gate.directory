@@ -359,9 +359,10 @@
     <div class="column">
       <p>The controlled clock gate, also called qudit controlled-$Z$, is the $d$-level generalization of <a href="/gates/cz">controlled-$Z$</a>. Let $\omega = \mathrm{e}^{2\pi i/d}$. With the control listed first, it applies a phase determined by both computational-basis values:</p>
 <p>$$
-\mathrm{CZ}_d |c,t\rangle = \omega^{ct}|c,t\rangle,
-\qquad
-\mathrm{CZ}<em c="0">d = \sum</em>^{d-1}|c\rangle\langle c| \otimes Z_d^c,
+\begin{align*}
+\mathrm{CZ}_d |c,t\rangle &amp; = \omega^{ct}|c,t\rangle, \\
+\mathrm{CZ}_d &amp; = \sum_{c=0}^{d-1}|c\rangle\langle c| \otimes Z_d^c,
+\end{align*}
 $$</p>
 <p>where $Z_d$ is the <a href="/gates/clock">clock gate</a>. Equivalently, its diagonal element on $|c,t\rangle$ is $\omega^{ct}$.</p>
 <h3>Properties</h3>
@@ -370,7 +371,7 @@ $$</p>
 <li>Diagonal and symmetric under exchanging the two qudits: $\omega^{ct}=\omega^{tc}$.</li>
 <li>Its inverse applies the conjugate phase, $\mathrm{CZ}_d^\dagger|c,t\rangle=\omega^{-ct}|c,t\rangle$. For $d&gt;2$, it is generally not self-inverse, but $\mathrm{CZ}_d^d=I$.</li>
 <li>It is the Chrestenson-basis form of <a href="/gates/controlled-shift">controlled shift</a>:
-$\mathrm{CZ}_d=(I\otimes C_d),\mathrm{SUM}_d,(I\otimes C_d^\dagger)$.</li>
+$\mathrm{CZ}_d=(I\otimes C_d)\,\mathrm{SUM}_d\,(I\otimes C_d^\dagger)$.</li>
 </ul>
 <h3>Usage</h3>
 <ul>
