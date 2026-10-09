@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
+  <link rel="stylesheet" href="/styles/weyl.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -374,6 +375,48 @@ $$</p>
 
     </div>
   </div>
+
+  
+<section class="weyl" aria-labelledby="weyl-heading">
+  <h3 id="weyl-heading">Weyl chamber</h3>
+  <div class="weyl-panel">
+    <div class="weyl-main">
+      <div class="weyl-figure">
+        <svg class="weyl-svg" viewBox="0 0 400 320" role="img" tabindex="0"
+             aria-label="Position of the Givens Rotation gate in the Weyl chamber of two-qubit gates. Drag or use the arrow keys to rotate."></svg>
+        <button type="button" class="weyl-reset" hidden>reset view</button>
+        <div class="weyl-tooltip" role="tooltip" hidden></div>
+      </div>
+      <ul class="weyl-key" aria-hidden="true">
+        <li><svg viewBox="0 0 14 14" width="14" height="14"><circle cx="7" cy="7" r="5" class="weyl-key-current"/></svg>this gate</li>
+        <li><svg viewBox="0 0 14 14" width="14" height="14"><circle cx="7" cy="7" r="4" class="weyl-key-landmark"/></svg>other gates</li>
+        <li><svg viewBox="0 0 14 14" width="14" height="14"><rect x="1.5" y="1.5" width="11" height="11" class="weyl-key-pe"/></svg>perfect entanglers</li>
+      </ul>
+    </div>
+    <div class="weyl-side">
+      <div class="weyl-controls"></div>
+      <div class="weyl-readout" aria-live="polite">
+        <p class="weyl-facts"><strong>Coordinates:</strong> <span class="weyl-coords"></span></p>
+        <p class="weyl-status">
+          <span class="gate-badge weyl-badge" data-state="local" hidden>not entangling</span>
+          <span class="gate-badge weyl-badge" data-state="entangling" hidden>entangling</span>
+          <span class="gate-badge weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
+          <span class="weyl-equiv" hidden></span>
+        </p>
+      </div>
+      <p class="weyl-note">
+        $(a, b, c)$ means the gate equals $e^{i(a\,XX + b\,YY + c\,ZZ)}$ up to single-qubit gates,
+        reduced to the chamber $\pi/4 \ge a \ge b \ge |c|$ (the convention of the
+        <a href="/gates/can/">canonical gate</a>, Qiskit and Cirq).
+        The $a = \pi/4$ face is a mirror: $(\pi/4, b, c)$ and $(\pi/4, b, -c)$ are the same gate.
+        Drag the figure to rotate it, double-click to reset.
+      </p>
+    </div>
+  </div>
+  <script type="application/json" class="weyl-data">{"slug":"givens","title":"Givens Rotation","label":"Gij","url":"/gates/givens/","weyl":{"coords":["theta/2","theta/2",0],"params":{"theta":{"label":"\\theta","range":[0,1],"default":"1/4"}}},"landmarks":[{"slug":"b","title":"B Gate","label":"B","url":"/gates/b/","coords":["1/4","1/8",0]},{"slug":"ch","title":"Controlled-Hadamard","label":"CH","url":"/gates/ch/","coords":["1/4",0,0]},{"slug":"cnot","title":"Controlled Not","label":"CNOT","url":"/gates/cnot/","coords":["1/4",0,0]},{"slug":"cs","title":"Controlled-S","label":"CS","url":"/gates/cs/","coords":["1/8",0,0]},{"slug":"csx","title":"Controlled sqrt(X)","label":"C√X","url":"/gates/csx/","coords":["1/8",0,0]},{"slug":"cy","title":"Controlled-Y","label":"CY","url":"/gates/cy/","coords":["1/4",0,0]},{"slug":"cz","title":"Controlled-Z","label":"CZ","url":"/gates/cz/","coords":["1/4",0,0]},{"slug":"dcx","title":"Double CX","label":"DCX","url":"/gates/dcx/","coords":["1/4","1/4",0]},{"slug":"ecr","title":"Echoed Cross-Resonance","label":"ECR","url":"/gates/ecr/","coords":["1/4",0,0]},{"slug":"fswap","title":"fSWAP","label":"fSWAP","url":"/gates/fswap/","coords":["1/4","1/4",0]},{"slug":"iswap","title":"iSWAP","label":"iSWAP","url":"/gates/iswap/","coords":["1/4","1/4",0]},{"slug":"magic","title":"Magic","label":"M","url":"/gates/magic/","coords":["1/4",0,0]},{"slug":"sqrt-iswap","title":"Square Root iSWAP","label":"√iSWAP","url":"/gates/sqrt-iswap/","coords":["1/8","1/8",0]},{"slug":"sqrt-swap","title":"Square Root SWAP","label":"√SWAP","url":"/gates/sqrt-swap/","coords":["1/8","1/8","-1/8"]},{"slug":"swap","title":"SWAP","label":"SWAP","url":"/gates/swap/","coords":["1/4","1/4","1/4"]},{"slug":"sycamore","title":"Sycamore","label":"SYC","url":"/gates/sycamore/","coords":["1/4","1/4","1/24"]},{"slug":"virtual-distillation","title":"Virtual Distillation","label":"B(2)i","url":"/gates/virtual-distillation/","coords":["1/8","1/8",0]}],"identityUrl":"/gates/identity/"}</script>
+  <script defer src="/js/weyl.js"></script>
+</section>
+
 
   <br/>
 
