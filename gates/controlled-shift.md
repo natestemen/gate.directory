@@ -30,20 +30,21 @@ citation:
 The controlled shift, commonly called the SUM or modular-addition gate, is the qudit generalization of [CNOT](/gates/cnot). With the control listed first, it adds the control value to the target modulo $d$:
 
 $$
-\mathrm{SUM}_d |c,t\rangle = |c, t+c \bmod d\rangle,
-\qquad
-\mathrm{SUM}_d = \sum_{c=0}^{d-1}|c\rangle\langle c| \otimes X_d^c,
+\begin{align*}
+\mathrm{SUM}\_d |c,t\rangle & = |c, t+c \bmod d\rangle, \\\\
+\mathrm{SUM}\_d & = \sum_{c=0}^{d-1}|c\rangle\langle c| \otimes X_d^c,
+\end{align*}
 $$
 
 where $X_d$ is the [shift gate](/gates/shift). It permutes the $d^2$ two-qudit computational-basis states.
 
 ### Properties
 
-- Its inverse subtracts the control value: $\mathrm{SUM}_d^\dagger |c,t\rangle = |c,t-c \bmod d\rangle$. Hence $\mathrm{SUM}_d^d=I$.
-- At $d=2$, addition modulo two is XOR, so $\mathrm{SUM}_2$ is CNOT.
+- Its inverse subtracts the control value: $\mathrm{SUM}\_d^\dagger |c,t\rangle = |c,t-c \bmod d\rangle$. Hence $\mathrm{SUM}\_d^d=I$.
+- At $d=2$, addition modulo two is XOR, so $\mathrm{SUM}\_2$ is CNOT.
 - Conjugating the target with the [Chrestenson gate](/gates/chrestenson) produces the [controlled clock gate](/gates/controlled-clock):
-  $\mathrm{CZ}_d = (I \otimes C_d)\,\mathrm{SUM}_d\,(I \otimes C_d^\dagger)$.
-- Applying $C_d$ to the control of $|0,0\rangle$, then applying $\mathrm{SUM}_d$, prepares the generalized GHZ state $\frac{1}{\sqrt{d}}\sum_{k=0}^{d-1}|k,k\rangle$.
+  $\mathrm{CZ}\_d = (I \otimes C_d)\\,\mathrm{SUM}\_d\\,(I \otimes C_d^\dagger)$.
+- Applying $C_d$ to the control of $|0,0\rangle$, then applying $\mathrm{SUM}\_d$, prepares the generalized GHZ state $\frac{1}{\sqrt{d}}\sum_{k=0}^{d-1}|k,k\rangle$.
 
 ### Usage
 
