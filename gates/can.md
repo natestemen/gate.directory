@@ -31,17 +31,17 @@ sdks:
 The canonical gate generates every two-qubit interaction (up to single-qubit rotations) through three real parameters $(a, b, c)$:
 
 $$
-\mathrm{CAN}(a, b, c) = \exp(i(a X{\otimes}X + b Y{\otimes}Y + c Z{\otimes}Z))
+\mathrm{CAN}(a, b, c) = \mathrm{e}^{\\,i(a\\,X{\otimes}X + b\\,Y{\otimes}Y + c\\,Z{\otimes}Z)}
 $$
 
-In the computational basis:
+In the computational basis, writing $c_\pm = \cos(a \pm b)$ and $s_\pm = \sin(a \pm b)$:
 
 $$
 \begin{bmatrix}
-  \mathrm{e}^{ic}\cos(a-b)    & 0                    & 0                    & i\mathrm{e}^{ic}\sin(a-b)    \\\\
-  0                   & \mathrm{e}^{-ic}\cos(a+b)    & i\mathrm{e}^{-ic}\sin(a+b)   & 0                   \\\\
-  0                   & i\mathrm{e}^{-ic}\sin(a+b)   & \mathrm{e}^{-ic}\cos(a+b)    & 0                   \\\\
-  i\mathrm{e}^{ic}\sin(a-b)   & 0                    & 0                    & \mathrm{e}^{ic}\cos(a-b)
+  \mathrm{e}^{ic} c_-  & 0                     & 0                     & i\mathrm{e}^{ic} s_-  \\\\
+  0                    & \mathrm{e}^{-ic} c_+  & i\mathrm{e}^{-ic} s_+ & 0                     \\\\
+  0                    & i\mathrm{e}^{-ic} s_+ & \mathrm{e}^{-ic} c_+  & 0                     \\\\
+  i\mathrm{e}^{ic} s_- & 0                     & 0                     & \mathrm{e}^{ic} c_-
 \end{bmatrix}
 $$
 

@@ -45,11 +45,13 @@ sdks:
 The phased rotation generalizes [$R_x$](/gates/rx) and [$R_y$](/gates/ry) to an arbitrary axis in the equatorial ($xy$) plane of the Bloch sphere:
 
 $$
-R(\theta, \phi) = \exp\left(-i \frac{\theta}{2} (\cos\phi \\, X + \sin\phi \\, Y)\right)
-= \begin{bmatrix}
+\begin{align*}
+R(\theta, \phi) & = \exp\left(-i \frac{\theta}{2} (\cos\phi \\, X + \sin\phi \\, Y)\right) \\\\
+& = \begin{bmatrix}
   \cos\frac{\theta}{2} & -i\mathrm{e}^{-i\phi}\sin\frac{\theta}{2} \\\\
   -i\mathrm{e}^{i\phi}\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
 \end{bmatrix}
+\end{align*}
 $$
 
 ### Special values

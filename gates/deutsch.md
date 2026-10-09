@@ -22,10 +22,9 @@ sdks:
     note: "QControlBox with 2 controls on a Unitary1qBox of iRx(2*theta)"
 ---
 
-The Deutsch gate is the doubly-controlled rotation David Deutsch introduced in 1989 to prove that a *single* three-qubit gate can be universal for quantum computation. When both controls are set it applies $i R_x(2\theta)$ to the target; otherwise it does nothing:
+The Deutsch gate is the doubly-controlled rotation David Deutsch introduced in 1989 to prove that a *single* three-qubit gate can be universal for quantum computation. When both controls are set it applies $i R_x(2\theta)$ to the target; otherwise it does nothing. In the computational basis, $D(\theta)$ is
 
 $$
-D(\theta) =
 \begin{bmatrix}
   1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
   0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\

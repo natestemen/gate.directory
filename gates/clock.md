@@ -30,9 +30,12 @@ sdks:
 The clock gate generalizes [Pauli-$Z$](/gates/pauli-z) from qubits to $d$-level qudits, advancing the phase of each basis state like the hand of a clock:
 
 $$
-Z_d |j\rangle = \omega^j |j\rangle,
-\quad \omega = \mathrm{e}^{2\pi i / d},
-\qquad
+Z_d |j\rangle = \omega^j |j\rangle, \qquad \omega = \mathrm{e}^{2\pi i / d}
+$$
+
+For a qutrit ($d = 3$):
+
+$$
 Z_3 = \begin{bmatrix}
   1 & 0 & 0 \\\\
   0 & \omega & 0 \\\\

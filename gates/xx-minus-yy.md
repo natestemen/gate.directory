@@ -29,11 +29,16 @@ The $XX - YY$ gate is the counterpart of the [XY gate](/gates/xy): where XY rota
 
 $$
 R_{xx-yy}(\theta) = \exp\left(-i \frac{\theta}{4} (X \otimes X - Y \otimes Y)\right)
-= \begin{bmatrix}
-  \cos\frac{\theta}{2} & 0 & 0 & -i\sin\frac{\theta}{2} \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
-  -i\sin\frac{\theta}{2} & 0 & 0 & \cos\frac{\theta}{2}
+$$
+
+In the computational basis:
+
+$$
+\begin{bmatrix}
+  \cos\tfrac{\theta}{2}   & 0 & 0 & -i\sin\tfrac{\theta}{2} \\\\
+  0                       & 1 & 0 & 0 \\\\
+  0                       & 0 & 1 & 0 \\\\
+  -i\sin\tfrac{\theta}{2} & 0 & 0 & \cos\tfrac{\theta}{2}
 \end{bmatrix}
 $$
 

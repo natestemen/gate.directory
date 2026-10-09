@@ -43,11 +43,13 @@ $$
 \mathrm{Rot}(\vec{n}, \theta) = e^{-i\frac{\theta}{2}(n_x X + n_y Y + n_z Z)}
 $$
 
+Writing $c = \cos\frac{\theta}{2}$ and $s = \sin\frac{\theta}{2}$, the matrix is
+
 $$
 \mathrm{Rot}(\vec{n}, \theta) =
 \begin{bmatrix}
-  \cos\frac{\theta}{2} - i n_z \sin\frac{\theta}{2} & (-i n_x - n_y)\sin\frac{\theta}{2} \\\\
-  (-i n_x + n_y)\sin\frac{\theta}{2} & \cos\frac{\theta}{2} + i n_z \sin\frac{\theta}{2}
+  c - i n_z s & (-i n_x - n_y)\\, s \\\\
+  (-i n_x + n_y)\\, s & c + i n_z s
 \end{bmatrix}
 $$
 

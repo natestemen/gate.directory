@@ -57,12 +57,17 @@ sdks:
 The $R_{xx}$ gate rotates in the $XX$ interaction basis by angle $\theta$.
 
 $$
-R_{xx}(\theta) = \exp\left(-i\frac{\theta}{2}X\otimes X\right) =
+R_{xx}(\theta) = \exp\left(-i\frac{\theta}{2}X\otimes X\right)
+$$
+
+In the computational basis:
+
+$$
 \begin{bmatrix}
-    \cos\frac{\theta}{2}     & 0                        & 0                        & -i\sin\frac{\theta}{2} \\\\
-    0                        & \cos\frac{\theta}{2}     & -i\sin{\frac{\theta}{2}} & 0 \\\\
-    0                        & -i\sin{\frac{\theta}{2}} & \cos{\frac{\theta}{2}}   & 0 \\\\
-    -i\sin{\frac{\theta}{2}} & 0                        & 0                        & \cos{\frac{\theta}{2}}
+  \cos\tfrac{\theta}{2}   & 0                       & 0                       & -i\sin\tfrac{\theta}{2} \\\\
+  0                       & \cos\tfrac{\theta}{2}   & -i\sin\tfrac{\theta}{2} & 0 \\\\
+  0                       & -i\sin\tfrac{\theta}{2} & \cos\tfrac{\theta}{2}   & 0 \\\\
+  -i\sin\tfrac{\theta}{2} & 0                       & 0                       & \cos\tfrac{\theta}{2}
 \end{bmatrix}
 $$
 
