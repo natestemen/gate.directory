@@ -330,15 +330,15 @@
     <div class="column">
       <p>The canonical gate generates every two-qubit interaction (up to single-qubit rotations) through three real parameters $(a, b, c)$:</p>
 <p>$$
-\mathrm{CAN}(a, b, c) = \exp(i(a X{\otimes}X + b Y{\otimes}Y + c Z{\otimes}Z))
+\mathrm{CAN}(a, b, c) = \mathrm{e}^{\,i(a\,X{\otimes}X + b\,Y{\otimes}Y + c\,Z{\otimes}Z)}
 $$</p>
-<p>In the computational basis:</p>
+<p>In the computational basis, writing $c_\pm = \cos(a \pm b)$ and $s_\pm = \sin(a \pm b)$:</p>
 <p>$$
 \begin{bmatrix}
-\mathrm{e}^{ic}\cos(a-b)    &amp; 0                    &amp; 0                    &amp; i\mathrm{e}^{ic}\sin(a-b)    \\
-0                   &amp; \mathrm{e}^{-ic}\cos(a+b)    &amp; i\mathrm{e}^{-ic}\sin(a+b)   &amp; 0                   \\
-0                   &amp; i\mathrm{e}^{-ic}\sin(a+b)   &amp; \mathrm{e}^{-ic}\cos(a+b)    &amp; 0                   \\
-i\mathrm{e}^{ic}\sin(a-b)   &amp; 0                    &amp; 0                    &amp; \mathrm{e}^{ic}\cos(a-b)
+\mathrm{e}^{ic} c_-  &amp; 0                     &amp; 0                     &amp; i\mathrm{e}^{ic} s_-  \\
+0                    &amp; \mathrm{e}^{-ic} c_+  &amp; i\mathrm{e}^{-ic} s_+ &amp; 0                     \\
+0                    &amp; i\mathrm{e}^{-ic} s_+ &amp; \mathrm{e}^{-ic} c_+  &amp; 0                     \\
+i\mathrm{e}^{ic} s_- &amp; 0                     &amp; 0                     &amp; \mathrm{e}^{ic} c_-
 \end{bmatrix}
 $$</p>
 <h3>Properties</h3>

@@ -350,12 +350,14 @@
     <div class="column">
       <p>The $U_2$ gate is the two-parameter member of the legacy OpenQASM 2 family $u_1, u_2, u_3$: a rotation with the angle frozen at $\pi/2$, sandwiched between two independent $z$ rotations:</p>
 <p>$$
-U_2(\phi, \lambda) = R_z(\phi) \, R_y(\pi/2) \, R_z(\lambda)
-= \frac{1}{\sqrt{2}}
+\begin{align*}
+U_2(\phi, \lambda) &amp; = R_z(\phi) \, R_y(\pi/2) \, R_z(\lambda) \\
+&amp; = \frac{1}{\sqrt{2}}
 \begin{bmatrix}
 1 &amp; -\mathrm{e}^{i\lambda} \\
 \mathrm{e}^{i\phi} &amp; \mathrm{e}^{i(\phi+\lambda)}
 \end{bmatrix}
+\end{align*}
 $$</p>
 <p>Historically it exposed IBM's hardware calibration in gate form: the $R_y(\pi/2)$ is the one physical microwave pulse, and $\phi$, $\lambda$ are <em>virtual</em> $z$ rotations implemented as frame changes that cost nothing.</p>
 <h3>Special values</h3>

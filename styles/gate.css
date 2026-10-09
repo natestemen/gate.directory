@@ -7,6 +7,13 @@
 .gate-title {
   font-size: 40px;
   margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .gate-title {
+    font-size: 30px;
+  }
 }
 
 .symbol-row {
@@ -41,31 +48,72 @@
 
 .two-column {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
 }
 
+/* min-width: 0 lets a column shrink below its widest equation instead of
+   pushing the page sideways; columns stack once they can't both fit */
 .column {
-  flex: 50%;
-  /* width:100%;
-  display: flex;
-  justify-content: center; */
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.column:last-child {
+  flex-grow: 1.5;
+  flex-basis: 340px;
+}
+
+/* Safety net for equations wider than their column: the inner KaTeX box
+   scrolls (KaTeX's recommended CSS). Pages are written so this rarely
+   triggers; a visible scrollbar flags it when it does. */
+.katex-display > .katex {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: initial;
+  padding: 6px 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+}
+
+.katex-display > .katex::-webkit-scrollbar {
+  height: 6px;
+}
+
+.katex-display > .katex::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+}
+
+.katex-display > .katex::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .gate table {
   border: 1px solid black;
   /* margin-bottom: 20px; */
   min-width: 300px;
+  max-width: 100%;
   padding: 10px;
   /* margin-top: 20px; */
 
   background: var(--gradient2);
 }
 
+/* long SDK identifiers may break rather than widen the table */
+.sdk-table code {
+  overflow-wrap: anywhere;
+}
+
 .matrix-copy {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
-  float: right;
+  margin: -6px 0 14px;
 }
 
 .copy-matrix-button {
@@ -119,8 +167,10 @@ p a .katex { /* this is probably too specific? */
   opacity: 1;
 }
 
+/* display: none until hovered, so the hidden tooltip never widens the page */
 .sdk-note::after {
   content: attr(data-note);
+  display: none;
   position: absolute;
   bottom: calc(100% + 6px);
   left: 50%;
@@ -138,6 +188,7 @@ p a .katex { /* this is probably too specific? */
 }
 
 .sdk-note:hover::after {
+  display: block;
   opacity: 1;
 }
 
