@@ -3,6 +3,7 @@ layout: gate
 title: Virtual Distillation
 symbol: B^{(2)}_i
 arity: 2
+weyl: [1/8, 1/8, 0]
 groups:
   - orthogonal
 description: A two-qubit entangling gate used in virtual distillation error-mitigation protocols.

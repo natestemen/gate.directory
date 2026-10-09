@@ -13,6 +13,7 @@ groups:
   - matchgate
   - number-preserving
 arity: 2
+weyl: [1/8, 1/8, 0]
 description: Applies half of an iSWAP interaction, native to superconducting hardware with $XY$ coupling.
 sdks:
   qiskit:

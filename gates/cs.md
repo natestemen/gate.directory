@@ -13,6 +13,7 @@ groups:
   - number-preserving
 controlled: s
 arity: 2
+weyl: [1/8, 0, 0]
 description: Applies a phase of $i$ to the $|11\rangle$ state, the square root of controlled-$Z$.
 sdks:
   qiskit:

@@ -16,6 +16,7 @@ controlled: pauli-z
 properties:
   - hermitian
 arity: 2
+weyl: [1/4, 0, 0]
 description: Applies a $-1$ phase to $|11\rangle$.
 sdks:
   qiskit:

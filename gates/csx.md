@@ -11,6 +11,7 @@ notations:
   - \text{controlled-}\sqrt{X}
 controlled: sx
 arity: 2
+weyl: [1/8, 0, 0]
 description: Applies $\sqrt{X}$ to the target when the control qubit is $|1\rangle$.
 sdks:
   qiskit:

@@ -1,6 +1,32 @@
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
 
+function stripMath(str = "") {
+  if (!str) {
+    return "";
+  }
+
+  return str
+    .replace(/\$\$([\s\S]+?)\$\$/g, "$1")
+    .replace(/\$([\s\S]+?)\$/g, "$1")
+    .replace(/\\\(|\\\)|\\\[|\\\]/g, "")
+    .replace(/\\([a-zA-Z]+)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Plain-text rendering of a gate's LaTeX symbol, for SVG labels:
+// \mathrm{C}\sqrt{X} -> C√X, \sqrt{i\mathrm{SWAP}} -> √iSWAP, R_{xx} -> Rxx
+function symbolText(tex = "") {
+  return String(tex)
+    .replace(/\\(?:mathrm|text|mathsf|mathit|operatorname)\{([^{}]*)\}/g, "$1")
+    .replace(/\\sqrt\{([^{}]*)\}/g, "√$1")
+    .replace(/\\([a-zA-Z]+)/g, "$1")
+    .replace(/[{}^_\\]/g, "")
+    .replace(/\s+/g, "")
+    .trim();
+}
+
 module.exports = function (eleventyConfig) {
   const markdownItOptions = {
     html: true,
@@ -32,22 +58,46 @@ module.exports = function (eleventyConfig) {
       }))
     );
   });
-  eleventyConfig.addFilter("stripMath", (str = "") => {
-    if (!str) {
-      return "";
-    }
+  eleventyConfig.addFilter("stripMath", stripMath);
+  eleventyConfig.addFilter("symbolText", symbolText);
 
-    return str
-      .replace(/\$\$([\s\S]+?)\$\$/g, "$1")
-      .replace(/\$([\s\S]+?)\$/g, "$1")
-      .replace(/\\\(|\\\)|\\\[|\\\]/g, "")
-      .replace(/\\([a-zA-Z]+)/g, "$1")
-      .replace(/\s+/g, " ")
-      .trim();
+  // JSON consumed by js/weyl.js: the current gate plus every two-qubit gate
+  // with fixed Weyl coordinates (drawn as landmarks in the chamber).
+  eleventyConfig.addFilter("weylData", function (gates, slug) {
+    const url = eleventyConfig.getFilter("url");
+    const current = gates.find((g) => g.fileSlug === slug);
+    if (!current || !current.data.weyl) return "null";
+
+    const fixedCoords = (w) => {
+      if (Array.isArray(w)) return w;
+      return w && w.coords && !w.params ? w.coords : null;
+    };
+    const describe = (g) => ({
+      slug: g.fileSlug,
+      title: stripMath(g.data.title),
+      label: (g.data.weyl && g.data.weyl.label) || symbolText(g.data.symbol),
+      url: url(g.url),
+    });
+
+    const landmarks = gates.flatMap((g) => {
+      const coords = fixedCoords(g.data.weyl);
+      const qubitGate = g.data.arity === 2 && (!g.data.dimension || g.data.dimension === 2);
+      return coords && qubitGate ? [{ ...describe(g), coords }] : [];
+    });
+    const identity = gates.find((g) => g.fileSlug === "identity");
+
+    return JSON.stringify({
+      ...describe(current),
+      weyl: current.data.weyl,
+      landmarks,
+      identityUrl: identity ? url(identity.url) : null,
+    }).replace(/</g, "\\u003c");
   });
 
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
+  eleventyConfig.addPassthroughCopy("styles/weyl.css");
+  eleventyConfig.addPassthroughCopy("js/weyl.js");
   eleventyConfig.addPassthroughCopy("CNAME");
 
   eleventyConfig.addCollection("gates", function (collectionApi) {

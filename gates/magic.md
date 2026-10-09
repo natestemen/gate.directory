@@ -11,6 +11,7 @@ notations:
 groups:
   - clifford
 arity: 2
+weyl: [1/4, 0, 0]
 description: Changes from the computational basis to the magic (Bell) basis used in two-qubit local invariants.
 sdks:
   pytket:

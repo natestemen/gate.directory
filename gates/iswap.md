@@ -7,6 +7,7 @@ groups:
   - matchgate
   - number-preserving
 arity: 2
+weyl: [1/4, 1/4, 0]
 description: Swaps $|01\rangle$ and $|10\rangle$ and adds a phase of $i$.
 sdks:
   qiskit:

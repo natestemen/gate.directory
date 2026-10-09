@@ -8,6 +8,12 @@ alias:
 groups:
 arity: 2
 parameters: 3
+weyl:
+  coords: [a, b, c]
+  params:
+    a: { label: a, range: [0, 1/2], default: 3/16 }
+    b: { label: b, range: [0, 1/2], default: 1/8 }
+    c: { label: c, range: [-1/4, 1/4], default: 1/16 }
 description: Parameterizes every two-qubit interaction up to local unitaries.
 sdks:
   pennylane:
@@ -53,5 +59,6 @@ $$
 | $(\pi/4, 0, 0)$         | [CNOT](/gates/cnot) / [CZ](/gates/cz) |
 | $(\pi/8, \pi/8, 0)$     | $\sqrt{i\mathrm{SWAP}}$ |
 | $(\pi/4, \pi/4, 0)$     | [iSWAP](/gates/iswap) |
-| $(\pi/8, \pi/8, \pi/8)$ | [$\sqrt{\mathrm{SWAP}}$](/gates/sqrt-swap) |
+| $(\pi/8, \pi/8, -\pi/8)$ | [$\sqrt{\mathrm{SWAP}}$](/gates/sqrt-swap) |
+| $(\pi/8, \pi/8, \pi/8)$ | $\sqrt{\mathrm{SWAP}}^\dagger$ |
 | $(\pi/4, \pi/4, \pi/4)$ | [SWAP](/gates/swap) (global phase) |

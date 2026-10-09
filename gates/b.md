@@ -5,6 +5,7 @@ symbol: B
 groups:
   - matchgate
 arity: 2
+weyl: [1/4, 1/8, 0]
 description: Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.
 citation:
   title: Minimum construction of two-qubit quantum operations

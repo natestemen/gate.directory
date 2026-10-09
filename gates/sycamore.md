@@ -11,6 +11,7 @@ notations:
 groups:
   - number-preserving
 arity: 2
+weyl: [1/4, 1/4, 1/24]
 description: Google's native two-qubit gate, the fSim gate at $\theta = \pi/2$, $\phi = \pi/6$.
 citation:
   title: Quantum supremacy using a programmable superconducting processor

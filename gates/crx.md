@@ -10,6 +10,10 @@ notations:
 controlled: rx
 arity: 2
 parameters: 1
+weyl:
+  coords: [theta/4, 0, 0]
+  params:
+    theta: { label: \theta, range: [0, 2], default: 1 }
 description: Rotates the target about the $x$ axis by $\theta$ when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

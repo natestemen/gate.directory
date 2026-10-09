@@ -8,6 +8,11 @@ groups:
   - number-preserving
 arity: 2
 parameters: 2
+weyl:
+  coords: [-theta/2, -theta/2, -phi/4]
+  params:
+    theta: { label: \theta, range: [0, 1], default: 1/2 }
+    phi: { label: \phi, range: [0, 2], default: 1/6 }
 description: Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.
 sdks:
   qiskit:

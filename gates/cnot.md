@@ -18,6 +18,9 @@ groups:
 properties:
   - hermitian
 arity: 2
+weyl:
+  coords: [1/4, 0, 0]
+  label: CNOT
 controlled: pauli-x
 description: Flips the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:

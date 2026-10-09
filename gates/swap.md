@@ -13,6 +13,7 @@ groups:
 properties:
   - hermitian
 arity: 2
+weyl: [1/4, 1/4, 1/4]
 description: Exchanges the quantum states of two qubits.
 sdks:
   qiskit:

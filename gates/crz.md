@@ -13,6 +13,10 @@ groups:
 controlled: rz
 arity: 2
 parameters: 1
+weyl:
+  coords: [0, 0, theta/4]
+  params:
+    theta: { label: \theta, range: [0, 2], default: 1 }
 description: Rotates the target about the $z$ axis by $\theta$ when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:
