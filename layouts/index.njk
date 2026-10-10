@@ -1,6 +1,8 @@
 {% extends "base.njk" %}
 
-{# One card per gate. `cell` is a slug, a {slug, fams} override, a {ghost, name} placeholder or null. #}
+{% from "gate-card.njk" import gateTile %}
+
+{# One card per layout cell. `cell` is a slug, a {slug, fams} override, a {ghost, name} placeholder or null. #}
 {% macro gateCard(cell, rowFams) %}
   {% if cell === null %}
     <div class="gate-card-empty"></div>
@@ -15,12 +17,7 @@
     {% set fams = cell.fams if cell.fams else rowFams %}
     {% set gate = collections.gates | gateBySlug(slug) %}
     {% if gate %}
-      <a class="gate-card" href="{{ gate.url | url }}" style="--fam: {{ periodic_layout.families[fams[0]].color }}">
-        <span class="gate-card-arity" title="qubits">{{ gate.data.arity }}</span>
-        {% if gate.data.parameters %}<span class="gate-card-params" title="parameters">{{ gate.data.parameters }}</span>{% endif %}
-        <span class="gate-card-symbol">${{ gate.data.symbol | safe }}$</span>
-        <span class="gate-card-name">{{ gate.data.title | stripMath }}</span>
-      </a>
+      {{ gateTile(gate, periodic_layout.families[fams[0]].color) }}
     {% else %}
       <div class="gate-card-empty" title="unknown: {{ slug }}"></div>
     {% endif %}
@@ -97,28 +94,8 @@
     <p>Subgroups of the unitary group $\mathsf{U}(n)$ worth knowing by name. The map shows how they nest and overlap, with one example gate per region. Click a region or a chip to read about the group.</p>
   </div>
 
-  <svg class="group-map" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
-    <a href="{{ '/groups/unitary/' | url }}"><rect class="group-shape" x="8" y="8" width="744" height="424" rx="14"/><text x="740" y="30" text-anchor="end">unitary</text></a>
-    <a href="{{ '/groups/clifford/' | url }}"><rect class="group-shape" x="40" y="40" width="430" height="260" rx="10"/><text x="52" y="62">clifford</text></a>
-    <a href="{{ '/groups/orthogonal/' | url }}"><rect class="group-shape" x="120" y="150" width="480" height="250" rx="10"/><text x="590" y="393" text-anchor="end">orthogonal</text></a>
-    <a href="{{ '/groups/number-preserving/' | url }}"><rect class="group-shape" x="300" y="70" width="420" height="290" rx="10"/><text x="570" y="350" text-anchor="end">number-preserving</text></a>
-    <a href="{{ '/groups/diagonal/' | url }}"><rect class="group-shape" x="310" y="105" width="250" height="141" rx="8"/><text x="548" y="118" text-anchor="end">diagonal</text></a>
-    <a href="{{ '/groups/pauli/' | url }}"><rect class="group-shape" x="70" y="76" width="260" height="154" rx="8"/><text x="78" y="92">pauli</text></a>
-    <a href="{{ '/groups/permutation/' | url }}"><rect class="group-shape" x="150" y="210" width="190" height="170" rx="8"/><text x="158" y="370">permutation</text></a>
-    <a href="{{ '/groups/matchgate/' | url }}">
-      <path class="group-shape" d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z" stroke-linejoin="round"/>
-      <text x="640" y="175" text-anchor="middle" transform="rotate(-90 640 175)">matchgate</text>
-    </a>
-    <g class="group-map-examples" aria-hidden="true">
-      <text x="180" y="118">Y</text><text x="222" y="224">X</text><text x="317" y="186">Z</text><text x="317" y="223">I</text>
-      <text x="400" y="58">H</text><text x="222" y="280">CNOT</text><text x="320" y="280" text-anchor="middle">SWAP</text>
-      <text x="222" y="342">Toffoli</text><text x="320" y="338" text-anchor="middle">CSWAP</text><text x="400" y="128">S</text>
-      <text x="510" y="140">T</text><text x="404" y="200">CZ</text><text x="512" y="200">CCZ</text><text x="400" y="90">iSWAP</text>
-      <text x="548" y="90">XY</text><text x="447" y="277" text-anchor="middle">fSWAP</text>
-      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text><text x="134" y="330" text-anchor="middle">Ry</text>
-      <text x="682" y="200">FSim</text><text x="62" y="412">Rx</text><text x="624" y="374">Rxx</text>
-    </g>
-  </svg>
+  {% set current = null %}
+  {% include "group-map.njk" %}
 
   <ul class="chip-list">
     {% for group in collections.groups | sort(false, false, 'data.title') %}

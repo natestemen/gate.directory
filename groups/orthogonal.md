@@ -1,9 +1,10 @@
 ---
 layout: group
 title: Orthogonal Group
+description: "The real unitaries. Circuits built from them keep every amplitude real, and that costs surprisingly little."
 ---
 
-The orthogonal group consists of the *real* unitaries — gates whose matrices have no imaginary entries (the homepage filter calls this group "Real"). Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.
+The orthogonal group consists of the *real* unitaries — gates whose matrices have no imaginary entries. Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.
 
 $$
 \begin{aligned}

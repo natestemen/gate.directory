@@ -1,25 +1,72 @@
 {% extends "base.njk" %}
-
+{% from "gate-card.njk" import gateTile %}
 
 {% block content %}
-<h2>{{ title }}</h2>
-
-<div>
-  {{ content | safe }}
-</div>
-
 {% set groupSlug = page.fileSlug %}
-{% if all_gates %}
-<p>Every gate in this directory is a member of this group.</p>
-{% else %}
-<p>The following gates are contained in this group:</p>
-<ul>
-{% for gate in collections.gates %}
-  {% if gate.data.groups and groupSlug in gate.data.groups %}
-    <li><a href="{{ gate.url | url }}">{{ gate.data.title }}</a></li>
+{% set members = [] %}
+{% for item in collections.gates | layoutOrder(periodic_layout) %}
+  {% if all_gates or (item.gate.data.groups and (groupSlug in item.gate.data.groups)) %}
+    {% set members = (members.push(item), members) %}
   {% endif %}
 {% endfor %}
-</ul>
-{% endif %}
 
+<article class="group">
+  <header class="gate-masthead group-masthead">
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>Group</span><span aria-hidden="true">·</span>
+        <span>{{ members.length }} gate{% if members.length != 1 %}s{% endif %}{% if all_gates %}, every one in the directory{% endif %}</span>
+      </p>
+      <h2 class="gate-title">{{ title }}</h2>
+      {% if description %}<div class="gate-lede">{{ description | markdown | safe }}</div>{% endif %}
+    </div>
+  </header>
+
+  <div class="gate-body">
+    <div class="gate-main prose">
+      {{ content | safe }}
+    </div>
+
+    <aside class="gate-aside">
+      <section>
+        <h3 class="caption">All groups</h3>
+        <ul class="chip-list">
+          {% for group in collections.groups | sort(false, false, 'data.title') %}
+            <li><a class="chip{% if group.fileSlug == groupSlug %} chip-current{% endif %}" href="{{ group.url | url }}"{% if group.fileSlug == groupSlug %} aria-current="page"{% endif %}>{{ group.data.title | replace(' Group', '') | lower }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/{{ page.inputPath | replace('./', '') }}" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="section" id="gates">
+    <div class="section-head">
+      <h2 class="section-title">Gates in this group</h2>
+      {% if all_gates %}
+        <p>Every gate in the directory is unitary, so this is the whole table. Browse it by family on the <a href="{{ '/#gates' | url }}">home page</a>.</p>
+      {% else %}
+        <p>In the order of the table on the home page; the colour bar is the gate's family.</p>
+      {% endif %}
+    </div>
+    {% if not all_gates %}
+      <div class="tile-grid">
+        {% for item in members %}{{ gateTile(item.gate, item.family.color if item.family else null) }}{% endfor %}
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="section" id="map">
+    <div class="section-head">
+      <h2 class="section-title">On the map</h2>
+      <p>How the {{ title | replace(' Group', '') | lower }} group sits among the others: nested regions are subgroups, overlaps are shared gates, and the small labels are one example gate per region.</p>
+    </div>
+    {% set current = groupSlug %}
+    {% include "group-map.njk" %}
+  </section>
+
+  <p class="gate-foot"><a href="{{ '/#groups' | url }}">← All groups</a></p>
+</article>
 {% endblock %}

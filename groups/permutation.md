@@ -1,6 +1,7 @@
 ---
 layout: group
 title: Permutation Group
+description: "Gates that shuffle computational basis states: classical reversible logic inside quantum computing."
 ---
 
 Permutation gates do the one thing a classical reversible computer can do: shuffle computational basis states. No superpositions are created from basis states, no phases appear — every entry of the matrix is a $0$ or a $1$. This group is the precise sense in which classical reversible logic sits inside quantum computing.

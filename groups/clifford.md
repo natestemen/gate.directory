@@ -1,6 +1,7 @@
 ---
 layout: group
 title: Clifford Group
+description: "Unitaries that map Pauli operators to Pauli operators: efficiently simulable, and the backbone of error correction."
 ---
 
 The Clifford group is the set of unitaries that map Pauli operators to Pauli operators under conjugation — formally, the *normalizer* of the [Pauli group](/groups/pauli) in the unitary group. A Clifford circuit can therefore be tracked entirely by following what happens to a handful of Pauli operators, rather than to exponentially many amplitudes.

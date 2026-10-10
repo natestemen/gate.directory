@@ -1,6 +1,7 @@
 ---
 layout: group
 title: Diagonal Group
+description: "Gates that only attach a phase to each computational basis state, so they all commute with one another."
 ---
 
 The diagonal group contains the gates that are diagonal in the computational basis: they never change *which* basis state you are in, only attach a phase to each one. Unitarity forces every diagonal entry onto the unit circle.

@@ -1,6 +1,7 @@
 ---
 layout: group
 title: Matchgate Group
+description: "Two-qubit gates that act separately on the even- and odd-parity subspaces with matching determinants: free-fermion evolutions."
 ---
 
 Matchgates are the two-qubit gates that act separately on the even- and odd-parity subspaces, with matching determinants. Introduced by Valiant and identified physically as *free-fermion* evolutions, they are the fermionic counterpart of the Clifford group: rich enough to entangle, structured enough to simulate classically.

@@ -1,0 +1,9 @@
+{# A gate as a small card: symbol, name, qubit and parameter counts, family colour bar. #}
+{% macro gateTile(gate, color) %}
+  <a class="gate-card" href="{{ gate.url | url }}"{% if color %} style="--fam: {{ color }}"{% endif %}>
+    <span class="gate-card-arity" title="qubits">{{ gate.data.arity }}</span>
+    {% if gate.data.parameters %}<span class="gate-card-params" title="parameters">{{ gate.data.parameters }}</span>{% endif %}
+    <span class="gate-card-symbol">${{ gate.data.symbol | safe }}$</span>
+    <span class="gate-card-name">{{ gate.data.title | stripMath }}</span>
+  </a>
+{% endmacro %}

@@ -130,6 +130,26 @@ module.exports = function (eleventyConfig) {
     return null;
   });
 
+  // Every gate with its first family, in the order of the periodic layout
+  // (gates missing from the layout come last).
+  eleventyConfig.addFilter("layoutOrder", function (gates, layout) {
+    const seen = new Set();
+    const out = [];
+    for (const row of [...layout.rows, ...layout.pullout]) {
+      for (const cell of row.cells) {
+        if (!cell || cell.ghost) continue;
+        const slug = cell.slug || cell;
+        const gate = gates.find((g) => g.fileSlug === slug);
+        if (!gate || seen.has(slug)) continue;
+        seen.add(slug);
+        const key = (cell.fams || row.fams)[0];
+        out.push({ gate, family: { key, ...layout.families[key] } });
+      }
+    }
+    for (const gate of gates) if (!seen.has(gate.fileSlug)) out.push({ gate, family: null });
+    return out;
+  });
+
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
   eleventyConfig.addPassthroughCopy("styles/weyl.css");

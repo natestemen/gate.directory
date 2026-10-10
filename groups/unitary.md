@@ -2,6 +2,7 @@
 layout: group
 title: Unitary Group
 all_gates: true
+description: "Every gate. The group of all unitary matrices, which is exactly what closed-system quantum evolution allows."
 ---
 
 The unitary group is the home of quantum computing: every gate is a unitary matrix, because the evolution of a closed quantum system preserves inner products — and with them, the total probability of measurement outcomes. All other groups on this site are subgroups of this one.

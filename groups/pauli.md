@@ -1,6 +1,7 @@
 ---
 layout: group
 title: Pauli Group
+description: "Bit flip, phase flip and their product, together with the phases that close them under multiplication."
 ---
 
 The Pauli group plays the role for quantum information that bit flips play for classical information: [$X$](/gates/pauli-x) is a bit flip, [$Z$](/gates/pauli-z) is a phase flip, and [$Y$](/gates/pauli-y) $= iXZ$ is both at once. Together with the identity they form the elementary alphabet of quantum errors and observables.

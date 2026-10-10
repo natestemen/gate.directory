@@ -1,6 +1,7 @@
 ---
 layout: group
 title: Number-Preserving Group
+description: "Gates that conserve the number of excitations, moving them around and adjusting phases without creating or destroying any."
 ---
 
 Number-preserving (or *excitation-preserving*) gates conserve the total number of $|1\rangle$s: they never create or destroy excitations, only move them around and adjust phases. Formally, they are the unitaries commuting with the total number operator $\hat{N} = \sum_i (I - Z_i)/2$ — the gates with a global $\mathsf{U}(1)$ symmetry.
