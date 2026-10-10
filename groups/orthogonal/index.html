@@ -34,7 +34,12 @@
 
 <div>
   <p>The orthogonal group consists of the <em>real</em> unitaries — gates whose matrices have no imaginary entries (the homepage filter calls this group &quot;Real&quot;). Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.</p>
-<p>$$\mathsf{O}(n) := \left\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}} O = I \right\} = \mathsf{U}(n) \cap \mathrm{GL}(n, \mathbb{R})$$</p>
+<p>$$
+\begin{aligned}
+\mathsf{O}(n) &amp;:= \left\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}} O = I \right\} \\
+&amp;= \mathsf{U}(n) \cap \mathrm{GL}(n, \mathbb{R})
+\end{aligned}
+$$</p>
 <h3>Properties</h3>
 <ul>
 <li>Every orthogonal matrix has $\det O = \pm 1$. The $+1$ component $\mathsf{SO}(n)$ contains the <em>rotations</em>, such as <a href="/gates/ry">$R_y(\theta)$</a> and <a href="/gates/givens">Givens rotations</a>; determinant $-1$ elements are <em>reflections</em>, such as the <a href="/gates/grover-diffuser">Grover diffuser</a>.</li>

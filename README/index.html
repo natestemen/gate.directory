@@ -18,6 +18,8 @@ cd gate.directory
 <p>When deploying to GitHub Pages the build uses a path prefix of <code>/gate.directory/</code> so asset URLs resolve correctly. Locally you can override this with the <code>PATH_PREFIX</code> environment variable:</p>
 <pre><code class="language-sh">PATH_PREFIX=/ npm run build
 </code></pre>
+<h2>Writing math</h2>
+<p>Anything between <code>$…$</code> or <code>$$…$$</code> is handed to KaTeX untouched (see <code>lib/markdown-math.js</code>), so write plain LaTeX: <code>\\</code> for matrix rows, <code>\,</code> for thin spaces, <code>\{</code>, and <code>_</code> wherever you like. No Markdown escaping is needed inside math.</p>
 <h2>Weyl chamber coordinates</h2>
 <p>Two-qubit gate pages show where the gate sits in the Weyl chamber. The data lives in each gate's front matter, in units of π, using the convention of the <a href="gates/can.md">canonical gate</a>: <code>U ≃ exp(i(a XX + b YY + c ZZ))</code> up to single-qubit gates, reduced to <code>π/4 ≥ a ≥ b ≥ |c|</code> (the canonical form Qiskit and Cirq use as well).</p>
 <p>Fixed gates give the point directly:</p>
