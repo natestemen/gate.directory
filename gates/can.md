@@ -15,21 +15,30 @@ weyl:
     b: { label: b, range: [0, 1/2], default: 1/8 }
     c: { label: c, range: [-1/4, 1/4], default: 1/16 }
 quirk:
+  spin: {a: 1, b: 2, c: 3}
   cols:
     - ["H", "H"]
     - ["•", "X"]
-    - [1, {id: Rzft, arg: "-2 pi t"}]
+    - [1, {id: Rzft, param: a, mul: -2}]
     - ["•", "X"]
     - ["H", "H"]
     - ["X^-½", "X^-½"]
     - ["•", "X"]
-    - [1, {id: Rzft, arg: "-4 pi t"}]
+    - [1, {id: Rzft, param: b, mul: -2}]
     - ["•", "X"]
     - ["X^½", "X^½"]
     - ["•", "X"]
-    - [1, {id: Rzft, arg: "-6 pi t"}]
+    - [1, {id: Rzft, param: c, mul: -2}]
     - ["•", "X"]
-  note: (a, b, c) = (\pi t, 2\pi t, 3\pi t)
+params:
+  a: { label: a, default: 1/4, range: [0, 1] }
+  b: { label: b, default: 1/8, range: [0, 2] }
+  c: { label: c, default: 1/16, range: [0, 3] }
+matrix:
+  - ["exp(i c) cos(a-b)", 0, 0, "i exp(i c) sin(a-b)"]
+  - [0, "exp(-i c) cos(a+b)", "i exp(-i c) sin(a+b)", 0]
+  - [0, "i exp(-i c) sin(a+b)", "exp(-i c) cos(a+b)", 0]
+  - ["i exp(i c) sin(a-b)", 0, 0, "exp(i c) cos(a-b)"]
 description: Parameterizes every two-qubit interaction up to local unitaries.
 sdks:
   pennylane:

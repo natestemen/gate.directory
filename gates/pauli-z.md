@@ -20,6 +20,9 @@ properties:
 arity: 1
 quirk:
   cols: [["Z"]]
+matrix:
+  - [1, 0]
+  - [0, -1]
 description: Phase-flip gate that leaves $|0\rangle$ unchanged and flips the phase of $|1\rangle$.
 sdks:
   qiskit:

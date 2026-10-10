@@ -16,6 +16,17 @@ groups:
   - permutation
 arity: 2
 dimension: d
+matrix:
+  - [1, 0, 0, 0, 0, 0, 0, 0, 0]
+  - [0, 1, 0, 0, 0, 0, 0, 0, 0]
+  - [0, 0, 1, 0, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 0, 1, 0, 0, 0]
+  - [0, 0, 0, 1, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 1, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 0, 0, 0, 1, 0]
+  - [0, 0, 0, 0, 0, 0, 0, 0, 1]
+  - [0, 0, 0, 0, 0, 0, 1, 0, 0]
+matrix_note: d = 3
 controlled: shift
 description: Qudit-controlled shift that adds the control value to the target modulo $d$.
 sdks:

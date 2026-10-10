@@ -16,6 +16,15 @@ arity: 3
 quirk:
   matrix: "{{1,0,0,0,0,0,0,0},{0,1,0,0,0,0,0,0},{0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1},{0,0,0,0,1,0,0,0},{0,0,0,0,0,-1,0,0},{0,0,0,0,0,0,1,0},{0,0,0,1,0,0,0,0}}"
   name: RCCX
+matrix:
+  - [1, 0, 0, 0, 0, 0, 0, 0]
+  - [0, 1, 0, 0, 0, 0, 0, 0]
+  - [0, 0, 1, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 1, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 1, 0, 0, 0]
+  - [0, 0, 0, 0, 0, -1, 0, 0]
+  - [0, 0, 0, 0, 0, 0, 0, 1]
+  - [0, 0, 0, 0, 0, 0, 1, 0]
 description: Simplified Toffoli gate, equal to the Toffoli up to a $-1$ phase on $|101\rangle$, costing only three CNOTs.
 citation:
   title: On the CNOT-cost of TOFFOLI gates

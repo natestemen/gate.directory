@@ -23,6 +23,9 @@ arity: n
 quirk:
   matrix: "{{1,0},{0,1}}"
   name: I
+matrix:
+  - [1, 0]
+  - [0, 1]
 description: Leaves the quantum state unchanged.
 sdks:
   qiskit:

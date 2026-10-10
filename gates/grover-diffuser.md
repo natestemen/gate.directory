@@ -18,6 +18,12 @@ quirk:
   matrix: "{{-0.5,0.5,0.5,0.5},{0.5,-0.5,0.5,0.5},{0.5,0.5,-0.5,0.5},{0.5,0.5,0.5,-0.5}}"
   name: Us
   note: n = 2
+matrix:
+  - ["-1/2", "1/2", "1/2", "1/2"]
+  - ["1/2", "-1/2", "1/2", "1/2"]
+  - ["1/2", "1/2", "-1/2", "1/2"]
+  - ["1/2", "1/2", "1/2", "-1/2"]
+matrix_note: n = 2
 description: Reflection about the uniform superposition, the "inversion about the mean" step of Grover's algorithm.
 citation:
   title: A fast quantum mechanical algorithm for database search

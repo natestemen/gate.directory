@@ -1,0 +1,30 @@
+{#
+  "The unitary, drawn": the gate's matrix as discs, evaluated in the browser from
+  the gate's own `params` and `matrix` (see js/gate-math.js).
+#}
+<section class="unitary section" aria-labelledby="unitary-heading">
+  <div class="section-head">
+    <h2 class="section-title" id="unitary-heading">The unitary, drawn</h2>
+    <p>
+      Every entry of the matrix as a disc. The area is the transition probability $|U_{jk}|^2$;
+      the colour and the hand are the phase. Rows are outputs $\langle j|$, columns inputs $|k\rangle$, in the computational basis{% if matrix_note %}, shown for ${{ matrix_note }}${% endif %}.
+      {% if params %}Each parameter has a slider; play runs through the family{% set quirkNote = quirk | quirkNote(params) %}{% if quirkNote %} along the path of the Quirk link ({{ '$' }}{{ quirkNote }}{{ '$' }}){% endif %}.{% endif %}
+    </p>
+  </div>
+  <div class="unitary-panel">
+    <div class="unitary-figure">
+      <svg class="unitary-svg" role="img" aria-label="The matrix of the {{ title | stripMath }} gate drawn as discs"></svg>
+      <div class="unitary-tooltip" role="tooltip" hidden></div>
+    </div>
+    <div class="unitary-side">
+      <div class="unitary-controls"></div>
+      <div class="unitary-legend">
+        <p class="caption">Phase</p>
+      </div>
+      <p class="unitary-key">Disc area $= |U_{jk}|^2$. Hover an entry for its value, or take the <a href="{{ ('/api/gates/' + page.fileSlug + '.json') | url }}">JSON</a>.</p>
+    </div>
+  </div>
+  <script type="application/json" class="unitary-data">{{ { params: params, matrix: matrix, note: matrix_note, spin: (quirk.spin if quirk else none) } | dump | replace('</', '<\\/') | safe }}</script>
+  <script defer src="{{ '/js/gate-math.js' | url }}"></script>
+  <script defer src="{{ '/js/unitary.js' | url }}"></script>
+</section>

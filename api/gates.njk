@@ -1,0 +1,5 @@
+---
+permalink: "api/gates.json"
+eleventyExcludeFromCollections: true
+---
+{{ collections.gates | gatesJson(periodic_layout) | safe }}

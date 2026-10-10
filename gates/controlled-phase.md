@@ -18,9 +18,16 @@ weyl:
   params:
     phi: { label: \phi, range: [0, 2], default: 1 }
 quirk:
+  spin: {phi: 2}
   cols:
-    - ["•", {id: Z^ft, arg: "2 t"}]
-  note: \phi = 2\pi t
+    - ["•", {id: Z^ft, param: phi}]
+params:
+  phi: { label: \phi, default: 1/2, range: [0, 2] }
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 0, 0, "exp(i phi)"]
 arity: 2
 description: Applies a phase $\mathrm{e}^{i\phi}$ to $|11\rangle$ and leaves other basis states unchanged.
 sdks:

@@ -7,6 +7,11 @@ weyl: [1/8, 1/8, 0]
 quirk:
   matrix: "{{1,0,0,0},{0,0.7071067812,0.7071067812,0},{0,-0.7071067812,0.7071067812,0},{0,0,0,1}}"
   name: B(2)
+matrix:
+  - [1, 0, 0, 0]
+  - [0, "1/sqrt(2)", "-1/sqrt(2)", 0]
+  - [0, "1/sqrt(2)", "1/sqrt(2)", 0]
+  - [0, 0, 0, 1]
 groups:
   - orthogonal
 description: A two-qubit entangling gate used in virtual distillation error-mitigation protocols.

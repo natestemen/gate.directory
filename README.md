@@ -31,23 +31,50 @@ PATH_PREFIX=/ npm run build
 
 Anything between `$…$` or `$$…$$` is handed to KaTeX untouched (see `lib/markdown-math.js`), so write plain LaTeX: `\\` for matrix rows, `\,` for thin spaces, `\{`, and `_` wherever you like. No Markdown escaping is needed inside math.
 
+## Gate definitions
+
+Each gate's front matter carries a machine-readable definition that drives the "unitary, drawn" panel, the JSON API and the consistency checks:
+
+```yaml
+params:
+  theta: { label: \theta, default: 1/2, range: [0, 2] }   # angles; defaults and ranges in units of π
+matrix:
+  - ["cos(theta/2)", "-i sin(theta/2)"]                    # expressions: inside them a parameter
+  - ["-i sin(theta/2)", "cos(theta/2)"]                    #   stands for the angle in radians
+matrix_note: d = 3                                         # optional: the instance shown for n- or d-dependent gates
+```
+
+The expression language (`js/gate-math.js`) has `+ - * / ^`, parentheses, juxtaposition as multiplication (`2 pi t`, `i sin(x)`), the constants `pi`, `e`, `i`, and `sqrt exp cos sin tan acos asin atan ln`. The first qubit is the most significant bit. Gates whose size depends on `n` or `d` (QFT, MCX, the qudit gates) give a small instance and say so in `matrix_note`.
+
+`npm run check` verifies every matrix is unitary, that each Quirk circuit reproduces its matrix, and that the Weyl coordinates agree with the matrix via Makhlin's invariants. It runs in CI on every push.
+
+## JSON API
+
+The built site publishes the same data as JSON:
+
+- `/api/gates.json` — every gate, in the order of the table on the home page
+- `/api/gates/<slug>.json` — one gate, for example `/api/gates/cnot.json`
+- `/api/groups.json` — the groups and their members
+
+Records are deliberately lean: slug, title, symbol (LaTeX), aliases, notations (LaTeX), description, qubit count and dimension, the parameters (label, default and range in units of π), the matrix as expressions (and `matrix_note` for the instance shown), groups, properties and the page URL. Evaluate the matrix with `js/gate-math.js` or any CAS; a parameter name inside an entry is the angle in radians.
+
 ## Quirk links
 
-Gate pages link to the gate in [Quirk](https://algassert.com/quirk) when the front matter has a `quirk` entry. Either list Quirk's gates per circuit column (the top wire is the page's first qubit), or give the unitary as a Quirk matrix string (Quirk's wires are little-endian, so the first qubit of the page's matrix is the last index). Parameterised gates are built from Quirk's formula gates (`Rxft`, `Ryft`, `Rzft`, `Z^ft`), whose angle is the formula in `arg`. Writing the angle in terms of Quirk's clock `t` (which runs from 0 to 1 and repeats) makes the gate spin through its whole family; rates are chosen so each circuit loops seamlessly. Clicking a gate in Quirk lets you edit the formula, for example to a fixed angle. `note` (LaTeX) states the parameterisation the link opens with:
+Gate pages link to the gate in [Quirk](https://algassert.com/quirk) when the front matter has a `quirk` entry. Either list Quirk's gates per circuit column (the top wire is the page's first qubit), or give the unitary as a Quirk matrix string (Quirk's wires are little-endian, so the first qubit of the page's matrix is the last index). Parameterised circuits reference the gate's `params` from Quirk's formula gates (`Rxft`, `Ryft`, `Rzft`, `Z^ft`) with `param` and an optional `mul`; rotation gates read the value in radians, `Z^ft` as an exponent. `spin` gives each parameter's rate in Quirk's clock `t` (0 to 1, repeating): the link substitutes `spin × t`, so the gate spins through its family and loops seamlessly, and the unitary panel's play button follows the same path. Constant angles use `arg` with a Quirk formula. `note` (LaTeX) overrides the generated description; `phase` records a global phase the page's matrix carries and the circuit cannot.
 
 ```yaml
 quirk:
-  cols: [["•", "X"]]                      # CNOT from Quirk's own gates
+  cols: [["•", "X"]]                            # CNOT from Quirk's own gates
 
 quirk:
+  spin: {theta: 4}                              # theta = 4πt in the link
   cols:
-    - ["•", {id: Rxft, arg: "4 pi t"}]    # controlled Rx spinning with Quirk's clock
-  note: \theta = 4\pi t                   # optional, shown next to the link
+    - ["•", {id: Rxft, param: theta}]           # or {id: Rzft, param: theta, mul: -0.5}
 
 quirk:
   matrix: "{{1,0,0,0},{0,0,i,0},{0,i,0,0},{0,0,0,1}}"
-  name: iSWAP                             # label drawn on the gate in Quirk
-  controls: 1                             # optional control wires in front of the gate
+  name: iSWAP                                   # label drawn on the gate in Quirk
+  controls: 1                                   # optional control wires in front of the gate
 ```
 
 ## Weyl chamber coordinates

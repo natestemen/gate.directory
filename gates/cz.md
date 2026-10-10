@@ -19,6 +19,11 @@ arity: 2
 weyl: [1/4, 0, 0]
 quirk:
   cols: [["•", "Z"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 0, 0, -1]
 description: Applies a $-1$ phase to $|11\rangle$.
 sdks:
   qiskit:

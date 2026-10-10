@@ -11,6 +11,11 @@ notations:
   - \mathcal{C}_d
 arity: 1
 dimension: d
+matrix:
+  - ["1/sqrt(3)", "1/sqrt(3)", "1/sqrt(3)"]
+  - ["1/sqrt(3)", "exp(2 pi i/3)/sqrt(3)", "exp(4 pi i/3)/sqrt(3)"]
+  - ["1/sqrt(3)", "exp(4 pi i/3)/sqrt(3)", "exp(2 pi i/3)/sqrt(3)"]
+matrix_note: d = 3
 description: Qudit generalization of the Hadamard gate that maps each basis state to an equal superposition with root-of-unity phases.
 sdks:
   cirq:

@@ -10,6 +10,9 @@ groups:
 arity: 1
 quirk:
   cols: [["Z^¼"]]
+matrix:
+  - [1, 0]
+  - [0, "exp(i pi/4)"]
 description: A $\pi/8$ phase gate which is a non-Clifford rotation about $Z$.
 sdks:
   qiskit:

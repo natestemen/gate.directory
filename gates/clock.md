@@ -13,6 +13,11 @@ groups:
   - number-preserving
 arity: 1
 dimension: d
+matrix:
+  - ["1", 0, 0]
+  - [0, "exp(2 pi i/3)", 0]
+  - [0, 0, "exp(4 pi i/3)"]
+matrix_note: d = 3
 description: Qudit generalization of Pauli-$Z$ that tags each basis state with a root-of-unity phase, $|j\rangle \mapsto \omega^j |j\rangle$.
 sdks:
   pennylane:

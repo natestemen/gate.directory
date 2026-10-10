@@ -15,6 +15,9 @@ groups:
 arity: 1
 quirk:
   cols: [["X^½"]]
+matrix:
+  - ["(1+i)/2", "(1-i)/2"]
+  - ["(1-i)/2", "(1+i)/2"]
 description: A gate whose square is the Pauli-$X$ (NOT) gate.
 sdks:
   qiskit:

@@ -16,6 +16,11 @@ arity: 2
 weyl: [1/4, 0, 0]
 quirk:
   cols: [["•", "H"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, "1/sqrt(2)", "1/sqrt(2)"]
+  - [0, 0, "1/sqrt(2)", "-1/sqrt(2)"]
 description: Applies a Hadamard to the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

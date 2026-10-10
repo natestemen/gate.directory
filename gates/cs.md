@@ -16,6 +16,11 @@ arity: 2
 weyl: [1/8, 0, 0]
 quirk:
   cols: [["•", "Z^½"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 0, 0, "i"]
 description: Applies a phase of $i$ to the $|11\rangle$ state, the square root of controlled-$Z$.
 sdks:
   qiskit:

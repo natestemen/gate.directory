@@ -1,0 +1,9 @@
+---
+pagination:
+  data: collections.gates
+  size: 1
+  alias: gate
+permalink: "api/gates/{{ gate.fileSlug }}.json"
+eleventyExcludeFromCollections: true
+---
+{{ gate | gateJson | safe }}

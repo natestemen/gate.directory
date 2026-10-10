@@ -12,11 +12,16 @@ properties:
 arity: 1
 parameters: 1
 quirk:
+  spin: {phi: 2}
   cols:
-    - [{id: Rzft, arg: "-2 pi t"}]
+    - [{id: Rzft, param: phi, mul: -1}]
     - ["X"]
-    - [{id: Rzft, arg: "2 pi t"}]
-  note: \phi = 2\pi t
+    - [{id: Rzft, param: phi}]
+params:
+  phi: { label: \phi, default: 1/4, range: [0, 2] }
+matrix:
+  - [0, "exp(-i phi)"]
+  - ["exp(i phi)", 0]
 description: IonQ's native $\pi$ pulse, a bit flip about the equatorial Bloch-sphere axis at angle $\phi$.
 sdks:
   qiskit:

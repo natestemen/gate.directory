@@ -23,6 +23,11 @@ weyl:
   label: CNOT
 quirk:
   cols: [["•", "X"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 0, 1]
+  - [0, 0, 1, 0]
 controlled: pauli-x
 description: Flips the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:

@@ -7,7 +7,12 @@ groups:
 arity: 2
 weyl: [1/4, 1/8, 0]
 quirk:
-  matrix: "{{0.9238795325,0,0,-0.3826834324i},{0,0.3826834324,-0.9238795325i,0},{0,-0.9238795325i,0.3826834324,0},{-0.3826834324i,0,0,0.9238795325}}"
+  matrix: "{{0.9238795325,0,0,0.3826834324i},{0,0.3826834324,0.9238795325i,0},{0,0.9238795325i,0.3826834324,0},{0.3826834324i,0,0,0.9238795325}}"
+matrix:
+  - ["(cos(pi/8)+sin(pi/8))/sqrt(2)", 0, 0, "i (cos(pi/8)-sin(pi/8))/sqrt(2)"]
+  - [0, "(cos(pi/8)-sin(pi/8))/sqrt(2)", "i (cos(pi/8)+sin(pi/8))/sqrt(2)", 0]
+  - [0, "i (cos(pi/8)+sin(pi/8))/sqrt(2)", "(cos(pi/8)-sin(pi/8))/sqrt(2)", 0]
+  - ["i (cos(pi/8)-sin(pi/8))/sqrt(2)", 0, 0, "(cos(pi/8)+sin(pi/8))/sqrt(2)"]
 description: Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.
 citation:
   title: Minimum construction of two-qubit quantum operations
@@ -25,7 +30,7 @@ The B gate introduced in Zhang, Vala, Sastry, and Whaley is
 
 $$
 \begin{align*}
-B & = \exp\left[-i\left(\frac{\pi}{4}X\otimes X + \frac{\pi}{8}Y\otimes Y\right)\right] \\
+B & = \exp\left[i\left(\frac{\pi}{4}X\otimes X + \frac{\pi}{8}Y\otimes Y\right)\right] \\
   & = \begin{bmatrix}
     \alpha^{+} & 0 & 0 & i\alpha^{-} \\
     0 & \alpha^{-} & i\alpha^{+} & 0 \\

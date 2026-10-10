@@ -17,6 +17,15 @@ properties:
 arity: 3
 quirk:
   cols: [["•", "Swap", "Swap"]]
+matrix:
+  - [1, 0, 0, 0, 0, 0, 0, 0]
+  - [0, 1, 0, 0, 0, 0, 0, 0]
+  - [0, 0, 1, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 1, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 1, 0, 0, 0]
+  - [0, 0, 0, 0, 0, 0, 1, 0]
+  - [0, 0, 0, 0, 0, 1, 0, 0]
+  - [0, 0, 0, 0, 0, 0, 0, 1]
 controlled: swap
 description: Controlled swap of two target qubits conditioned on a single control qubit.
 sdks:

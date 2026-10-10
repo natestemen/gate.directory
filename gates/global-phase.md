@@ -17,6 +17,12 @@ quirk:
   matrix: "{{i,0},{0,i}}"
   name: Ph(π/2)
   note: \phi = \pi/2
+params:
+  phi: { label: \phi, default: 1/2, range: [0, 2] }
+matrix:
+  - ["exp(i phi)", 0]
+  - [0, "exp(i phi)"]
+matrix_note: n = 1
 description: Multiplies the entire quantum state by an overall phase factor.
 sdks:
   qiskit:

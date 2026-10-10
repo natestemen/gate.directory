@@ -21,6 +21,15 @@ controlled: cnot
 arity: 3
 quirk:
   cols: [["•", "•", "X"]]
+matrix:
+  - [1, 0, 0, 0, 0, 0, 0, 0]
+  - [0, 1, 0, 0, 0, 0, 0, 0]
+  - [0, 0, 1, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 1, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 1, 0, 0, 0]
+  - [0, 0, 0, 0, 0, 1, 0, 0]
+  - [0, 0, 0, 0, 0, 0, 0, 1]
+  - [0, 0, 0, 0, 0, 0, 1, 0]
 description: Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\rangle$.
 sdks:
   qiskit:

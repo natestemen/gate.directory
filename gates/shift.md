@@ -13,6 +13,11 @@ groups:
   - permutation
 arity: 1
 dimension: d
+matrix:
+  - [0, 0, 1]
+  - [1, 0, 0]
+  - [0, 1, 0]
+matrix_note: d = 3
 description: Qudit generalization of Pauli-$X$ that cyclically increments the basis state, $|j\rangle \mapsto |j+1 \bmod d\rangle$.
 sdks:
   pennylane:

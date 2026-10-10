@@ -10,6 +10,11 @@ arity: 2
 weyl: [1/4, 0, 0]
 quirk:
   matrix: "{{0,0,0.7071067812,0.7071067812i},{0,0,0.7071067812i,0.7071067812},{0.7071067812,-0.7071067812i,0,0},{-0.7071067812i,0.7071067812,0,0}}"
+matrix:
+  - [0, "1/sqrt(2)", 0, "i/sqrt(2)"]
+  - ["1/sqrt(2)", 0, "-i/sqrt(2)", 0]
+  - [0, "i/sqrt(2)", 0, "1/sqrt(2)"]
+  - ["-i/sqrt(2)", 0, "1/sqrt(2)", 0]
 description: A native two-qubit Clifford gate for cross-resonance hardware, locally equivalent to CNOT.
 sdks:
   qiskit:

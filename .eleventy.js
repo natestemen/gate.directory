@@ -1,6 +1,8 @@
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
 const mathPassthrough = require("./lib/markdown-math");
+const GateMath = require("./js/gate-math");
+const Weyl = require("./js/weyl");
 
 function stripMath(str = "") {
   if (!str) {
@@ -98,26 +100,82 @@ module.exports = function (eleventyConfig) {
   // Link to a gate in Quirk (algassert.com/quirk). Front matter either lists
   // built-in Quirk gates per column (`cols`) or gives the unitary as a Quirk
   // matrix string (`matrix`, optionally behind `controls` control wires).
-  eleventyConfig.addFilter("quirkUrl", function (quirk, slug, symbol) {
+  // A circuit cell {id, param, mul} means "this Quirk formula gate with angle
+  // mul × param"; the Quirk link replaces the parameter by its spin rate × t.
+  // Parameters are in units of π: rotation gates take radians, Z^ft an exponent.
+  function spinFormula(cell, spin) {
+    const rate = (spin || {})[cell.param];
+    if (rate == null) throw new Error(`quirk: no spin rate for parameter ${cell.param}`);
+    const k = (cell.mul == null ? 1 : cell.mul) * rate;
+    const mag = Math.abs(k) === 1 ? "" : String(+Math.abs(k).toFixed(6)) + " ";
+    return (k < 0 ? "-" : "") + mag + (/\^ft$/.test(cell.id) ? "t" : "pi t");
+  }
+  const spinTex = (k) => (k === 1 ? "" : String(k)) + "\\pi t";
+
+  eleventyConfig.addFilter("quirkNote", function (quirk, params) {
+    if (!quirk) return null;
+    if (quirk.note) return quirk.note;
+    if (!quirk.spin) return null;
+    return Object.entries(quirk.spin).map(([name, k]) => `${((params || {})[name] || {}).label || name} = ${spinTex(k)}`).join(",\\ ");
+  });
+
+  function quirkUrl(quirk, slug, symbol, params) {
     if (!quirk) return null;
     let circuit;
     if (quirk.cols) {
-      circuit = { cols: quirk.cols };
+      circuit = { cols: quirk.cols.map((col) => col.map((cell) => (cell && cell.param ? { id: cell.id, arg: spinFormula(cell, quirk.spin) } : cell))) };
     } else if (quirk.matrix) {
       const id = "~" + String(slug).replace(/[^a-z0-9]/gi, "").slice(0, 12);
       const controls = Array(quirk.controls || 0).fill("•");
-      circuit = {
-        cols: [[...controls, id]],
-        gates: [{ id, name: quirk.name || symbolText(symbol), matrix: quirk.matrix }],
-      };
+      circuit = { cols: [[...controls, id]], gates: [{ id, name: quirk.name || symbolText(symbol), matrix: quirk.matrix }] };
     } else {
       return null;
     }
     return "https://algassert.com/quirk#circuit=" + encodeURIComponent(JSON.stringify(circuit));
+  }
+  eleventyConfig.addFilter("quirkUrl", quirkUrl);
+
+  // ---------------------------------------------------------------- JSON API
+  // Lean records: the LaTeX, the matrix as expressions, and the basic facts.
+  function gateRecord(gate) {
+    const url = eleventyConfig.getFilter("url");
+    const d = gate.data;
+    const record = {
+      slug: gate.fileSlug,
+      title: stripMath(d.title),
+      symbol: d.symbol,
+      aliases: d.alias || [],
+      notations: d.notations || [],
+      description: d.description || "",
+      arity: d.arity,
+      dimension: d.dimension || 2,
+    };
+    if (d.params) {
+      record.params = Object.fromEntries(Object.entries(d.params).map(([name, p]) => [name, { label: p.label || name, default: String(p.default), range: p.range || null }]));
+    }
+    if (d.matrix) record.matrix = d.matrix;
+    if (d.matrix_note) record.matrix_note = d.matrix_note;
+    record.groups = d.groups || [];
+    record.properties = d.properties || [];
+    record.url = url(gate.url);
+    return record;
+  }
+  const safeJson = (value) => JSON.stringify(value, null, 1).replace(/</g, "\\u003c");
+  eleventyConfig.addFilter("gateJson", (gate) => safeJson(gateRecord(gate)));
+  eleventyConfig.addFilter("gatesJson", (gates, layout) => safeJson(layoutOrder(gates, layout).map((item) => gateRecord(item.gate))));
+  eleventyConfig.addFilter("groupsJson", (groups, gates) => {
+    const url = eleventyConfig.getFilter("url");
+    return safeJson(groups.map((group) => ({
+      slug: group.fileSlug,
+      title: group.data.title,
+      description: group.data.description || "",
+      gates: gates.filter((g) => group.data.all_gates || (g.data.groups || []).includes(group.fileSlug)).map((g) => g.fileSlug),
+      url: url(group.url),
+    })));
   });
 
   // First family of a gate in the periodic layout: {key, label, color} or null.
-  eleventyConfig.addFilter("gateFamily", function (layout, slug) {
+  function gateFamily(layout, slug) {
     for (const row of [...layout.rows, ...layout.pullout]) {
       for (const cell of row.cells) {
         if (!cell || cell.ghost) continue;
@@ -128,11 +186,12 @@ module.exports = function (eleventyConfig) {
       }
     }
     return null;
-  });
+  }
+  eleventyConfig.addFilter("gateFamily", gateFamily);
 
   // Every gate with its first family, in the order of the periodic layout
   // (gates missing from the layout come last).
-  eleventyConfig.addFilter("layoutOrder", function (gates, layout) {
+  function layoutOrder(gates, layout) {
     const seen = new Set();
     const out = [];
     for (const row of [...layout.rows, ...layout.pullout]) {
@@ -148,13 +207,17 @@ module.exports = function (eleventyConfig) {
     }
     for (const gate of gates) if (!seen.has(gate.fileSlug)) out.push({ gate, family: null });
     return out;
-  });
+  }
+  eleventyConfig.addFilter("layoutOrder", layoutOrder);
 
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
   eleventyConfig.addPassthroughCopy("styles/weyl.css");
   eleventyConfig.addPassthroughCopy("styles/home.css");
   eleventyConfig.addPassthroughCopy("js/weyl.js");
+  eleventyConfig.addPassthroughCopy("styles/unitary.css");
+  eleventyConfig.addPassthroughCopy("js/unitary.js");
+  eleventyConfig.addPassthroughCopy("js/gate-math.js");
   eleventyConfig.addPassthroughCopy("CNAME");
 
   eleventyConfig.addCollection("gates", function (collectionApi) {

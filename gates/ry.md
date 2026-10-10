@@ -12,9 +12,14 @@ groups:
 arity: 1
 parameters: 1
 quirk:
+  spin: {theta: 2}
   cols:
-    - [{id: Ryft, arg: "2 pi t"}]
-  note: \theta = 2\pi t
+    - [{id: Ryft, param: theta}]
+params:
+  theta: { label: \theta, default: 1/2, range: [0, 2] }
+matrix:
+  - ["cos(theta/2)", "-sin(theta/2)"]
+  - ["sin(theta/2)", "cos(theta/2)"]
 description: Rotation about the $y$ axis of the Bloch sphere.
 sdks:
   qiskit:

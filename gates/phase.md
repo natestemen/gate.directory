@@ -14,9 +14,14 @@ groups:
 arity: 1
 parameters: 1
 quirk:
+  spin: {phi: 2}
   cols:
-    - [{id: Z^ft, arg: "2 t"}]
-  note: \phi = 2\pi t
+    - [{id: Z^ft, param: phi}]
+params:
+  phi: { label: \phi, default: 1/4, range: [0, 2] }
+matrix:
+  - [1, 0]
+  - [0, "exp(i phi)"]
 description: Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.
 sdks:
   qiskit:

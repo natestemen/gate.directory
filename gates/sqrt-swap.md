@@ -10,6 +10,11 @@ arity: 2
 weyl: [1/8, 1/8, -1/8]
 quirk:
   matrix: "{{1,0,0,0},{0,0.5+0.5i,0.5-0.5i,0},{0,0.5-0.5i,0.5+0.5i,0},{0,0,0,1}}"
+matrix:
+  - [1, 0, 0, 0]
+  - [0, "(1+i)/2", "(1-i)/2", 0]
+  - [0, "(1-i)/2", "(1+i)/2", 0]
+  - [0, 0, 0, 1]
 description: Applies half of a SWAP interaction, creating maximal entanglement from a product state.
 sdks:
   qiskit:

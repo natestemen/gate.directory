@@ -8,6 +8,16 @@ arity: n
 quirk:
   cols: [["QFT3"]]
   note: n = 3
+matrix:
+  - ["1/sqrt(8)", "1/sqrt(8)", "1/sqrt(8)", "1/sqrt(8)", "1/sqrt(8)", "1/sqrt(8)", "1/sqrt(8)", "1/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*1/8)/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "exp(2 pi i*3/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*5/8)/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "exp(2 pi i*7/8)/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "1/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*3/8)/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "exp(2 pi i*1/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*7/8)/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "exp(2 pi i*5/8)/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "1/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "1/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "1/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*5/8)/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "exp(2 pi i*7/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*1/8)/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "exp(2 pi i*3/8)/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "1/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)"]
+  - ["1/sqrt(8)", "exp(2 pi i*7/8)/sqrt(8)", "exp(2 pi i*6/8)/sqrt(8)", "exp(2 pi i*5/8)/sqrt(8)", "exp(2 pi i*4/8)/sqrt(8)", "exp(2 pi i*3/8)/sqrt(8)", "exp(2 pi i*2/8)/sqrt(8)", "exp(2 pi i*1/8)/sqrt(8)"]
+matrix_note: n = 3
 description: Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.
 sdks:
   qiskit:

@@ -20,6 +20,9 @@ properties:
 arity: 1
 quirk:
   cols: [["X"]]
+matrix:
+  - [0, 1]
+  - [1, 0]
 description: Bit-flip gate that swaps $|0\rangle$ and $|1\rangle$.
 sdks:
   qiskit:

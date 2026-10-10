@@ -16,6 +16,11 @@ arity: 2
 weyl: [1/4, 1/4, 0]
 quirk:
   cols: [["Swap", "Swap"], ["•", "Z"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 0, -1]
 description: Swaps $|01\rangle$ and $|10\rangle$ while applying a $-1$ phase to $|11\rangle$.
 sdks:
   qiskit:

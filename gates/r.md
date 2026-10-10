@@ -12,11 +12,17 @@ notations:
 arity: 1
 parameters: 2
 quirk:
+  spin: {theta: 2, phi: 4}
   cols:
-    - [{id: Rzft, arg: "-4 pi t"}]
-    - [{id: Rxft, arg: "2 pi t"}]
-    - [{id: Rzft, arg: "4 pi t"}]
-  note: \theta = 2\pi t,\ \phi = 4\pi t
+    - [{id: Rzft, param: phi, mul: -1}]
+    - [{id: Rxft, param: theta}]
+    - [{id: Rzft, param: phi}]
+params:
+  theta: { label: \theta, default: 1/2, range: [0, 2] }
+  phi: { label: \phi, default: 1/4, range: [0, 4] }
+matrix:
+  - ["cos(theta/2)", "-i exp(-i phi) sin(theta/2)"]
+  - ["-i exp(i phi) sin(theta/2)", "cos(theta/2)"]
 description: Rotation by $\theta$ about the equatorial Bloch-sphere axis at azimuthal angle $\phi$.
 sdks:
   qiskit:

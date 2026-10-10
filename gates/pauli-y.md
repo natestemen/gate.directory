@@ -17,6 +17,9 @@ properties:
 arity: 1
 quirk:
   cols: [["Y"]]
+matrix:
+  - [0, "-i"]
+  - ["i", 0]
 description: Bit-and-phase flip combining $X$ and $Z$ with a phase.
 sdks:
   qiskit:

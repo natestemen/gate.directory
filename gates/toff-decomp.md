@@ -8,6 +8,9 @@ arity: 1
 quirk:
   cols:
     - [{id: Ryft, arg: "pi/4"}]
+matrix:
+  - ["cos(pi/8)", "-sin(pi/8)"]
+  - ["sin(pi/8)", "cos(pi/8)"]
 description: A single-qubit rotation used in optimal Toffoli decompositions.
 citation:
   year: 2003

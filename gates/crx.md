@@ -15,9 +15,16 @@ weyl:
   params:
     theta: { label: \theta, range: [0, 2], default: 1 }
 quirk:
+  spin: {theta: 4}
   cols:
-    - ["•", {id: Rxft, arg: "4 pi t"}]
-  note: \theta = 4\pi t
+    - ["•", {id: Rxft, param: theta}]
+params:
+  theta: { label: \theta, default: 1/2, range: [0, 4] }
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, "cos(theta/2)", "-i sin(theta/2)"]
+  - [0, 0, "-i sin(theta/2)", "cos(theta/2)"]
 description: Rotates the target about the $x$ axis by $\theta$ when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

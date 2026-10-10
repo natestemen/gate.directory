@@ -11,6 +11,9 @@ notations:
 arity: 1
 quirk:
   cols: [["Z^½"]]
+matrix:
+  - [1, 0]
+  - [0, "i"]
 groups:
   - clifford
   - diagonal

@@ -1,0 +1,160 @@
+/* the unitary, drawn */
+
+.unitary-panel {
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  background: var(--card);
+  padding: 16px 18px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 12px 28px;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  .unitary-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.unitary-figure {
+  position: relative;
+}
+
+.unitary-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.unitary-grid line {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.unitary-label {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 9px;
+  fill: var(--ink-muted);
+}
+
+.unitary-entry {
+  outline: none;
+}
+
+.unitary-entry circle {
+  transition: r 0.12s ease;
+}
+
+.unitary-hand {
+  stroke: var(--ink);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0.8;
+}
+
+.unitary-hit {
+  fill: transparent;
+}
+
+.unitary-entry:hover .unitary-hit,
+.unitary-entry:focus-visible .unitary-hit {
+  fill: rgba(22, 22, 22, 0.06);
+}
+
+.unitary-entry.is-zero .unitary-hand {
+  opacity: 0;
+}
+
+.unitary-tooltip {
+  position: absolute;
+  background: #222;
+  color: #fff;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 5px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 10px));
+  z-index: 5;
+}
+
+.unitary-tooltip strong {
+  font-weight: 700;
+}
+
+.unitary-tooltip small {
+  display: block;
+  opacity: 0.75;
+  font-size: 11px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+
+.unitary-side {
+  padding-top: 4px;
+}
+
+.unitary-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.unitary-controls .weyl-control {
+  width: 100%;
+}
+
+.unitary-controls:empty {
+  display: none;
+}
+
+.unitary-controls .weyl-control {
+  grid-template-columns: 1.4em minmax(0, 1fr) 5.2em;
+}
+
+.unitary-play {
+  margin-top: 4px;
+}
+
+.unitary-tname {
+  font-family: KaTeX_Math, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.unitary-play {
+  min-width: 68px;
+  justify-content: center;
+}
+
+.unitary-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.unitary-legend .caption {
+  margin: 0;
+}
+
+.unitary-wheel {
+  width: 84px;
+  height: 84px;
+  flex: none;
+}
+
+.unitary-wheel text {
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 7.5px;
+  fill: var(--ink-muted);
+}
+
+.unitary-key {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}

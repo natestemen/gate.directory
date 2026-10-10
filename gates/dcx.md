@@ -14,6 +14,11 @@ arity: 2
 weyl: [1/4, 1/4, 0]
 quirk:
   cols: [["•", "X"], ["X", "•"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 0, 0, 1]
+  - [0, 1, 0, 0]
 description: Two back-to-back CNOTs with alternating control and target qubits.
 sdks:
   qiskit:

@@ -10,10 +10,21 @@ notations:
 arity: 3
 parameters: 1
 quirk:
+  spin: {theta: 2}
   cols:
-    - ["•", "•", {id: Rxft, arg: "4 pi t"}]
+    - ["•", "•", {id: Rxft, param: theta, mul: 2}]
     - ["•", "Z^½"]
-  note: \theta = 2\pi t
+params:
+  theta: { label: \theta, default: 1/4, range: [0, 2] }
+matrix:
+  - [1, 0, 0, 0, 0, 0, 0, 0]
+  - [0, 1, 0, 0, 0, 0, 0, 0]
+  - [0, 0, 1, 0, 0, 0, 0, 0]
+  - [0, 0, 0, 1, 0, 0, 0, 0]
+  - [0, 0, 0, 0, 1, 0, 0, 0]
+  - [0, 0, 0, 0, 0, 1, 0, 0]
+  - [0, 0, 0, 0, 0, 0, "i cos(theta)", "sin(theta)"]
+  - [0, 0, 0, 0, 0, 0, "sin(theta)", "i cos(theta)"]
 description: The original universal three-qubit gate, applying $iR_x(2\theta)$ to the target when both controls are $|1\rangle$.
 citation:
   title: Quantum computational networks

@@ -14,6 +14,11 @@ arity: 2
 weyl: [1/8, 0, 0]
 quirk:
   cols: [["•", "X^½"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, "(1+i)/2", "(1-i)/2"]
+  - [0, 0, "(1-i)/2", "(1+i)/2"]
 description: Applies $\sqrt{X}$ to the target when the control qubit is $|1\rangle$.
 sdks:
   qiskit:

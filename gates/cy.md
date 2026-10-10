@@ -16,6 +16,11 @@ arity: 2
 weyl: [1/4, 0, 0]
 quirk:
   cols: [["•", "Y"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 0, "-i"]
+  - [0, 0, "i", 0]
 description: Applies $Y$ to the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

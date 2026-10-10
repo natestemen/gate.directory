@@ -12,6 +12,9 @@ properties:
 arity: 1
 quirk:
   cols: [["H"]]
+matrix:
+  - ["1/sqrt(2)", "1/sqrt(2)"]
+  - ["1/sqrt(2)", "-1/sqrt(2)"]
 description: Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.
 sdks:
   qiskit:

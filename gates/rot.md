@@ -10,13 +10,21 @@ notations:
 arity: 1
 parameters: 3
 quirk:
+  spin: {theta: 2, alpha: 2}
   cols:
-    - [{id: Rzft, arg: "-2 pi t"}]
+    - [{id: Rzft, param: alpha, mul: -1}]
     - [{id: Ryft, arg: "-acos(1/sqrt(3))"}]
-    - [{id: Rzft, arg: "2 pi t"}]
+    - [{id: Rzft, param: theta}]
     - [{id: Ryft, arg: "acos(1/sqrt(3))"}]
-    - [{id: Rzft, arg: "2 pi t"}]
+    - [{id: Rzft, param: alpha}]
   note: \theta = 2\pi t,\ \mathbf{n} = (\sqrt{2}\cos 2\pi t,\ \sqrt{2}\sin 2\pi t,\ 1)/\sqrt{3}
+params:
+  theta: { label: \theta, default: 1/2, range: [0, 2] }
+  alpha: { label: \alpha, default: 1/4, range: [0, 2] }
+  beta: { label: \beta, default: "acos(1/sqrt(3))/pi", range: [0, 1] }
+matrix:
+  - ["cos(theta/2) - i sin(theta/2) cos(beta)", "-i sin(theta/2) sin(beta) exp(-i alpha)"]
+  - ["-i sin(theta/2) sin(beta) exp(i alpha)", "cos(theta/2) + i sin(theta/2) cos(beta)"]
 description: Rotation by angle $\theta$ about the Bloch-sphere axis $\vec{n}$.
 sdks:
   qiskit:

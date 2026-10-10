@@ -16,6 +16,11 @@ arity: 2
 weyl: [1/4, 1/4, 1/4]
 quirk:
   cols: [["Swap", "Swap"]]
+matrix:
+  - [1, 0, 0, 0]
+  - [0, 0, 1, 0]
+  - [0, 1, 0, 0]
+  - [0, 0, 0, 1]
 description: Exchanges the quantum states of two qubits.
 sdks:
   qiskit:

@@ -10,13 +10,22 @@ arity: n
 dimension: 2
 parameters: n(n-1)/2
 quirk:
+  spin: {chi: 2}
   cols:
     - ["H", "H"]
     - ["•", "X"]
-    - [1, {id: Rzft, arg: "2 pi t"}]
+    - [1, {id: Rzft, param: chi}]
     - ["•", "X"]
     - ["H", "H"]
   note: n = 2,\ \chi = 2\pi t
+params:
+  chi: { label: \chi, default: 1/2, range: [0, 2] }
+matrix:
+  - ["cos(chi/2)", 0, 0, "-i sin(chi/2)"]
+  - [0, "cos(chi/2)", "-i sin(chi/2)", 0]
+  - [0, "-i sin(chi/2)", "cos(chi/2)", 0]
+  - ["-i sin(chi/2)", 0, 0, "cos(chi/2)"]
+matrix_note: n = 2
 description: A native entangling interaction in ion-trap systems based on collective spin-motion coupling.
 citation:
   title: Multiparticle Entanglement of Hot Trapped Ions

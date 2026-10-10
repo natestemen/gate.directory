@@ -2,7 +2,7 @@
 
 {% block content %}
 {% set fam = periodic_layout | gateFamily(page.fileSlug) %}
-{% set quirkHref = quirk | quirkUrl(page.fileSlug, symbol) %}
+{% set quirkHref = quirk | quirkUrl(page.fileSlug, symbol, params) %}
 {% set githubPath = page.inputPath | replace('./', '') %}
 {% set controlledVariants = [] %}
 {% for g in collections.gates %}
@@ -26,7 +26,7 @@
       <div class="gate-actions">
         {% if quirkHref %}
           <a class="button" href="{{ quirkHref }}" target="_blank" rel="noopener">Open in Quirk ↗</a>
-          {% if quirk.note %}<span class="quirk-note">with ${{ quirk.note }}$</span>{% endif %}
+          {% set quirkNote = quirk | quirkNote(params) %}{% if quirkNote %}<span class="quirk-note">with ${{ quirkNote }}$</span>{% endif %}
         {% endif %}
         {% for prop in properties %}<span class="chip">{{ prop }}</span>{% endfor %}
       </div>
@@ -80,10 +80,16 @@
       {% endif %}
 
       <section>
-        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/{{ githubPath }}" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+        <h3 class="caption">Data</h3>
+        <ul class="aside-list">
+          <li><a href="{{ ('/api/gates/' + page.fileSlug + '.json') | url }}">This gate as JSON</a></li>
+          <li><a href="https://github.com/natestemen/gate.directory/tree/main/{{ githubPath }}" target="_blank" rel="noopener">Edit this page on GitHub</a></li>
+        </ul>
       </section>
     </aside>
   </div>
+
+  {% if matrix %}{% include "unitary.njk" %}{% endif %}
 
   {% if weyl %}{% include "weyl.njk" %}{% endif %}
 

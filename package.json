@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "npx @11ty/eleventy --serve --quiet",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "check": "node scripts/check_gates.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",

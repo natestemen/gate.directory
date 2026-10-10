@@ -16,6 +16,17 @@ groups:
   - number-preserving
 arity: 2
 dimension: d
+matrix:
+  - ["1", 0, 0, 0, 0, 0, 0, 0, 0]
+  - [0, "1", 0, 0, 0, 0, 0, 0, 0]
+  - [0, 0, "1", 0, 0, 0, 0, 0, 0]
+  - [0, 0, 0, "1", 0, 0, 0, 0, 0]
+  - [0, 0, 0, 0, "exp(2 pi i/3)", 0, 0, 0, 0]
+  - [0, 0, 0, 0, 0, "exp(4 pi i/3)", 0, 0, 0]
+  - [0, 0, 0, 0, 0, 0, "1", 0, 0]
+  - [0, 0, 0, 0, 0, 0, 0, "exp(4 pi i/3)", 0]
+  - [0, 0, 0, 0, 0, 0, 0, 0, "exp(2 pi i/3)"]
+matrix_note: d = 3
 controlled: clock
 description: Qudit generalization of controlled-$Z$ that applies the phase $\omega^{ct}$ to $|c,t\rangle$.
 sdks:
