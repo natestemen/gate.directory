@@ -35,13 +35,13 @@ The Margolus gate (Qiskit's "relative-phase" or "simplified" Toffoli, RCCX) acts
 $$
 \mathrm{RCC}X =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\
-  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\
-  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\
-  0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\\\
-  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\\\
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
   0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
 \end{bmatrix}
 $$
@@ -57,8 +57,8 @@ An exact Toffoli requires six CNOTs; the Margolus gate needs only **three** (She
 - Three CNOTs and four rotations, all real:
   $$
   \begin{align*}
-  \mathrm{RCC}X = {} & R_y(-\tfrac{\pi}{4})\_t \\, \mathrm{CX}\_{2,t} \\, R_y(-\tfrac{\pi}{4})\_t \\, \mathrm{CX}\_{1,t} \\\\
-  & \times R_y(\tfrac{\pi}{4})\_t \\, \mathrm{CX}\_{2,t} \\, R_y(\tfrac{\pi}{4})\_t
+  \mathrm{RCC}X = {} & R_y(-\tfrac{\pi}{4})_t \, \mathrm{CX}_{2,t} \, R_y(-\tfrac{\pi}{4})_t \, \mathrm{CX}_{1,t} \\
+  & \times R_y(\tfrac{\pi}{4})_t \, \mathrm{CX}_{2,t} \, R_y(\tfrac{\pi}{4})_t
   \end{align*}
   $$
   (read right to left; subscripts denote control, target).

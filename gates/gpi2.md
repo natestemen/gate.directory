@@ -39,7 +39,7 @@ The GPi2 gate is the half-pulse counterpart of [GPi](/gates/gpi): a $\pi/2$ rota
 $$
 \mathrm{GPi2}(\phi) = \frac{1}{\sqrt{2}}
 \begin{bmatrix}
-  1 & -i\mathrm{e}^{-i\phi} \\\\
+  1 & -i\mathrm{e}^{-i\phi} \\
   -i\mathrm{e}^{i\phi} & 1
 \end{bmatrix}
 $$

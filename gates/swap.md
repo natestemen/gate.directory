@@ -55,9 +55,9 @@ The SWAP gate exchanges the states of two qubits and is commonly used to reorder
 
 $$
 \mathrm{SWAP} = \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 1 & 0 & 0 \\
   0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -66,4 +66,4 @@ $$
 
 - Reversible: the SWAP gate is its own inverse.
 - Decomposition:
-  $\mathrm{SWAP} = \mathrm{CNOT}\_{12} \cdot \mathrm{CNOT}\_{21} \cdot \mathrm{CNOT}\_{12}$.
+  $\mathrm{SWAP} = \mathrm{CNOT}_{12} \cdot \mathrm{CNOT}_{21} \cdot \mathrm{CNOT}_{12}$.

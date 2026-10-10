@@ -53,7 +53,7 @@ sdks:
 
 The $S$ gate applies a relative phase of $i$ to the $|1\rangle$ component.
 
-$$S = \begin{bmatrix}1 & 0 \\\\ 0 & i\end{bmatrix} = \sqrt{Z}$$
+$$S = \begin{bmatrix}1 & 0 \\ 0 & i\end{bmatrix} = \sqrt{Z}$$
 
 ### Properties
 

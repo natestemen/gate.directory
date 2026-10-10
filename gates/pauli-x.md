@@ -59,7 +59,7 @@ The Pauli-$X$ gate is the quantum analog of a classical NOT.
 
 $$
 X = \begin{bmatrix}
-  0 & 1 \\\\
+  0 & 1 \\
   1 & 0
 \end{bmatrix}
 $$

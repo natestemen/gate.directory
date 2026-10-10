@@ -65,7 +65,7 @@ The identity gate $I_n$ acts on $n$ qubits and leaves all basis states unchanged
 
 $$
 I_2 = \begin{bmatrix}
-  1 & 0 \\\\
+  1 & 0 \\
   0 & 1
 \end{bmatrix}
 $$

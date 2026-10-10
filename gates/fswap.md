@@ -43,9 +43,9 @@ The name comes from the fact that exchanging two fermions introduces a $-1$ phas
 $$
 \mathrm{fSWAP} =
 \begin{bmatrix}
-  1 & 0 & 0 &  0 \\\\
-  0 & 0 & 1 &  0 \\\\
-  0 & 1 & 0 &  0 \\\\
+  1 & 0 & 0 &  0 \\
+  0 & 0 & 1 &  0 \\
+  0 & 1 & 0 &  0 \\
   0 & 0 & 0 & -1
 \end{bmatrix}
 $$
@@ -53,4 +53,4 @@ $$
 ### Properties
 
 - Self-inverse: $\mathrm{fSWAP}^2 = I$.
-- Equals SWAP on the $\\{|01\rangle, |10\rangle\\}$ subspace.
+- Equals SWAP on the $\{|01\rangle, |10\rangle\}$ subspace.

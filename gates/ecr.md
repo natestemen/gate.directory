@@ -37,9 +37,9 @@ The echoed cross-resonance (ECR) gate is an entangling operation used on superco
 $$
 ECR = \frac{1}{\sqrt{2}}
 \begin{pmatrix}
-    0 & 1   &  0  & i \\\\
-    1 & 0   & -i  & 0 \\\\
-    0 & i   &  0  & 1 \\\\
+    0 & 1   &  0  & i \\
+    1 & 0   & -i  & 0 \\
+    0 & i   &  0  & 1 \\
     -i & 0  &  1  & 0
 \end{pmatrix}
 $$

@@ -55,9 +55,9 @@ The controlled-$Y$ gate is a two-qubit entangling gate that conditionally applie
 $$
 \mathrm{C}Y =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 0 & -i \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & -i \\
   0 & 0 & i & 0
 \end{bmatrix}
 $$
@@ -65,4 +65,4 @@ $$
 ### Properties
 
 - Clifford, Hermitian, and self-inverse.
-- Related to CNOT by $S$ gates on the target: $\mathrm{C}Y = (I \otimes S)\\,\mathrm{CNOT}\\,(I \otimes S^\dagger)$.
+- Related to CNOT by $S$ gates on the target: $\mathrm{C}Y = (I \otimes S)\,\mathrm{CNOT}\,(I \otimes S^\dagger)$.

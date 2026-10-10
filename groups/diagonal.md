@@ -5,7 +5,7 @@ title: Diagonal Group
 
 The diagonal group contains the gates that are diagonal in the computational basis: they never change *which* basis state you are in, only attach a phase to each one. Unitarity forces every diagonal entry onto the unit circle.
 
-$$\mathsf{D}(n) := \left\\{ \mathrm{diag}(\mathrm{e}^{i\theta_1}, \ldots, \mathrm{e}^{i\theta_n}) \mid \theta_j \in \mathbb{R} \right\\} \subset \mathsf{U}(n)$$
+$$\mathsf{D}(n) := \left\{ \mathrm{diag}(\mathrm{e}^{i\theta_1}, \ldots, \mathrm{e}^{i\theta_n}) \mid \theta_j \in \mathbb{R} \right\} \subset \mathsf{U}(n)$$
 
 As a group it is the $n$-torus $\mathsf{U}(1)^n$, and it is a *maximal* abelian subgroup of the unitary group (a maximal torus): you cannot enlarge it without adding gates that fail to commute.
 

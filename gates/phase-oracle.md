@@ -25,7 +25,7 @@ sdks:
     note: DiagonalBox synthesises the +/-1 phase diagonal of f
 ---
 
-A phase oracle is a variant of the [standard oracle](/gates/oracle) that acts on a single register $|x\rangle$, encoding the value of a classical Boolean function $f: \\{0, 1\\}^n \to \\{0, 1\\}$ as a relative phase:
+A phase oracle is a variant of the [standard oracle](/gates/oracle) that acts on a single register $|x\rangle$, encoding the value of a classical Boolean function $f: \{0, 1\}^n \to \{0, 1\}$ as a relative phase:
 $$
 |x\rangle  \xmapsto{O_f^\pm} (-1)^{f(x)}|x\rangle
 $$

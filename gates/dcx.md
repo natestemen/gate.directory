@@ -36,9 +36,9 @@ The DCNOT gate applies a CNOT from qubit 1 to 2 and then a CNOT from qubit 2 to 
 $$
 \mathrm{DC}X =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
-  0 & 0 & 0 & 1 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1 \\
   0 & 1 & 0 & 0
 \end{bmatrix}
 $$

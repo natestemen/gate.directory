@@ -59,12 +59,12 @@ The $R_{zz}$ gate implements an Ising-type interaction with rotation angle $\the
 
 $$
 \begin{align*}
-R_{zz}(\theta) & = \exp\left(-i\frac{\theta}{2}Z\otimes Z\right) \\\\
+R_{zz}(\theta) & = \exp\left(-i\frac{\theta}{2}Z\otimes Z\right) \\
   & =
 \begin{bmatrix}
-    \mathrm{e}^{-i\frac{\theta}{2}} & 0                     & 0                     & 0 \\\\
-    0                      & \mathrm{e}^{i\frac{\theta}{2}} & 0                     & 0 \\\\
-    0                      & 0                     & \mathrm{e}^{i\frac{\theta}{2}} & 0 \\\\
+    \mathrm{e}^{-i\frac{\theta}{2}} & 0                     & 0                     & 0 \\
+    0                      & \mathrm{e}^{i\frac{\theta}{2}} & 0                     & 0 \\
+    0                      & 0                     & \mathrm{e}^{i\frac{\theta}{2}} & 0 \\
     0                      & 0                     & 0                     & \mathrm{e}^{-i\frac{\theta}{2}}
 \end{bmatrix}
 \end{align*}

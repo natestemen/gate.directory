@@ -42,7 +42,7 @@ sdks:
 
 The iSWAP gate exchanges the $|01\rangle$ and $|10\rangle$ states with a phase $i$, leaving $|00\rangle$ and $|11\rangle$ unchanged.
 
-$$i\mathrm{SWAP} = \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & i & 0 \\\\ 0 & i & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+$$i\mathrm{SWAP} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & i & 0 \\ 0 & i & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
 
 ### Properties
 

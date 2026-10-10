@@ -49,7 +49,7 @@ The $R_x$ gate rotates a qubit by angle $\theta$ around the $x$ axis.
 $$
 R_x(\theta) = \exp\left(-i\frac{\theta}{2}X\right)
 = \begin{bmatrix}
-  \cos\frac{\theta}{2}     & -i\sin\frac{\theta}{2} \\\\
+  \cos\frac{\theta}{2}     & -i\sin\frac{\theta}{2} \\
   -i\sin{\frac{\theta}{2}} & \cos\frac{\theta}{2}
 \end{bmatrix}
 $$

@@ -59,7 +59,7 @@ The Pauli-$Z$ gate applies a relative phase of $-1$ to the $|1\rangle$ component
 
 $$
 Z = \begin{bmatrix}
-  1 & 0 \\\\
+  1 & 0 \\
   0 & -1
 \end{bmatrix}
 $$

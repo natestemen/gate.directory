@@ -56,7 +56,7 @@ The phase shift gate is diagonal and leaves $|0\rangle$ unchanged while multiply
 
 $$
 P(\phi) = \begin{bmatrix}
-  1 & 0 \\\\
+  1 & 0 \\
   0 & \mathrm{e}^{i\phi}
 \end{bmatrix}
 $$
@@ -70,8 +70,8 @@ $$
 
 | $\phi$   | Equivalent Gate | Matrix                                          |
 | -------- | --------------- | ----------------------------------------------- |
-| $0$      | [Identity](/gates/identity)  | $\begin{bmatrix}1 & 0 \\\\ 0 & 1\end{bmatrix}$  |
-| $\pi / 4$| [$T$](/gates/t) | $\begin{bmatrix}1 & 0 \\\\ 0 & \mathrm{e}^{i\pi/8}\end{bmatrix}$  |
-| $\pi/2$  | [$S$](/gates/s)     | $\begin{bmatrix}1 & 0 \\\\ 0 & i\end{bmatrix}$  |
-| $\pi$    | [$Z$](/gates/pauli-z)   | $\begin{bmatrix}1 & 0 \\\\ 0 & -1\end{bmatrix}$ |
-| $3\pi/2$ | $S^\dagger$     | $\begin{bmatrix}1 & 0 \\\\ 0 & -i\end{bmatrix}$ |
+| $0$      | [Identity](/gates/identity)  | $\begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}$  |
+| $\pi / 4$| [$T$](/gates/t) | $\begin{bmatrix}1 & 0 \\ 0 & \mathrm{e}^{i\pi/8}\end{bmatrix}$  |
+| $\pi/2$  | [$S$](/gates/s)     | $\begin{bmatrix}1 & 0 \\ 0 & i\end{bmatrix}$  |
+| $\pi$    | [$Z$](/gates/pauli-z)   | $\begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}$ |
+| $3\pi/2$ | $S^\dagger$     | $\begin{bmatrix}1 & 0 \\ 0 & -i\end{bmatrix}$ |

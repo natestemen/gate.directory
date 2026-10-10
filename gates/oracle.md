@@ -24,7 +24,7 @@ sdks:
     note: ToffoliBox encodes a classical basis-state permutation
 ---
 
-An oracle is a quantum operation that implements a classical function $f: \\{0, 1\\}^n \to \\{0, 1\\}^m$ as a reversible, unitary operation. Given an input register $|x\rangle$ and output register $|y\rangle$ the gate acts as
+An oracle is a quantum operation that implements a classical function $f: \{0, 1\}^n \to \{0, 1\}^m$ as a reversible, unitary operation. Given an input register $|x\rangle$ and output register $|y\rangle$ the gate acts as
 $$
 |x\rangle \otimes |y\rangle \xmapsto{O_f} |x\rangle \otimes |b \oplus f(x)\rangle.
 $$

@@ -59,9 +59,9 @@ The controlled-$Z$ gate is a two-qubit diagonal entangling gate.
 $$
 \mathrm{C}Z =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
   0 & 0 & 0 & -1
 \end{bmatrix}
 $$
@@ -69,7 +69,7 @@ $$
 ### Properties
 
 - Clifford, Hermitian, and self-inverse.
-- Related to CNOT by Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\\,\mathrm{CZ}\\,(I \otimes H)$.
+- Related to CNOT by Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\,\mathrm{CZ}\,(I \otimes H)$.
 - Symmetric under exchange of the two qubits.
 
 ### Usage

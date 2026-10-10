@@ -52,7 +52,7 @@ It is the only purely real rotation matrix among $R_x$, $R_y$, and $R_z$.
 $$
 R_y(\theta) = \exp\left(-i\frac{\theta}{2}Y\right) =
 \begin{bmatrix}
-    \cos\frac{\theta}{2}    & -\sin\frac{\theta}{2} \\\\
+    \cos\frac{\theta}{2}    & -\sin\frac{\theta}{2} \\
     \sin{\frac{\theta}{2}}  & \phantom{+}\cos\frac{\theta}{2}
 \end{bmatrix}
 $$

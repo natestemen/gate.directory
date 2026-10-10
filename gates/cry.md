@@ -52,9 +52,9 @@ The controlled-$R_y$ gate applies the single-qubit rotation [$R_y(\theta)$](/gat
 $$
 \mathrm{C}R_y(\theta) =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & \cos\frac{\theta}{2} & -\sin\frac{\theta}{2} \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & \cos\frac{\theta}{2} & -\sin\frac{\theta}{2} \\
   0 & 0 & \sin\frac{\theta}{2} & \cos\frac{\theta}{2}
 \end{bmatrix}
 $$
@@ -64,17 +64,17 @@ $$
 | $\theta$ | Gate |
 | --- | --- |
 | $0$ | [Identity](/gates/identity) |
-| $\pi$ | [Controlled-$Y$](/gates/cy), up to a phase of $-i$ on the control's $|1\rangle$ subspace |
+| $\pi$ | [Controlled-$Y$](/gates/cy), up to a phase of $-i$ on the control's $\lvert 1\rangle$ subspace |
 
 ### Properties
 
 - Real, so it lies in the orthogonal group — the only one of the three controlled rotations with this property.
 - Inverse: $\mathrm{C}R_y(\theta)^\dagger = \mathrm{C}R_y(-\theta)$.
-- Related to [$\mathrm{C}R_x$](/gates/crx) by conjugating the target with [$S$](/gates/s): $\mathrm{C}R_y(\theta) = (I \otimes S) \\, \mathrm{C}R_x(\theta) \\, (I \otimes S^\dagger)$.
+- Related to [$\mathrm{C}R_x$](/gates/crx) by conjugating the target with [$S$](/gates/s): $\mathrm{C}R_y(\theta) = (I \otimes S) \, \mathrm{C}R_x(\theta) \, (I \otimes S^\dagger)$.
 
 ### Decompositions
 
-- Two CNOTs and two rotations: $\mathrm{C}R_y(\theta) = (I \otimes R_y(\theta/2)) \\, \mathrm{CNOT} \\, (I \otimes R_y(-\theta/2)) \\, \mathrm{CNOT}$.
+- Two CNOTs and two rotations: $\mathrm{C}R_y(\theta) = (I \otimes R_y(\theta/2)) \, \mathrm{CNOT} \, (I \otimes R_y(-\theta/2)) \, \mathrm{CNOT}$.
 
 ### Usage
 

@@ -15,7 +15,7 @@ The gate $G$ is a single-qubit rotation that appears in optimal decompositions o
 
 $$
 G = \begin{bmatrix}
-  \cos\frac{\pi}{8}   & -\sin\frac{\pi}{8} \\\\
+  \cos\frac{\pi}{8}   & -\sin\frac{\pi}{8} \\
   \sin{\frac{\pi}{8}} & \cos\frac{\pi}{8}
 \end{bmatrix}
 $$

@@ -48,9 +48,9 @@ The controlled-$S$ gate is a two-qubit diagonal gate, and the special case $\phi
 $$
 \mathrm{C}S =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
   0 & 0 & 0 & i
 \end{bmatrix}
 $$
@@ -64,7 +64,7 @@ $$
 ### Decompositions
 
 - In terms of [$T$](/gates/t) gates and [CNOTs](/gates/cnot):
-  $$\mathrm{C}S = (T \otimes T) \\, \mathrm{CNOT} \\, (I \otimes T^\dagger) \\, \mathrm{CNOT}$$
+  $$\mathrm{C}S = (T \otimes T) \, \mathrm{CNOT} \, (I \otimes T^\dagger) \, \mathrm{CNOT}$$
   Three $T$ gates is the minimum for an exact, ancilla-free circuit.
 
 ### Usage

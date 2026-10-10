@@ -52,7 +52,7 @@ sdks:
 The multi-controlled $X$ gate extends the family [$X$](/gates/pauli-x) → [CNOT](/gates/cnot) → [Toffoli](/gates/toffoli) to $n$ controls:
 
 $$
-\mathrm{C}^nX \\, |c_1 \cdots c_n\rangle |t\rangle = |c_1 \cdots c_n\rangle |t \oplus c_1 c_2 \cdots c_n\rangle
+\mathrm{C}^nX \, |c_1 \cdots c_n\rangle |t\rangle = |c_1 \cdots c_n\rangle |t \oplus c_1 c_2 \cdots c_n\rangle
 $$
 
 As a matrix it is the identity, except for a $2 \times 2$ [$X$](/gates/pauli-x) block on the last two basis states $|1{\cdots}10\rangle$ and $|1{\cdots}11\rangle$.

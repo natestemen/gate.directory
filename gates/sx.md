@@ -57,7 +57,7 @@ The $\sqrt{X}$ gate is a single-qubit unitary that squares to $X$.
 $$
 \sqrt{X} =
 \frac{1}{2}\begin{bmatrix}
-  1 + i & 1 - i \\\\
+  1 + i & 1 - i \\
   1 - i & 1 + i
 \end{bmatrix}
 $$

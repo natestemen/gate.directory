@@ -56,7 +56,7 @@ The Pauli-$Y$ gate is a $\pi$ rotation around the $y$ axis of the Bloch sphere.
 
 $$
 Y = \begin{bmatrix}
-  0 & -i \\\\
+  0 & -i \\
   i & 0
 \end{bmatrix}
 $$

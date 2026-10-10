@@ -41,7 +41,7 @@ The GPi gate is one of IonQ's native gates: a $\pi$ rotation about an axis in th
 $$
 \mathrm{GPi}(\phi) =
 \begin{bmatrix}
-  0 & \mathrm{e}^{-i\phi} \\\\
+  0 & \mathrm{e}^{-i\phi} \\
   \mathrm{e}^{i\phi} & 0
 \end{bmatrix}
 $$
@@ -57,7 +57,7 @@ $$
 
 - Hermitian and self-inverse for every $\phi$: $\mathrm{GPi}(\phi)^2 = I$.
 - Always a bit flip: $\mathrm{GPi}(\phi)|0\rangle = \mathrm{e}^{i\phi}|1\rangle$. The angle $\phi$ only changes the relative phase picked up along the way.
-- Equal to the general [phased rotation](/gates/r) at $\theta = \pi$, up to global phase: $\mathrm{GPi}(\phi) = i \\, R(\pi, \phi)$.
+- Equal to the general [phased rotation](/gates/r) at $\theta = \pi$, up to global phase: $\mathrm{GPi}(\phi) = i \, R(\pi, \phi)$.
 
 ### Usage
 

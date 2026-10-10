@@ -18,9 +18,9 @@ The gate $B^{(2)}_i$ is the two-qubit case of a more general entangling gate app
 $$
 B^{(2)}_i =
 \begin{bmatrix}
-  1 & 0                  & \phantom{+}0                   & 0 \\\\
-  0 & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0 \\\\
-  0 & \frac{\sqrt{2}}{2} & \phantom{+}\frac{\sqrt{2}}{2}  & 0 \\\\
+  1 & 0                  & \phantom{+}0                   & 0 \\
+  0 & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0 \\
+  0 & \frac{\sqrt{2}}{2} & \phantom{+}\frac{\sqrt{2}}{2}  & 0 \\
   0 & 0                  & \phantom{+}0                   & 1
 \end{bmatrix}
 $$

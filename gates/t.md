@@ -47,7 +47,7 @@ The $T$ gate applies a phase of $\mathrm{e}^{i\pi/4}$ to $|1\rangle$.
 $$
 T =
 \begin{bmatrix}
-  1 & 0 \\\\
+  1 & 0 \\
   0 & \mathrm{e}^{i\frac{\pi}{4}}
 \end{bmatrix}
 $$

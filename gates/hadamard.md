@@ -51,7 +51,7 @@ The Hadamard gate creates and removes superposition by mapping $|0\rangle \mapst
 
 $$
 H = \frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 & 1 \\\\
+  1 & 1 \\
   1 & -1
 \end{bmatrix}
 $$

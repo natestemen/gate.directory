@@ -60,9 +60,9 @@ The controlled-phase gate is a two-qubit diagonal gate that adds a phase to the 
 $$
 \mathrm{C}P(\phi) =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
   0 & 0 & 0 & \mathrm{e}^{i\phi}
 \end{bmatrix}
 $$

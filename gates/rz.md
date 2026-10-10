@@ -52,7 +52,7 @@ The $R_z$ gate rotates a qubit by angle $\theta$ around the $z$ axis, adding a r
 $$
 R_z(\theta) = \exp\left(-i\frac{\theta}{2}Z\right) =
 \begin{bmatrix}
-  \mathrm{e}^{-i\frac{\theta}{2}}   & 0 \\\\
+  \mathrm{e}^{-i\frac{\theta}{2}}   & 0 \\
   0                                 & \mathrm{e}^{i\frac{\theta}{2}}
 \end{bmatrix}
 $$

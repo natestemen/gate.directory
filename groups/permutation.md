@@ -5,7 +5,9 @@ title: Permutation Group
 
 Permutation gates do the one thing a classical reversible computer can do: shuffle computational basis states. No superpositions are created from basis states, no phases appear — every entry of the matrix is a $0$ or a $1$. This group is the precise sense in which classical reversible logic sits inside quantum computing.
 
-$$\mathrm{S}\_N \cong \left\\{ P \in \mathsf{U}(N) \mid P|x\rangle = |\pi(x)\rangle \text{ for some permutation } \pi \text{ of } \\{0, \ldots, N-1\\} \right\\}$$
+$$\mathrm{S}_N \cong \left\{ P \in \mathsf{U}(N) \mid P|x\rangle = |\pi(x)\rangle \right\}$$
+
+where $\pi$ ranges over the permutations of $\{0, \ldots, N-1\}$.
 
 For $n$ qubits, $N = 2^n$, and the group is the symmetric group on $2^n$ letters — finite, with $N!$ elements, and a subgroup of the [orthogonal group](/groups/orthogonal).
 

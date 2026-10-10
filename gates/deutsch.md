@@ -26,13 +26,13 @@ The Deutsch gate is the doubly-controlled rotation David Deutsch introduced in 1
 
 $$
 \begin{bmatrix}
-  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\
-  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\
-  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\
-  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\
-  0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\
-  0 & 0 & 0 & 0 & 0 & 0 & i\cos\theta & \sin\theta \\\\
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & i\cos\theta & \sin\theta \\
   0 & 0 & 0 & 0 & 0 & 0 & \sin\theta & i\cos\theta
 \end{bmatrix}
 $$

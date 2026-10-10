@@ -29,9 +29,9 @@ The $\sqrt{\mathrm{SWAP}}$ gate is the canonical maximally entangling two-qubit 
 $$
 \sqrt{\mathrm{SWAP}} =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & \frac{1+i}{2} & \frac{1-i}{2} & 0 \\\\
-  0 & \frac{1-i}{2} & \frac{1+i}{2} & 0 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & \frac{1+i}{2} & \frac{1-i}{2} & 0 \\
+  0 & \frac{1-i}{2} & \frac{1+i}{2} & 0 \\
   0 & 0 & 0 & 1
 \end{bmatrix}
 $$

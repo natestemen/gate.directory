@@ -43,9 +43,9 @@ In the computational basis:
 
 $$
 \begin{bmatrix}
-  \cos\tfrac{\theta}{2}   & -i\sin\tfrac{\theta}{2} & 0                      & 0 \\\\
-  -i\sin\tfrac{\theta}{2} & \cos\tfrac{\theta}{2}   & 0                      & 0 \\\\
-  0                       & 0                       & \cos\tfrac{\theta}{2}  & i\sin\tfrac{\theta}{2} \\\\
+  \cos\tfrac{\theta}{2}   & -i\sin\tfrac{\theta}{2} & 0                      & 0 \\
+  -i\sin\tfrac{\theta}{2} & \cos\tfrac{\theta}{2}   & 0                      & 0 \\
+  0                       & 0                       & \cos\tfrac{\theta}{2}  & i\sin\tfrac{\theta}{2} \\
   0                       & 0                       & i\sin\tfrac{\theta}{2} & \cos\tfrac{\theta}{2}
 \end{bmatrix}
 $$
@@ -55,7 +55,7 @@ The block structure makes the action clear: the target is rotated by $R_x(\theta
 ### Properties
 
 - Unlike its cousins [$R_{xx}$](/gates/rxx), [$R_{yy}$](/gates/ryy), and [$R_{zz}$](/gates/rzz), the generator is asymmetric, so the two qubits play different roles.
-- Related to $R_{zz}$ by a basis change on the target: $R_{zx}(\theta) = (I \otimes H) \\, R_{zz}(\theta) \\, (I \otimes H)$.
+- Related to $R_{zz}$ by a basis change on the target: $R_{zx}(\theta) = (I \otimes H) \, R_{zz}(\theta) \, (I \otimes H)$.
 - A single $R_{zx}(\pi/2)$ plus one-qubit gates yields a [CNOT](/gates/cnot).
 
 ### Usage

@@ -50,7 +50,7 @@ On a single qubit:
 $$
 \mathrm{Ph}(\phi) = \mathrm{e}^{i\phi} I =
 \begin{bmatrix}
-  \mathrm{e}^{i\phi} & 0 \\\\
+  \mathrm{e}^{i\phi} & 0 \\
   0                  & \mathrm{e}^{i\phi}
 \end{bmatrix}
 $$

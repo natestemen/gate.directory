@@ -8,15 +8,16 @@ Matchgates are the two-qubit gates that act separately on the even- and odd-pari
 $$
 G(A, B) =
 \begin{bmatrix}
-  A_{11} & 0 & 0 & A_{12} \\\\
-  0 & B_{11} & B_{12} & 0 \\\\
-  0 & B_{21} & B_{22} & 0 \\\\
+  A_{11} & 0 & 0 & A_{12} \\
+  0 & B_{11} & B_{12} & 0 \\
+  0 & B_{21} & B_{22} & 0 \\
   A_{21} & 0 & 0 & A_{22}
-\end{bmatrix},
-\qquad A, B \in \mathsf{U}(2),\ \det A = \det B
+\end{bmatrix}
 $$
 
-Here $A$ acts on the even-parity subspace $\\{|00\rangle, |11\rangle\\}$ and $B$ on the odd-parity subspace $\\{|01\rangle, |10\rangle\\}$.
+with $A, B \in \mathsf{U}(2)$ and $\det A = \det B$.
+
+Here $A$ acts on the even-parity subspace $\{|00\rangle, |11\rangle\}$ and $B$ on the odd-parity subspace $\{|01\rangle, |10\rangle\}$.
 
 ### Free fermions
 

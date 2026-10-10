@@ -45,9 +45,9 @@ The $\sqrt{i\mathrm{SWAP}}$ gate is the square root of [iSWAP](/gates/iswap): ap
 $$
 \sqrt{i\mathrm{SWAP}} =
 \begin{bmatrix}
-  1 & 0                  & 0                  & 0 \\\\
-  0 & \frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\\\
-  0 & \frac{i}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\\\
+  1 & 0                  & 0                  & 0 \\
+  0 & \frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} & 0 \\
+  0 & \frac{i}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\
   0 & 0                  & 0                  & 1
 \end{bmatrix}
 $$

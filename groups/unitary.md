@@ -6,7 +6,7 @@ all_gates: true
 
 The unitary group is the home of quantum computing: every gate is a unitary matrix, because the evolution of a closed quantum system preserves inner products — and with them, the total probability of measurement outcomes. All other groups on this site are subgroups of this one.
 
-$$\mathsf{U}(n) := \left\\{ U \in \mathrm{GL}(n, \mathbb{C}) \mid U^\dag U = I \right\\}$$
+$$\mathsf{U}(n) := \left\{ U \in \mathrm{GL}(n, \mathbb{C}) \mid U^\dag U = I \right\}$$
 
 For $n$ qubits the relevant group is $\mathsf{U}(2^n)$, acting on the $2^n$-dimensional state space.
 

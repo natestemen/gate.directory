@@ -49,7 +49,7 @@ sdks:
 The Mølmer-Sørensen (MS) gate acts on $n$ qubits and, for $n = 2$, reduces to an $XX$ rotation. In full generality the MS gate (sometimes referred to as global MS or GMS) takes $n(n-1)/2$ parameters $\chi_{ij}$.
 
 $$
-\mathrm{MS}(\chi_{ij}) = \exp\left(-i \sum_{i=1}^n\sum_{j=i+1}^n X_i\otimes X_j \\, \chi_{ij} / 2\right)
+\mathrm{MS}(\chi_{ij}) = \exp\left(-i \sum_{i=1}^n\sum_{j=i+1}^n X_i\otimes X_j \, \chi_{ij} / 2\right)
 $$
 
 Where $X_i$ denotes a [Pauli X](/gates/pauli-x) on qubit $i$.

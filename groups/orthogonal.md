@@ -5,7 +5,12 @@ title: Orthogonal Group
 
 The orthogonal group consists of the *real* unitaries — gates whose matrices have no imaginary entries (the homepage filter calls this group "Real"). Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.
 
-$$\mathsf{O}(n) := \left\\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}} O = I \right\\} = \mathsf{U}(n) \cap \mathrm{GL}(n, \mathbb{R})$$
+$$
+\begin{aligned}
+\mathsf{O}(n) &:= \left\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}} O = I \right\} \\
+&= \mathsf{U}(n) \cap \mathrm{GL}(n, \mathbb{R})
+\end{aligned}
+$$
 
 ### Properties
 

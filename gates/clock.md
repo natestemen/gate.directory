@@ -37,8 +37,8 @@ For a qutrit ($d = 3$):
 
 $$
 Z_3 = \begin{bmatrix}
-  1 & 0 & 0 \\\\
-  0 & \omega & 0 \\\\
+  1 & 0 & 0 \\
+  0 & \omega & 0 \\
   0 & 0 & \omega^2
 \end{bmatrix}
 $$
@@ -47,7 +47,7 @@ $$
 
 - Order $d$: $Z_d^d = I$, and for $d > 2$ the gate is *not* Hermitian — its inverse is $Z_d^{d-1}$. At $d = 2$ it reduces exactly to Pauli-$Z$.
 - Diagonal, with the $d$-th roots of unity as eigenvalues.
-- Weyl commutation relation with the [shift gate](/gates/shift): $Z_d X_d = \omega \\, X_d Z_d$ — the finite-dimensional analog of the position–momentum relation.
+- Weyl commutation relation with the [shift gate](/gates/shift): $Z_d X_d = \omega \, X_d Z_d$ — the finite-dimensional analog of the position–momentum relation.
 - The [Fourier transform](/gates/qft) exchanges clock and shift: $F Z_d F^\dagger = X_d^{-1}$, mirroring how it exchanges the two mutually unbiased bases.
 
 ### Usage

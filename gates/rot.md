@@ -48,8 +48,8 @@ Writing $c = \cos\frac{\theta}{2}$ and $s = \sin\frac{\theta}{2}$, the matrix is
 $$
 \mathrm{Rot}(\vec{n}, \theta) =
 \begin{bmatrix}
-  c - i n_z s & (-i n_x - n_y)\\, s \\\\
-  (-i n_x + n_y)\\, s & c + i n_z s
+  c - i n_z s & (-i n_x - n_y)\, s \\
+  (-i n_x + n_y)\, s & c + i n_z s
 \end{bmatrix}
 $$
 

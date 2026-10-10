@@ -5,7 +5,7 @@ title: Number-Preserving Group
 
 Number-preserving (or *excitation-preserving*) gates conserve the total number of $|1\rangle$s: they never create or destroy excitations, only move them around and adjust phases. Formally, they are the unitaries commuting with the total number operator $\hat{N} = \sum_i (I - Z_i)/2$ — the gates with a global $\mathsf{U}(1)$ symmetry.
 
-$$\mathcal{N}\_n := \left\\{ U \in \mathsf{U}(2^n) \mid U \hat{N} U^\dag = \hat{N} \right\\}$$
+$$\mathcal{N}_n := \left\{ U \in \mathsf{U}(2^n) \mid U \hat{N} U^\dag = \hat{N} \right\}$$
 
 Equivalently, $U$ is block-diagonal with respect to Hamming weight: it decomposes as $\bigoplus_{k=0}^{n} U_k$ with $U_k$ acting on the $\binom{n}{k}$-dimensional weight-$k$ sector.
 

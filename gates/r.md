@@ -46,9 +46,9 @@ The phased rotation generalizes [$R_x$](/gates/rx) and [$R_y$](/gates/ry) to an 
 
 $$
 \begin{align*}
-R(\theta, \phi) & = \exp\left(-i \frac{\theta}{2} (\cos\phi \\, X + \sin\phi \\, Y)\right) \\\\
+R(\theta, \phi) & = \exp\left(-i \frac{\theta}{2} (\cos\phi \, X + \sin\phi \, Y)\right) \\
 & = \begin{bmatrix}
-  \cos\frac{\theta}{2} & -i\mathrm{e}^{-i\phi}\sin\frac{\theta}{2} \\\\
+  \cos\frac{\theta}{2} & -i\mathrm{e}^{-i\phi}\sin\frac{\theta}{2} \\
   -i\mathrm{e}^{i\phi}\sin\frac{\theta}{2} & \cos\frac{\theta}{2}
 \end{bmatrix}
 \end{align*}
@@ -65,7 +65,7 @@ $$
 
 ### Properties
 
-- Sandwich form: $R(\theta, \phi) = R_z(\phi) \\, R_x(\theta) \\, R_z(-\phi)$ — the phase $\phi$ just rotates the frame in which the $x$ rotation happens.
+- Sandwich form: $R(\theta, \phi) = R_z(\phi) \, R_x(\theta) \, R_z(-\phi)$ — the phase $\phi$ just rotates the frame in which the $x$ rotation happens.
 - Covers half of the Bloch sphere's rotation axes with one pulse shape, which is why it is the native single-qubit gate on ion traps (as GPi/GPi2) and on Google hardware (as PhasedX).
 
 ### Usage

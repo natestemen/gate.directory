@@ -48,9 +48,9 @@ The controlled-$\sqrt{X}$ gate applies $\sqrt{X}$ to the target qubit conditione
 $$
 \mathrm{C}\sqrt{X} =
 \begin{bmatrix}
-  1 & 0 & 0               & 0 \\\\
-  0 & 1 & 0               & 0 \\\\
-  0 & 0 & \frac{1 + i}{2} & \frac{1 - i}{2} \\\\
+  1 & 0 & 0               & 0 \\
+  0 & 1 & 0               & 0 \\
+  0 & 0 & \frac{1 + i}{2} & \frac{1 - i}{2} \\
   0 & 0 & \frac{1 - i}{2} & \frac{1 + i}{2}
 \end{bmatrix}
 $$

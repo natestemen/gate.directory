@@ -27,6 +27,10 @@ When deploying to GitHub Pages the build uses a path prefix of `/gate.directory/
 PATH_PREFIX=/ npm run build
 ```
 
+## Writing math
+
+Anything between `$…$` or `$$…$$` is handed to KaTeX untouched (see `lib/markdown-math.js`), so write plain LaTeX: `\\` for matrix rows, `\,` for thin spaces, `\{`, and `_` wherever you like. No Markdown escaping is needed inside math.
+
 ## Weyl chamber coordinates
 
 Two-qubit gate pages show where the gate sits in the Weyl chamber. The data lives in each gate's front matter, in units of π, using the convention of the [canonical gate](gates/can.md): `U ≃ exp(i(a XX + b YY + c ZZ))` up to single-qubit gates, reduced to `π/4 ≥ a ≥ b ≥ |c|` (the canonical form Qiskit and Cirq use as well).

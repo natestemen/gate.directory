@@ -49,9 +49,9 @@ The controlled-Hadamard gate performs a conditional change of basis, moving the 
 $$
 \mathrm{C}H =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & \tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}} \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & \tfrac{1}{\sqrt{2}} & \tfrac{1}{\sqrt{2}} \\
   0 & 0 & \tfrac{1}{\sqrt{2}} & -\tfrac{1}{\sqrt{2}}
 \end{bmatrix}
 $$
@@ -65,5 +65,5 @@ $$
 ### Decompositions
 
 - A single entangling gate suffices:
-  $\mathrm{C}H = (I \otimes R_y(\pi/4)) \\, \mathrm{C}Z \\, (I \otimes R_y(-\pi/4))$,
-  which works because $R_y(\pi/4) \\, Z \\, R_y(-\pi/4) = H$.
+  $\mathrm{C}H = (I \otimes R_y(\pi/4)) \, \mathrm{C}Z \, (I \otimes R_y(-\pi/4))$,
+  which works because $R_y(\pi/4) \, Z \, R_y(-\pi/4) = H$.

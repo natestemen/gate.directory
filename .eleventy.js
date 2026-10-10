@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
+const mathPassthrough = require("./lib/markdown-math");
 
 function stripMath(str = "") {
   if (!str) {
@@ -36,7 +37,7 @@ module.exports = function (eleventyConfig) {
     // rightDelimiter: "}}",
   };
 
-  const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs);
+  const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs).use(mathPassthrough);
   eleventyConfig.setLibrary("md", markdownLib);
   eleventyConfig.addFilter("markdown", (str) => markdownLib.render(str || ""));
   eleventyConfig.addFilter("gateBySlug", function (gates, slug) {

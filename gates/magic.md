@@ -23,9 +23,9 @@ The magic gate is a fixed two-qubit unitary that performs a basis change to the 
 $$
   M = \frac{1}{\sqrt{2}}
   \begin{bmatrix}
-    1 & i & 0 & 0 \\\\
-    0 & 0 & i & 1 \\\\
-    0 & 0 & i & -1 \\\\
+    1 & i & 0 & 0 \\
+    0 & 0 & i & 1 \\
+    0 & 0 & i & -1 \\
     1 & -i & 0 & 0
   \end{bmatrix}
 $$

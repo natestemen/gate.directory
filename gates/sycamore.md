@@ -41,9 +41,9 @@ The Sycamore gate is the native entangling gate of Google's Sycamore processor, 
 $$
 \mathrm{SYC} =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 0 & -i & 0 \\\\
-  0 & -i & 0 & 0 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 0 & -i & 0 \\
+  0 & -i & 0 & 0 \\
   0 & 0 & 0 & \mathrm{e}^{-i\pi/6}
 \end{bmatrix}
 $$

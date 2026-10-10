@@ -25,7 +25,7 @@ sdks:
     note: "TK2(a, -a, 0) with a in half-turns gives e^{-i(pi/2)a(XX-YY)}"
 ---
 
-The $XX - YY$ gate is the counterpart of the [XY gate](/gates/xy): where XY rotates the single-excitation subspace $\\{|01\rangle, |10\rangle\\}$, this gate rotates the even-parity subspace $\\{|00\rangle, |11\rangle\\}$ and leaves the rest alone.
+The $XX - YY$ gate is the counterpart of the [XY gate](/gates/xy): where XY rotates the single-excitation subspace $\{|01\rangle, |10\rangle\}$, this gate rotates the even-parity subspace $\{|00\rangle, |11\rangle\}$ and leaves the rest alone.
 
 $$
 R_{xx-yy}(\theta) = \exp\left(-i \frac{\theta}{4} (X \otimes X - Y \otimes Y)\right)
@@ -35,9 +35,9 @@ In the computational basis:
 
 $$
 \begin{bmatrix}
-  \cos\tfrac{\theta}{2}   & 0 & 0 & -i\sin\tfrac{\theta}{2} \\\\
-  0                       & 1 & 0 & 0 \\\\
-  0                       & 0 & 1 & 0 \\\\
+  \cos\tfrac{\theta}{2}   & 0 & 0 & -i\sin\tfrac{\theta}{2} \\
+  0                       & 1 & 0 & 0 \\
+  0                       & 0 & 1 & 0 \\
   -i\sin\tfrac{\theta}{2} & 0 & 0 & \cos\tfrac{\theta}{2}
 \end{bmatrix}
 $$
@@ -47,7 +47,7 @@ $$
 - Coherently converts $|00\rangle \leftrightarrow |11\rangle$: a two-photon (pair-creation) process, in contrast to the excitation-conserving hopping of [XY](/gates/xy).
 - Commutes with the XY gate, since the two act on disjoint subspaces.
 - Together the pair decomposes the standard two-qubit rotations, for example
-  $$R_{xx}(\theta) = \mathrm{XY}(-\theta) \\, R_{xx-yy}(\theta)$$
+  $$R_{xx}(\theta) = \mathrm{XY}(-\theta) \, R_{xx-yy}(\theta)$$
   because $X \otimes X = \tfrac{1}{2}(XX + YY) + \tfrac{1}{2}(XX - YY)$.
 
 ### Usage

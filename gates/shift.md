@@ -33,8 +33,8 @@ $$
 X_d |j\rangle = |j + 1 \bmod d\rangle,
 \qquad
 X_3 = \begin{bmatrix}
-  0 & 0 & 1 \\\\
-  1 & 0 & 0 \\\\
+  0 & 0 & 1 \\
+  1 & 0 & 0 \\
   0 & 1 & 0
 \end{bmatrix}
 $$
@@ -43,7 +43,7 @@ $$
 
 - Order $d$: $X_d^d = I$, and for $d > 2$ the gate is *not* Hermitian — its inverse is the down-shift $X_d^{d-1}$. At $d = 2$ it reduces exactly to Pauli-$X$.
 - A permutation matrix, hence real and orthogonal.
-- Weyl commutation relation with the [clock gate](/gates/clock): $Z_d X_d = \omega \\, X_d Z_d$ where $\omega = \mathrm{e}^{2\pi i/d}$. Together, products $\omega^a X_d^b Z_d^c$ form the generalized Pauli (Weyl–Heisenberg) group.
+- Weyl commutation relation with the [clock gate](/gates/clock): $Z_d X_d = \omega \, X_d Z_d$ where $\omega = \mathrm{e}^{2\pi i/d}$. Together, products $\omega^a X_d^b Z_d^c$ form the generalized Pauli (Weyl–Heisenberg) group.
 - Diagonalized by the [Fourier transform](/gates/qft): $F X_d F^\dagger = Z_d$, so its eigenvalues are the $d$-th roots of unity and its eigenvectors are the Fourier basis states.
 
 ### Usage

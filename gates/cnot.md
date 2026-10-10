@@ -66,9 +66,9 @@ The controlled-NOT (CNOT) gate is a two-qubit entangling gate that conditionally
 $$
 \mathrm{C}X =
 \begin{bmatrix}
-  1 & 0 & 0 & 0 \\\\
-  0 & 1 & 0 & 0 \\\\
-  0 & 0 & 0 & 1 \\\\
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
   0 & 0 & 1 & 0
 \end{bmatrix}
 $$
@@ -76,4 +76,4 @@ $$
 ### Properties
 
 - Self-inverse and Hermitian: $\mathrm{CNOT}^\dagger = \mathrm{CNOT}$.
-- Equivalent to a controlled-$Z$ up to Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\\,\mathrm{CZ}\\,(I \otimes H)$.
+- Equivalent to a controlled-$Z$ up to Hadamards on the target: $\mathrm{CNOT} = (I \otimes H)\,\mathrm{CZ}\,(I \otimes H)$.

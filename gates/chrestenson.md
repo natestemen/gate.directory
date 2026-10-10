@@ -34,9 +34,9 @@ For a four-level qudit, $\omega=i$ and
 $$
 C_4 = \frac{1}{2}
 \begin{bmatrix}
-  1 &  1 &  1 &  1 \\\\
-  1 &  i & -1 & -i \\\\
-  1 & -1 &  1 & -1 \\\\
+  1 &  1 &  1 &  1 \\
+  1 &  i & -1 & -i \\
+  1 & -1 &  1 & -1 \\
   1 & -i & -1 &  i
 \end{bmatrix}.
 $$
