@@ -1,10 +1,18 @@
 :root {
-  --color-a: #adc7f3;
-  --color-b: #f5d395;
+  --paper: #f6f1e7;
+  --card: #ffffff;
+  --ink: #161616;
+  --ink-soft: #3f3b36;
+  --ink-muted: #6a6560;
+  --rule: rgba(22, 22, 22, 0.14);
+  --peach: #f5d395;
+  --blue: #adc7f3;
 
-  --gradient1: linear-gradient(130deg, var(--color-a) 0%, var(--color-b) 100%);
-  --gradient2: var(--color-b);
-
+  /* names the gate pages were built against */
+  --color-a: var(--blue);
+  --color-b: var(--peach);
+  --gradient1: var(--paper);
+  --gradient2: var(--peach);
 }
 
 * {
@@ -21,46 +29,88 @@ html {
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 p,
 a,
 li {
-  color: black;
+  color: var(--ink);
   font-family: "TASA Orbiter", sans-serif;
 }
 
-/* generic above, specifics below */
+/* ---------------------------------------------------------------- shell */
 
 main {
   width: 100%;
   display: flex;
   justify-content: center;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .content-container {
   width: 100%;
   max-width: 800px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
 }
 
-header {
-  background: var(--gradient2);
-  padding: 20px;
+.site-header {
+  background: var(--peach);
+  border-bottom: 1.5px solid var(--ink);
+  padding: 14px 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
 }
 
 .header-title {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "BBH Bartle", sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.header-title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 18px;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 1px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  border-bottom-color: var(--ink);
 }
 
 .not-footer {
-  background: var(--gradient1);
+  background: var(--paper);
   flex-grow: 1;
   padding: 20px;
   min-width: 0;
@@ -68,60 +118,76 @@ header {
 }
 
 footer {
-  /* padding-bottom: 20px; */
-  align-self: flex-end;
   width: 100%;
-  padding: 20px;
-
-  background: var(--gradient2);
+  padding: 16px 20px;
+  background: var(--peach);
+  border-top: 1.5px solid var(--ink);
+  font-size: 13px;
 }
+
+/* --------------------------------------------------------------- search */
 
 .gate-search {
   position: relative;
-  max-width: 520px;
-  margin-top: 20px;
+  max-width: 560px;
 }
 
 .gate-search input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   font-size: 15px;
-  border: 2px solid black;
-  border-radius: 5px;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
   font-family: "TASA Orbiter", sans-serif;
-  background: white;
+  background: var(--card);
+  color: var(--ink);
+  transition: box-shadow 0.15s ease;
+}
+
+.gate-search input::placeholder {
+  color: var(--ink-muted);
+}
+
+.gate-search input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--blue);
 }
 
 .gate-search ul {
   list-style: none;
-  padding: 0;
-  margin: 4px 0 0;
-  border: 2px solid black;
-  border-radius: 5px;
-  background: white;
+  padding: 4px 0;
+  margin: 6px 0 0;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  background: var(--card);
   position: absolute;
   width: 100%;
   z-index: 10;
   max-height: 320px;
   overflow-y: auto;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .gate-search li {
-  padding: 6px 12px;
+  padding: 7px 14px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  border-bottom: 1px solid #eee;
+  font-size: 15px;
 }
 
-.gate-search li:last-child {
-  border-bottom: none;
+.gate-search li a {
+  text-decoration: none;
+}
+
+.gate-search li:hover {
+  background: var(--paper);
 }
 
 .search-match {
-  font-family: monospace;
+  font-family: ui-monospace, Menlo, monospace;
   font-size: 12px;
-  opacity: 0.6;
+  color: var(--ink-muted);
   align-self: center;
   white-space: nowrap;
   overflow: hidden;
@@ -129,204 +195,94 @@ footer {
 }
 
 .search-empty {
-  color: #777;
+  color: var(--ink-muted);
 }
 
-/* periodic-table redesign prototype */
-.pt-table {
-  --pt-cell-w: 82px;
-  margin-top: 18px;
-  overflow-x: auto;
-  padding-bottom: 4px;
+/* ------------------------------------------------------------- sections */
+
+.section {
+  border-top: 1.5px solid var(--ink);
+  padding: 20px 0 10px;
+  margin-top: 26px;
 }
 
-.pt-headrow {
-  display: grid;
-  grid-template-columns: repeat(8, var(--pt-cell-w));
+.section-head {
+  max-width: 620px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.section-head p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------- chips */
+
+.chip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  padding: 0 24px;
-  margin-bottom: 2px;
 }
 
-.pt-colhead {
-  text-align: center;
+.chip,
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--card);
   font-family: "TASA Orbiter", sans-serif;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.pt-wrap {
-  position: relative;
-  width: fit-content;
-  padding: 24px;
-}
-
-.pt-outlines path {
-  transition: fill-opacity 0.18s ease, stroke-width 0.18s ease;
-}
-
-.pt-outlines path.pt-region-active {
-  fill-opacity: 0.13;
-  stroke-width: 3.4;
-}
-
-.pt-cell {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.18s ease;
-}
-
-.pt-cell-kin {
-  filter: saturate(1.45) brightness(1.02);
-}
-
-.pt-outlines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.pt-grid2 {
-  display: grid;
-  grid-template-columns: repeat(8, var(--pt-cell-w));
-  column-gap: 8px;
-  row-gap: 38px;
-  position: relative;
-  z-index: 1;
-}
-
-.pt-region-label {
-  position: absolute;
-  z-index: 2;
-  background: white;
-  border: 1.5px solid black;
-  border-radius: 999px;
-  padding: 0 9px;
-  font-family: "TASA Orbiter", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 15px;
-}
-
-.pt-cell {
-  border: 1.5px solid rgba(0, 0, 0, 0.8);
-  border-radius: 4px;
-  padding: 4px 2px 3px;
-  position: relative;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 72px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
   text-decoration: none;
-  color: black;
-  background: #f5d395;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
-.pt-cell:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
-  z-index: 3;
+.button {
+  background: var(--peach);
+  cursor: pointer;
 }
 
-.pt-arity {
-  position: absolute;
-  top: 3px;
-  left: 6px;
+a.chip:hover,
+a.chip:focus-visible,
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+a.chip:hover,
+a.chip:focus-visible {
+  background: var(--peach);
+}
+
+.chip-count {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.caption {
+  font-family: "TASA Orbiter", sans-serif;
   font-size: 11px;
   font-weight: 700;
-  font-family: "TASA Orbiter", sans-serif;
-}
-
-.pt-params {
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  font-size: 9px;
-  opacity: 0.7;
-  font-family: "TASA Orbiter", sans-serif;
-  max-width: 45%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.pt-symbol {
-  font-size: 15px;
-  overflow: hidden;
-  font-weight: bold;
-  margin-top: 13px;
-}
-
-.pt-name {
-  font-size: 8.5px;
-  margin-top: auto;
-  padding-top: 3px;
-  font-family: "TASA Orbiter", sans-serif;
-  line-height: 1.25;
-}
-
-.pt-ghost {
-  border-style: dashed;
-  border-color: #777;
-  background: rgba(255, 255, 255, 0.6) !important;
-  opacity: 0.85;
-}
-
-.pt-pullout {
-  margin-top: 8px;
-  padding-top: 6px;
-  border-top: 2px dashed rgba(0, 0, 0, 0.25);
-}
-
-.group-venn-wrap {
-  margin-top: 14px;
-}
-
-.group-venn {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.group-venn .venn-shape {
-  fill-opacity: 0.07;
-  stroke-width: 2.5;
-  transition: fill-opacity 0.18s ease, stroke-width 0.18s ease;
-}
-
-.group-venn text {
-  font-family: "TASA Orbiter", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.group-venn a:hover .venn-shape,
-.group-venn a:focus .venn-shape {
-  fill-opacity: 0.22;
-  stroke-width: 4;
-}
-
-.group-venn a:hover text {
-  text-decoration: underline;
-}
-
-.venn-caption {
-  font-size: 13px;
-  opacity: 0.85;
-  margin-top: 10px;
-}
-
-.group-venn .venn-gates text {
-  font-family: "TASA Orbiter", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  fill: #333;
-  opacity: 0.75;
-  text-transform: none;
-  letter-spacing: 0;
-  pointer-events: none;
+  color: var(--ink-muted);
 }

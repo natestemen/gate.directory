@@ -116,9 +116,24 @@ module.exports = function (eleventyConfig) {
     return "https://algassert.com/quirk#circuit=" + encodeURIComponent(JSON.stringify(circuit));
   });
 
+  // First family of a gate in the periodic layout: {key, label, color} or null.
+  eleventyConfig.addFilter("gateFamily", function (layout, slug) {
+    for (const row of [...layout.rows, ...layout.pullout]) {
+      for (const cell of row.cells) {
+        if (!cell || cell.ghost) continue;
+        const cellSlug = cell.slug || cell;
+        if (cellSlug !== slug) continue;
+        const key = (cell.fams || row.fams)[0];
+        return { key, ...layout.families[key] };
+      }
+    }
+    return null;
+  });
+
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
   eleventyConfig.addPassthroughCopy("styles/weyl.css");
+  eleventyConfig.addPassthroughCopy("styles/home.css");
   eleventyConfig.addPassthroughCopy("js/weyl.js");
   eleventyConfig.addPassthroughCopy("CNAME");
 

@@ -1,197 +1,159 @@
 {% extends "base.njk" %}
 
-{% macro cellFor(cell, rowFams, rowIndex, colIndex) %}
+{# One card per gate. `cell` is a slug, a {slug, fams} override, a {ghost, name} placeholder or null. #}
+{% macro gateCard(cell, rowFams) %}
   {% if cell === null %}
-    <div class="pt-empty"></div>
+    <div class="gate-card-empty"></div>
   {% elif cell.ghost %}
-    <a class="pt-cell pt-ghost" data-row="{{ rowIndex }}" data-col="{{ colIndex }}" data-fams="{{ rowFams | join(' ') }}"
-       href="https://github.com/natestemen/gate.directory/issues/new"
-       title="Predicted by the table, but undocumented — open an issue!">
-      <div class="pt-symbol">${{ cell.ghost }}$</div>
-      <div class="pt-name">{{ cell.name }}</div>
+    <a class="gate-card gate-card-ghost" href="https://github.com/natestemen/gate.directory/issues/new"
+       title="Predicted by the table but undocumented — open an issue">
+      <span class="gate-card-symbol">${{ cell.ghost }}$</span>
+      <span class="gate-card-name">{{ cell.name }}</span>
     </a>
   {% else %}
-    {% if cell.slug %}
-      {% set slug = cell.slug %}
-      {% set fams = cell.fams %}
-    {% else %}
-      {% set slug = cell %}
-      {% set fams = rowFams %}
-    {% endif %}
+    {% set slug = cell.slug if cell.slug else cell %}
+    {% set fams = cell.fams if cell.fams else rowFams %}
     {% set gate = collections.gates | gateBySlug(slug) %}
     {% if gate %}
-      {% set c1 = periodic_layout.families[fams[0]].color %}
-      <a class="pt-cell" data-row="{{ rowIndex }}" data-col="{{ colIndex }}" data-fams="{{ fams | join(' ') }}"
-         href="{{ gate.url | url }}"
-         {% if fams.length > 1 %}
-           {% set stops = [] %}
-           {% for f in fams %}
-             {% set stops = (stops.push("color-mix(in srgb, " + periodic_layout.families[f].color + " 25%, white)"), stops) %}
-           {% endfor %}
-           style="background: linear-gradient(135deg, {{ stops | join(', ') }});"
-         {% else %}
-           style="background: color-mix(in srgb, {{ c1 }} 24%, white);"
-         {% endif %}>
-        <span class="pt-arity">{{ gate.data.arity }}</span>
-        {% if gate.data.parameters %}<span class="pt-params">{{ gate.data.parameters }}</span>{% endif %}
-        <div class="pt-symbol">${{ gate.data.symbol | safe }}$</div>
-        <div class="pt-name">{{ gate.data.title | stripMath }}</div>
+      <a class="gate-card" href="{{ gate.url | url }}" style="--fam: {{ periodic_layout.families[fams[0]].color }}">
+        <span class="gate-card-arity" title="qubits">{{ gate.data.arity }}</span>
+        {% if gate.data.parameters %}<span class="gate-card-params" title="parameters">{{ gate.data.parameters }}</span>{% endif %}
+        <span class="gate-card-symbol">${{ gate.data.symbol | safe }}$</span>
+        <span class="gate-card-name">{{ gate.data.title | stripMath }}</span>
       </a>
     {% else %}
-      <div class="pt-empty" title="unknown: {{ slug }}"></div>
+      <div class="gate-card-empty" title="unknown: {{ slug }}"></div>
     {% endif %}
   {% endif %}
 {% endmacro %}
 
-{% macro gridFor(rows, id) %}
-  <div class="pt-wrap" id="{{ id }}">
-    <svg class="pt-outlines" aria-hidden="true"></svg>
-    <div class="pt-grid2">
-      {% for row in rows %}
-        {% set rowIndex = loop.index0 %}
-        {% for cell in row.cells %}
-          {{ cellFor(cell, row.fams, rowIndex, loop.index0) }}
-        {% endfor %}
-        {% if row.cells.length < 8 %}
-          {% for i in range(row.cells.length, 8) %}<div class="pt-empty"></div>{% endfor %}
-        {% endif %}
+{# Consecutive layout rows with the same families share one caption. #}
+{% macro familyBands(rows) %}
+  {% set bands = [] %}
+  {% for row in rows %}
+    {% set key = row.fams | join('+') %}
+    {% if bands.length and bands[bands.length - 1].key == key %}
+      {% set _ = bands[bands.length - 1].rows.push(row) %}
+    {% else %}
+      {% set _ = bands.push({ key: key, fams: row.fams, rows: [row] }) %}
+    {% endif %}
+  {% endfor %}
+  {% for band in bands %}
+    <section class="family-band" style="--fam: {{ periodic_layout.families[band.fams[0]].color }}">
+      <h3 class="family-caption">
+        {% for f in band.fams %}<span class="family-caption-item" style="--fam: {{ periodic_layout.families[f].color }}">{{ periodic_layout.families[f].label }}</span>{% endfor %}
+      </h3>
+      {% for row in band.rows %}
+        <div class="family-grid">
+          {% for cell in row.cells %}{{ gateCard(cell, row.fams) }}{% endfor %}
+        </div>
       {% endfor %}
-    </div>
-  </div>
+    </section>
+  {% endfor %}
 {% endmacro %}
 
 {% block content %}
-<p>
-  Quantum gates are the fundamental building block of quantum computation.
-  This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
-</p>
+{% set gateCount = collections.gates | length %}
+{% set groupCount = collections.groups | length %}
+{% set sdkCount = sdk_list | length %}
 
-<div class="gate-search">
-  <input type="search" id="gate-search-input" placeholder="Search gates by name, alias, or SDK name (e.g. CU1, XXPlusYY, fredkin)…" autocomplete="off" aria-label="Search gates" />
-  <ul id="gate-search-results" hidden></ul>
-</div>
+<section class="home-hero">
+  <h2 class="home-title">A field guide to quantum gates.</h2>
+  <p class="home-lede">
+    Definitions, matrices, properties and SDK names for the gates of quantum computing,
+    from the Paulis to hardware natives.
+  </p>
+  <div class="gate-search">
+    <input type="search" id="gate-search-input" placeholder="Search by name, alias or SDK name — CU1, XXPlusYY, fredkin…" autocomplete="off" aria-label="Search gates" />
+    <ul id="gate-search-results" hidden></ul>
+  </div>
+  <p class="home-stats">
+    <a href="#gates">{{ gateCount }} gates</a>
+    <span aria-hidden="true">·</span>
+    <a href="#groups">{{ groupCount }} groups</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ '/sdks/' | url }}">{{ sdkCount }} SDKs</a>
+  </p>
+</section>
 
-<br/>
+<section class="section" id="gates">
+  <div class="section-head">
+    <h2 class="section-title">Gates by family</h2>
+    <p>Grouped by family. Within a row, the first three columns are the $X$, $Y$ and $Z$ flavours of a gate. The small number in each card is the qubit count, and the one on the right is the number of parameters.</p>
+  </div>
+  <div class="family-table">
+    <div class="family-colheads" aria-hidden="true">
+      {% for c in periodic_layout.columns %}<span>{{ c }}</span>{% endfor %}
+    </div>
+    {{ familyBands(periodic_layout.rows) }}
+    <div class="family-divider" role="separator"></div>
+    {{ familyBands(periodic_layout.pullout) }}
+  </div>
+</section>
 
-<h2>Periodic Table of Gates</h2>
-
-<div class="pt-table">
-  <div class="pt-headrow">
-    {% for i in range(0, 8) %}
-      <div class="pt-colhead">{{ periodic_layout.columns[i] }}</div>
-    {% endfor %}
+<section class="section" id="groups">
+  <div class="section-head">
+    <h2 class="section-title">Groups</h2>
+    <p>Subgroups of the unitary group $\mathsf{U}(n)$ worth knowing by name. The map shows how they nest and overlap, with one example gate per region. Click a region or a chip to read about the group.</p>
   </div>
 
-  {{ gridFor(periodic_layout.rows, "pt-main") }}
-
-  <div class="pt-pullout">
-    {{ gridFor(periodic_layout.pullout, "pt-pullout-grid") }}
-  </div>
-</div>
-
-<br/>
-
-<h2>Groups</h2>
-<p>
-  Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
-  Every gate lives inside the unitary group; click a region to read about that subgroup.
-</p>
-
-<div class="group-venn-wrap">
-  <svg class="group-venn" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
-    <a href="{{ '/groups/unitary/' | url }}">
-      <rect class="venn-shape" x="8" y="8" width="744" height="424" rx="14" fill="#666666" stroke="#666666"/>
-      <text x="740" y="30" text-anchor="end" fill="#666666">unitary</text>
-    </a>
-    <a href="{{ '/groups/clifford/' | url }}">
-      <rect class="venn-shape" x="40" y="40" width="430" height="260" rx="10" fill="#c2571a" stroke="#c2571a"/>
-      <text x="52" y="62" text-anchor="start" fill="#c2571a">clifford</text>
-    </a>
-    <a href="{{ '/groups/orthogonal/' | url }}">
-      <rect class="venn-shape" x="120" y="150" width="480" height="250" rx="10" fill="#1a8ec2" stroke="#1a8ec2"/>
-      <text x="590" y="393" text-anchor="end" fill="#1a8ec2">orthogonal</text>
-    </a>
-    <a href="{{ '/groups/number-preserving/' | url }}">
-      <rect class="venn-shape" x="300" y="70" width="420" height="290" rx="10" fill="#8a6d00" stroke="#8a6d00"/>
-      <text x="570" y="350" text-anchor="end" fill="#8a6d00">number-preserving</text>
-    </a>
-    <a href="{{ '/groups/diagonal/' | url }}">
-      <rect class="venn-shape" x="310" y="105" width="250" height="141" rx="8" fill="#0b7a5a" stroke="#0b7a5a"/>
-      <text x="548" y="118" text-anchor="end" fill="#0b7a5a">diagonal</text>
-    </a>
-    <a href="{{ '/groups/pauli/' | url }}">
-      <rect class="venn-shape" x="70" y="76" width="260" height="154" rx="8" fill="#2f5fd0" stroke="#2f5fd0"/>
-      <text x="78" y="92" text-anchor="start" fill="#2f5fd0">Pauli</text>
-    </a>
-    <a href="{{ '/groups/permutation/' | url }}">
-      <rect class="venn-shape" x="150" y="210" width="190" height="170" rx="8" fill="#7a2f8f" stroke="#7a2f8f"/>
-      <text x="158" y="370" text-anchor="start" fill="#7a2f8f">permutation</text>
-    </a>
+  <svg class="group-map" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
+    <a href="{{ '/groups/unitary/' | url }}"><rect class="group-shape" x="8" y="8" width="744" height="424" rx="14"/><text x="740" y="30" text-anchor="end">unitary</text></a>
+    <a href="{{ '/groups/clifford/' | url }}"><rect class="group-shape" x="40" y="40" width="430" height="260" rx="10"/><text x="52" y="62">clifford</text></a>
+    <a href="{{ '/groups/orthogonal/' | url }}"><rect class="group-shape" x="120" y="150" width="480" height="250" rx="10"/><text x="590" y="393" text-anchor="end">orthogonal</text></a>
+    <a href="{{ '/groups/number-preserving/' | url }}"><rect class="group-shape" x="300" y="70" width="420" height="290" rx="10"/><text x="570" y="350" text-anchor="end">number-preserving</text></a>
+    <a href="{{ '/groups/diagonal/' | url }}"><rect class="group-shape" x="310" y="105" width="250" height="141" rx="8"/><text x="548" y="118" text-anchor="end">diagonal</text></a>
+    <a href="{{ '/groups/pauli/' | url }}"><rect class="group-shape" x="70" y="76" width="260" height="154" rx="8"/><text x="78" y="92">pauli</text></a>
+    <a href="{{ '/groups/permutation/' | url }}"><rect class="group-shape" x="150" y="210" width="190" height="170" rx="8"/><text x="158" y="370">permutation</text></a>
     <a href="{{ '/groups/matchgate/' | url }}">
-      <path class="venn-shape"
-        d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z"
-        fill="#b3315f" stroke="#b3315f" stroke-linejoin="round"/>
-      <text x="640" y="175" text-anchor="middle" fill="#b3315f" transform="rotate(-90 640 175)">matchgate</text>
+      <path class="group-shape" d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z" stroke-linejoin="round"/>
+      <text x="640" y="175" text-anchor="middle" transform="rotate(-90 640 175)">matchgate</text>
     </a>
-
-    <g class="venn-gates" aria-hidden="true">
-      <text x="180" y="118">Y</text>
-      <text x="222" y="224">X</text>
-      <text x="317" y="186">Z</text>
-      <text x="317" y="223">I</text>
-      <text x="400" y="58">H</text>
-      <text x="222" y="280">CNOT</text>
-      <text x="320" y="280" text-anchor="middle">SWAP</text>
-      <text x="222" y="342">Toffoli</text>
-      <text x="320" y="338" text-anchor="middle">CSWAP</text>
-      <text x="400" y="128">S</text>
-      <text x="510" y="140">T</text>
-      <text x="404" y="200">CZ</text>
-      <text x="512" y="200">CCZ</text>
-      <text x="400" y="90">iSWAP</text>
-      <text x="548" y="90">XY</text>
-      <text x="447" y="277" text-anchor="middle">fSWAP</text>
-      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text>
-      <text x="134" y="330" text-anchor="middle">Ry</text>
-      <text x="682" y="200">FSim</text>
-      <text x="62" y="412">Rx</text>
-      <text x="624" y="374">Rxx</text>
+    <g class="group-map-examples" aria-hidden="true">
+      <text x="180" y="118">Y</text><text x="222" y="224">X</text><text x="317" y="186">Z</text><text x="317" y="223">I</text>
+      <text x="400" y="58">H</text><text x="222" y="280">CNOT</text><text x="320" y="280" text-anchor="middle">SWAP</text>
+      <text x="222" y="342">Toffoli</text><text x="320" y="338" text-anchor="middle">CSWAP</text><text x="400" y="128">S</text>
+      <text x="510" y="140">T</text><text x="404" y="200">CZ</text><text x="512" y="200">CCZ</text><text x="400" y="90">iSWAP</text>
+      <text x="548" y="90">XY</text><text x="447" y="277" text-anchor="middle">fSWAP</text>
+      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text><text x="134" y="330" text-anchor="middle">Ry</text>
+      <text x="682" y="200">FSim</text><text x="62" y="412">Rx</text><text x="624" y="374">Rxx</text>
     </g>
   </svg>
-</div>
 
-<p class="venn-caption">
-  The small grey labels mark one example gate per intersection.
-</p>
+  <ul class="chip-list">
+    {% for group in collections.groups | sort(false, false, 'data.title') %}
+      {% set n = 0 %}
+      {% for g in collections.gates %}
+        {% if group.data.all_gates or (g.data.groups and (group.fileSlug in g.data.groups)) %}{% set n = n + 1 %}{% endif %}
+      {% endfor %}
+      <li><a class="chip" href="{{ group.url | url }}">{{ group.data.title | replace(' Group', '') | lower }}<span class="chip-count">{{ n }}</span></a></li>
+    {% endfor %}
+  </ul>
+</section>
 
-<br/>
+<section class="section" id="sdks">
+  <div class="section-head">
+    <h2 class="section-title">SDK support</h2>
+    <p>Each gate page names the gate in every framework that has it. The <a href="{{ '/sdks/' | url }}">support matrix</a> shows all gates against all frameworks at once.</p>
+  </div>
+  <ul class="chip-list">
+    {% for sdk in sdk_list %}<li><a class="chip" href="{{ sdk.url }}">{{ sdk.label }}</a></li>{% endfor %}
+  </ul>
+</section>
 
-<h2>SDK Support</h2>
-<p>
-Wondering which framework implements a gate natively?
-The <a href="{{ '/sdks/' | url }}">SDK support matrix</a> shows every gate against Qiskit, PennyLane, Cirq, Q#, PyQuil, Braket, BQSKit, Qibo, pytket, Stim, and OpenQASM, with links into each SDK's documentation.
-</p>
-
-<br/>
-
-<p>
-Not finding a gate you're interested in?
-Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a> and we'll add it!
-</p>
+<section class="section home-contribute">
+  <p>Missing a gate, or spotted a mistake? <a href="https://github.com/natestemen/gate.directory/issues/new">Open an issue</a> or edit the page on GitHub; every page links to its source.</p>
+</section>
 
 <script>
   (function () {
     const input = document.getElementById("gate-search-input");
     const list = document.getElementById("gate-search-results");
-    if (!input || !list) {
-      return;
-    }
+    if (!input || !list) return;
 
     let indexPromise = null;
     const loadIndex = () => {
-      if (!indexPromise) {
-        indexPromise = fetch("{{ '/search-index.json' | url }}").then((r) => r.json());
-      }
+      if (!indexPromise) indexPromise = fetch("{{ '/search-index.json' | url }}").then((r) => r.json());
       return indexPromise;
     };
     input.addEventListener("focus", loadIndex, { once: true });
@@ -203,7 +165,6 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
         list.innerHTML = "";
         return;
       }
-
       const gates = await loadIndex();
       const results = [];
       for (const g of gates) {
@@ -251,123 +212,8 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
     });
 
     document.addEventListener("click", (event) => {
-      if (!event.target.closest(".gate-search")) {
-        list.hidden = true;
-      }
+      if (!event.target.closest(".gate-search")) list.hidden = true;
     });
   })();
-</script>
-
-<script>
-  const PT_FAMILIES = {{ periodic_layout.families | dump | safe }};
-
-  function drawRegions(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    const svg = container.querySelector("svg.pt-outlines");
-    svg.innerHTML = "";
-    container.querySelectorAll(".pt-region-label").forEach((el) => el.remove());
-
-    // cell offsets are grid-relative; the svg overlay is wrap-relative
-    const grid = container.querySelector(".pt-grid2");
-    const ox = grid.offsetLeft, oy = grid.offsetTop;
-
-    const fams = {};
-    for (const cell of container.querySelectorAll("[data-fams]")) {
-      const r = +cell.dataset.row;
-      const L = cell.offsetLeft + ox, T = cell.offsetTop + oy;
-      const R = L + cell.offsetWidth, B = T + cell.offsetHeight;
-      for (const f of cell.dataset.fams.split(" ")) {
-        const rows = (fams[f] ??= new Map());
-        const e = rows.get(r) || { L: 1e9, R: -1e9, T: 1e9, B: -1e9 };
-        e.L = Math.min(e.L, L); e.R = Math.max(e.R, R);
-        e.T = Math.min(e.T, T); e.B = Math.max(e.B, B);
-        rows.set(r, e);
-      }
-    }
-
-    svg.setAttribute("width", container.scrollWidth);
-    svg.setAttribute("height", container.scrollHeight);
-
-    Object.keys(fams).forEach((f) => {
-      const meta = PT_FAMILIES[f];
-      const rows = [...fams[f].entries()].sort((a, b) => a[0] - b[0]).map((e) => e[1]);
-      const inset = meta.inset || 6;
-      const n = rows.length;
-      const ys = [rows[0].T - inset];
-      for (let i = 0; i < n; i++) {
-        ys.push(i < n - 1 ? (rows[i].B + rows[i + 1].T) / 2 + (inset - 8) * 0.5 : rows[i].B + inset);
-      }
-      let d = `M ${rows[0].L - inset} ${ys[0]} L ${rows[0].R + inset} ${ys[0]}`;
-      for (let i = 0; i < n; i++) {
-        d += ` L ${rows[i].R + inset} ${ys[i + 1]}`;
-        if (i < n - 1) d += ` L ${rows[i + 1].R + inset} ${ys[i + 1]}`;
-      }
-      for (let i = n - 1; i >= 0; i--) {
-        d += ` L ${rows[i].L - inset} ${ys[i + 1]}`;
-        if (i > 0) {
-          d += ` L ${rows[i].L - inset} ${ys[i]}`;
-          d += ` L ${rows[i - 1].L - inset} ${ys[i]}`;
-        }
-      }
-      d += " Z";
-
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path.setAttribute("d", d);
-      path.setAttribute("fill", meta.color);
-      path.setAttribute("fill-opacity", "0.05");
-      path.setAttribute("stroke", meta.color);
-      path.setAttribute("stroke-width", "2.2");
-      path.setAttribute("stroke-linejoin", "round");
-      path.dataset.fam = f;
-      svg.appendChild(path);
-
-      /* pin the label to the topmost row that starts at the region's left
-         edge — narrow overlap tongues (e.g. swap reaching up to CSWAP)
-         start indented, so they never carry the label */
-      const minL = Math.min(...rows.map((r) => r.L));
-      const labelRow = rows.find((r) => Math.abs(r.L - minL) < 2) || rows[0];
-      const label = document.createElement("span");
-      label.className = "pt-region-label";
-      label.textContent = meta.label;
-      label.style.borderColor = meta.color;
-      label.style.color = meta.color;
-      label.style.left = labelRow.L - inset + 8 + "px";
-      label.style.top = labelRow.T - inset - 8 + "px";
-      container.appendChild(label);
-    });
-  }
-
-  function setupHover() {
-    document.querySelectorAll(".pt-wrap").forEach((container) => {
-      const cells = container.querySelectorAll(".pt-cell[data-fams]");
-      const setActive = (fams) => {
-        container.querySelectorAll(".pt-outlines path").forEach((p) =>
-          p.classList.toggle("pt-region-active", fams.includes(p.dataset.fam))
-        );
-        cells.forEach((c) =>
-          c.classList.toggle(
-            "pt-cell-kin",
-            fams.length > 0 && c.dataset.fams.split(" ").some((f) => fams.includes(f))
-          )
-        );
-      };
-      cells.forEach((cell) => {
-        cell.addEventListener("mouseenter", () => setActive(cell.dataset.fams.split(" ")));
-        cell.addEventListener("mouseleave", () => setActive([]));
-      });
-    });
-  }
-
-  function drawAll() {
-    drawRegions("pt-main");
-    drawRegions("pt-pullout-grid");
-  }
-  window.addEventListener("load", () => {
-    drawAll();
-    setTimeout(drawAll, 600); /* re-measure after KaTeX renders */
-    setupHover();
-  });
-  window.addEventListener("resize", drawAll);
 </script>
 {% endblock %}

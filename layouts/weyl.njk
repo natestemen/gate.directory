@@ -3,8 +3,11 @@
   two-qubit gates that declare `weyl` in their front matter; the drawing itself
   is done by js/weyl.js.
 #}
-<section class="weyl" aria-labelledby="weyl-heading">
-  <h3 id="weyl-heading">Weyl chamber</h3>
+<section class="weyl section" aria-labelledby="weyl-heading">
+  <div class="section-head">
+    <h2 class="section-title" id="weyl-heading">Weyl chamber</h2>
+    <p>Where this gate sits among all two-qubit gates, up to single-qubit rotations before and after.</p>
+  </div>
   <div class="weyl-panel">
     <div class="weyl-main">
       <div class="weyl-figure">
@@ -24,9 +27,9 @@
       <div class="weyl-readout" aria-live="polite">
         <p class="weyl-facts"><strong>Coordinates:</strong> <span class="weyl-coords"></span></p>
         <p class="weyl-status">
-          <span class="gate-badge weyl-badge" data-state="local" hidden>not entangling</span>
-          <span class="gate-badge weyl-badge" data-state="entangling" hidden>entangling</span>
-          <span class="gate-badge weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
+          <span class="chip weyl-badge" data-state="local" hidden>not entangling</span>
+          <span class="chip weyl-badge" data-state="entangling" hidden>entangling</span>
+          <span class="chip weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
           <span class="weyl-equiv" hidden></span>
         </p>
       </div>

@@ -1,77 +1,102 @@
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="gate">
-  <h2 class="gate-title">{{ title }}</h2>
+{% set fam = periodic_layout | gateFamily(page.fileSlug) %}
+{% set quirkHref = quirk | quirkUrl(page.fileSlug, symbol) %}
+{% set githubPath = page.inputPath | replace('./', '') %}
+{% set controlledVariants = [] %}
+{% for g in collections.gates %}
+  {% if g.data.controlled == page.fileSlug %}
+    {% set controlledVariants = (controlledVariants.push(g), controlledVariants) %}
+  {% endif %}
+{% endfor %}
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">${{ symbol }}$</div>
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card"{% if fam %} style="--fam: {{ fam.color }}"{% endif %}>${{ symbol }}$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        {% if fam %}<span>{{ fam.label }}</span><span aria-hidden="true">·</span>{% endif %}
+        <span>{{ arity }} qubit{% if arity != 1 %}s{% endif %}</span>
+        {% if dimension and dimension != 2 %}<span aria-hidden="true">·</span><span>dimension ${{ dimension }}$</span>{% endif %}
+        {% if parameters %}<span aria-hidden="true">·</span><span>{{ parameters }} parameter{% if parameters != 1 %}s{% endif %}</span>{% endif %}
+      </p>
+      <h2 class="gate-title">{{ title }}</h2>
+      <div class="gate-lede">{{ description | markdown | safe }}</div>
+      <div class="gate-actions">
+        {% if quirkHref %}
+          <a class="button" href="{{ quirkHref }}" target="_blank" rel="noopener">Open in Quirk ↗</a>
+          {% if quirk.note %}<span class="quirk-note">with ${{ quirk.note }}$</span>{% endif %}
+        {% endif %}
+        {% for prop in properties %}<span class="chip">{{ prop }}</span>{% endfor %}
       </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> ${{ arity }}$</span>
-        {% if dimension and dimension != 2 %}<span><strong>Dimension:</strong> ${{ dimension }}$</span>{% endif %}
-        {% if parameters %}<span><strong>Parameters:</strong> ${{ parameters }}$</span>{% endif %}
-      </p>
-      {% set quirkHref = quirk | quirkUrl(page.fileSlug, symbol) %}
-      {% if quirkHref %}
-      <p class="gate-actions">
-        <a class="quirk-link" href="{{ quirkHref }}" target="_blank" rel="noopener">Open in Quirk ↗</a>
-        {% if quirk.note %}<span class="quirk-note">with ${{ quirk.note }}$</span>{% endif %}
-      </p>
-      {% endif %}
-      {% if properties %}
-      <p class="gate-badges">
-        {% for prop in properties %}<span class="gate-badge">{{ prop }}</span>{% endfor %}
-      </p>
-      {% endif %}
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p>{{ description | markdown | safe }}</p>
-        <br>
+    </div>
+  </header>
 
-        {% if notations %}
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            {% for n in notations %}
-            <li>${{ n }}$</li>
+  <div class="gate-body">
+    <div class="gate-main">
+      {{ content | safe }}
+    </div>
+
+    <aside class="gate-aside">
+      {% if notations %}
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            {% for n in notations %}<li>${{ n }}$</li>{% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      {% if controlled or controlledVariants.length %}
+        <section>
+          <h3 class="caption">Related</h3>
+          <ul class="aside-list">
+            {% if controlled %}
+              {% set baseGate = collections.gates | gateBySlug(controlled) %}
+              {% if baseGate %}<li>Controlled version of <a href="{{ baseGate.url | url }}">{{ baseGate.data.title }}</a></li>{% endif %}
+            {% endif %}
+            {% for g in controlledVariants %}
+              <li>Controlled variant: <a href="{{ g.url | url }}">{{ g.data.title }}</a></li>
             {% endfor %}
           </ul>
-        {% endif %}
-      </div>
-
-      {% set controlledVariants = [] %}
-      {% for g in collections.gates %}
-        {% if g.data.controlled == page.fileSlug %}
-          {% set controlledVariants = (controlledVariants.push(g), controlledVariants) %}
-        {% endif %}
-      {% endfor %}
-      {% if controlled or controlledVariants.length %}
-        <div class="gate-relations">
-          {% if controlled %}
-            {% set baseGate = collections.gates | gateBySlug(controlled) %}
-            {% if baseGate %}
-              <p><strong>Controlled version of:</strong> <a href="{{ baseGate.url | url }}">{{ baseGate.data.title }}</a></p>
-            {% endif %}
-          {% endif %}
-          {% if controlledVariants.length %}
-            <p><strong>Controlled variant{% if controlledVariants.length > 1 %}s{% endif %}:</strong>
-              {% for g in controlledVariants %}<a href="{{ g.url | url }}">{{ g.data.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
-            </p>
-          {% endif %}
-        </div>
+        </section>
       {% endif %}
 
-      {% if sdks %}
-        <h3>SDK Support</h3>
+      {% if groups %}
+        <section>
+          <h3 class="caption">Groups</h3>
+          <ul class="chip-list">
+            {% for group in groups %}<li><a class="chip" href="{{ ('/groups/' + group + '/') | url }}">{{ group }}</a></li>{% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
+      {% if citation %}
+        <section>
+          <h3 class="caption">Reference</h3>
+          <p class="gate-citation"><a href="{{ citation.url }}">{{ citation.title or citation.url }}</a>{% if citation.year %} ({{ citation.year }}){% endif %}</p>
+        </section>
+      {% endif %}
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/{{ githubPath }}" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
+  </div>
+
+  {% if weyl %}{% include "weyl.njk" %}{% endif %}
+
+  {% if sdks %}
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="{{ '/sdks/' | url }}">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
         <table class="sdk-table">
           <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
+            <tr><th>SDK</th><th>Name</th></tr>
           </thead>
           <tbody>
             {% for sdk in sdk_list %}
@@ -79,52 +104,18 @@
               <tr>
                 <td>{{ sdk.label }}</td>
                 {% if entry and entry.name %}
-                  <td>
-                    <a href="{{ entry.url }}"><code>{{ entry.name }}</code></a>
-                    {% if entry.note %}
-                      <span class="sdk-note" data-note="{{ entry.note }}">ⓘ</span>
-                    {% endif %}
-                  </td>
+                  <td><a href="{{ entry.url }}"><code>{{ entry.name }}</code></a>{% if entry.note %} <span class="sdk-note" data-note="{{ entry.note }}">ⓘ</span>{% endif %}</td>
                 {% else %}
-                  <td class="sdk-unavailable">—
-                    {% if entry.note %}
-                      <span class="sdk-note" data-note="{{ entry.note }}">ⓘ</span>
-                    {% endif %}
-                  </td>
+                  <td class="sdk-unavailable">—{% if entry.note %} <span class="sdk-note" data-note="{{ entry.note }}">ⓘ</span>{% endif %}</td>
                 {% endif %}
               </tr>
             {% endfor %}
           </tbody>
         </table>
-      {% endif %}
-      {% if groups %}
-        <h3>Groups</h3>
-        <p>This gate is contained in the following groups:</p>
-        <ul>
-          {% for group in groups %}
-          <li><a href="{{ ('/groups/' + group) | url }}">{{ group }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% if citation %}
-        <h3>Reference</h3>
-        <p class="gate-citation">
-          <a href="{{ citation.url }}">{{ citation.title or citation.url }}</a>{% if citation.year %} ({{ citation.year }}){% endif %}
-        </p>
-      {% endif %}
-    </div>
+      </div>
+    </section>
+  {% endif %}
 
-    <div class="column">
-      {{ content | safe }}
-    </div>
-  </div>
-
-  {% if weyl %}{% include "weyl.njk" %}{% endif %}
-
-  <br/>
-
-  <a class="back-to-home" href="{{ '/' | url }}">Back to home</a>
-  {% set githubPath = page.inputPath | replace('./', '') %}
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/{{ githubPath }}" target="_blank">Edit this page on GitHub</a></p>
-</div>
+  <p class="gate-foot"><a href="{{ '/' | url }}">← All gates</a></p>
+</article>
 {% endblock %}
