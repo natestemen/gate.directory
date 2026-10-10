@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,340 +25,181 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Givens Rotation</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$G_{ij}$</div>
-      </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $2$</span>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #8a6d00">$G_{ij}$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>interactions</span><span aria-hidden="true">·</span>
+        <span>2 qubits</span>
         
-        <span><strong>Parameters:</strong> $1$</span>
+        <span aria-hidden="true">·</span><span>1 parameter</span>
       </p>
-      
-      
-      <p class="gate-actions">
-        <a class="quirk-link" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B1%2C%22Z%5E%C2%BD%22%5D%2C%5B%22H%22%2C%22H%22%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B1%2C%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B%22H%22%2C%22H%22%5D%2C%5B%22X%5E-%C2%BD%22%2C%22X%5E-%C2%BD%22%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B1%2C%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B%22X%5E%C2%BD%22%2C%22X%5E%C2%BD%22%5D%2C%5B1%2C%22Z%5E-%C2%BD%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
-        <span class="quirk-note">with $&#92;theta = 2&#92;pi t$</span>
-      </p>
-      
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.</p>
-</p>
-        <br>
-
+      <h2 class="gate-title">Givens Rotation</h2>
+      <div class="gate-lede"><p>Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.</p>
+</div>
+      <div class="gate-actions">
         
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$G(&#92;theta)$</li>
-            
-            <li>$G_{ij}(&#92;theta)$</li>
-            
-          </ul>
+          <a class="button" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B1%2C%22Z%5E%C2%BD%22%5D%2C%5B%22H%22%2C%22H%22%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B1%2C%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B%22H%22%2C%22H%22%5D%2C%5B%22X%5E-%C2%BD%22%2C%22X%5E-%C2%BD%22%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B1%2C%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B%22X%5E%C2%BD%22%2C%22X%5E%C2%BD%22%5D%2C%5B1%2C%22Z%5E-%C2%BD%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
+          <span class="quirk-note">with $&#92;theta = 2&#92;pi t$</span>
+        
         
       </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not a named gate. XXPlusYYGate acts as a Givens rotation up to angle convention.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td>
-                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SingleExcitation.html"><code>pennylane.SingleExcitation</code></a>
-                    
-                      <span class="sdk-note" data-note="Half-angle convention: SingleExcitation(θ) is the Givens rotation by θ/2.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td>
-                    <a href="https://quantumai.google/reference/python/cirq/givens"><code>cirq.givens</code></a>
-                    
-                      <span class="sdk-note" data-note="cirq.givens(θ) returns a PhasedISwapPowGate.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td>
-                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GIVENS"><code>qibo.gates.GIVENS</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="PhasedISWAP(0.25, 2*theta/pi) implements Givens(theta)">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-        <h3>Groups</h3>
-        <p>This gate is contained in the following groups:</p>
-        <ul>
-          
-          <li><a href="/groups/orthogonal">orthogonal</a></li>
-          
-          <li><a href="/groups/matchgate">matchgate</a></li>
-          
-          <li><a href="/groups/number-preserving">number-preserving</a></li>
-          
-        </ul>
-      
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>A Givens rotation is a two-qubit gate that performs a real rotation in the single-excitation subspace spanned by $|01\rangle$ and $|10\rangle$, leaving $|00\rangle$ and $|11\rangle$ unchanged.</p>
 <p>$$
 G(\theta) =
@@ -381,11 +223,42 @@ $$</p>
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$G(&#92;theta)$</li><li>$G_{ij}(&#92;theta)$</li>
+          </ul>
+        </section>
+      
+
+      
+
+      
+        <section>
+          <h3 class="caption">Groups</h3>
+          <ul class="chip-list">
+            <li><a class="chip" href="/groups/orthogonal/">orthogonal</a></li><li><a class="chip" href="/groups/matchgate/">matchgate</a></li><li><a class="chip" href="/groups/number-preserving/">number-preserving</a></li>
+          </ul>
+        </section>
+      
+
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/givens.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
-<section class="weyl" aria-labelledby="weyl-heading">
-  <h3 id="weyl-heading">Weyl chamber</h3>
+<section class="weyl section" aria-labelledby="weyl-heading">
+  <div class="section-head">
+    <h2 class="section-title" id="weyl-heading">Weyl chamber</h2>
+    <p>Where this gate sits among all two-qubit gates, up to single-qubit rotations before and after.</p>
+  </div>
   <div class="weyl-panel">
     <div class="weyl-main">
       <div class="weyl-figure">
@@ -405,9 +278,9 @@ $$</p>
       <div class="weyl-readout" aria-live="polite">
         <p class="weyl-facts"><strong>Coordinates:</strong> <span class="weyl-coords"></span></p>
         <p class="weyl-status">
-          <span class="gate-badge weyl-badge" data-state="local" hidden>not entangling</span>
-          <span class="gate-badge weyl-badge" data-state="entangling" hidden>entangling</span>
-          <span class="gate-badge weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
+          <span class="chip weyl-badge" data-state="local" hidden>not entangling</span>
+          <span class="chip weyl-badge" data-state="entangling" hidden>entangling</span>
+          <span class="chip weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
           <span class="weyl-equiv" hidden></span>
         </p>
       </div>
@@ -425,12 +298,115 @@ $$</p>
 </section>
 
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/givens.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not a named gate. XXPlusYYGate acts as a Givens rotation up to angle convention.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.SingleExcitation.html"><code>pennylane.SingleExcitation</code></a> <span class="sdk-note" data-note="Half-angle convention: SingleExcitation(θ) is the Givens rotation by θ/2.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td><a href="https://quantumai.google/reference/python/cirq/givens"><code>cirq.givens</code></a> <span class="sdk-note" data-note="cirq.givens(θ) returns a PhasedISwapPowGate.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.GIVENS"><code>qibo.gates.GIVENS</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="PhasedISWAP(0.25, 2*theta/pi) implements Givens(theta)">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -519,7 +495,7 @@ $$</p>
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

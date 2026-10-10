@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,333 +25,178 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Oracle</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$O_f$</div>
-      </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $n$</span>
-        <span><strong>Dimension:</strong> $p$</span>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #666666">$O_f$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>circuit-level</span><span aria-hidden="true">·</span>
+        <span>n qubits</span>
+        <span aria-hidden="true">·</span><span>dimension $p$</span>
         
       </p>
-      
-      
-      
-      <p class="gate-badges">
-        <span class="gate-badge">hermitian</span>
-      </p>
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Implements a classical function as a reversible black-box unitary that can be queried coherently.</p>
-</p>
-        <br>
-
+      <h2 class="gate-title">Oracle</h2>
+      <div class="gate-lede"><p>Implements a classical function as a reversible black-box unitary that can be queried coherently.</p>
+</div>
+      <div class="gate-actions">
         
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$U_f$</li>
-            
-            <li>$&#92;mathcal{O}_f$</li>
-            
-          </ul>
-        
+        <span class="chip">hermitian</span>
       </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td>
-                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.BitFlipOracleGate"><code>qiskit.circuit.library.BitFlipOracleGate</code></a>
-                    
-                      <span class="sdk-note" data-note="Bit-flip oracle built from a Boolean expression.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="No oracle builder; wrap a matrix with braket.circuits.gates.Unitary">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="ToffoliBox encodes a classical basis-state permutation">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-        <h3>Groups</h3>
-        <p>This gate is contained in the following groups:</p>
-        <ul>
-          
-          <li><a href="/groups/orthogonal">orthogonal</a></li>
-          
-          <li><a href="/groups/permutation">permutation</a></li>
-          
-        </ul>
-      
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>An oracle is a quantum operation that implements a classical function $f: \{0, 1\}^n \to \{0, 1\}^m$ as a reversible, unitary operation. Given an input register $|x\rangle$ and output register $|y\rangle$ the gate acts as
 $$
 |x\rangle \otimes |y\rangle \xmapsto{O_f} |x\rangle \otimes |b \oplus f(x)\rangle.
@@ -374,16 +220,147 @@ where $\oplus$ denotes bitwise XOR. By coherently evaluating $f$ on superpositio
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$U_f$</li><li>$&#92;mathcal{O}_f$</li>
+          </ul>
+        </section>
+      
+
+      
+
+      
+        <section>
+          <h3 class="caption">Groups</h3>
+          <ul class="chip-list">
+            <li><a class="chip" href="/groups/orthogonal/">orthogonal</a></li><li><a class="chip" href="/groups/permutation/">permutation</a></li>
+          </ul>
+        </section>
+      
+
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/oracle.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/oracle.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.BitFlipOracleGate"><code>qiskit.circuit.library.BitFlipOracleGate</code></a> <span class="sdk-note" data-note="Bit-flip oracle built from a Boolean expression.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="No oracle builder; wrap a matrix with braket.circuits.gates.Unitary">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="ToffoliBox encodes a classical basis-state permutation">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -472,7 +449,7 @@ where $\oplus$ denotes bitwise XOR. By coherently evaluating $f$ on superpositio
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,345 +25,181 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Mølmer-Sørensen</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$MS$</div>
-      </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $n$</span>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #c2571a">$MS$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>hardware natives</span><span aria-hidden="true">·</span>
+        <span>n qubits</span>
         
-        <span><strong>Parameters:</strong> $n(n-1)/2$</span>
+        <span aria-hidden="true">·</span><span>n(n-1)/2 parameters</span>
       </p>
-      
-      
-      <p class="gate-actions">
-        <a class="quirk-link" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%22H%22%2C%22H%22%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B1%2C%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B%22H%22%2C%22H%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
-        <span class="quirk-note">with $n = 2,&#92; &#92;chi = 2&#92;pi t$</span>
-      </p>
-      
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>A native entangling interaction in ion-trap systems based on collective spin-motion coupling.</p>
-</p>
-        <br>
-
+      <h2 class="gate-title">Mølmer-Sørensen</h2>
+      <div class="gate-lede"><p>A native entangling interaction in ion-trap systems based on collective spin-motion coupling.</p>
+</div>
+      <div class="gate-actions">
         
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$&#92;mathrm{MS}$</li>
-            
-            <li>$&#92;mathrm{MS}(&#92;chi_{ij})$</li>
-            
-            <li>$&#92;mathrm{GMS}$</li>
-            
-          </ul>
+          <a class="button" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%22H%22%2C%22H%22%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B1%2C%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%2C%5B%22%E2%80%A2%22%2C%22X%22%5D%2C%5B%22H%22%2C%22H%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
+          <span class="quirk-note">with $n = 2,&#92; &#92;chi = 2&#92;pi t$</span>
+        
         
       </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td>
-                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.MSGate"><code>qiskit.circuit.library.MSGate</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not in core PennyLane. Available through the PennyLane-IonQ plugin as MS.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td>
-                    <a href="https://quantumai.google/reference/python/cirq/MSGate"><code>cirq.MSGate</code></a>
-                    
-                      <span class="sdk-note" data-note="Two-qubit MS via cirq.ms(rads); cirq_ionq.MSGate is the IonQ native version.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td>
-                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.MS"><code>braket.circuits.gates.MS</code></a>
-                    
-                      <span class="sdk-note" data-note="IonQ 2-qubit phased MS(phi0, phi1, theta); theta defaults to pi/2">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td>
-                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.XXGate.html"><code>bqskit.ir.gates.XXGate</code></a>
-                    
-                      <span class="sdk-note" data-note="Fixed 2-qubit MS gate exp(-i pi XX/4); no n-qubit MS gate">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td>
-                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.MS"><code>qibo.gates.MS</code></a>
-                    
-                      <span class="sdk-note" data-note="Two-qubit MS(q0, q1, phi0, phi1, theta); theta defaults to π/2">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td>
-                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.AAMS"><code>pytket.circuit.OpType.AAMS</code></a>
-                    
-                      <span class="sdk-note" data-note="2-qubit phased MS, angles in half-turns; plain MS(pi/2) = XXPhase(0.5)">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td>
-                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_XX"><code>SQRT_XX</code></a>
-                    
-                      <span class="sdk-note" data-note="Only the Clifford point: the 2-qubit MS at theta = pi/2 equals SQRT_XX up to phase.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-      
-        <h3>Reference</h3>
-        <p class="gate-citation">
-          <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835">Multiparticle Entanglement of Hot Trapped Ions</a> (1999)
-        </p>
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>The Mølmer-Sørensen (MS) gate acts on $n$ qubits and, for $n = 2$, reduces to an $XX$ rotation. In full generality the MS gate (sometimes referred to as global MS or GMS) takes $n(n-1)/2$ parameters $\chi_{ij}$.</p>
 <p>$$
 \mathrm{MS}(\chi_{ij}) = \exp\left(-i \sum_{i=1}^n\sum_{j=i+1}^n X_i\otimes X_j \, \chi_{ij} / 2\right)
@@ -385,16 +222,145 @@ $$</p>
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$&#92;mathrm{MS}$</li><li>$&#92;mathrm{MS}(&#92;chi_{ij})$</li><li>$&#92;mathrm{GMS}$</li>
+          </ul>
+        </section>
+      
+
+      
+
+      
+
+      
+        <section>
+          <h3 class="caption">Reference</h3>
+          <p class="gate-citation"><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.82.1835">Multiparticle Entanglement of Hot Trapped Ions</a> (1999)</p>
+        </section>
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/molmer-sorenson.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/molmer-sorenson.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.MSGate"><code>qiskit.circuit.library.MSGate</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not in core PennyLane. Available through the PennyLane-IonQ plugin as MS.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td><a href="https://quantumai.google/reference/python/cirq/MSGate"><code>cirq.MSGate</code></a> <span class="sdk-note" data-note="Two-qubit MS via cirq.ms(rads); cirq_ionq.MSGate is the IonQ native version.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.MS"><code>braket.circuits.gates.MS</code></a> <span class="sdk-note" data-note="IonQ 2-qubit phased MS(phi0, phi1, theta); theta defaults to pi/2">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.XXGate.html"><code>bqskit.ir.gates.XXGate</code></a> <span class="sdk-note" data-note="Fixed 2-qubit MS gate exp(-i pi XX/4); no n-qubit MS gate">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.MS"><code>qibo.gates.MS</code></a> <span class="sdk-note" data-note="Two-qubit MS(q0, q1, phi0, phi1, theta); theta defaults to π/2">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.AAMS"><code>pytket.circuit.OpType.AAMS</code></a> <span class="sdk-note" data-note="2-qubit phased MS, angles in half-turns; plain MS(pi/2) = XXPhase(0.5)">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#SQRT_XX"><code>SQRT_XX</code></a> <span class="sdk-note" data-note="Only the Clifford point: the 2-qubit MS at theta = pi/2 equals SQRT_XX up to phase.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -483,7 +449,7 @@ $$</p>
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

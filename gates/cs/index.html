@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,357 +25,181 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Controlled-S</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$&#92;mathrm{C}S$</div>
-      </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $2$</span>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #7a2f8f">$&#92;mathrm{C}S$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>controlled</span><span aria-hidden="true">·</span>
+        <span>2 qubits</span>
         
         
       </p>
-      
-      
-      <p class="gate-actions">
-        <a class="quirk-link" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%22%E2%80%A2%22%2C%22Z%5E%C2%BD%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
+      <h2 class="gate-title">Controlled-S</h2>
+      <div class="gate-lede"><p>Applies a phase of $i$ to the $|11\rangle$ state, the square root of controlled-$Z$.</p>
+</div>
+      <div class="gate-actions">
         
-      </p>
-      
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Applies a phase of $i$ to the $|11\rangle$ state, the square root of controlled-$Z$.</p>
-</p>
-        <br>
-
+          <a class="button" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%22%E2%80%A2%22%2C%22Z%5E%C2%BD%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
+          
         
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$&#92;Lambda(S)$</li>
-            
-            <li>$&#92;sqrt{&#92;mathrm{C}Z}$</li>
-            
-            <li>$&#92;mathrm{CP}(&#92;pi/2)$</li>
-            
-          </ul>
         
       </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-        <div class="gate-relations">
-          
-            
-            
-              <p><strong>Controlled version of:</strong> <a href="/gates/s/">Phase</a></p>
-            
-          
-          
-        </div>
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td>
-                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSGate"><code>qiskit.circuit.library.CSGate</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not available natively. Construct with qml.ctrl(qml.S(0), 1).">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td>
-                    <a href="https://quantumai.google/reference/python/cirq/CZPowGate"><code>cirq.CZPowGate</code></a>
-                    
-                      <span class="sdk-note" data-note="No named constant. CS = cirq.CZ**0.5 (CZPowGate with exponent 0.5).">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Apply via the Controlled functor, Controlled S([control], target).">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Equal to CPHASE(pi/2, control, target), or use S(target).controlled(control).">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="No CS class; CPhaseShift(pi/2) or s(target, control=q)">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td>
-                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CSGate.html"><code>bqskit.ir.gates.CSGate</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Construct as qibo.gates.S(q1).controlled_by(q0) or qibo.gates.CU1(q0, q1, pi/2)">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td>
-                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CS"><code>pytket.circuit.OpType.CS</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ s q0, q1.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-        <h3>Groups</h3>
-        <p>This gate is contained in the following groups:</p>
-        <ul>
-          
-          <li><a href="/groups/diagonal">diagonal</a></li>
-          
-          <li><a href="/groups/number-preserving">number-preserving</a></li>
-          
-        </ul>
-      
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>The controlled-$S$ gate is a two-qubit diagonal gate, and the special case $\phi = \pi/2$ of the <a href="/gates/controlled-phase">controlled phase</a> gate.</p>
 <p>$$
 \mathrm{C}S =
@@ -403,11 +228,53 @@ Three $T$ gates is the minimum for an exact, ancilla-free circuit.</li>
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$&#92;Lambda(S)$</li><li>$&#92;sqrt{&#92;mathrm{C}Z}$</li><li>$&#92;mathrm{CP}(&#92;pi/2)$</li>
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Related</h3>
+          <ul class="aside-list">
+            
+              
+              <li>Controlled version of <a href="/gates/s/">Phase</a></li>
+            
+            
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Groups</h3>
+          <ul class="chip-list">
+            <li><a class="chip" href="/groups/diagonal/">diagonal</a></li><li><a class="chip" href="/groups/number-preserving/">number-preserving</a></li>
+          </ul>
+        </section>
+      
+
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cs.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
-<section class="weyl" aria-labelledby="weyl-heading">
-  <h3 id="weyl-heading">Weyl chamber</h3>
+<section class="weyl section" aria-labelledby="weyl-heading">
+  <div class="section-head">
+    <h2 class="section-title" id="weyl-heading">Weyl chamber</h2>
+    <p>Where this gate sits among all two-qubit gates, up to single-qubit rotations before and after.</p>
+  </div>
   <div class="weyl-panel">
     <div class="weyl-main">
       <div class="weyl-figure">
@@ -427,9 +294,9 @@ Three $T$ gates is the minimum for an exact, ancilla-free circuit.</li>
       <div class="weyl-readout" aria-live="polite">
         <p class="weyl-facts"><strong>Coordinates:</strong> <span class="weyl-coords"></span></p>
         <p class="weyl-status">
-          <span class="gate-badge weyl-badge" data-state="local" hidden>not entangling</span>
-          <span class="gate-badge weyl-badge" data-state="entangling" hidden>entangling</span>
-          <span class="gate-badge weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
+          <span class="chip weyl-badge" data-state="local" hidden>not entangling</span>
+          <span class="chip weyl-badge" data-state="entangling" hidden>entangling</span>
+          <span class="chip weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
           <span class="weyl-equiv" hidden></span>
         </p>
       </div>
@@ -447,12 +314,115 @@ Three $T$ gates is the minimum for an exact, ancilla-free circuit.</li>
 </section>
 
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cs.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CSGate"><code>qiskit.circuit.library.CSGate</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not available natively. Construct with qml.ctrl(qml.S(0), 1).">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td><a href="https://quantumai.google/reference/python/cirq/CZPowGate"><code>cirq.CZPowGate</code></a> <span class="sdk-note" data-note="No named constant. CS = cirq.CZ**0.5 (CZPowGate with exponent 0.5).">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Apply via the Controlled functor, Controlled S([control], target).">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Equal to CPHASE(pi/2, control, target), or use S(target).controlled(control).">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="No CS class; CPhaseShift(pi/2) or s(target, control=q)">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CSGate.html"><code>bqskit.ir.gates.CSGate</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Construct as qibo.gates.S(q1).controlled_by(q0) or qibo.gates.CU1(q0, q1, pi/2)">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CS"><code>pytket.circuit.OpType.CS</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not in stdgates.inc; write ctrl @ s q0, q1.">ⓘ</span></td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -541,7 +511,7 @@ Three $T$ gates is the minimum for an exact, ancilla-free circuit.</li>
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

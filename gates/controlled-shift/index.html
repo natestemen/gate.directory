@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,341 +25,178 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Controlled Shift (SUM)</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$&#92;mathrm{SUM}_d$</div>
-      </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $2$</span>
-        <span><strong>Dimension:</strong> $d$</span>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #556b2f">$&#92;mathrm{SUM}_d$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>qudits</span><span aria-hidden="true">·</span>
+        <span>2 qubits</span>
+        <span aria-hidden="true">·</span><span>dimension $d$</span>
         
       </p>
-      
-      
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Qudit-controlled shift that adds the control value to the target modulo $d$.</p>
-</p>
-        <br>
-
+      <h2 class="gate-title">Controlled Shift (SUM)</h2>
+      <div class="gate-lede"><p>Qudit-controlled shift that adds the control value to the target modulo $d$.</p>
+</div>
+      <div class="gate-actions">
         
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$&#92;mathrm{C}X_d$</li>
-            
-            <li>$&#92;mathrm{ADD}_d$</li>
-            
-            <li>$&#92;mathrm{SUM}_d$</li>
-            
-          </ul>
         
       </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-        <div class="gate-relations">
-          
-            
-            
-              <p><strong>Controlled version of:</strong> <a href="/gates/shift/">Shift</a></p>
-            
-          
-          
-        </div>
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not available natively. Define its $d^2&#92;times d^2$ unitary with `cirq.MatrixGate(..., qid_shape=(d, d))`.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-        <h3>Groups</h3>
-        <p>This gate is contained in the following groups:</p>
-        <ul>
-          
-          <li><a href="/groups/orthogonal">orthogonal</a></li>
-          
-          <li><a href="/groups/permutation">permutation</a></li>
-          
-        </ul>
-      
-      
-        <h3>Reference</h3>
-        <p class="gate-citation">
-          <a href="https://arxiv.org/abs/2608.18332">Generalizing Pauli Checks for Qudit-based Quantum Error Detection and Mitigation</a> (2026)
-        </p>
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>The controlled shift, commonly called the SUM or modular-addition gate, is the qudit generalization of <a href="/gates/cnot">CNOT</a>. With the control listed first, it adds the control value to the target modulo $d$:</p>
 <p>$$
 \begin{align*}
@@ -382,16 +220,163 @@ $\mathrm{CZ}_d = (I \otimes C_d)\,\mathrm{SUM}_d\,(I \otimes C_d^\dagger)$.</li>
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$&#92;mathrm{C}X_d$</li><li>$&#92;mathrm{ADD}_d$</li><li>$&#92;mathrm{SUM}_d$</li>
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Related</h3>
+          <ul class="aside-list">
+            
+              
+              <li>Controlled version of <a href="/gates/shift/">Shift</a></li>
+            
+            
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Groups</h3>
+          <ul class="chip-list">
+            <li><a class="chip" href="/groups/orthogonal/">orthogonal</a></li><li><a class="chip" href="/groups/permutation/">permutation</a></li>
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Reference</h3>
+          <p class="gate-citation"><a href="https://arxiv.org/abs/2608.18332">Generalizing Pauli Checks for Qudit-based Quantum Error Detection and Mitigation</a> (2026)</p>
+        </section>
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/controlled-shift.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/controlled-shift.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not available natively. Define its $d^2&#92;times d^2$ unitary with `cirq.MatrixGate(..., qid_shape=(d, d))`.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -480,7 +465,7 @@ $\mathrm{CZ}_d = (I \otimes C_d)\,\mathrm{SUM}_d\,(I \otimes C_d^\dagger)$.</li>
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

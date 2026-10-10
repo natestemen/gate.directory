@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,351 +25,181 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">Controlled-Y</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$&#92;mathrm{C}Y$</div>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #7a2f8f">$&#92;mathrm{C}Y$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>controlled</span><span aria-hidden="true">·</span>
+        <span>2 qubits</span>
+        
+        
+      </p>
+      <h2 class="gate-title">Controlled-Y</h2>
+      <div class="gate-lede"><p>Applies $Y$ to the target qubit when the control qubit is in the $|1\rangle$ state.</p>
+</div>
+      <div class="gate-actions">
+        
+          <a class="button" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%22%E2%80%A2%22%2C%22Y%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
+          
+        
+        <span class="chip">hermitian</span>
       </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $2$</span>
-        
-        
-      </p>
-      
-      
-      <p class="gate-actions">
-        <a class="quirk-link" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%22%E2%80%A2%22%2C%22Y%22%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
-        
-      </p>
-      
-      
-      <p class="gate-badges">
-        <span class="gate-badge">hermitian</span>
-      </p>
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Applies $Y$ to the target qubit when the control qubit is in the $|1\rangle$ state.</p>
-</p>
-        <br>
-
-        
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$&#92;Lambda(Y)$</li>
-            
-            <li>$&#92;text{controlled-}Y$</li>
-            
-          </ul>
-        
-      </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-        <div class="gate-relations">
-          
-            
-            
-              <p><strong>Controlled version of:</strong> <a href="/gates/pauli-y/">Pauli-Y</a></p>
-            
-          
-          
-        </div>
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td>
-                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CYGate"><code>qiskit.circuit.library.CYGate</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td>
-                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CY.html"><code>pennylane.CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td>
-                    <a href="https://quantumai.google/reference/python/cirq/CY"><code>cirq.CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td>
-                    <a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cy"><code>Std.Canon.CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: Y(target).controlled(control).">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td>
-                    <a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CY"><code>braket.circuits.gates.CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td>
-                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CYGate.html"><code>bqskit.ir.gates.CYGate</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td>
-                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CY"><code>qibo.gates.CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td>
-                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CY"><code>pytket.circuit.OpType.CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td>
-                    <a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CY"><code>CY</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td>
-                    <a href="https://openqasm.com/language/standard_library.html#cy"><code>stdgates.inc: cy</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-        <h3>Groups</h3>
-        <p>This gate is contained in the following groups:</p>
-        <ul>
-          
-          <li><a href="/groups/clifford">clifford</a></li>
-          
-        </ul>
-      
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>The controlled-$Y$ gate is a two-qubit entangling gate that conditionally applies $Y$ to the target.</p>
 <p>$$
 \mathrm{C}Y =
@@ -386,11 +217,53 @@ $$</p>
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$&#92;Lambda(Y)$</li><li>$&#92;text{controlled-}Y$</li>
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Related</h3>
+          <ul class="aside-list">
+            
+              
+              <li>Controlled version of <a href="/gates/pauli-y/">Pauli-Y</a></li>
+            
+            
+          </ul>
+        </section>
+      
+
+      
+        <section>
+          <h3 class="caption">Groups</h3>
+          <ul class="chip-list">
+            <li><a class="chip" href="/groups/clifford/">clifford</a></li>
+          </ul>
+        </section>
+      
+
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cy.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
-<section class="weyl" aria-labelledby="weyl-heading">
-  <h3 id="weyl-heading">Weyl chamber</h3>
+<section class="weyl section" aria-labelledby="weyl-heading">
+  <div class="section-head">
+    <h2 class="section-title" id="weyl-heading">Weyl chamber</h2>
+    <p>Where this gate sits among all two-qubit gates, up to single-qubit rotations before and after.</p>
+  </div>
   <div class="weyl-panel">
     <div class="weyl-main">
       <div class="weyl-figure">
@@ -410,9 +283,9 @@ $$</p>
       <div class="weyl-readout" aria-live="polite">
         <p class="weyl-facts"><strong>Coordinates:</strong> <span class="weyl-coords"></span></p>
         <p class="weyl-status">
-          <span class="gate-badge weyl-badge" data-state="local" hidden>not entangling</span>
-          <span class="gate-badge weyl-badge" data-state="entangling" hidden>entangling</span>
-          <span class="gate-badge weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
+          <span class="chip weyl-badge" data-state="local" hidden>not entangling</span>
+          <span class="chip weyl-badge" data-state="entangling" hidden>entangling</span>
+          <span class="chip weyl-badge weyl-badge-pe" data-state="perfect" hidden>perfect entangler</span>
           <span class="weyl-equiv" hidden></span>
         </p>
       </div>
@@ -430,12 +303,115 @@ $$</p>
 </section>
 
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/cy.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.CYGate"><code>qiskit.circuit.library.CYGate</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.CY.html"><code>pennylane.CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td><a href="https://quantumai.google/reference/python/cirq/CY"><code>cirq.CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td><a href="https://learn.microsoft.com/en-us/qsharp/api/qsharp-lang/std.canon/cy"><code>Std.Canon.CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not available natively. Use the CONTROLLED modifier: Y(target).controlled(control).">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td><a href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/_apidoc/braket.circuits.gates.html#braket.circuits.gates.CY"><code>braket.circuits.gates.CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.CYGate.html"><code>bqskit.ir.gates.CYGate</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.CY"><code>qibo.gates.CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.CY"><code>pytket.circuit.OpType.CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td><a href="https://github.com/quantumlib/Stim/blob/main/doc/gates.md#CY"><code>CY</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td><a href="https://openqasm.com/language/standard_library.html#cy"><code>stdgates.inc: cy</code></a></td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -524,7 +500,7 @@ $$</p>
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

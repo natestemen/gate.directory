@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,337 +25,181 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<div class="gate">
-  <h2 class="gate-title">U2</h2>
 
-  <div class="two-column">
-    <div class="column">
-      <div class="symbol-row">
-        <p>Symbol</p>
-        <div class="symbol-box">$U_2$</div>
-      </div>
-      <p class="gate-facts">
-        <span><strong>Qubits:</strong> $1$</span>
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<article class="gate">
+  <header class="gate-masthead">
+    <div class="symbol-card" style="--fam: #8a5a44">$U_2$</div>
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>misc &amp; legacy</span><span aria-hidden="true">·</span>
+        <span>1 qubit</span>
         
-        <span><strong>Parameters:</strong> $2$</span>
+        <span aria-hidden="true">·</span><span>2 parameters</span>
       </p>
-      
-      
-      <p class="gate-actions">
-        <a class="quirk-link" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%224%20pi%20t%22%7D%5D%2C%5B%7B%22id%22%3A%22Ryft%22%2C%22arg%22%3A%22pi%2F2%22%7D%5D%2C%5B%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
-        <span class="quirk-note">with $&#92;phi = 2&#92;pi t,&#92; &#92;lambda = 4&#92;pi t$</span>
-      </p>
-      
-      
-      <div class="gate-description">
-        <p><strong>Description:</strong></p>
-        <p><p>Legacy IBM gate performing a fixed $\pi/2$ rotation dressed by two $z$ rotations, $U_2(\phi, \lambda) = U_3(\pi/2, \phi, \lambda)$.</p>
-</p>
-        <br>
-
+      <h2 class="gate-title">U2</h2>
+      <div class="gate-lede"><p>Legacy IBM gate performing a fixed $\pi/2$ rotation dressed by two $z$ rotations, $U_2(\phi, \lambda) = U_3(\pi/2, \phi, \lambda)$.</p>
+</div>
+      <div class="gate-actions">
         
-          <p><strong>Alternate notations:</strong></p>
-          <ul>
-            
-            <li>$U_2(&#92;phi, &#92;lambda)$</li>
-            
-            <li>$&#92;mathrm{U2}(&#92;phi, &#92;lambda)$</li>
-            
-          </ul>
+          <a class="button" href="https://algassert.com/quirk#circuit=%7B%22cols%22%3A%5B%5B%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%224%20pi%20t%22%7D%5D%2C%5B%7B%22id%22%3A%22Ryft%22%2C%22arg%22%3A%22pi%2F2%22%7D%5D%2C%5B%7B%22id%22%3A%22Rzft%22%2C%22arg%22%3A%222%20pi%20t%22%7D%5D%5D%7D" target="_blank" rel="noopener">Open in Quirk ↗</a>
+          <span class="quirk-note">with $&#92;phi = 2&#92;pi t,&#92; &#92;lambda = 4&#92;pi t$</span>
+        
         
       </div>
-
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-
-      
-        <h3>SDK Support</h3>
-        <table class="sdk-table">
-          <thead>
-            <tr>
-              <th>SDK</th>
-              <th>Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              
-              <tr>
-                <td>Qiskit</td>
-                
-                  <td>
-                    <a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.U2Gate"><code>qiskit.circuit.library.U2Gate</code></a>
-                    
-                      <span class="sdk-note" data-note="Deprecated; use UGate(π/2, φ, λ) instead.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PennyLane</td>
-                
-                  <td>
-                    <a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.U2.html"><code>pennylane.U2</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Cirq</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not available natively. Decompose into rz/ry rotations.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Q#</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>PyQuil</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="Not available natively. Equal to U3 with theta=pi/2; see pyquil.simulation.matrices.U.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Braket</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                      <span class="sdk-note" data-note="No U2 class; U(pi/2, phi, lambda) reproduces it">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>BQSKit</td>
-                
-                  <td>
-                    <a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U2Gate.html"><code>bqskit.ir.gates.U2Gate</code></a>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Qibo</td>
-                
-                  <td>
-                    <a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U2"><code>qibo.gates.U2</code></a>
-                    
-                      <span class="sdk-note" data-note="Differs from OpenQASM u2 by a global phase">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>pytket</td>
-                
-                  <td>
-                    <a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U2"><code>pytket.circuit.OpType.U2</code></a>
-                    
-                      <span class="sdk-note" data-note="Angles in half-turns: U2(phi/pi, lambda/pi)">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>Stim</td>
-                
-                  <td class="sdk-unavailable">—
-                    
-                  </td>
-                
-              </tr>
-            
-              
-              <tr>
-                <td>OpenQASM</td>
-                
-                  <td>
-                    <a href="https://openqasm.com/language/standard_library.html#u2"><code>stdgates.inc: u2</code></a>
-                    
-                      <span class="sdk-note" data-note="Legacy OpenQASM 2 compatibility gate.">ⓘ</span>
-                    
-                  </td>
-                
-              </tr>
-            
-          </tbody>
-        </table>
-      
-      
-      
     </div>
+  </header>
 
-    <div class="column">
+  <div class="gate-body">
+    <div class="gate-main">
       <p>The $U_2$ gate is the two-parameter member of the legacy OpenQASM 2 family $u_1, u_2, u_3$: a rotation with the angle frozen at $\pi/2$, sandwiched between two independent $z$ rotations:</p>
 <p>$$
 \begin{align*}
@@ -402,16 +247,140 @@ $$</p>
 </ul>
 
     </div>
+
+    <aside class="gate-aside">
+      
+        <section>
+          <h3 class="caption">Also written</h3>
+          <ul class="notation-list">
+            <li>$U_2(&#92;phi, &#92;lambda)$</li><li>$&#92;mathrm{U2}(&#92;phi, &#92;lambda)$</li>
+          </ul>
+        </section>
+      
+
+      
+
+      
+
+      
+
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/u2.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
   </div>
 
   
 
-  <br/>
-
-  <a class="back-to-home" href="/">Back to home</a>
   
-  <p class="edit-on-github"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/u2.md" target="_blank">Edit this page on GitHub</a></p>
-</div>
+    <section class="section" id="sdk-support">
+      <div class="section-head">
+        <h2 class="section-title">SDK support</h2>
+        <p>How to call this gate in each framework. Hover a ⓘ for a note; the <a href="/sdks/">support matrix</a> compares every gate at once.</p>
+      </div>
+      <div class="sdk-table-wrap">
+        <table class="sdk-table">
+          <thead>
+            <tr><th>SDK</th><th>Name</th></tr>
+          </thead>
+          <tbody>
+            
+              
+              <tr>
+                <td>Qiskit</td>
+                
+                  <td><a href="https://docs.quantum.ibm.com/api/qiskit/qiskit.circuit.library.U2Gate"><code>qiskit.circuit.library.U2Gate</code></a> <span class="sdk-note" data-note="Deprecated; use UGate(π/2, φ, λ) instead.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PennyLane</td>
+                
+                  <td><a href="https://docs.pennylane.ai/en/stable/code/api/pennylane.U2.html"><code>pennylane.U2</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Cirq</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not available natively. Decompose into rz/ry rotations.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Q#</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>PyQuil</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="Not available natively. Equal to U3 with theta=pi/2; see pyquil.simulation.matrices.U.">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Braket</td>
+                
+                  <td class="sdk-unavailable">— <span class="sdk-note" data-note="No U2 class; U(pi/2, phi, lambda) reproduces it">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>BQSKit</td>
+                
+                  <td><a href="https://bqskit.readthedocs.io/en/latest/source/autogen/bqskit.ir.gates.U2Gate.html"><code>bqskit.ir.gates.U2Gate</code></a></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Qibo</td>
+                
+                  <td><a href="https://qibo.science/qibo/stable/api-reference/qibo.html#qibo.gates.U2"><code>qibo.gates.U2</code></a> <span class="sdk-note" data-note="Differs from OpenQASM u2 by a global phase">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>pytket</td>
+                
+                  <td><a href="https://docs.quantinuum.com/tket/api-docs/optype.html#pytket.circuit.OpType.U2"><code>pytket.circuit.OpType.U2</code></a> <span class="sdk-note" data-note="Angles in half-turns: U2(phi/pi, lambda/pi)">ⓘ</span></td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>Stim</td>
+                
+                  <td class="sdk-unavailable">—</td>
+                
+              </tr>
+            
+              
+              <tr>
+                <td>OpenQASM</td>
+                
+                  <td><a href="https://openqasm.com/language/standard_library.html#u2"><code>stdgates.inc: u2</code></a> <span class="sdk-note" data-note="Legacy OpenQASM 2 compatibility gate.">ⓘ</span></td>
+                
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+
+  <p class="gate-foot"><a href="/">← All gates</a></p>
+</article>
 
       </div>
       <footer>
@@ -500,7 +469,7 @@ $$</p>
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
+  <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,1860 +25,2359 @@
 <body>
   <main>
     <div class="content-container">
-      <header>
-          <h1 class="header-title"><a class="header-title" href="/">quantum gate directory</a></h1>
-        </header>
+      <header class="site-header">
+        <h1 class="header-title"><a href="/">quantum gate directory</a></h1>
+        <nav class="site-nav" aria-label="Site">
+          <a href="/#gates">Gates</a>
+          <a href="/#groups">Groups</a>
+          <a href="/sdks/">SDKs</a>
+          <a href="https://github.com/natestemen/gate.directory">GitHub</a>
+        </nav>
+      </header>
       <div class="not-footer">
         
         
-<p>
-  Quantum gates are the fundamental building block of quantum computation.
-  This website aims to provide information regarding quantum gates seen in literature, and in practice in building quantum computers.
-</p>
 
-<div class="gate-search">
-  <input type="search" id="gate-search-input" placeholder="Search gates by name, alias, or SDK name (e.g. CU1, XXPlusYY, fredkin)…" autocomplete="off" aria-label="Search gates" />
-  <ul id="gate-search-results" hidden></ul>
-</div>
 
-<br/>
 
-<h2>Periodic Table of Gates</h2>
 
-<div class="pt-table">
-  <div class="pt-headrow">
-    
-      <div class="pt-colhead">X</div>
-    
-      <div class="pt-colhead">Y</div>
-    
-      <div class="pt-colhead">Z</div>
-    
-      <div class="pt-colhead"></div>
-    
-      <div class="pt-colhead"></div>
-    
-      <div class="pt-colhead"></div>
-    
-      <div class="pt-colhead"></div>
-    
-      <div class="pt-colhead"></div>
-    
+<section class="home-hero">
+  <h2 class="home-title">A field guide to quantum gates.</h2>
+  <p class="home-lede">
+    Definitions, matrices, properties and SDK names for the gates of quantum computing,
+    from the Paulis to hardware natives.
+  </p>
+  <div class="gate-search">
+    <input type="search" id="gate-search-input" placeholder="Search by name, alias or SDK name — CU1, XXPlusYY, fredkin…" autocomplete="off" aria-label="Search gates" />
+    <ul id="gate-search-results" hidden></ul>
   </div>
+  <p class="home-stats">
+    <a href="#gates">66 gates</a>
+    <span aria-hidden="true">·</span>
+    <a href="#groups">8 groups</a>
+    <span aria-hidden="true">·</span>
+    <a href="/sdks/">11 SDKs</a>
+  </p>
+</section>
 
-  
-  <div class="pt-wrap" id="pt-main">
-    <svg class="pt-outlines" aria-hidden="true"></svg>
-    <div class="pt-grid2">
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="0" data-fams="paulis"
-         href="/gates/pauli-x/"
-         
-           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$X$</div>
-        <div class="pt-name">Pauli-X</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="1" data-fams="paulis"
-         href="/gates/pauli-y/"
-         
-           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$Y$</div>
-        <div class="pt-name">Pauli-Y</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="2" data-fams="paulis"
-         href="/gates/pauli-z/"
-         
-           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$Z$</div>
-        <div class="pt-name">Pauli-Z</div>
-      </a>
-    
-  
-
-        
-          
-  
-    <div class="pt-empty"></div>
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="4" data-fams="paulis"
-         href="/gates/identity/"
-         
-           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        
-        <div class="pt-symbol">$I$</div>
-        <div class="pt-name">Identity</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="5" data-fams="paulis"
-         href="/gates/hadamard/"
-         
-           style="background: color-mix(in srgb, #2f5fd0 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$H$</div>
-        <div class="pt-name">Hadamard</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="0" data-fams="roots"
-         href="/gates/sx/"
-         
-           style="background: color-mix(in srgb, #1a8ec2 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$\sqrt{X}$</div>
-        <div class="pt-name">Square Root of X</div>
-      </a>
-    
-  
-
-        
-          
-  
-    <a class="pt-cell pt-ghost" data-row="1" data-col="1" data-fams="roots"
-       href="https://github.com/natestemen/gate.directory/issues/new"
-       title="Predicted by the table, but undocumented — open an issue!">
-      <div class="pt-symbol">$&#92;sqrt{Y}$</div>
-      <div class="pt-name">unclaimed</div>
-    </a>
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="2" data-fams="roots"
-         href="/gates/s/"
-         
-           style="background: color-mix(in srgb, #1a8ec2 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$S$</div>
-        <div class="pt-name">Phase</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="3" data-fams="roots"
-         href="/gates/t/"
-         
-           style="background: color-mix(in srgb, #1a8ec2 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$T$</div>
-        <div class="pt-name">T</div>
-      </a>
-    
-  
-
-        
-          
-  
-    <div class="pt-empty"></div>
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="5" data-fams="misc"
-         href="/gates/toff-decomp/"
-         
-           style="background: color-mix(in srgb, #8a5a44 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$G$</div>
-        <div class="pt-name">unnamed</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="6" data-fams="misc"
-         href="/gates/u2/"
-         
-           style="background: color-mix(in srgb, #8a5a44 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">2</span>
-        <div class="pt-symbol">$U_2$</div>
-        <div class="pt-name">U2</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="0" data-fams="rotations"
-         href="/gates/rx/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_x$</div>
-        <div class="pt-name">x Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="1" data-fams="rotations"
-         href="/gates/ry/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_y$</div>
-        <div class="pt-name">y Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="2" data-fams="rotations"
-         href="/gates/rz/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_z$</div>
-        <div class="pt-name">z Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="3" data-fams="rotations"
-         href="/gates/phase/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$P$</div>
-        <div class="pt-name">Phase Shift</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="4" data-fams="rotations"
-         href="/gates/r/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">2</span>
-        <div class="pt-symbol">$R(\theta, \phi)$</div>
-        <div class="pt-name">Phased Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="5" data-fams="rotations"
-         href="/gates/rot/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">3</span>
-        <div class="pt-symbol">$R_{\mathbf{n}}$</div>
-        <div class="pt-name">Arbitrary Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="2" data-col="6" data-fams="rotations"
-         href="/gates/u3/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">3</span>
-        <div class="pt-symbol">$U_3$</div>
-        <div class="pt-name">U3</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="3" data-col="0" data-fams="rotations"
-         href="/gates/rxx/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_{xx}$</div>
-        <div class="pt-name">xx Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="3" data-col="1" data-fams="rotations"
-         href="/gates/ryy/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_{yy}$</div>
-        <div class="pt-name">yy Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="3" data-col="2" data-fams="rotations"
-         href="/gates/rzz/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_{zz}$</div>
-        <div class="pt-name">zz Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="3" data-col="3" data-fams="rotations"
-         href="/gates/rzx/"
-         
-           style="background: color-mix(in srgb, #0b7a5a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_{zx}$</div>
-        <div class="pt-name">zx Rotation</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="4" data-col="0" data-fams="rotations controlled"
-         href="/gates/crx/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #0b7a5a 25%, white), color-mix(in srgb, #7a2f8f 25%, white));"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{C}R_x$</div>
-        <div class="pt-name">Controlled x Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="4" data-col="1" data-fams="rotations controlled"
-         href="/gates/cry/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #0b7a5a 25%, white), color-mix(in srgb, #7a2f8f 25%, white));"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{C}R_y$</div>
-        <div class="pt-name">Controlled y Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="4" data-col="2" data-fams="rotations controlled"
-         href="/gates/crz/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #0b7a5a 25%, white), color-mix(in srgb, #7a2f8f 25%, white));"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{C}R_z$</div>
-        <div class="pt-name">Controlled z Rotation</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="0" data-fams="controlled"
-         href="/gates/cnot/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}X$</div>
-        <div class="pt-name">Controlled Not</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="1" data-fams="controlled"
-         href="/gates/cy/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}Y$</div>
-        <div class="pt-name">Controlled-Y</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="2" data-fams="controlled"
-         href="/gates/cz/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}Z$</div>
-        <div class="pt-name">Controlled-Z</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="3" data-fams="controlled"
-         href="/gates/controlled-phase/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{C}P$</div>
-        <div class="pt-name">Controlled Phase</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="4" data-fams="controlled"
-         href="/gates/ch/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}H$</div>
-        <div class="pt-name">Controlled-Hadamard</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="5" data-fams="controlled"
-         href="/gates/cs/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}S$</div>
-        <div class="pt-name">Controlled-S</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="5" data-col="6" data-fams="controlled"
-         href="/gates/csx/"
-         
-           style="background: color-mix(in srgb, #7a2f8f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}\sqrt{X}$</div>
-        <div class="pt-name">Controlled sqrt(X)</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="6" data-col="0" data-fams="controlled multi"
-         href="/gates/toffoli/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
-         >
-        <span class="pt-arity">3</span>
-        
-        <div class="pt-symbol">$\mathrm{CC}X$</div>
-        <div class="pt-name">Toffoli</div>
-      </a>
-    
-  
-
-        
-          
-  
-    <div class="pt-empty"></div>
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="6" data-col="2" data-fams="controlled multi"
-         href="/gates/ccz/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
-         >
-        <span class="pt-arity">3</span>
-        
-        <div class="pt-symbol">$\mathrm{CC}Z$</div>
-        <div class="pt-name">Controlled-CZ</div>
-      </a>
-    
-  
-
-        
-          
-  
-    <div class="pt-empty"></div>
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="6" data-col="4" data-fams="controlled multi swap"
-         href="/gates/cswap/"
-         
-           
-           
-             
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white), color-mix(in srgb, #b3315f 25%, white));"
-         >
-        <span class="pt-arity">3</span>
-        
-        <div class="pt-symbol">$\mathrm{CSWAP}$</div>
-        <div class="pt-name">Fredkin</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="6" data-col="5" data-fams="controlled multi"
-         href="/gates/mcx/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
-         >
-        <span class="pt-arity">n+1</span>
-        
-        <div class="pt-symbol">$\mathrm{C}^nX$</div>
-        <div class="pt-name">Multi-Controlled X</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="6" data-col="6" data-fams="controlled multi"
-         href="/gates/deutsch/"
-         
-           
-           
-             
-           
-             
-           
-           style="background: linear-gradient(135deg, color-mix(in srgb, #7a2f8f 25%, white), color-mix(in srgb, #8f2f2f 25%, white));"
-         >
-        <span class="pt-arity">3</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$D(\theta)$</div>
-        <div class="pt-name">Deutsch</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="6" data-col="7" data-fams="multi"
-         href="/gates/rccx/"
-         
-           style="background: color-mix(in srgb, #8f2f2f 24%, white);"
-         >
-        <span class="pt-arity">3</span>
-        
-        <div class="pt-symbol">$\mathrm{RCC}X$</div>
-        <div class="pt-name">Margolus</div>
-      </a>
-    
-  
-
-        
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="7" data-col="0" data-fams="swap"
-         href="/gates/swap/"
-         
-           style="background: color-mix(in srgb, #b3315f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{SWAP}$</div>
-        <div class="pt-name">SWAP</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="7" data-col="1" data-fams="swap"
-         href="/gates/iswap/"
-         
-           style="background: color-mix(in srgb, #b3315f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$i\mathrm{SWAP}$</div>
-        <div class="pt-name">iSWAP</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="7" data-col="2" data-fams="swap"
-         href="/gates/sqrt-swap/"
-         
-           style="background: color-mix(in srgb, #b3315f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\sqrt{\mathrm{SWAP}}$</div>
-        <div class="pt-name">Square Root SWAP</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="7" data-col="3" data-fams="swap"
-         href="/gates/sqrt-iswap/"
-         
-           style="background: color-mix(in srgb, #b3315f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\sqrt{i\mathrm{SWAP}}$</div>
-        <div class="pt-name">Square Root iSWAP</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="7" data-col="4" data-fams="swap"
-         href="/gates/fswap/"
-         
-           style="background: color-mix(in srgb, #b3315f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{fSWAP}$</div>
-        <div class="pt-name">fSWAP</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="7" data-col="5" data-fams="swap"
-         href="/gates/dcx/"
-         
-           style="background: color-mix(in srgb, #b3315f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{DC}X$</div>
-        <div class="pt-name">Double CX</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="8" data-col="0" data-fams="natives"
-         href="/gates/gpi/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{GPi}$</div>
-        <div class="pt-name">GPi</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="8" data-col="1" data-fams="natives"
-         href="/gates/gpi2/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{GPi2}$</div>
-        <div class="pt-name">GPi2</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="9" data-col="0" data-fams="natives"
-         href="/gates/molmer-sorenson/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        <span class="pt-params">n(n-1)/2</span>
-        <div class="pt-symbol">$MS$</div>
-        <div class="pt-name">Mølmer-Sørensen</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="9" data-col="1" data-fams="natives"
-         href="/gates/ecr/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$ECR$</div>
-        <div class="pt-name">Echoed Cross-Resonance</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="9" data-col="2" data-fams="natives"
-         href="/gates/sycamore/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{SYC}$</div>
-        <div class="pt-name">Sycamore</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="9" data-col="3" data-fams="natives"
-         href="/gates/xy/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{XY}$</div>
-        <div class="pt-name">XY Interaction</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="9" data-col="4" data-fams="natives"
-         href="/gates/fsim/"
-         
-           style="background: color-mix(in srgb, #c2571a 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">2</span>
-        <div class="pt-symbol">$\mathrm{FSim}$</div>
-        <div class="pt-name">Fermionic Simulator</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="10" data-col="0" data-fams="interactions"
-         href="/gates/can/"
-         
-           style="background: color-mix(in srgb, #8a6d00 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">3</span>
-        <div class="pt-symbol">$\mathrm{CAN}$</div>
-        <div class="pt-name">Canonical entangling</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="10" data-col="1" data-fams="interactions"
-         href="/gates/b/"
-         
-           style="background: color-mix(in srgb, #8a6d00 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$B$</div>
-        <div class="pt-name">B Gate</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="10" data-col="2" data-fams="interactions"
-         href="/gates/magic/"
-         
-           style="background: color-mix(in srgb, #8a6d00 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$M$</div>
-        <div class="pt-name">Magic</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="10" data-col="3" data-fams="interactions"
-         href="/gates/givens/"
-         
-           style="background: color-mix(in srgb, #8a6d00 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$G_{ij}$</div>
-        <div class="pt-name">Givens Rotation</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="10" data-col="4" data-fams="interactions"
-         href="/gates/xx-minus-yy/"
-         
-           style="background: color-mix(in srgb, #8a6d00 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$R_{xx-yy}$</div>
-        <div class="pt-name">XX−YY Interaction</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
+<section class="section" id="gates">
+  <div class="section-head">
+    <h2 class="section-title">Gates by family</h2>
+    <p>Grouped by family. Within a row, the first three columns are the $X$, $Y$ and $Z$ flavours of a gate. The small number in each card is the qubit count, and the one on the right is the number of parameters.</p>
+  </div>
+  <div class="family-table">
+    <div class="family-colheads" aria-hidden="true">
+      <span>X</span><span>Y</span><span>Z</span>
     </div>
+    
+  
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+  
+    <section class="family-band" style="--fam: #2f5fd0">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #2f5fd0">Paulis &amp; basics</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/pauli-x/" style="--fam: #2f5fd0">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$X$</span>
+        <span class="gate-card-name">Pauli-X</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/pauli-y/" style="--fam: #2f5fd0">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$Y$</span>
+        <span class="gate-card-name">Pauli-Y</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/pauli-z/" style="--fam: #2f5fd0">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$Z$</span>
+        <span class="gate-card-name">Pauli-Z</span>
+      </a>
+    
+  
+
+  
+    <div class="gate-card-empty"></div>
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/identity/" style="--fam: #2f5fd0">
+        <span class="gate-card-arity" title="qubits">n</span>
+        
+        <span class="gate-card-symbol">$I$</span>
+        <span class="gate-card-name">Identity</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/hadamard/" style="--fam: #2f5fd0">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$H$</span>
+        <span class="gate-card-name">Hadamard</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #1a8ec2">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #1a8ec2">roots</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/sx/" style="--fam: #1a8ec2">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$\sqrt{X}$</span>
+        <span class="gate-card-name">Square Root of X</span>
+      </a>
+    
+  
+
+  
+    <a class="gate-card gate-card-ghost" href="https://github.com/natestemen/gate.directory/issues/new"
+       title="Predicted by the table but undocumented — open an issue">
+      <span class="gate-card-symbol">$&#92;sqrt{Y}$</span>
+      <span class="gate-card-name">unclaimed</span>
+    </a>
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/s/" style="--fam: #1a8ec2">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$S$</span>
+        <span class="gate-card-name">Phase</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/t/" style="--fam: #1a8ec2">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$T$</span>
+        <span class="gate-card-name">T</span>
+      </a>
+    
+  
+
+  
+    <div class="gate-card-empty"></div>
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/toff-decomp/" style="--fam: #8a5a44">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$G$</span>
+        <span class="gate-card-name">unnamed</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/u2/" style="--fam: #8a5a44">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">2</span>
+        <span class="gate-card-symbol">$U_2$</span>
+        <span class="gate-card-name">U2</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #0b7a5a">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #0b7a5a">rotations</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rx/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_x$</span>
+        <span class="gate-card-name">x Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/ry/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_y$</span>
+        <span class="gate-card-name">y Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rz/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_z$</span>
+        <span class="gate-card-name">z Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/phase/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$P$</span>
+        <span class="gate-card-name">Phase Shift</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/r/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">2</span>
+        <span class="gate-card-symbol">$R(\theta, \phi)$</span>
+        <span class="gate-card-name">Phased Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rot/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">3</span>
+        <span class="gate-card-symbol">$R_{\mathbf{n}}$</span>
+        <span class="gate-card-name">Arbitrary Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/u3/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">3</span>
+        <span class="gate-card-symbol">$U_3$</span>
+        <span class="gate-card-name">U3</span>
+      </a>
+    
+  
+
+        </div>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rxx/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_{xx}$</span>
+        <span class="gate-card-name">xx Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/ryy/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_{yy}$</span>
+        <span class="gate-card-name">yy Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rzz/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_{zz}$</span>
+        <span class="gate-card-name">zz Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rzx/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_{zx}$</span>
+        <span class="gate-card-name">zx Rotation</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #0b7a5a">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #0b7a5a">rotations</span><span class="family-caption-item" style="--fam: #7a2f8f">controlled</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/crx/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{C}R_x$</span>
+        <span class="gate-card-name">Controlled x Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/cry/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{C}R_y$</span>
+        <span class="gate-card-name">Controlled y Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/crz/" style="--fam: #0b7a5a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{C}R_z$</span>
+        <span class="gate-card-name">Controlled z Rotation</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #7a2f8f">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #7a2f8f">controlled</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/cnot/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}X$</span>
+        <span class="gate-card-name">Controlled Not</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/cy/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}Y$</span>
+        <span class="gate-card-name">Controlled-Y</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/cz/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}Z$</span>
+        <span class="gate-card-name">Controlled-Z</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/controlled-phase/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{C}P$</span>
+        <span class="gate-card-name">Controlled Phase</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/ch/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}H$</span>
+        <span class="gate-card-name">Controlled-Hadamard</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/cs/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}S$</span>
+        <span class="gate-card-name">Controlled-S</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/csx/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}\sqrt{X}$</span>
+        <span class="gate-card-name">Controlled sqrt(X)</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #7a2f8f">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #7a2f8f">controlled</span><span class="family-caption-item" style="--fam: #8f2f2f">multi-qubit</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/toffoli/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">3</span>
+        
+        <span class="gate-card-symbol">$\mathrm{CC}X$</span>
+        <span class="gate-card-name">Toffoli</span>
+      </a>
+    
+  
+
+  
+    <div class="gate-card-empty"></div>
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/ccz/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">3</span>
+        
+        <span class="gate-card-symbol">$\mathrm{CC}Z$</span>
+        <span class="gate-card-name">Controlled-CZ</span>
+      </a>
+    
+  
+
+  
+    <div class="gate-card-empty"></div>
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/cswap/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">3</span>
+        
+        <span class="gate-card-symbol">$\mathrm{CSWAP}$</span>
+        <span class="gate-card-name">Fredkin</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/mcx/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">n+1</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}^nX$</span>
+        <span class="gate-card-name">Multi-Controlled X</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/deutsch/" style="--fam: #7a2f8f">
+        <span class="gate-card-arity" title="qubits">3</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$D(\theta)$</span>
+        <span class="gate-card-name">Deutsch</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/rccx/" style="--fam: #8f2f2f">
+        <span class="gate-card-arity" title="qubits">3</span>
+        
+        <span class="gate-card-symbol">$\mathrm{RCC}X$</span>
+        <span class="gate-card-name">Margolus</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #b3315f">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #b3315f">swap family</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/swap/" style="--fam: #b3315f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{SWAP}$</span>
+        <span class="gate-card-name">SWAP</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/iswap/" style="--fam: #b3315f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$i\mathrm{SWAP}$</span>
+        <span class="gate-card-name">iSWAP</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/sqrt-swap/" style="--fam: #b3315f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\sqrt{\mathrm{SWAP}}$</span>
+        <span class="gate-card-name">Square Root SWAP</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/sqrt-iswap/" style="--fam: #b3315f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\sqrt{i\mathrm{SWAP}}$</span>
+        <span class="gate-card-name">Square Root iSWAP</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/fswap/" style="--fam: #b3315f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{fSWAP}$</span>
+        <span class="gate-card-name">fSWAP</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/dcx/" style="--fam: #b3315f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{DC}X$</span>
+        <span class="gate-card-name">Double CX</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #c2571a">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #c2571a">hardware natives</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/gpi/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{GPi}$</span>
+        <span class="gate-card-name">GPi</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/gpi2/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">1</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{GPi2}$</span>
+        <span class="gate-card-name">GPi2</span>
+      </a>
+    
+  
+
+        </div>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/molmer-sorenson/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">n</span>
+        <span class="gate-card-params" title="parameters">n(n-1)/2</span>
+        <span class="gate-card-symbol">$MS$</span>
+        <span class="gate-card-name">Mølmer-Sørensen</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/ecr/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$ECR$</span>
+        <span class="gate-card-name">Echoed Cross-Resonance</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/sycamore/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{SYC}$</span>
+        <span class="gate-card-name">Sycamore</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/xy/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{XY}$</span>
+        <span class="gate-card-name">XY Interaction</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/fsim/" style="--fam: #c2571a">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">2</span>
+        <span class="gate-card-symbol">$\mathrm{FSim}$</span>
+        <span class="gate-card-name">Fermionic Simulator</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #8a6d00">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #8a6d00">interactions</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/can/" style="--fam: #8a6d00">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">3</span>
+        <span class="gate-card-symbol">$\mathrm{CAN}$</span>
+        <span class="gate-card-name">Canonical entangling</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/b/" style="--fam: #8a6d00">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$B$</span>
+        <span class="gate-card-name">B Gate</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/magic/" style="--fam: #8a6d00">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$M$</span>
+        <span class="gate-card-name">Magic</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/givens/" style="--fam: #8a6d00">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$G_{ij}$</span>
+        <span class="gate-card-name">Givens Rotation</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/xx-minus-yy/" style="--fam: #8a6d00">
+        <span class="gate-card-arity" title="qubits">2</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$R_{xx-yy}$</span>
+        <span class="gate-card-name">XX−YY Interaction</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+
+    <div class="family-divider" role="separator"></div>
+    
+  
+  
+    
+    
+      
+    
+  
+    
+    
+      
+    
+  
+  
+    <section class="family-band" style="--fam: #556b2f">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #556b2f">qudits</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/shift/" style="--fam: #556b2f">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$X_d$</span>
+        <span class="gate-card-name">Shift</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/clock/" style="--fam: #556b2f">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$Z_d$</span>
+        <span class="gate-card-name">Clock</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/chrestenson/" style="--fam: #556b2f">
+        <span class="gate-card-arity" title="qubits">1</span>
+        
+        <span class="gate-card-symbol">$C_d$</span>
+        <span class="gate-card-name">Chrestenson</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/controlled-shift/" style="--fam: #556b2f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{SUM}_d$</span>
+        <span class="gate-card-name">Controlled Shift (SUM)</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/controlled-clock/" style="--fam: #556b2f">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$\mathrm{C}Z_d$</span>
+        <span class="gate-card-name">Controlled Clock</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+    <section class="family-band" style="--fam: #666666">
+      <h3 class="family-caption">
+        <span class="family-caption-item" style="--fam: #666666">circuit-level</span>
+      </h3>
+      
+        <div class="family-grid">
+          
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/global-phase/" style="--fam: #666666">
+        <span class="gate-card-arity" title="qubits">n</span>
+        <span class="gate-card-params" title="parameters">1</span>
+        <span class="gate-card-symbol">$\mathrm{Ph}$</span>
+        <span class="gate-card-name">Global Phase</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/qft/" style="--fam: #666666">
+        <span class="gate-card-arity" title="qubits">n</span>
+        
+        <span class="gate-card-symbol">$\mathrm{QFT}_n$</span>
+        <span class="gate-card-name">Quantum Fourier Transform</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/oracle/" style="--fam: #666666">
+        <span class="gate-card-arity" title="qubits">n</span>
+        
+        <span class="gate-card-symbol">$O_f$</span>
+        <span class="gate-card-name">Oracle</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/phase-oracle/" style="--fam: #666666">
+        <span class="gate-card-arity" title="qubits">n</span>
+        
+        <span class="gate-card-symbol">$O_f^\pm$</span>
+        <span class="gate-card-name">Phase Oracle</span>
+      </a>
+    
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/grover-diffuser/" style="--fam: #666666">
+        <span class="gate-card-arity" title="qubits">n</span>
+        
+        <span class="gate-card-symbol">$U_s$</span>
+        <span class="gate-card-name">Grover Diffuser</span>
+      </a>
+    
+  
+
+  
+    <div class="gate-card-empty"></div>
+  
+
+  
+    <div class="gate-card-empty"></div>
+  
+
+  
+    
+    
+    
+    
+      <a class="gate-card" href="/gates/virtual-distillation/" style="--fam: #666666">
+        <span class="gate-card-arity" title="qubits">2</span>
+        
+        <span class="gate-card-symbol">$B^{(2)}_i$</span>
+        <span class="gate-card-name">Virtual Distillation</span>
+      </a>
+    
+  
+
+        </div>
+      
+    </section>
+  
+
+  </div>
+</section>
+
+<section class="section" id="groups">
+  <div class="section-head">
+    <h2 class="section-title">Groups</h2>
+    <p>Subgroups of the unitary group $\mathsf{U}(n)$ worth knowing by name. The map shows how they nest and overlap, with one example gate per region. Click a region or a chip to read about the group.</p>
   </div>
 
-
-  <div class="pt-pullout">
-    
-  <div class="pt-wrap" id="pt-pullout-grid">
-    <svg class="pt-outlines" aria-hidden="true"></svg>
-    <div class="pt-grid2">
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="0" data-fams="qudits"
-         href="/gates/shift/"
-         
-           style="background: color-mix(in srgb, #556b2f 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$X_d$</div>
-        <div class="pt-name">Shift</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="1" data-fams="qudits"
-         href="/gates/clock/"
-         
-           style="background: color-mix(in srgb, #556b2f 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$Z_d$</div>
-        <div class="pt-name">Clock</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="2" data-fams="qudits"
-         href="/gates/chrestenson/"
-         
-           style="background: color-mix(in srgb, #556b2f 24%, white);"
-         >
-        <span class="pt-arity">1</span>
-        
-        <div class="pt-symbol">$C_d$</div>
-        <div class="pt-name">Chrestenson</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="3" data-fams="qudits"
-         href="/gates/controlled-shift/"
-         
-           style="background: color-mix(in srgb, #556b2f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{SUM}_d$</div>
-        <div class="pt-name">Controlled Shift (SUM)</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="0" data-col="4" data-fams="qudits"
-         href="/gates/controlled-clock/"
-         
-           style="background: color-mix(in srgb, #556b2f 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$\mathrm{C}Z_d$</div>
-        <div class="pt-name">Controlled Clock</div>
-      </a>
-    
-  
-
-        
-        
-          <div class="pt-empty"></div><div class="pt-empty"></div><div class="pt-empty"></div>
-        
-      
-        
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="0" data-fams="circuit"
-         href="/gates/global-phase/"
-         
-           style="background: color-mix(in srgb, #666666 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        <span class="pt-params">1</span>
-        <div class="pt-symbol">$\mathrm{Ph}$</div>
-        <div class="pt-name">Global Phase</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="1" data-fams="circuit"
-         href="/gates/qft/"
-         
-           style="background: color-mix(in srgb, #666666 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        
-        <div class="pt-symbol">$\mathrm{QFT}_n$</div>
-        <div class="pt-name">Quantum Fourier Transform</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="2" data-fams="circuit"
-         href="/gates/oracle/"
-         
-           style="background: color-mix(in srgb, #666666 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        
-        <div class="pt-symbol">$O_f$</div>
-        <div class="pt-name">Oracle</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="3" data-fams="circuit"
-         href="/gates/phase-oracle/"
-         
-           style="background: color-mix(in srgb, #666666 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        
-        <div class="pt-symbol">$O_f^\pm$</div>
-        <div class="pt-name">Phase Oracle</div>
-      </a>
-    
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="4" data-fams="circuit"
-         href="/gates/grover-diffuser/"
-         
-           style="background: color-mix(in srgb, #666666 24%, white);"
-         >
-        <span class="pt-arity">n</span>
-        
-        <div class="pt-symbol">$U_s$</div>
-        <div class="pt-name">Grover Diffuser</div>
-      </a>
-    
-  
-
-        
-          
-  
-    <div class="pt-empty"></div>
-  
-
-        
-          
-  
-    <div class="pt-empty"></div>
-  
-
-        
-          
-  
-    
-      
-      
-    
-    
-    
-      
-      <a class="pt-cell" data-row="1" data-col="7" data-fams="circuit"
-         href="/gates/virtual-distillation/"
-         
-           style="background: color-mix(in srgb, #666666 24%, white);"
-         >
-        <span class="pt-arity">2</span>
-        
-        <div class="pt-symbol">$B^{(2)}_i$</div>
-        <div class="pt-name">Virtual Distillation</div>
-      </a>
-    
-  
-
-        
-        
-      
-    </div>
-  </div>
-
-  </div>
-</div>
-
-<br/>
-
-<h2>Groups</h2>
-<p>
-  Subgroups of the unitary group $\mathsf{U}(n)$ that are of particular importance.
-  Every gate lives inside the unitary group; click a region to read about that subgroup.
-</p>
-
-<div class="group-venn-wrap">
-  <svg class="group-venn" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
-    <a href="/groups/unitary/">
-      <rect class="venn-shape" x="8" y="8" width="744" height="424" rx="14" fill="#666666" stroke="#666666"/>
-      <text x="740" y="30" text-anchor="end" fill="#666666">unitary</text>
-    </a>
-    <a href="/groups/clifford/">
-      <rect class="venn-shape" x="40" y="40" width="430" height="260" rx="10" fill="#c2571a" stroke="#c2571a"/>
-      <text x="52" y="62" text-anchor="start" fill="#c2571a">clifford</text>
-    </a>
-    <a href="/groups/orthogonal/">
-      <rect class="venn-shape" x="120" y="150" width="480" height="250" rx="10" fill="#1a8ec2" stroke="#1a8ec2"/>
-      <text x="590" y="393" text-anchor="end" fill="#1a8ec2">orthogonal</text>
-    </a>
-    <a href="/groups/number-preserving/">
-      <rect class="venn-shape" x="300" y="70" width="420" height="290" rx="10" fill="#8a6d00" stroke="#8a6d00"/>
-      <text x="570" y="350" text-anchor="end" fill="#8a6d00">number-preserving</text>
-    </a>
-    <a href="/groups/diagonal/">
-      <rect class="venn-shape" x="310" y="105" width="250" height="141" rx="8" fill="#0b7a5a" stroke="#0b7a5a"/>
-      <text x="548" y="118" text-anchor="end" fill="#0b7a5a">diagonal</text>
-    </a>
-    <a href="/groups/pauli/">
-      <rect class="venn-shape" x="70" y="76" width="260" height="154" rx="8" fill="#2f5fd0" stroke="#2f5fd0"/>
-      <text x="78" y="92" text-anchor="start" fill="#2f5fd0">Pauli</text>
-    </a>
-    <a href="/groups/permutation/">
-      <rect class="venn-shape" x="150" y="210" width="190" height="170" rx="8" fill="#7a2f8f" stroke="#7a2f8f"/>
-      <text x="158" y="370" text-anchor="start" fill="#7a2f8f">permutation</text>
-    </a>
+  <svg class="group-map" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
+    <a href="/groups/unitary/"><rect class="group-shape" x="8" y="8" width="744" height="424" rx="14"/><text x="740" y="30" text-anchor="end">unitary</text></a>
+    <a href="/groups/clifford/"><rect class="group-shape" x="40" y="40" width="430" height="260" rx="10"/><text x="52" y="62">clifford</text></a>
+    <a href="/groups/orthogonal/"><rect class="group-shape" x="120" y="150" width="480" height="250" rx="10"/><text x="590" y="393" text-anchor="end">orthogonal</text></a>
+    <a href="/groups/number-preserving/"><rect class="group-shape" x="300" y="70" width="420" height="290" rx="10"/><text x="570" y="350" text-anchor="end">number-preserving</text></a>
+    <a href="/groups/diagonal/"><rect class="group-shape" x="310" y="105" width="250" height="141" rx="8"/><text x="548" y="118" text-anchor="end">diagonal</text></a>
+    <a href="/groups/pauli/"><rect class="group-shape" x="70" y="76" width="260" height="154" rx="8"/><text x="78" y="92">pauli</text></a>
+    <a href="/groups/permutation/"><rect class="group-shape" x="150" y="210" width="190" height="170" rx="8"/><text x="158" y="370">permutation</text></a>
     <a href="/groups/matchgate/">
-      <path class="venn-shape"
-        d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z"
-        fill="#b3315f" stroke="#b3315f" stroke-linejoin="round"/>
-      <text x="640" y="175" text-anchor="middle" fill="#b3315f" transform="rotate(-90 640 175)">matchgate</text>
+      <path class="group-shape" d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z" stroke-linejoin="round"/>
+      <text x="640" y="175" text-anchor="middle" transform="rotate(-90 640 175)">matchgate</text>
     </a>
-
-    <g class="venn-gates" aria-hidden="true">
-      <text x="180" y="118">Y</text>
-      <text x="222" y="224">X</text>
-      <text x="317" y="186">Z</text>
-      <text x="317" y="223">I</text>
-      <text x="400" y="58">H</text>
-      <text x="222" y="280">CNOT</text>
-      <text x="320" y="280" text-anchor="middle">SWAP</text>
-      <text x="222" y="342">Toffoli</text>
-      <text x="320" y="338" text-anchor="middle">CSWAP</text>
-      <text x="400" y="128">S</text>
-      <text x="510" y="140">T</text>
-      <text x="404" y="200">CZ</text>
-      <text x="512" y="200">CCZ</text>
-      <text x="400" y="90">iSWAP</text>
-      <text x="548" y="90">XY</text>
-      <text x="447" y="277" text-anchor="middle">fSWAP</text>
-      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text>
-      <text x="134" y="330" text-anchor="middle">Ry</text>
-      <text x="682" y="200">FSim</text>
-      <text x="62" y="412">Rx</text>
-      <text x="624" y="374">Rxx</text>
+    <g class="group-map-examples" aria-hidden="true">
+      <text x="180" y="118">Y</text><text x="222" y="224">X</text><text x="317" y="186">Z</text><text x="317" y="223">I</text>
+      <text x="400" y="58">H</text><text x="222" y="280">CNOT</text><text x="320" y="280" text-anchor="middle">SWAP</text>
+      <text x="222" y="342">Toffoli</text><text x="320" y="338" text-anchor="middle">CSWAP</text><text x="400" y="128">S</text>
+      <text x="510" y="140">T</text><text x="404" y="200">CZ</text><text x="512" y="200">CCZ</text><text x="400" y="90">iSWAP</text>
+      <text x="548" y="90">XY</text><text x="447" y="277" text-anchor="middle">fSWAP</text>
+      <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text><text x="134" y="330" text-anchor="middle">Ry</text>
+      <text x="682" y="200">FSim</text><text x="62" y="412">Rx</text><text x="624" y="374">Rxx</text>
     </g>
   </svg>
-</div>
 
-<p class="venn-caption">
-  The small grey labels mark one example gate per intersection.
-</p>
+  <ul class="chip-list">
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/clifford/">clifford<span class="chip-count">16</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/diagonal/">diagonal<span class="chip-count">16</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/matchgate/">matchgate<span class="chip-count">9</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/number-preserving/">number-preserving<span class="chip-count">26</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/orthogonal/">orthogonal<span class="chip-count">25</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/pauli/">pauli<span class="chip-count">4</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/permutation/">permutation<span class="chip-count">11</span></a></li>
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <li><a class="chip" href="/groups/unitary/">unitary<span class="chip-count">66</span></a></li>
+    
+  </ul>
+</section>
 
-<br/>
+<section class="section" id="sdks">
+  <div class="section-head">
+    <h2 class="section-title">SDK support</h2>
+    <p>Each gate page names the gate in every framework that has it. The <a href="/sdks/">support matrix</a> shows all gates against all frameworks at once.</p>
+  </div>
+  <ul class="chip-list">
+    <li><a class="chip" href="https://docs.quantum.ibm.com/api/qiskit">Qiskit</a></li><li><a class="chip" href="https://docs.pennylane.ai">PennyLane</a></li><li><a class="chip" href="https://quantumai.google/cirq">Cirq</a></li><li><a class="chip" href="https://learn.microsoft.com/en-us/azure/quantum/qsharp-overview">Q#</a></li><li><a class="chip" href="https://pyquil-docs.rigetti.com">PyQuil</a></li><li><a class="chip" href="https://amazon-braket-sdk-python.readthedocs.io">Braket</a></li><li><a class="chip" href="https://bqskit.readthedocs.io">BQSKit</a></li><li><a class="chip" href="https://qibo.science">Qibo</a></li><li><a class="chip" href="https://docs.quantinuum.com/tket">pytket</a></li><li><a class="chip" href="https://github.com/quantumlib/Stim">Stim</a></li><li><a class="chip" href="https://openqasm.com">OpenQASM</a></li>
+  </ul>
+</section>
 
-<h2>SDK Support</h2>
-<p>
-Wondering which framework implements a gate natively?
-The <a href="/sdks/">SDK support matrix</a> shows every gate against Qiskit, PennyLane, Cirq, Q#, PyQuil, Braket, BQSKit, Qibo, pytket, Stim, and OpenQASM, with links into each SDK's documentation.
-</p>
-
-<br/>
-
-<p>
-Not finding a gate you're interested in?
-Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue</a> and we'll add it!
-</p>
+<section class="section home-contribute">
+  <p>Missing a gate, or spotted a mistake? <a href="https://github.com/natestemen/gate.directory/issues/new">Open an issue</a> or edit the page on GitHub; every page links to its source.</p>
+</section>
 
 <script>
   (function () {
     const input = document.getElementById("gate-search-input");
     const list = document.getElementById("gate-search-results");
-    if (!input || !list) {
-      return;
-    }
+    if (!input || !list) return;
 
     let indexPromise = null;
     const loadIndex = () => {
-      if (!indexPromise) {
-        indexPromise = fetch("/search-index.json").then((r) => r.json());
-      }
+      if (!indexPromise) indexPromise = fetch("/search-index.json").then((r) => r.json());
       return indexPromise;
     };
     input.addEventListener("focus", loadIndex, { once: true });
@@ -1889,7 +2389,6 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
         list.innerHTML = "";
         return;
       }
-
       const gates = await loadIndex();
       const results = [];
       for (const g of gates) {
@@ -1937,124 +2436,9 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
     });
 
     document.addEventListener("click", (event) => {
-      if (!event.target.closest(".gate-search")) {
-        list.hidden = true;
-      }
+      if (!event.target.closest(".gate-search")) list.hidden = true;
     });
   })();
-</script>
-
-<script>
-  const PT_FAMILIES = {"paulis":{"label":"Paulis & basics","color":"#2f5fd0","inset":6},"roots":{"label":"roots","color":"#1a8ec2","inset":6},"misc":{"label":"misc & legacy","color":"#8a5a44","inset":6},"rotations":{"label":"rotations","color":"#0b7a5a","inset":5},"natives":{"label":"hardware natives","color":"#c2571a","inset":6},"controlled":{"label":"controlled","color":"#7a2f8f","inset":12},"swap":{"label":"swap family","color":"#b3315f","inset":4},"interactions":{"label":"interactions","color":"#8a6d00","inset":6},"multi":{"label":"multi-qubit","color":"#8f2f2f","inset":20},"qudits":{"label":"qudits","color":"#556b2f","inset":6},"circuit":{"label":"circuit-level","color":"#666666","inset":6}};
-
-  function drawRegions(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    const svg = container.querySelector("svg.pt-outlines");
-    svg.innerHTML = "";
-    container.querySelectorAll(".pt-region-label").forEach((el) => el.remove());
-
-    // cell offsets are grid-relative; the svg overlay is wrap-relative
-    const grid = container.querySelector(".pt-grid2");
-    const ox = grid.offsetLeft, oy = grid.offsetTop;
-
-    const fams = {};
-    for (const cell of container.querySelectorAll("[data-fams]")) {
-      const r = +cell.dataset.row;
-      const L = cell.offsetLeft + ox, T = cell.offsetTop + oy;
-      const R = L + cell.offsetWidth, B = T + cell.offsetHeight;
-      for (const f of cell.dataset.fams.split(" ")) {
-        const rows = (fams[f] ??= new Map());
-        const e = rows.get(r) || { L: 1e9, R: -1e9, T: 1e9, B: -1e9 };
-        e.L = Math.min(e.L, L); e.R = Math.max(e.R, R);
-        e.T = Math.min(e.T, T); e.B = Math.max(e.B, B);
-        rows.set(r, e);
-      }
-    }
-
-    svg.setAttribute("width", container.scrollWidth);
-    svg.setAttribute("height", container.scrollHeight);
-
-    Object.keys(fams).forEach((f) => {
-      const meta = PT_FAMILIES[f];
-      const rows = [...fams[f].entries()].sort((a, b) => a[0] - b[0]).map((e) => e[1]);
-      const inset = meta.inset || 6;
-      const n = rows.length;
-      const ys = [rows[0].T - inset];
-      for (let i = 0; i < n; i++) {
-        ys.push(i < n - 1 ? (rows[i].B + rows[i + 1].T) / 2 + (inset - 8) * 0.5 : rows[i].B + inset);
-      }
-      let d = `M ${rows[0].L - inset} ${ys[0]} L ${rows[0].R + inset} ${ys[0]}`;
-      for (let i = 0; i < n; i++) {
-        d += ` L ${rows[i].R + inset} ${ys[i + 1]}`;
-        if (i < n - 1) d += ` L ${rows[i + 1].R + inset} ${ys[i + 1]}`;
-      }
-      for (let i = n - 1; i >= 0; i--) {
-        d += ` L ${rows[i].L - inset} ${ys[i + 1]}`;
-        if (i > 0) {
-          d += ` L ${rows[i].L - inset} ${ys[i]}`;
-          d += ` L ${rows[i - 1].L - inset} ${ys[i]}`;
-        }
-      }
-      d += " Z";
-
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path.setAttribute("d", d);
-      path.setAttribute("fill", meta.color);
-      path.setAttribute("fill-opacity", "0.05");
-      path.setAttribute("stroke", meta.color);
-      path.setAttribute("stroke-width", "2.2");
-      path.setAttribute("stroke-linejoin", "round");
-      path.dataset.fam = f;
-      svg.appendChild(path);
-
-      /* pin the label to the topmost row that starts at the region's left
-         edge — narrow overlap tongues (e.g. swap reaching up to CSWAP)
-         start indented, so they never carry the label */
-      const minL = Math.min(...rows.map((r) => r.L));
-      const labelRow = rows.find((r) => Math.abs(r.L - minL) < 2) || rows[0];
-      const label = document.createElement("span");
-      label.className = "pt-region-label";
-      label.textContent = meta.label;
-      label.style.borderColor = meta.color;
-      label.style.color = meta.color;
-      label.style.left = labelRow.L - inset + 8 + "px";
-      label.style.top = labelRow.T - inset - 8 + "px";
-      container.appendChild(label);
-    });
-  }
-
-  function setupHover() {
-    document.querySelectorAll(".pt-wrap").forEach((container) => {
-      const cells = container.querySelectorAll(".pt-cell[data-fams]");
-      const setActive = (fams) => {
-        container.querySelectorAll(".pt-outlines path").forEach((p) =>
-          p.classList.toggle("pt-region-active", fams.includes(p.dataset.fam))
-        );
-        cells.forEach((c) =>
-          c.classList.toggle(
-            "pt-cell-kin",
-            fams.length > 0 && c.dataset.fams.split(" ").some((f) => fams.includes(f))
-          )
-        );
-      };
-      cells.forEach((cell) => {
-        cell.addEventListener("mouseenter", () => setActive(cell.dataset.fams.split(" ")));
-        cell.addEventListener("mouseleave", () => setActive([]));
-      });
-    });
-  }
-
-  function drawAll() {
-    drawRegions("pt-main");
-    drawRegions("pt-pullout-grid");
-  }
-  window.addEventListener("load", () => {
-    drawAll();
-    setTimeout(drawAll, 600); /* re-measure after KaTeX renders */
-    setupHover();
-  });
-  window.addEventListener("resize", drawAll);
 </script>
 
       </div>
@@ -2144,7 +2528,7 @@ Open an <a href="https://github.com/natestemen/gate.directory/issues/new">issue<
 
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "copy-matrix-button";
+      button.className = "button copy-matrix-button";
       button.textContent = "Copy LaTeX";
       button.setAttribute("aria-label", "Copy matrix LaTeX");
 
