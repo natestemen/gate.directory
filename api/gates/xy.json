@@ -17,7 +17,7 @@
  "params": {
   "theta": {
    "label": "\\theta",
-   "default": "1/2",
+   "default": "1",
    "range": [
     0,
     4

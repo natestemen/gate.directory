@@ -16,7 +16,7 @@
  "params": {
   "phi": {
    "label": "\\phi",
-   "default": "1/2",
+   "default": "1",
    "range": [
     0,
     2
