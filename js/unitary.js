@@ -179,9 +179,17 @@
         row.append(name, input, out);
         controls.appendChild(row);
         rows[p.key] = { input, out };
-        input.addEventListener("input", () => { stop(); setValue(p, parseFloat(input.value), true); refresh(); });
+        input.addEventListener("input", () => { stop(); setValue(p, parseFloat(input.value), true); refresh(); emit(p); });
         setValue(p, p.value, false);
       }
+      const emit = (p) => document.dispatchEvent(new CustomEvent("gate:param", { detail: { name: p.key, value: values[p.key], source: section } }));
+      document.addEventListener("gate:param", (e) => {
+        const { name, value, source } = e.detail || {};
+        if (source === section || !rows[name]) return;
+        stop();
+        setValue(params.find((p) => p.key === name), value, false);
+        refresh();
+      });
       play.type = "button"; play.className = "button unitary-play"; play.textContent = "Play";
       controls.appendChild(play);
       const step = (now) => {
@@ -192,6 +200,7 @@
           const span = p.max - p.min;
           const v = p.spin != null ? p.spin * t : p.min + span * t;
           setValue(p, p.spin != null && v > p.max ? p.min + ((v - p.min) % span) : v, false);
+          emit(p);
         }
         refresh();
         raf = requestAnimationFrame(step);

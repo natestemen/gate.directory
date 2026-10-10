@@ -87,13 +87,13 @@ Fixed gates give the point directly:
 weyl: [1/4, 0, 0]   # CNOT
 ```
 
-Parameterised gates give the raw exponent coefficients as expressions in their parameters, plus a slider range and default (also in units of π) for each parameter:
+Parameterised gates give the raw exponent coefficients as expressions in the gate's `params` (see "Gate definitions"); the Weyl panel's sliders are the same parameters as the matrix panel's, and the two stay in step:
 
 ```yaml
+params:
+  theta: { label: \theta, default: 1/2, range: [0, 2] }
 weyl:
-  coords: [-theta/2, 0, 0]   # R_xx(θ) = exp(-iθ/2 X⊗X)
-  params:
-    theta: { label: \theta, range: [0, 1], default: 1/2 }
+  coords: [-theta/2, 0, 0]   # R_xx(θ) = exp(-iθ/2 X⊗X); here theta is in units of π
 ```
 
 The page reduces the raw coefficients to the chamber itself, so write whatever falls out of the gate's definition. Only signed fractions of a single parameter are understood (`-phi/4`, `3/16`, `a`). The drawing is done by `js/weyl.js`.

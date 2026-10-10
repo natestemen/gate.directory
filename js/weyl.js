@@ -86,10 +86,10 @@
     return (params) => (sign * k * (name ? num(params[name]) : 1)) / d;
   }
 
-  function normaliseSpec(w) {
+  function normaliseSpec(w, sharedParams) {
     const raw = Array.isArray(w) ? { coords: w } : w || {};
     const coords = (raw.coords || [0, 0, 0]).map(compileCoord);
-    const params = Object.entries(raw.params || {}).map(([key, p]) => {
+    const params = Object.entries(raw.coords ? sharedParams || raw.params || {} : {}).map(([key, p]) => {
       p = p || {};
       const range = Array.isArray(p.range) ? p.range : [0, 1];
       const min = num(range[0]);
@@ -367,7 +367,7 @@
 
     const [, , W, H] = (svg.getAttribute("viewBox") || "0 0 360 330").split(/\s+/).map(Number);
     const fit = fitView(W, H, 18, 16);
-    const spec = normaliseSpec(data.weyl);
+    const spec = normaliseSpec(data.weyl, data.params);
     const params = {};
     for (const p of spec.params) params[p.key] = p.value;
     const view = { ...DEFAULT_VIEW };
@@ -497,8 +497,18 @@
       input.addEventListener("input", () => {
         params[p.key] = parseFloat(input.value);
         update();
+        document.dispatchEvent(new CustomEvent("gate:param", { detail: { name: p.key, value: params[p.key], source: section } }));
       });
     }
+
+    // follow the same parameter when another panel on the page moves it
+    document.addEventListener("gate:param", (e) => {
+      const { name, value, source } = e.detail || {};
+      if (source === section || !(name in outputs)) return;
+      params[name] = value;
+      outputs[name].input.value = value;
+      update();
+    });
 
     /* readout */
     function updateReadout(v) {

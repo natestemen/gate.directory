@@ -13,8 +13,6 @@ arity: 2
 parameters: 1
 weyl:
   coords: [-theta/4, theta/4, 0]
-  params:
-    theta: { label: \theta, range: [0, 2], default: 1 }
 quirk:
   spin: {theta: 4}
   cols:
@@ -29,7 +27,7 @@ quirk:
     - ["•", "X"]
     - ["X^½", "X^½"]
 params:
-  theta: { label: \theta, default: 1/2, range: [0, 4] }
+  theta: { label: \theta, default: 1, range: [0, 4] }
 matrix:
   - ["cos(theta/2)", 0, 0, "-i sin(theta/2)"]
   - [0, 1, 0, 0]

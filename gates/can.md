@@ -10,10 +10,6 @@ arity: 2
 parameters: 3
 weyl:
   coords: [a, b, c]
-  params:
-    a: { label: a, range: [0, 1/2], default: 3/16 }
-    b: { label: b, range: [0, 1/2], default: 1/8 }
-    c: { label: c, range: [-1/4, 1/4], default: 1/16 }
 quirk:
   spin: {a: 1, b: 2, c: 3}
   cols:
@@ -31,7 +27,7 @@ quirk:
     - [1, {id: Rzft, param: c, mul: -2}]
     - ["•", "X"]
 params:
-  a: { label: a, default: 1/4, range: [0, 1] }
+  a: { label: a, default: 3/16, range: [0, 1] }
   b: { label: b, default: 1/8, range: [0, 2] }
   c: { label: c, default: 1/16, range: [0, 3] }
 matrix:

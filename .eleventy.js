@@ -92,6 +92,7 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify({
       ...describe(current),
       weyl: current.data.weyl,
+      params: current.data.params || null,
       landmarks,
       identityUrl: identity ? url(identity.url) : null,
     }).replace(/</g, "\\u003c");

@@ -90,10 +90,10 @@ for (const file of fs.readdirSync(path.join(root, "gates")).sort()) {
   if (data.weyl && data.arity === 2 && (!data.dimension || data.dimension === 2)) {
     const w = Array.isArray(data.weyl) ? { coords: data.weyl } : data.weyl;
     const coordFns = (w.coords || []).map(Weyl.compileCoord);
-    const wparams = Object.keys(w.params || {});
+    const wparams = Object.keys(w.params || data.params || {});
     for (const values of [defaults, randomPoint(), randomPoint()]) {
       checks++;
-      const wvals = Object.fromEntries(wparams.map((k) => [k, values[k] != null ? values[k] : Weyl.num((w.params[k] || {}).default)]));
+      const wvals = Object.fromEntries(wparams.map((k) => [k, values[k] != null ? values[k] : Weyl.num(((w.params || {})[k] || {}).default)]));
       const point = Weyl.canonical(coordFns.map((f) => f(wvals)));
       const a = makhlin(matrixAt(values)), b = makhlin(can(...point));
       const err = Math.hypot(a.g1[0] - b.g1[0], a.g1[1] - b.g1[1]) + Math.abs(a.g2[0] - b.g2[0]);

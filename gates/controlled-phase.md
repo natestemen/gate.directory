@@ -15,14 +15,12 @@ groups:
 parameters: 1
 weyl:
   coords: [0, 0, phi/4]
-  params:
-    phi: { label: \phi, range: [0, 2], default: 1 }
 quirk:
   spin: {phi: 2}
   cols:
     - ["•", {id: Z^ft, param: phi}]
 params:
-  phi: { label: \phi, default: 1/2, range: [0, 2] }
+  phi: { label: \phi, default: 1, range: [0, 2] }
 matrix:
   - [1, 0, 0, 0]
   - [0, 1, 0, 0]

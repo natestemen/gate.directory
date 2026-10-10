@@ -15,8 +15,6 @@ arity: 2
 parameters: 1
 weyl:
   coords: [theta/2, theta/2, 0]
-  params:
-    theta: { label: \theta, range: [0, 1], default: 1/4 }
 quirk:
   spin: {theta: 2}
   cols:

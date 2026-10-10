@@ -15,14 +15,12 @@ arity: 2
 parameters: 1
 weyl:
   coords: [0, 0, theta/4]
-  params:
-    theta: { label: \theta, range: [0, 2], default: 1 }
 quirk:
   spin: {theta: 4}
   cols:
     - ["•", {id: Rzft, param: theta}]
 params:
-  theta: { label: \theta, default: 1/2, range: [0, 4] }
+  theta: { label: \theta, default: 1, range: [0, 4] }
 matrix:
   - [1, 0, 0, 0]
   - [0, 1, 0, 0]
