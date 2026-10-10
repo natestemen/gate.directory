@@ -203,6 +203,35 @@ p a .katex { /* this is probably too specific? */
   font-size: 14px;
 }
 
+.gate-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -6px 0 20px;
+}
+
+.quirk-link {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 999px;
+  padding: 5px 14px;
+  background: var(--gradient2);
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.quirk-link:hover {
+  transform: translateY(-1px);
+}
+
+.quirk-note {
+  font-size: 12px;
+  font-style: italic;
+}
+
 .sdk-matrix-wrap {
   margin-top: 20px;
   border: 2px solid black;
