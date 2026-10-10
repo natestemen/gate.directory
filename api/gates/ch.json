@@ -1,0 +1,48 @@
+{
+ "slug": "ch",
+ "title": "Controlled-Hadamard",
+ "symbol": "\\mathrm{C}H",
+ "aliases": [
+  "ch"
+ ],
+ "notations": [
+  "\\Lambda(H)",
+  "\\text{controlled-}H"
+ ],
+ "description": "Applies a Hadamard to the target qubit when the control qubit is in the $|1\\rangle$ state.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "1/sqrt(2)",
+   "1/sqrt(2)"
+  ],
+  [
+   0,
+   0,
+   "1/sqrt(2)",
+   "-1/sqrt(2)"
+  ]
+ ],
+ "groups": [
+  "orthogonal"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/ch/"
+}

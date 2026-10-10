@@ -1,0 +1,46 @@
+{
+ "slug": "u2",
+ "title": "U2",
+ "symbol": "U_2",
+ "aliases": [
+  "u2"
+ ],
+ "notations": [
+  "U_2(\\phi, \\lambda)",
+  "\\mathrm{U2}(\\phi, \\lambda)"
+ ],
+ "description": "Legacy IBM gate performing a fixed $\\pi/2$ rotation dressed by two $z$ rotations, $U_2(\\phi, \\lambda) = U_3(\\pi/2, \\phi, \\lambda)$.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "phi": {
+   "label": "\\phi",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  },
+  "lambda": {
+   "label": "\\lambda",
+   "default": "1/4",
+   "range": [
+    0,
+    4
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "1/sqrt(2)",
+   "-exp(i lambda)/sqrt(2)"
+  ],
+  [
+   "exp(i phi)/sqrt(2)",
+   "exp(i (phi+lambda))/sqrt(2)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/u2/"
+}

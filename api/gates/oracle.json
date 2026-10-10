@@ -1,0 +1,21 @@
+{
+ "slug": "oracle",
+ "title": "Oracle",
+ "symbol": "O_f",
+ "aliases": [],
+ "notations": [
+  "U_f",
+  "\\mathcal{O}_f"
+ ],
+ "description": "Implements a classical function as a reversible black-box unitary that can be queried coherently.",
+ "arity": "n",
+ "dimension": "p",
+ "groups": [
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/oracle/"
+}

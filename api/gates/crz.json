@@ -1,0 +1,57 @@
+{
+ "slug": "crz",
+ "title": "Controlled z Rotation",
+ "symbol": "\\mathrm{C}R_z",
+ "aliases": [
+  "crz"
+ ],
+ "notations": [
+  "\\mathrm{CR}_z(\\theta)",
+  "\\Lambda(R_z(\\theta))"
+ ],
+ "description": "Rotates the target about the $z$ axis by $\\theta$ when the control qubit is in the $|1\\rangle$ state.",
+ "arity": 2,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    4
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "exp(-i theta/2)",
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   "exp(i theta/2)"
+  ]
+ ],
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/crz/"
+}

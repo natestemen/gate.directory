@@ -1,0 +1,58 @@
+{
+ "slug": "givens",
+ "title": "Givens Rotation",
+ "symbol": "G_{ij}",
+ "aliases": [
+  "givens"
+ ],
+ "notations": [
+  "G(\\theta)",
+  "G_{ij}(\\theta)"
+ ],
+ "description": "Two-level rotation that mixes the $|01\\rangle$ and $|10\\rangle$ subspace.",
+ "arity": 2,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   "cos(theta)",
+   "-sin(theta)",
+   0
+  ],
+  [
+   0,
+   "sin(theta)",
+   "cos(theta)",
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "orthogonal",
+  "matchgate",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/givens/"
+}

@@ -1,0 +1,48 @@
+{
+ "slug": "cy",
+ "title": "Controlled-Y",
+ "symbol": "\\mathrm{C}Y",
+ "aliases": [
+  "cy"
+ ],
+ "notations": [
+  "\\Lambda(Y)",
+  "\\text{controlled-}Y"
+ ],
+ "description": "Applies $Y$ to the target qubit when the control qubit is in the $|1\\rangle$ state.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   "-i"
+  ],
+  [
+   0,
+   0,
+   "i",
+   0
+  ]
+ ],
+ "groups": [
+  "clifford"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/cy/"
+}

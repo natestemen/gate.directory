@@ -1,0 +1,51 @@
+{
+ "slug": "cz",
+ "title": "Controlled-Z",
+ "symbol": "\\mathrm{C}Z",
+ "aliases": [
+  "cz"
+ ],
+ "notations": [
+  "\\Lambda(Z)",
+  "\\text{controlled-}Z"
+ ],
+ "description": "Applies a $-1$ phase to $|11\\rangle$.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   -1
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "diagonal",
+  "orthogonal",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/cz/"
+}

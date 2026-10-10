@@ -1,0 +1,35 @@
+{
+ "slug": "pauli-y",
+ "title": "Pauli-Y",
+ "symbol": "Y",
+ "aliases": [
+  "y"
+ ],
+ "notations": [
+  "Y",
+  "\\sigma_y",
+  "\\sigma^y",
+  "\\sigma_2"
+ ],
+ "description": "Bit-and-phase flip combining $X$ and $Z$ with a phase.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   0,
+   "-i"
+  ],
+  [
+   "i",
+   0
+  ]
+ ],
+ "groups": [
+  "pauli",
+  "clifford"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/pauli-y/"
+}

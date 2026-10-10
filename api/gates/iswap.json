@@ -1,0 +1,43 @@
+{
+ "slug": "iswap",
+ "title": "iSWAP",
+ "symbol": "i\\mathrm{SWAP}",
+ "aliases": [],
+ "notations": [],
+ "description": "Swaps $|01\\rangle$ and $|10\\rangle$ and adds a phase of $i$.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "i",
+   0
+  ],
+  [
+   0,
+   "i",
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "matchgate",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/iswap/"
+}

@@ -1,0 +1,47 @@
+{
+ "slug": "sycamore",
+ "title": "Sycamore",
+ "symbol": "\\mathrm{SYC}",
+ "aliases": [
+  "sycamore",
+  "syc"
+ ],
+ "notations": [
+  "\\mathrm{SYC}",
+  "\\mathrm{fSim}(\\pi/2, \\pi/6)"
+ ],
+ "description": "Google's native two-qubit gate, the fSim gate at $\\theta = \\pi/2$, $\\phi = \\pi/6$.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "-i",
+   0
+  ],
+  [
+   0,
+   "-i",
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   "exp(-i pi/6)"
+  ]
+ ],
+ "groups": [
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/sycamore/"
+}

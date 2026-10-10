@@ -1,0 +1,38 @@
+{
+ "slug": "rx",
+ "title": "x Rotation",
+ "symbol": "R_x",
+ "aliases": [],
+ "notations": [
+  "R_x(\\theta)",
+  "\\mathrm{Rx}(\\theta)",
+  "X(\\theta)",
+  "X_\\theta"
+ ],
+ "description": "Rotation about the $x$ axis of the Bloch sphere.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "cos(theta/2)",
+   "-i sin(theta/2)"
+  ],
+  [
+   "-i sin(theta/2)",
+   "cos(theta/2)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/rx/"
+}

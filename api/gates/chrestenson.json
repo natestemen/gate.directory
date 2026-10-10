@@ -1,0 +1,38 @@
+{
+ "slug": "chrestenson",
+ "title": "Chrestenson",
+ "symbol": "C_d",
+ "aliases": [
+  "chrestenson",
+  "chrestenson-transform",
+  "generalized-hadamard"
+ ],
+ "notations": [
+  "C_d",
+  "\\mathcal{C}_d"
+ ],
+ "description": "Qudit generalization of the Hadamard gate that maps each basis state to an equal superposition with root-of-unity phases.",
+ "arity": 1,
+ "dimension": "d",
+ "matrix": [
+  [
+   "1/sqrt(3)",
+   "1/sqrt(3)",
+   "1/sqrt(3)"
+  ],
+  [
+   "1/sqrt(3)",
+   "exp(2 pi i/3)/sqrt(3)",
+   "exp(4 pi i/3)/sqrt(3)"
+  ],
+  [
+   "1/sqrt(3)",
+   "exp(4 pi i/3)/sqrt(3)",
+   "exp(2 pi i/3)/sqrt(3)"
+  ]
+ ],
+ "matrix_note": "d = 3",
+ "groups": [],
+ "properties": [],
+ "url": "/gates/chrestenson/"
+}

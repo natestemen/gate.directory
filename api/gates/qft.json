@@ -1,0 +1,98 @@
+{
+ "slug": "qft",
+ "title": "Quantum Fourier Transform",
+ "symbol": "\\mathrm{QFT}_n",
+ "aliases": [
+  "qft"
+ ],
+ "notations": [],
+ "description": "Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.",
+ "arity": "n",
+ "dimension": 2,
+ "matrix": [
+  [
+   "1/sqrt(8)",
+   "1/sqrt(8)",
+   "1/sqrt(8)",
+   "1/sqrt(8)",
+   "1/sqrt(8)",
+   "1/sqrt(8)",
+   "1/sqrt(8)",
+   "1/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*1/8)/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "exp(2 pi i*3/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*5/8)/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "exp(2 pi i*7/8)/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "1/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*3/8)/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "exp(2 pi i*1/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*7/8)/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "exp(2 pi i*5/8)/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "1/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "1/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "1/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*5/8)/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "exp(2 pi i*7/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*1/8)/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "exp(2 pi i*3/8)/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "1/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)"
+  ],
+  [
+   "1/sqrt(8)",
+   "exp(2 pi i*7/8)/sqrt(8)",
+   "exp(2 pi i*6/8)/sqrt(8)",
+   "exp(2 pi i*5/8)/sqrt(8)",
+   "exp(2 pi i*4/8)/sqrt(8)",
+   "exp(2 pi i*3/8)/sqrt(8)",
+   "exp(2 pi i*2/8)/sqrt(8)",
+   "exp(2 pi i*1/8)/sqrt(8)"
+  ]
+ ],
+ "matrix_note": "n = 3",
+ "groups": [],
+ "properties": [],
+ "url": "/gates/qft/"
+}

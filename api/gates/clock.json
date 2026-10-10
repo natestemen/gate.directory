@@ -1,0 +1,40 @@
+{
+ "slug": "clock",
+ "title": "Clock",
+ "symbol": "Z_d",
+ "aliases": [
+  "clock"
+ ],
+ "notations": [
+  "Z_d",
+  "\\Sigma_z",
+  "\\sigma"
+ ],
+ "description": "Qudit generalization of Pauli-$Z$ that tags each basis state with a root-of-unity phase, $|j\\rangle \\mapsto \\omega^j |j\\rangle$.",
+ "arity": 1,
+ "dimension": "d",
+ "matrix": [
+  [
+   "1",
+   0,
+   0
+  ],
+  [
+   0,
+   "exp(2 pi i/3)",
+   0
+  ],
+  [
+   0,
+   0,
+   "exp(4 pi i/3)"
+  ]
+ ],
+ "matrix_note": "d = 3",
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/clock/"
+}

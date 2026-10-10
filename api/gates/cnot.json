@@ -1,0 +1,54 @@
+{
+ "slug": "cnot",
+ "title": "Controlled Not",
+ "symbol": "\\mathrm{C}X",
+ "aliases": [
+  "cx"
+ ],
+ "notations": [
+  "\\mathrm{C}X",
+  "\\mathrm{CNOT}",
+  "\\mathrm{CNOT}_{ij}",
+  "\\text{controlled-}X",
+  "\\Lambda(X)",
+  "\\mathrm{XOR}[i, j]"
+ ],
+ "description": "Flips the target qubit when the control qubit is in the $|1\\rangle$ state.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   1,
+   0
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/cnot/"
+}

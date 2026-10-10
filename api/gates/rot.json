@@ -1,0 +1,54 @@
+{
+ "slug": "rot",
+ "title": "Arbitrary Rotation",
+ "symbol": "R_{\\mathbf{n}}",
+ "aliases": [
+  "rot"
+ ],
+ "notations": [
+  "\\mathrm{Rot}(\\vec{n}, \\theta)",
+  "R_{\\vec{n}}(\\theta)"
+ ],
+ "description": "Rotation by angle $\\theta$ about the Bloch-sphere axis $\\vec{n}$.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  },
+  "alpha": {
+   "label": "\\alpha",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  },
+  "beta": {
+   "label": "\\beta",
+   "default": "acos(1/sqrt(3))/pi",
+   "range": [
+    0,
+    1
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "cos(theta/2) - i sin(theta/2) cos(beta)",
+   "-i sin(theta/2) sin(beta) exp(-i alpha)"
+  ],
+  [
+   "-i sin(theta/2) sin(beta) exp(i alpha)",
+   "cos(theta/2) + i sin(theta/2) cos(beta)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/rot/"
+}

@@ -1,0 +1,105 @@
+{
+ "slug": "rccx",
+ "title": "Margolus",
+ "symbol": "\\mathrm{RCC}X",
+ "aliases": [
+  "rccx",
+  "margolus"
+ ],
+ "notations": [
+  "\\mathrm{RCCX}",
+  "\\widetilde{\\mathrm{CC}X}"
+ ],
+ "description": "Simplified Toffoli gate, equal to the Toffoli up to a $-1$ phase on $|101\\rangle$, costing only three CNOTs.",
+ "arity": 3,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   -1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ]
+ ],
+ "groups": [
+  "orthogonal"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/rccx/"
+}

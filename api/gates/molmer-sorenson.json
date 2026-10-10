@@ -1,0 +1,54 @@
+{
+ "slug": "molmer-sorenson",
+ "title": "Mølmer-Sørensen",
+ "symbol": "MS",
+ "aliases": [],
+ "notations": [
+  "\\mathrm{MS}",
+  "\\mathrm{MS}(\\chi_{ij})",
+  "\\mathrm{GMS}"
+ ],
+ "description": "A native entangling interaction in ion-trap systems based on collective spin-motion coupling.",
+ "arity": "n",
+ "dimension": 2,
+ "params": {
+  "chi": {
+   "label": "\\chi",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "cos(chi/2)",
+   0,
+   0,
+   "-i sin(chi/2)"
+  ],
+  [
+   0,
+   "cos(chi/2)",
+   "-i sin(chi/2)",
+   0
+  ],
+  [
+   0,
+   "-i sin(chi/2)",
+   "cos(chi/2)",
+   0
+  ],
+  [
+   "-i sin(chi/2)",
+   0,
+   0,
+   "cos(chi/2)"
+  ]
+ ],
+ "matrix_note": "n = 2",
+ "groups": [],
+ "properties": [],
+ "url": "/gates/molmer-sorenson/"
+}

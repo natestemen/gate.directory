@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/styles/gate.css">
   <link rel="stylesheet" href="/styles/weyl.css">
   <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/unitary.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,10 +254,43 @@ $$</p>
       
 
       <section>
-        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/gates/rz.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+        <h3 class="caption">Data</h3>
+        <ul class="aside-list">
+          <li><a href="/api/gates/rz.json">This gate as JSON</a></li>
+          <li><a href="https://github.com/natestemen/gate.directory/tree/main/gates/rz.md" target="_blank" rel="noopener">Edit this page on GitHub</a></li>
+        </ul>
       </section>
     </aside>
   </div>
+
+  
+<section class="unitary section" aria-labelledby="unitary-heading">
+  <div class="section-head">
+    <h2 class="section-title" id="unitary-heading">The unitary, drawn</h2>
+    <p>
+      Every entry of the matrix as a disc. The area is the transition probability $|U_{jk}|^2$;
+      the colour and the hand are the phase. Rows are outputs $\langle j|$, columns inputs $|k\rangle$, in the computational basis.
+      Each parameter has a slider; play runs through the family along the path of the Quirk link ($&#92;theta = 2&#92;pi t$).
+    </p>
+  </div>
+  <div class="unitary-panel">
+    <div class="unitary-figure">
+      <svg class="unitary-svg" role="img" aria-label="The matrix of the z Rotation gate drawn as discs"></svg>
+      <div class="unitary-tooltip" role="tooltip" hidden></div>
+    </div>
+    <div class="unitary-side">
+      <div class="unitary-controls"></div>
+      <div class="unitary-legend">
+        <p class="caption">Phase</p>
+      </div>
+      <p class="unitary-key">Disc area $= |U_{jk}|^2$. Hover an entry for its value, or take the <a href="/api/gates/rz.json">JSON</a>.</p>
+    </div>
+  </div>
+  <script type="application/json" class="unitary-data">{"params":{"theta":{"label":"\\theta","default":"1/2","range":[0,2]}},"matrix":[["exp(-i theta/2)",0],[0,"exp(i theta/2)"]],"spin":{"theta":2}}</script>
+  <script defer src="/js/gate-math.js"></script>
+  <script defer src="/js/unitary.js"></script>
+</section>
+
 
   
 

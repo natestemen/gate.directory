@@ -1,0 +1,40 @@
+{
+ "slug": "shift",
+ "title": "Shift",
+ "symbol": "X_d",
+ "aliases": [
+  "shift"
+ ],
+ "notations": [
+  "X_d",
+  "\\Sigma_x",
+  "\\tau"
+ ],
+ "description": "Qudit generalization of Pauli-$X$ that cyclically increments the basis state, $|j\\rangle \\mapsto |j+1 \\bmod d\\rangle$.",
+ "arity": 1,
+ "dimension": "d",
+ "matrix": [
+  [
+   0,
+   0,
+   1
+  ],
+  [
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0
+  ]
+ ],
+ "matrix_note": "d = 3",
+ "groups": [
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [],
+ "url": "/gates/shift/"
+}

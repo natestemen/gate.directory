@@ -1,0 +1,56 @@
+{
+ "slug": "cry",
+ "title": "Controlled y Rotation",
+ "symbol": "\\mathrm{C}R_y",
+ "aliases": [
+  "cry"
+ ],
+ "notations": [
+  "\\mathrm{CR}_y(\\theta)",
+  "\\Lambda(R_y(\\theta))"
+ ],
+ "description": "Rotates the target about the $y$ axis by $\\theta$ when the control qubit is in the $|1\\rangle$ state.",
+ "arity": 2,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    4
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "cos(theta/2)",
+   "-sin(theta/2)"
+  ],
+  [
+   0,
+   0,
+   "sin(theta/2)",
+   "cos(theta/2)"
+  ]
+ ],
+ "groups": [
+  "orthogonal"
+ ],
+ "properties": [],
+ "url": "/gates/cry/"
+}

@@ -1,0 +1,43 @@
+{
+ "slug": "sqrt-swap",
+ "title": "Square Root SWAP",
+ "symbol": "\\sqrt{\\mathrm{SWAP}}",
+ "aliases": [
+  "sqrtswap"
+ ],
+ "notations": [],
+ "description": "Applies half of a SWAP interaction, creating maximal entanglement from a product state.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   "(1+i)/2",
+   "(1-i)/2",
+   0
+  ],
+  [
+   0,
+   "(1-i)/2",
+   "(1+i)/2",
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/sqrt-swap/"
+}

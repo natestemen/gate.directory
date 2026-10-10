@@ -1,0 +1,46 @@
+{
+ "slug": "csx",
+ "title": "Controlled sqrt(X)",
+ "symbol": "\\mathrm{C}\\sqrt{X}",
+ "aliases": [
+  "csx",
+  "controlled-sqrt-x"
+ ],
+ "notations": [
+  "\\mathrm{CS}X",
+  "\\mathrm{C}V",
+  "\\text{controlled-}\\sqrt{X}"
+ ],
+ "description": "Applies $\\sqrt{X}$ to the target when the control qubit is $|1\\rangle$.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "(1+i)/2",
+   "(1-i)/2"
+  ],
+  [
+   0,
+   0,
+   "(1-i)/2",
+   "(1+i)/2"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/csx/"
+}

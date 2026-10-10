@@ -1,0 +1,30 @@
+{
+ "slug": "hadamard",
+ "title": "Hadamard",
+ "symbol": "H",
+ "aliases": [
+  "h"
+ ],
+ "notations": [],
+ "description": "Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   "1/sqrt(2)",
+   "1/sqrt(2)"
+  ],
+  [
+   "1/sqrt(2)",
+   "-1/sqrt(2)"
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "orthogonal"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/hadamard/"
+}

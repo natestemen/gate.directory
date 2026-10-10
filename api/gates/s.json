@@ -1,0 +1,33 @@
+{
+ "slug": "s",
+ "title": "Phase",
+ "symbol": "S",
+ "aliases": [],
+ "notations": [
+  "S",
+  "\\sqrt{Z}",
+  "Z^{1/2}",
+  "P(\\pi/2)",
+  "K"
+ ],
+ "description": "$\\pi/2$ phase gate, equal to $\\sqrt{Z}$.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0
+  ],
+  [
+   0,
+   "i"
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/s/"
+}

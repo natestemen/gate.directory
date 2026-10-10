@@ -1,0 +1,41 @@
+{
+ "slug": "virtual-distillation",
+ "title": "Virtual Distillation",
+ "symbol": "B^{(2)}_i",
+ "aliases": [],
+ "notations": [],
+ "description": "A two-qubit entangling gate used in virtual distillation error-mitigation protocols.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   "1/sqrt(2)",
+   "-1/sqrt(2)",
+   0
+  ],
+  [
+   0,
+   "1/sqrt(2)",
+   "1/sqrt(2)",
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "orthogonal"
+ ],
+ "properties": [],
+ "url": "/gates/virtual-distillation/"
+}

@@ -1,0 +1,49 @@
+{
+ "slug": "sqrt-iswap",
+ "title": "Square Root iSWAP",
+ "symbol": "\\sqrt{i\\mathrm{SWAP}}",
+ "aliases": [
+  "sqrt-iswap",
+  "siswap",
+  "sqisw"
+ ],
+ "notations": [
+  "\\mathrm{SISWAP}",
+  "\\mathrm{SQISW}"
+ ],
+ "description": "Applies half of an iSWAP interaction, native to superconducting hardware with $XY$ coupling.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   "1/sqrt(2)",
+   "i/sqrt(2)",
+   0
+  ],
+  [
+   0,
+   "i/sqrt(2)",
+   "1/sqrt(2)",
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "matchgate",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/sqrt-iswap/"
+}

@@ -1,0 +1,42 @@
+{
+ "slug": "phase",
+ "title": "Phase Shift",
+ "symbol": "P",
+ "aliases": [
+  "phase",
+  "p",
+  "u1"
+ ],
+ "notations": [
+  "U_1(\\phi)"
+ ],
+ "description": "Applies a relative phase $e^{i\\phi}$ to the $|1\\rangle$ component.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "phi": {
+   "label": "\\phi",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0
+  ],
+  [
+   0,
+   "exp(i phi)"
+  ]
+ ],
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/phase/"
+}

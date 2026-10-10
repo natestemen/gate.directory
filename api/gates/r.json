@@ -1,0 +1,48 @@
+{
+ "slug": "r",
+ "title": "Phased Rotation",
+ "symbol": "R(\\theta, \\phi)",
+ "aliases": [
+  "r",
+  "phased-x"
+ ],
+ "notations": [
+  "R(\\theta, \\phi)",
+  "R_\\phi(\\theta)",
+  "\\mathrm{PhasedX}"
+ ],
+ "description": "Rotation by $\\theta$ about the equatorial Bloch-sphere axis at azimuthal angle $\\phi$.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  },
+  "phi": {
+   "label": "\\phi",
+   "default": "1/4",
+   "range": [
+    0,
+    4
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "cos(theta/2)",
+   "-i exp(-i phi) sin(theta/2)"
+  ],
+  [
+   "-i exp(i phi) sin(theta/2)",
+   "cos(theta/2)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/r/"
+}

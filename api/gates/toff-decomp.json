@@ -1,0 +1,25 @@
+{
+ "slug": "toff-decomp",
+ "title": "unnamed",
+ "symbol": "G",
+ "aliases": [],
+ "notations": [],
+ "description": "A single-qubit rotation used in optimal Toffoli decompositions.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   "cos(pi/8)",
+   "-sin(pi/8)"
+  ],
+  [
+   "sin(pi/8)",
+   "cos(pi/8)"
+  ]
+ ],
+ "groups": [
+  "orthogonal"
+ ],
+ "properties": [],
+ "url": "/gates/toff-decomp/"
+}

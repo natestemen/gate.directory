@@ -1,0 +1,47 @@
+{
+ "slug": "dcx",
+ "title": "Double CX",
+ "symbol": "\\mathrm{DC}X",
+ "aliases": [
+  "dcnot"
+ ],
+ "notations": [
+  "\\mathrm{DCNOT}"
+ ],
+ "description": "Two back-to-back CNOTs with alternating control and target qubits.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [],
+ "url": "/gates/dcx/"
+}

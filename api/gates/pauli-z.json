@@ -1,0 +1,38 @@
+{
+ "slug": "pauli-z",
+ "title": "Pauli-Z",
+ "symbol": "Z",
+ "aliases": [
+  "z"
+ ],
+ "notations": [
+  "Z",
+  "\\sigma_z",
+  "\\sigma^z",
+  "\\sigma_3"
+ ],
+ "description": "Phase-flip gate that leaves $|0\\rangle$ unchanged and flips the phase of $|1\\rangle$.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0
+  ],
+  [
+   0,
+   -1
+  ]
+ ],
+ "groups": [
+  "pauli",
+  "clifford",
+  "diagonal",
+  "orthogonal",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/pauli-z/"
+}

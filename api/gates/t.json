@@ -1,0 +1,28 @@
+{
+ "slug": "t",
+ "title": "T",
+ "symbol": "T",
+ "aliases": [],
+ "notations": [
+  "\\pi/8"
+ ],
+ "description": "A $\\pi/8$ phase gate which is a non-Clifford rotation about $Z$.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0
+  ],
+  [
+   0,
+   "exp(i pi/4)"
+  ]
+ ],
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/t/"
+}

@@ -1,0 +1,40 @@
+{
+ "slug": "identity",
+ "title": "Identity",
+ "symbol": "I",
+ "aliases": [
+  "i"
+ ],
+ "notations": [
+  "I",
+  "I_n",
+  "1_n",
+  "\\mathbb{1}",
+  "\\mathrm{Id}"
+ ],
+ "description": "Leaves the quantum state unchanged.",
+ "arity": "n",
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "pauli",
+  "clifford",
+  "diagonal",
+  "orthogonal",
+  "permutation",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/identity/"
+}

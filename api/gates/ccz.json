@@ -1,0 +1,106 @@
+{
+ "slug": "ccz",
+ "title": "Controlled-CZ",
+ "symbol": "\\mathrm{CC}Z",
+ "aliases": [
+  "ccz"
+ ],
+ "notations": [
+  "C^2Z",
+  "\\Lambda^2(Z)"
+ ],
+ "description": "Applies a $-1$ phase to $|111\\rangle$ and leaves all other basis states unchanged.",
+ "arity": 3,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   -1
+  ]
+ ],
+ "groups": [
+  "diagonal",
+  "orthogonal",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/ccz/"
+}

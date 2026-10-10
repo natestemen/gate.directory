@@ -1,0 +1,43 @@
+{
+ "slug": "global-phase",
+ "title": "Global Phase",
+ "symbol": "\\mathrm{Ph}",
+ "aliases": [
+  "gphase",
+  "ph"
+ ],
+ "notations": [
+  "\\mathrm{e}^{i\\phi}",
+  "\\mathrm{e}^{i\\phi} I"
+ ],
+ "description": "Multiplies the entire quantum state by an overall phase factor.",
+ "arity": "n",
+ "dimension": 2,
+ "params": {
+  "phi": {
+   "label": "\\phi",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "exp(i phi)",
+   0
+  ],
+  [
+   0,
+   "exp(i phi)"
+  ]
+ ],
+ "matrix_note": "n = 1",
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/global-phase/"
+}

@@ -1,0 +1,41 @@
+{
+ "slug": "b",
+ "title": "B Gate",
+ "symbol": "B",
+ "aliases": [],
+ "notations": [],
+ "description": "Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   "(cos(pi/8)+sin(pi/8))/sqrt(2)",
+   0,
+   0,
+   "i (cos(pi/8)-sin(pi/8))/sqrt(2)"
+  ],
+  [
+   0,
+   "(cos(pi/8)-sin(pi/8))/sqrt(2)",
+   "i (cos(pi/8)+sin(pi/8))/sqrt(2)",
+   0
+  ],
+  [
+   0,
+   "i (cos(pi/8)+sin(pi/8))/sqrt(2)",
+   "(cos(pi/8)-sin(pi/8))/sqrt(2)",
+   0
+  ],
+  [
+   "i (cos(pi/8)-sin(pi/8))/sqrt(2)",
+   0,
+   0,
+   "(cos(pi/8)+sin(pi/8))/sqrt(2)"
+  ]
+ ],
+ "groups": [
+  "matchgate"
+ ],
+ "properties": [],
+ "url": "/gates/b/"
+}

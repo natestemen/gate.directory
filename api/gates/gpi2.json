@@ -1,0 +1,38 @@
+{
+ "slug": "gpi2",
+ "title": "GPi2",
+ "symbol": "\\mathrm{GPi2}",
+ "aliases": [
+  "gpi2"
+ ],
+ "notations": [
+  "\\mathrm{GPi2}(\\phi)",
+  "\\mathrm{GPI2}(\\phi)"
+ ],
+ "description": "IonQ's native $\\pi/2$ pulse, a half rotation about the equatorial Bloch-sphere axis at angle $\\phi$.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "phi": {
+   "label": "\\phi",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "1/sqrt(2)",
+   "-i exp(-i phi)/sqrt(2)"
+  ],
+  [
+   "-i exp(i phi)/sqrt(2)",
+   "1/sqrt(2)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/gpi2/"
+}

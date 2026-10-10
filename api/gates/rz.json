@@ -1,0 +1,41 @@
+{
+ "slug": "rz",
+ "title": "z Rotation",
+ "symbol": "R_z",
+ "aliases": [],
+ "notations": [
+  "R_z(\\theta)",
+  "\\mathrm{Rz}(\\theta)",
+  "Z(\\theta)",
+  "Z_\\theta"
+ ],
+ "description": "Rotation about the $z$ axis of the Bloch sphere.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   "exp(-i theta/2)",
+   0
+  ],
+  [
+   0,
+   "exp(i theta/2)"
+  ]
+ ],
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/rz/"
+}

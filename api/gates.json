@@ -1,0 +1,3810 @@
+[
+ {
+  "slug": "pauli-x",
+  "title": "Pauli-X",
+  "symbol": "X",
+  "aliases": [
+   "x"
+  ],
+  "notations": [
+   "X",
+   "\\sigma_x",
+   "\\sigma^x",
+   "\\sigma_1",
+   "\\mathrm{NOT}"
+  ],
+  "description": "Bit-flip gate that swaps $|0\\rangle$ and $|1\\rangle$.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ]
+  ],
+  "groups": [
+   "pauli",
+   "clifford",
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/pauli-x/"
+ },
+ {
+  "slug": "pauli-y",
+  "title": "Pauli-Y",
+  "symbol": "Y",
+  "aliases": [
+   "y"
+  ],
+  "notations": [
+   "Y",
+   "\\sigma_y",
+   "\\sigma^y",
+   "\\sigma_2"
+  ],
+  "description": "Bit-and-phase flip combining $X$ and $Z$ with a phase.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    0,
+    "-i"
+   ],
+   [
+    "i",
+    0
+   ]
+  ],
+  "groups": [
+   "pauli",
+   "clifford"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/pauli-y/"
+ },
+ {
+  "slug": "pauli-z",
+  "title": "Pauli-Z",
+  "symbol": "Z",
+  "aliases": [
+   "z"
+  ],
+  "notations": [
+   "Z",
+   "\\sigma_z",
+   "\\sigma^z",
+   "\\sigma_3"
+  ],
+  "description": "Phase-flip gate that leaves $|0\\rangle$ unchanged and flips the phase of $|1\\rangle$.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    -1
+   ]
+  ],
+  "groups": [
+   "pauli",
+   "clifford",
+   "diagonal",
+   "orthogonal",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/pauli-z/"
+ },
+ {
+  "slug": "identity",
+  "title": "Identity",
+  "symbol": "I",
+  "aliases": [
+   "i"
+  ],
+  "notations": [
+   "I",
+   "I_n",
+   "1_n",
+   "\\mathbb{1}",
+   "\\mathrm{Id}"
+  ],
+  "description": "Leaves the quantum state unchanged.",
+  "arity": "n",
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "pauli",
+   "clifford",
+   "diagonal",
+   "orthogonal",
+   "permutation",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/identity/"
+ },
+ {
+  "slug": "hadamard",
+  "title": "Hadamard",
+  "symbol": "H",
+  "aliases": [
+   "h"
+  ],
+  "notations": [],
+  "description": "Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    "1/sqrt(2)",
+    "1/sqrt(2)"
+   ],
+   [
+    "1/sqrt(2)",
+    "-1/sqrt(2)"
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "orthogonal"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/hadamard/"
+ },
+ {
+  "slug": "sx",
+  "title": "Square Root of X",
+  "symbol": "\\sqrt{X}",
+  "aliases": [
+   "sx",
+   "sqrt-x",
+   "sqrtx"
+  ],
+  "notations": [
+   "\\sqrt{X}",
+   "\\mathrm{S}X",
+   "V"
+  ],
+  "description": "A gate whose square is the Pauli-$X$ (NOT) gate.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    "(1+i)/2",
+    "(1-i)/2"
+   ],
+   [
+    "(1-i)/2",
+    "(1+i)/2"
+   ]
+  ],
+  "groups": [
+   "clifford"
+  ],
+  "properties": [],
+  "url": "/gates/sx/"
+ },
+ {
+  "slug": "s",
+  "title": "Phase",
+  "symbol": "S",
+  "aliases": [],
+  "notations": [
+   "S",
+   "\\sqrt{Z}",
+   "Z^{1/2}",
+   "P(\\pi/2)",
+   "K"
+  ],
+  "description": "$\\pi/2$ phase gate, equal to $\\sqrt{Z}$.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    "i"
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/s/"
+ },
+ {
+  "slug": "t",
+  "title": "T",
+  "symbol": "T",
+  "aliases": [],
+  "notations": [
+   "\\pi/8"
+  ],
+  "description": "A $\\pi/8$ phase gate which is a non-Clifford rotation about $Z$.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    "exp(i pi/4)"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/t/"
+ },
+ {
+  "slug": "toff-decomp",
+  "title": "unnamed",
+  "symbol": "G",
+  "aliases": [],
+  "notations": [],
+  "description": "A single-qubit rotation used in optimal Toffoli decompositions.",
+  "arity": 1,
+  "dimension": 2,
+  "matrix": [
+   [
+    "cos(pi/8)",
+    "-sin(pi/8)"
+   ],
+   [
+    "sin(pi/8)",
+    "cos(pi/8)"
+   ]
+  ],
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [],
+  "url": "/gates/toff-decomp/"
+ },
+ {
+  "slug": "u2",
+  "title": "U2",
+  "symbol": "U_2",
+  "aliases": [
+   "u2"
+  ],
+  "notations": [
+   "U_2(\\phi, \\lambda)",
+   "\\mathrm{U2}(\\phi, \\lambda)"
+  ],
+  "description": "Legacy IBM gate performing a fixed $\\pi/2$ rotation dressed by two $z$ rotations, $U_2(\\phi, \\lambda) = U_3(\\pi/2, \\phi, \\lambda)$.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "phi": {
+    "label": "\\phi",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "lambda": {
+    "label": "\\lambda",
+    "default": "1/4",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "1/sqrt(2)",
+    "-exp(i lambda)/sqrt(2)"
+   ],
+   [
+    "exp(i phi)/sqrt(2)",
+    "exp(i (phi+lambda))/sqrt(2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/u2/"
+ },
+ {
+  "slug": "rx",
+  "title": "x Rotation",
+  "symbol": "R_x",
+  "aliases": [],
+  "notations": [
+   "R_x(\\theta)",
+   "\\mathrm{Rx}(\\theta)",
+   "X(\\theta)",
+   "X_\\theta"
+  ],
+  "description": "Rotation about the $x$ axis of the Bloch sphere.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    "-i sin(theta/2)"
+   ],
+   [
+    "-i sin(theta/2)",
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/rx/"
+ },
+ {
+  "slug": "ry",
+  "title": "y Rotation",
+  "symbol": "R_y",
+  "aliases": [],
+  "notations": [
+   "R_y(\\theta)",
+   "\\mathrm{Ry}(\\theta)",
+   "Y(\\theta)",
+   "Y_\\theta"
+  ],
+  "description": "Rotation about the $y$ axis of the Bloch sphere.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    "-sin(theta/2)"
+   ],
+   [
+    "sin(theta/2)",
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [],
+  "url": "/gates/ry/"
+ },
+ {
+  "slug": "rz",
+  "title": "z Rotation",
+  "symbol": "R_z",
+  "aliases": [],
+  "notations": [
+   "R_z(\\theta)",
+   "\\mathrm{Rz}(\\theta)",
+   "Z(\\theta)",
+   "Z_\\theta"
+  ],
+  "description": "Rotation about the $z$ axis of the Bloch sphere.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "exp(-i theta/2)",
+    0
+   ],
+   [
+    0,
+    "exp(i theta/2)"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/rz/"
+ },
+ {
+  "slug": "phase",
+  "title": "Phase Shift",
+  "symbol": "P",
+  "aliases": [
+   "phase",
+   "p",
+   "u1"
+  ],
+  "notations": [
+   "U_1(\\phi)"
+  ],
+  "description": "Applies a relative phase $e^{i\\phi}$ to the $|1\\rangle$ component.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "phi": {
+    "label": "\\phi",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    "exp(i phi)"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/phase/"
+ },
+ {
+  "slug": "r",
+  "title": "Phased Rotation",
+  "symbol": "R(\\theta, \\phi)",
+  "aliases": [
+   "r",
+   "phased-x"
+  ],
+  "notations": [
+   "R(\\theta, \\phi)",
+   "R_\\phi(\\theta)",
+   "\\mathrm{PhasedX}"
+  ],
+  "description": "Rotation by $\\theta$ about the equatorial Bloch-sphere axis at azimuthal angle $\\phi$.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "phi": {
+    "label": "\\phi",
+    "default": "1/4",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    "-i exp(-i phi) sin(theta/2)"
+   ],
+   [
+    "-i exp(i phi) sin(theta/2)",
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/r/"
+ },
+ {
+  "slug": "rot",
+  "title": "Arbitrary Rotation",
+  "symbol": "R_{\\mathbf{n}}",
+  "aliases": [
+   "rot"
+  ],
+  "notations": [
+   "\\mathrm{Rot}(\\vec{n}, \\theta)",
+   "R_{\\vec{n}}(\\theta)"
+  ],
+  "description": "Rotation by angle $\\theta$ about the Bloch-sphere axis $\\vec{n}$.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "alpha": {
+    "label": "\\alpha",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "beta": {
+    "label": "\\beta",
+    "default": "acos(1/sqrt(3))/pi",
+    "range": [
+     0,
+     1
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2) - i sin(theta/2) cos(beta)",
+    "-i sin(theta/2) sin(beta) exp(-i alpha)"
+   ],
+   [
+    "-i sin(theta/2) sin(beta) exp(i alpha)",
+    "cos(theta/2) + i sin(theta/2) cos(beta)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/rot/"
+ },
+ {
+  "slug": "u3",
+  "title": "U3",
+  "symbol": "U_3",
+  "aliases": [
+   "u3"
+  ],
+  "notations": [
+   "U_3(\\theta, \\phi, \\lambda)",
+   "\\mathrm{U3}(\\theta, \\phi, \\lambda)",
+   "U(\\theta, \\phi, \\lambda)"
+  ],
+  "description": "General single-qubit gate parameterized by three Euler angles.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/3",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "phi": {
+    "label": "\\phi",
+    "default": "1/4",
+    "range": [
+     0,
+     4
+    ]
+   },
+   "lambda": {
+    "label": "\\lambda",
+    "default": "1/6",
+    "range": [
+     0,
+     6
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    "-exp(i lambda) sin(theta/2)"
+   ],
+   [
+    "exp(i phi) sin(theta/2)",
+    "exp(i (phi+lambda)) cos(theta/2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/u3/"
+ },
+ {
+  "slug": "rxx",
+  "title": "xx Rotation",
+  "symbol": "R_{xx}",
+  "aliases": [
+   "XX"
+  ],
+  "notations": [
+   "R_{xx}(\\theta)",
+   "\\mathrm{RXX}(\\theta)",
+   "XX(\\theta)"
+  ],
+  "description": "Two-qubit rotation generated by $X \\otimes X$.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    0,
+    0,
+    "-i sin(theta/2)"
+   ],
+   [
+    0,
+    "cos(theta/2)",
+    "-i sin(theta/2)",
+    0
+   ],
+   [
+    0,
+    "-i sin(theta/2)",
+    "cos(theta/2)",
+    0
+   ],
+   [
+    "-i sin(theta/2)",
+    0,
+    0,
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [
+   "matchgate"
+  ],
+  "properties": [],
+  "url": "/gates/rxx/"
+ },
+ {
+  "slug": "ryy",
+  "title": "yy Rotation",
+  "symbol": "R_{yy}",
+  "aliases": [
+   "YY"
+  ],
+  "notations": [
+   "R_{yy}(\\theta)",
+   "\\mathrm{RYY}(\\theta)",
+   "YY(\\theta)"
+  ],
+  "description": "Two-qubit rotation generated by $Y \\otimes Y$.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    0,
+    0,
+    "i sin(theta/2)"
+   ],
+   [
+    0,
+    "cos(theta/2)",
+    "-i sin(theta/2)",
+    0
+   ],
+   [
+    0,
+    "-i sin(theta/2)",
+    "cos(theta/2)",
+    0
+   ],
+   [
+    "i sin(theta/2)",
+    0,
+    0,
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [
+   "matchgate"
+  ],
+  "properties": [],
+  "url": "/gates/ryy/"
+ },
+ {
+  "slug": "rzz",
+  "title": "zz Rotation",
+  "symbol": "R_{zz}",
+  "aliases": [
+   "ZZ"
+  ],
+  "notations": [
+   "R_{zz}(\\theta)",
+   "\\mathrm{RZZ}(\\theta)",
+   "ZZ(\\theta)"
+  ],
+  "description": "Two-qubit rotation generated by $Z \\otimes Z$.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "exp(-i theta/2)",
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "exp(i theta/2)",
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "exp(i theta/2)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "exp(-i theta/2)"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/rzz/"
+ },
+ {
+  "slug": "rzx",
+  "title": "zx Rotation",
+  "symbol": "R_{zx}",
+  "aliases": [
+   "rzx",
+   "cross-resonance"
+  ],
+  "notations": [
+   "R_{zx}(\\theta)",
+   "\\mathrm{ZX}(\\theta)",
+   "\\mathrm{CR}(\\theta)"
+  ],
+  "description": "Rotation generated by the $Z \\otimes X$ interaction, the native cross-resonance interaction of fixed-frequency superconducting qubits.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    "-i sin(theta/2)",
+    0,
+    0
+   ],
+   [
+    "-i sin(theta/2)",
+    "cos(theta/2)",
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "cos(theta/2)",
+    "i sin(theta/2)"
+   ],
+   [
+    0,
+    0,
+    "i sin(theta/2)",
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/rzx/"
+ },
+ {
+  "slug": "crx",
+  "title": "Controlled x Rotation",
+  "symbol": "\\mathrm{C}R_x",
+  "aliases": [
+   "crx"
+  ],
+  "notations": [
+   "\\mathrm{CR}_x(\\theta)",
+   "\\Lambda(R_x(\\theta))"
+  ],
+  "description": "Rotates the target about the $x$ axis by $\\theta$ when the control qubit is in the $|1\\rangle$ state.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "cos(theta/2)",
+    "-i sin(theta/2)"
+   ],
+   [
+    0,
+    0,
+    "-i sin(theta/2)",
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/crx/"
+ },
+ {
+  "slug": "cry",
+  "title": "Controlled y Rotation",
+  "symbol": "\\mathrm{C}R_y",
+  "aliases": [
+   "cry"
+  ],
+  "notations": [
+   "\\mathrm{CR}_y(\\theta)",
+   "\\Lambda(R_y(\\theta))"
+  ],
+  "description": "Rotates the target about the $y$ axis by $\\theta$ when the control qubit is in the $|1\\rangle$ state.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "cos(theta/2)",
+    "-sin(theta/2)"
+   ],
+   [
+    0,
+    0,
+    "sin(theta/2)",
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [],
+  "url": "/gates/cry/"
+ },
+ {
+  "slug": "crz",
+  "title": "Controlled z Rotation",
+  "symbol": "\\mathrm{C}R_z",
+  "aliases": [
+   "crz"
+  ],
+  "notations": [
+   "\\mathrm{CR}_z(\\theta)",
+   "\\Lambda(R_z(\\theta))"
+  ],
+  "description": "Rotates the target about the $z$ axis by $\\theta$ when the control qubit is in the $|1\\rangle$ state.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "exp(-i theta/2)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "exp(i theta/2)"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/crz/"
+ },
+ {
+  "slug": "cnot",
+  "title": "Controlled Not",
+  "symbol": "\\mathrm{C}X",
+  "aliases": [
+   "cx"
+  ],
+  "notations": [
+   "\\mathrm{C}X",
+   "\\mathrm{CNOT}",
+   "\\mathrm{CNOT}_{ij}",
+   "\\text{controlled-}X",
+   "\\Lambda(X)",
+   "\\mathrm{XOR}[i, j]"
+  ],
+  "description": "Flips the target qubit when the control qubit is in the $|1\\rangle$ state.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/cnot/"
+ },
+ {
+  "slug": "cy",
+  "title": "Controlled-Y",
+  "symbol": "\\mathrm{C}Y",
+  "aliases": [
+   "cy"
+  ],
+  "notations": [
+   "\\Lambda(Y)",
+   "\\text{controlled-}Y"
+  ],
+  "description": "Applies $Y$ to the target qubit when the control qubit is in the $|1\\rangle$ state.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "-i"
+   ],
+   [
+    0,
+    0,
+    "i",
+    0
+   ]
+  ],
+  "groups": [
+   "clifford"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/cy/"
+ },
+ {
+  "slug": "cz",
+  "title": "Controlled-Z",
+  "symbol": "\\mathrm{C}Z",
+  "aliases": [
+   "cz"
+  ],
+  "notations": [
+   "\\Lambda(Z)",
+   "\\text{controlled-}Z"
+  ],
+  "description": "Applies a $-1$ phase to $|11\\rangle$.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    -1
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "diagonal",
+   "orthogonal",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/cz/"
+ },
+ {
+  "slug": "controlled-phase",
+  "title": "Controlled Phase",
+  "symbol": "\\mathrm{C}P",
+  "aliases": [
+   "cphase",
+   "cp"
+  ],
+  "notations": [
+   "\\mathrm{CPhase}(\\phi)",
+   "\\Lambda(\\mathrm{e}^{i\\phi})"
+  ],
+  "description": "Applies a phase $\\mathrm{e}^{i\\phi}$ to $|11\\rangle$ and leaves other basis states unchanged.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "phi": {
+    "label": "\\phi",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "exp(i phi)"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/controlled-phase/"
+ },
+ {
+  "slug": "ch",
+  "title": "Controlled-Hadamard",
+  "symbol": "\\mathrm{C}H",
+  "aliases": [
+   "ch"
+  ],
+  "notations": [
+   "\\Lambda(H)",
+   "\\text{controlled-}H"
+  ],
+  "description": "Applies a Hadamard to the target qubit when the control qubit is in the $|1\\rangle$ state.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "1/sqrt(2)",
+    "1/sqrt(2)"
+   ],
+   [
+    0,
+    0,
+    "1/sqrt(2)",
+    "-1/sqrt(2)"
+   ]
+  ],
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/ch/"
+ },
+ {
+  "slug": "cs",
+  "title": "Controlled-S",
+  "symbol": "\\mathrm{C}S",
+  "aliases": [
+   "cs"
+  ],
+  "notations": [
+   "\\Lambda(S)",
+   "\\sqrt{\\mathrm{C}Z}",
+   "\\mathrm{CP}(\\pi/2)"
+  ],
+  "description": "Applies a phase of $i$ to the $|11\\rangle$ state, the square root of controlled-$Z$.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "i"
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/cs/"
+ },
+ {
+  "slug": "csx",
+  "title": "Controlled sqrt(X)",
+  "symbol": "\\mathrm{C}\\sqrt{X}",
+  "aliases": [
+   "csx",
+   "controlled-sqrt-x"
+  ],
+  "notations": [
+   "\\mathrm{CS}X",
+   "\\mathrm{C}V",
+   "\\text{controlled-}\\sqrt{X}"
+  ],
+  "description": "Applies $\\sqrt{X}$ to the target when the control qubit is $|1\\rangle$.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "(1+i)/2",
+    "(1-i)/2"
+   ],
+   [
+    0,
+    0,
+    "(1-i)/2",
+    "(1+i)/2"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/csx/"
+ },
+ {
+  "slug": "toffoli",
+  "title": "Toffoli",
+  "symbol": "\\mathrm{CC}X",
+  "aliases": [
+   "toffoli",
+   "ccx"
+  ],
+  "notations": [
+   "\\mathrm{CCX}",
+   "\\mathrm{CCNOT}",
+   "\\mathrm{TOFF}",
+   "C^2X",
+   "\\Lambda^2(X)",
+   "\\text{Toffoli}"
+  ],
+  "description": "Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\\rangle$.",
+  "arity": 3,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ]
+  ],
+  "groups": [
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/toffoli/"
+ },
+ {
+  "slug": "ccz",
+  "title": "Controlled-CZ",
+  "symbol": "\\mathrm{CC}Z",
+  "aliases": [
+   "ccz"
+  ],
+  "notations": [
+   "C^2Z",
+   "\\Lambda^2(Z)"
+  ],
+  "description": "Applies a $-1$ phase to $|111\\rangle$ and leaves all other basis states unchanged.",
+  "arity": 3,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1
+   ]
+  ],
+  "groups": [
+   "diagonal",
+   "orthogonal",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/ccz/"
+ },
+ {
+  "slug": "cswap",
+  "title": "Fredkin",
+  "symbol": "\\mathrm{CSWAP}",
+  "aliases": [
+   "fredkin"
+  ],
+  "notations": [
+   "\\mathrm{CSWAP}",
+   "\\text{Fredkin}",
+   "\\text{controlled-}SWAP"
+  ],
+  "description": "Controlled swap of two target qubits conditioned on a single control qubit.",
+  "arity": 3,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "orthogonal",
+   "permutation",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/cswap/"
+ },
+ {
+  "slug": "mcx",
+  "title": "Multi-Controlled X",
+  "symbol": "\\mathrm{C}^nX",
+  "aliases": [
+   "mcx",
+   "c3x",
+   "c4x"
+  ],
+  "notations": [
+   "\\mathrm{C}^nX",
+   "\\Lambda^n(X)",
+   "\\mathrm{MCX}",
+   "\\mathrm{C}^3X"
+  ],
+  "description": "Flips the target qubit when all $n$ control qubits are in the $|1\\rangle$ state.",
+  "arity": "n+1",
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ]
+  ],
+  "matrix_note": "n = 3",
+  "groups": [
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/mcx/"
+ },
+ {
+  "slug": "deutsch",
+  "title": "Deutsch",
+  "symbol": "D(\\theta)",
+  "aliases": [
+   "deutsch"
+  ],
+  "notations": [
+   "D(\\theta)",
+   "\\Lambda^2(iR_x(2\\theta))"
+  ],
+  "description": "The original universal three-qubit gate, applying $iR_x(2\\theta)$ to the target when both controls are $|1\\rangle$.",
+  "arity": 3,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "i cos(theta)",
+    "sin(theta)"
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "sin(theta)",
+    "i cos(theta)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/deutsch/"
+ },
+ {
+  "slug": "rccx",
+  "title": "Margolus",
+  "symbol": "\\mathrm{RCC}X",
+  "aliases": [
+   "rccx",
+   "margolus"
+  ],
+  "notations": [
+   "\\mathrm{RCCX}",
+   "\\widetilde{\\mathrm{CC}X}"
+  ],
+  "description": "Simplified Toffoli gate, equal to the Toffoli up to a $-1$ phase on $|101\\rangle$, costing only three CNOTs.",
+  "arity": 3,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ]
+  ],
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/rccx/"
+ },
+ {
+  "slug": "swap",
+  "title": "SWAP",
+  "symbol": "\\mathrm{SWAP}",
+  "aliases": [],
+  "notations": [
+   "\\mathrm{SWAP}",
+   "\\mathrm{SWAP}_{ij}"
+  ],
+  "description": "Exchanges the quantum states of two qubits.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "orthogonal",
+   "permutation",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/swap/"
+ },
+ {
+  "slug": "iswap",
+  "title": "iSWAP",
+  "symbol": "i\\mathrm{SWAP}",
+  "aliases": [],
+  "notations": [],
+  "description": "Swaps $|01\\rangle$ and $|10\\rangle$ and adds a phase of $i$.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "i",
+    0
+   ],
+   [
+    0,
+    "i",
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "matchgate",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/iswap/"
+ },
+ {
+  "slug": "sqrt-swap",
+  "title": "Square Root SWAP",
+  "symbol": "\\sqrt{\\mathrm{SWAP}}",
+  "aliases": [
+   "sqrtswap"
+  ],
+  "notations": [],
+  "description": "Applies half of a SWAP interaction, creating maximal entanglement from a product state.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "(1+i)/2",
+    "(1-i)/2",
+    0
+   ],
+   [
+    0,
+    "(1-i)/2",
+    "(1+i)/2",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/sqrt-swap/"
+ },
+ {
+  "slug": "sqrt-iswap",
+  "title": "Square Root iSWAP",
+  "symbol": "\\sqrt{i\\mathrm{SWAP}}",
+  "aliases": [
+   "sqrt-iswap",
+   "siswap",
+   "sqisw"
+  ],
+  "notations": [
+   "\\mathrm{SISWAP}",
+   "\\mathrm{SQISW}"
+  ],
+  "description": "Applies half of an iSWAP interaction, native to superconducting hardware with $XY$ coupling.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "1/sqrt(2)",
+    "i/sqrt(2)",
+    0
+   ],
+   [
+    0,
+    "i/sqrt(2)",
+    "1/sqrt(2)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "matchgate",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/sqrt-iswap/"
+ },
+ {
+  "slug": "fswap",
+  "title": "fSWAP",
+  "symbol": "\\mathrm{fSWAP}",
+  "aliases": [
+   "fswap",
+   "fermionic-swap"
+  ],
+  "notations": [],
+  "description": "Swaps $|01\\rangle$ and $|10\\rangle$ while applying a $-1$ phase to $|11\\rangle$.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    -1
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "orthogonal",
+   "matchgate",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/fswap/"
+ },
+ {
+  "slug": "dcx",
+  "title": "Double CX",
+  "symbol": "\\mathrm{DC}X",
+  "aliases": [
+   "dcnot"
+  ],
+  "notations": [
+   "\\mathrm{DCNOT}"
+  ],
+  "description": "Two back-to-back CNOTs with alternating control and target qubits.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ]
+  ],
+  "groups": [
+   "clifford",
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [],
+  "url": "/gates/dcx/"
+ },
+ {
+  "slug": "gpi",
+  "title": "GPi",
+  "symbol": "\\mathrm{GPi}",
+  "aliases": [
+   "gpi"
+  ],
+  "notations": [
+   "\\mathrm{GPi}(\\phi)",
+   "\\mathrm{GPI}(\\phi)"
+  ],
+  "description": "IonQ's native $\\pi$ pulse, a bit flip about the equatorial Bloch-sphere axis at angle $\\phi$.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "phi": {
+    "label": "\\phi",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    0,
+    "exp(-i phi)"
+   ],
+   [
+    "exp(i phi)",
+    0
+   ]
+  ],
+  "groups": [],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/gpi/"
+ },
+ {
+  "slug": "gpi2",
+  "title": "GPi2",
+  "symbol": "\\mathrm{GPi2}",
+  "aliases": [
+   "gpi2"
+  ],
+  "notations": [
+   "\\mathrm{GPi2}(\\phi)",
+   "\\mathrm{GPI2}(\\phi)"
+  ],
+  "description": "IonQ's native $\\pi/2$ pulse, a half rotation about the equatorial Bloch-sphere axis at angle $\\phi$.",
+  "arity": 1,
+  "dimension": 2,
+  "params": {
+   "phi": {
+    "label": "\\phi",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "1/sqrt(2)",
+    "-i exp(-i phi)/sqrt(2)"
+   ],
+   [
+    "-i exp(i phi)/sqrt(2)",
+    "1/sqrt(2)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/gpi2/"
+ },
+ {
+  "slug": "molmer-sorenson",
+  "title": "Mølmer-Sørensen",
+  "symbol": "MS",
+  "aliases": [],
+  "notations": [
+   "\\mathrm{MS}",
+   "\\mathrm{MS}(\\chi_{ij})",
+   "\\mathrm{GMS}"
+  ],
+  "description": "A native entangling interaction in ion-trap systems based on collective spin-motion coupling.",
+  "arity": "n",
+  "dimension": 2,
+  "params": {
+   "chi": {
+    "label": "\\chi",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(chi/2)",
+    0,
+    0,
+    "-i sin(chi/2)"
+   ],
+   [
+    0,
+    "cos(chi/2)",
+    "-i sin(chi/2)",
+    0
+   ],
+   [
+    0,
+    "-i sin(chi/2)",
+    "cos(chi/2)",
+    0
+   ],
+   [
+    "-i sin(chi/2)",
+    0,
+    0,
+    "cos(chi/2)"
+   ]
+  ],
+  "matrix_note": "n = 2",
+  "groups": [],
+  "properties": [],
+  "url": "/gates/molmer-sorenson/"
+ },
+ {
+  "slug": "ecr",
+  "title": "Echoed Cross-Resonance",
+  "symbol": "ECR",
+  "aliases": [],
+  "notations": [],
+  "description": "A native two-qubit Clifford gate for cross-resonance hardware, locally equivalent to CNOT.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    0,
+    "1/sqrt(2)",
+    0,
+    "i/sqrt(2)"
+   ],
+   [
+    "1/sqrt(2)",
+    0,
+    "-i/sqrt(2)",
+    0
+   ],
+   [
+    0,
+    "i/sqrt(2)",
+    0,
+    "1/sqrt(2)"
+   ],
+   [
+    "-i/sqrt(2)",
+    0,
+    "1/sqrt(2)",
+    0
+   ]
+  ],
+  "groups": [
+   "clifford"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/ecr/"
+ },
+ {
+  "slug": "sycamore",
+  "title": "Sycamore",
+  "symbol": "\\mathrm{SYC}",
+  "aliases": [
+   "sycamore",
+   "syc"
+  ],
+  "notations": [
+   "\\mathrm{SYC}",
+   "\\mathrm{fSim}(\\pi/2, \\pi/6)"
+  ],
+  "description": "Google's native two-qubit gate, the fSim gate at $\\theta = \\pi/2$, $\\phi = \\pi/6$.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "-i",
+    0
+   ],
+   [
+    0,
+    "-i",
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "exp(-i pi/6)"
+   ]
+  ],
+  "groups": [
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/sycamore/"
+ },
+ {
+  "slug": "xy",
+  "title": "XY Interaction",
+  "symbol": "\\mathrm{XY}",
+  "aliases": [
+   "xy",
+   "xx-plus-yy"
+  ],
+  "notations": [
+   "\\mathrm{XY}(\\theta)",
+   "R_{xx+yy}(\\theta)",
+   "\\mathrm{PISWAP}(\\theta)"
+  ],
+  "description": "Partial iSWAP generated by the $XX + YY$ exchange interaction, rotating within the single-excitation subspace.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "cos(theta/2)",
+    "i sin(theta/2)",
+    0
+   ],
+   [
+    0,
+    "i sin(theta/2)",
+    "cos(theta/2)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "matchgate",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/xy/"
+ },
+ {
+  "slug": "fsim",
+  "title": "Fermionic Simulator",
+  "symbol": "\\mathrm{FSim}",
+  "aliases": [
+   "fsim"
+  ],
+  "notations": [],
+  "description": "Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "phi": {
+    "label": "\\phi",
+    "default": "1/3",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "cos(theta)",
+    "-i sin(theta)",
+    0
+   ],
+   [
+    0,
+    "-i sin(theta)",
+    "cos(theta)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "exp(-i phi)"
+   ]
+  ],
+  "groups": [
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/fsim/"
+ },
+ {
+  "slug": "can",
+  "title": "Canonical entangling",
+  "symbol": "\\mathrm{CAN}",
+  "aliases": [
+   "can",
+   "canonical"
+  ],
+  "notations": [],
+  "description": "Parameterizes every two-qubit interaction up to local unitaries.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "a": {
+    "label": "a",
+    "default": "1/4",
+    "range": [
+     0,
+     1
+    ]
+   },
+   "b": {
+    "label": "b",
+    "default": "1/8",
+    "range": [
+     0,
+     2
+    ]
+   },
+   "c": {
+    "label": "c",
+    "default": "1/16",
+    "range": [
+     0,
+     3
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "exp(i c) cos(a-b)",
+    0,
+    0,
+    "i exp(i c) sin(a-b)"
+   ],
+   [
+    0,
+    "exp(-i c) cos(a+b)",
+    "i exp(-i c) sin(a+b)",
+    0
+   ],
+   [
+    0,
+    "i exp(-i c) sin(a+b)",
+    "exp(-i c) cos(a+b)",
+    0
+   ],
+   [
+    "i exp(i c) sin(a-b)",
+    0,
+    0,
+    "exp(i c) cos(a-b)"
+   ]
+  ],
+  "groups": [],
+  "properties": [],
+  "url": "/gates/can/"
+ },
+ {
+  "slug": "b",
+  "title": "B Gate",
+  "symbol": "B",
+  "aliases": [],
+  "notations": [],
+  "description": "Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    "(cos(pi/8)+sin(pi/8))/sqrt(2)",
+    0,
+    0,
+    "i (cos(pi/8)-sin(pi/8))/sqrt(2)"
+   ],
+   [
+    0,
+    "(cos(pi/8)-sin(pi/8))/sqrt(2)",
+    "i (cos(pi/8)+sin(pi/8))/sqrt(2)",
+    0
+   ],
+   [
+    0,
+    "i (cos(pi/8)+sin(pi/8))/sqrt(2)",
+    "(cos(pi/8)-sin(pi/8))/sqrt(2)",
+    0
+   ],
+   [
+    "i (cos(pi/8)-sin(pi/8))/sqrt(2)",
+    0,
+    0,
+    "(cos(pi/8)+sin(pi/8))/sqrt(2)"
+   ]
+  ],
+  "groups": [
+   "matchgate"
+  ],
+  "properties": [],
+  "url": "/gates/b/"
+ },
+ {
+  "slug": "magic",
+  "title": "Magic",
+  "symbol": "M",
+  "aliases": [
+   "m"
+  ],
+  "notations": [
+   "\\mathcal{M}",
+   "Q",
+   "E"
+  ],
+  "description": "Changes from the computational basis to the magic (Bell) basis used in two-qubit local invariants.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    "1/sqrt(2)",
+    "i/sqrt(2)",
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "i/sqrt(2)",
+    "1/sqrt(2)"
+   ],
+   [
+    0,
+    0,
+    "i/sqrt(2)",
+    "-1/sqrt(2)"
+   ],
+   [
+    "1/sqrt(2)",
+    "-i/sqrt(2)",
+    0,
+    0
+   ]
+  ],
+  "groups": [
+   "clifford"
+  ],
+  "properties": [],
+  "url": "/gates/magic/"
+ },
+ {
+  "slug": "givens",
+  "title": "Givens Rotation",
+  "symbol": "G_{ij}",
+  "aliases": [
+   "givens"
+  ],
+  "notations": [
+   "G(\\theta)",
+   "G_{ij}(\\theta)"
+  ],
+  "description": "Two-level rotation that mixes the $|01\\rangle$ and $|10\\rangle$ subspace.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/4",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "cos(theta)",
+    "-sin(theta)",
+    0
+   ],
+   [
+    0,
+    "sin(theta)",
+    "cos(theta)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "orthogonal",
+   "matchgate",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/givens/"
+ },
+ {
+  "slug": "xx-minus-yy",
+  "title": "XX−YY Interaction",
+  "symbol": "R_{xx-yy}",
+  "aliases": [
+   "xx-minus-yy"
+  ],
+  "notations": [
+   "R_{xx-yy}(\\theta)",
+   "\\mathrm{XX{-}YY}(\\theta)"
+  ],
+  "description": "Rotation generated by the $XX - YY$ interaction, acting only on the even-parity subspace.",
+  "arity": 2,
+  "dimension": 2,
+  "params": {
+   "theta": {
+    "label": "\\theta",
+    "default": "1/2",
+    "range": [
+     0,
+     4
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "cos(theta/2)",
+    0,
+    0,
+    "-i sin(theta/2)"
+   ],
+   [
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    "-i sin(theta/2)",
+    0,
+    0,
+    "cos(theta/2)"
+   ]
+  ],
+  "groups": [
+   "matchgate"
+  ],
+  "properties": [],
+  "url": "/gates/xx-minus-yy/"
+ },
+ {
+  "slug": "shift",
+  "title": "Shift",
+  "symbol": "X_d",
+  "aliases": [
+   "shift"
+  ],
+  "notations": [
+   "X_d",
+   "\\Sigma_x",
+   "\\tau"
+  ],
+  "description": "Qudit generalization of Pauli-$X$ that cyclically increments the basis state, $|j\\rangle \\mapsto |j+1 \\bmod d\\rangle$.",
+  "arity": 1,
+  "dimension": "d",
+  "matrix": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "matrix_note": "d = 3",
+  "groups": [
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [],
+  "url": "/gates/shift/"
+ },
+ {
+  "slug": "clock",
+  "title": "Clock",
+  "symbol": "Z_d",
+  "aliases": [
+   "clock"
+  ],
+  "notations": [
+   "Z_d",
+   "\\Sigma_z",
+   "\\sigma"
+  ],
+  "description": "Qudit generalization of Pauli-$Z$ that tags each basis state with a root-of-unity phase, $|j\\rangle \\mapsto \\omega^j |j\\rangle$.",
+  "arity": 1,
+  "dimension": "d",
+  "matrix": [
+   [
+    "1",
+    0,
+    0
+   ],
+   [
+    0,
+    "exp(2 pi i/3)",
+    0
+   ],
+   [
+    0,
+    0,
+    "exp(4 pi i/3)"
+   ]
+  ],
+  "matrix_note": "d = 3",
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/clock/"
+ },
+ {
+  "slug": "chrestenson",
+  "title": "Chrestenson",
+  "symbol": "C_d",
+  "aliases": [
+   "chrestenson",
+   "chrestenson-transform",
+   "generalized-hadamard"
+  ],
+  "notations": [
+   "C_d",
+   "\\mathcal{C}_d"
+  ],
+  "description": "Qudit generalization of the Hadamard gate that maps each basis state to an equal superposition with root-of-unity phases.",
+  "arity": 1,
+  "dimension": "d",
+  "matrix": [
+   [
+    "1/sqrt(3)",
+    "1/sqrt(3)",
+    "1/sqrt(3)"
+   ],
+   [
+    "1/sqrt(3)",
+    "exp(2 pi i/3)/sqrt(3)",
+    "exp(4 pi i/3)/sqrt(3)"
+   ],
+   [
+    "1/sqrt(3)",
+    "exp(4 pi i/3)/sqrt(3)",
+    "exp(2 pi i/3)/sqrt(3)"
+   ]
+  ],
+  "matrix_note": "d = 3",
+  "groups": [],
+  "properties": [],
+  "url": "/gates/chrestenson/"
+ },
+ {
+  "slug": "controlled-shift",
+  "title": "Controlled Shift (SUM)",
+  "symbol": "\\mathrm{SUM}_d",
+  "aliases": [
+   "sum",
+   "cadd",
+   "qudit-cx",
+   "controlled-shift"
+  ],
+  "notations": [
+   "\\mathrm{C}X_d",
+   "\\mathrm{ADD}_d",
+   "\\mathrm{SUM}_d"
+  ],
+  "description": "Qudit-controlled shift that adds the control value to the target modulo $d$.",
+  "arity": 2,
+  "dimension": "d",
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ]
+  ],
+  "matrix_note": "d = 3",
+  "groups": [
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [],
+  "url": "/gates/controlled-shift/"
+ },
+ {
+  "slug": "controlled-clock",
+  "title": "Controlled Clock",
+  "symbol": "\\mathrm{C}Z_d",
+  "aliases": [
+   "controlled-clock",
+   "qudit-cz",
+   "czd",
+   "controlled-zd"
+  ],
+  "notations": [
+   "\\mathrm{C}Z_d",
+   "\\mathrm{CP}_d",
+   "\\Lambda(Z_d)"
+  ],
+  "description": "Qudit generalization of controlled-$Z$ that applies the phase $\\omega^{ct}$ to $|c,t\\rangle$.",
+  "arity": 2,
+  "dimension": "d",
+  "matrix": [
+   [
+    "1",
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "1",
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    "1",
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    "1",
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    "exp(2 pi i/3)",
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    "exp(4 pi i/3)",
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "1",
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "exp(4 pi i/3)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "exp(2 pi i/3)"
+   ]
+  ],
+  "matrix_note": "d = 3",
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/controlled-clock/"
+ },
+ {
+  "slug": "global-phase",
+  "title": "Global Phase",
+  "symbol": "\\mathrm{Ph}",
+  "aliases": [
+   "gphase",
+   "ph"
+  ],
+  "notations": [
+   "\\mathrm{e}^{i\\phi}",
+   "\\mathrm{e}^{i\\phi} I"
+  ],
+  "description": "Multiplies the entire quantum state by an overall phase factor.",
+  "arity": "n",
+  "dimension": 2,
+  "params": {
+   "phi": {
+    "label": "\\phi",
+    "default": "1/2",
+    "range": [
+     0,
+     2
+    ]
+   }
+  },
+  "matrix": [
+   [
+    "exp(i phi)",
+    0
+   ],
+   [
+    0,
+    "exp(i phi)"
+   ]
+  ],
+  "matrix_note": "n = 1",
+  "groups": [
+   "diagonal",
+   "number-preserving"
+  ],
+  "properties": [],
+  "url": "/gates/global-phase/"
+ },
+ {
+  "slug": "qft",
+  "title": "Quantum Fourier Transform",
+  "symbol": "\\mathrm{QFT}_n",
+  "aliases": [
+   "qft"
+  ],
+  "notations": [],
+  "description": "Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.",
+  "arity": "n",
+  "dimension": 2,
+  "matrix": [
+   [
+    "1/sqrt(8)",
+    "1/sqrt(8)",
+    "1/sqrt(8)",
+    "1/sqrt(8)",
+    "1/sqrt(8)",
+    "1/sqrt(8)",
+    "1/sqrt(8)",
+    "1/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*1/8)/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "exp(2 pi i*3/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*5/8)/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "exp(2 pi i*7/8)/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "1/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*3/8)/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "exp(2 pi i*1/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*7/8)/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "exp(2 pi i*5/8)/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "1/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "1/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "1/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*5/8)/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "exp(2 pi i*7/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*1/8)/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "exp(2 pi i*3/8)/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "1/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)"
+   ],
+   [
+    "1/sqrt(8)",
+    "exp(2 pi i*7/8)/sqrt(8)",
+    "exp(2 pi i*6/8)/sqrt(8)",
+    "exp(2 pi i*5/8)/sqrt(8)",
+    "exp(2 pi i*4/8)/sqrt(8)",
+    "exp(2 pi i*3/8)/sqrt(8)",
+    "exp(2 pi i*2/8)/sqrt(8)",
+    "exp(2 pi i*1/8)/sqrt(8)"
+   ]
+  ],
+  "matrix_note": "n = 3",
+  "groups": [],
+  "properties": [],
+  "url": "/gates/qft/"
+ },
+ {
+  "slug": "oracle",
+  "title": "Oracle",
+  "symbol": "O_f",
+  "aliases": [],
+  "notations": [
+   "U_f",
+   "\\mathcal{O}_f"
+  ],
+  "description": "Implements a classical function as a reversible black-box unitary that can be queried coherently.",
+  "arity": "n",
+  "dimension": "p",
+  "groups": [
+   "orthogonal",
+   "permutation"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/oracle/"
+ },
+ {
+  "slug": "phase-oracle",
+  "title": "Phase Oracle",
+  "symbol": "O_f^\\pm",
+  "aliases": [],
+  "notations": [
+   "U_f^\\pm",
+   "\\mathcal{O}_f^\\pm"
+  ],
+  "description": "Encodes a Boolean function as phases on computational basis states.",
+  "arity": "n",
+  "dimension": "p",
+  "groups": [
+   "diagonal",
+   "orthogonal",
+   "number-preserving"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/phase-oracle/"
+ },
+ {
+  "slug": "grover-diffuser",
+  "title": "Grover Diffuser",
+  "symbol": "U_s",
+  "aliases": [
+   "grover-diffuser",
+   "diffuser"
+  ],
+  "notations": [
+   "U_s",
+   "2|s\\rangle\\langle s| - I",
+   "\\mathrm{D}"
+  ],
+  "description": "Reflection about the uniform superposition, the \"inversion about the mean\" step of Grover's algorithm.",
+  "arity": "n",
+  "dimension": 2,
+  "matrix": [
+   [
+    "-1/2",
+    "1/2",
+    "1/2",
+    "1/2"
+   ],
+   [
+    "1/2",
+    "-1/2",
+    "1/2",
+    "1/2"
+   ],
+   [
+    "1/2",
+    "1/2",
+    "-1/2",
+    "1/2"
+   ],
+   [
+    "1/2",
+    "1/2",
+    "1/2",
+    "-1/2"
+   ]
+  ],
+  "matrix_note": "n = 2",
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [
+   "hermitian"
+  ],
+  "url": "/gates/grover-diffuser/"
+ },
+ {
+  "slug": "virtual-distillation",
+  "title": "Virtual Distillation",
+  "symbol": "B^{(2)}_i",
+  "aliases": [],
+  "notations": [],
+  "description": "A two-qubit entangling gate used in virtual distillation error-mitigation protocols.",
+  "arity": 2,
+  "dimension": 2,
+  "matrix": [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    "1/sqrt(2)",
+    "-1/sqrt(2)",
+    0
+   ],
+   [
+    0,
+    "1/sqrt(2)",
+    "1/sqrt(2)",
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    1
+   ]
+  ],
+  "groups": [
+   "orthogonal"
+  ],
+  "properties": [],
+  "url": "/gates/virtual-distillation/"
+ }
+]

@@ -1,0 +1,38 @@
+{
+ "slug": "pauli-x",
+ "title": "Pauli-X",
+ "symbol": "X",
+ "aliases": [
+  "x"
+ ],
+ "notations": [
+  "X",
+  "\\sigma_x",
+  "\\sigma^x",
+  "\\sigma_1",
+  "\\mathrm{NOT}"
+ ],
+ "description": "Bit-flip gate that swaps $|0\\rangle$ and $|1\\rangle$.",
+ "arity": 1,
+ "dimension": 2,
+ "matrix": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   0
+  ]
+ ],
+ "groups": [
+  "pauli",
+  "clifford",
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/pauli-x/"
+}

@@ -1,0 +1,107 @@
+{
+ "slug": "cswap",
+ "title": "Fredkin",
+ "symbol": "\\mathrm{CSWAP}",
+ "aliases": [
+  "fredkin"
+ ],
+ "notations": [
+  "\\mathrm{CSWAP}",
+  "\\text{Fredkin}",
+  "\\text{controlled-}SWAP"
+ ],
+ "description": "Controlled swap of two target qubits conditioned on a single control qubit.",
+ "arity": 3,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "orthogonal",
+  "permutation",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/cswap/"
+}

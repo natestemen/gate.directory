@@ -1,0 +1,51 @@
+{
+ "slug": "grover-diffuser",
+ "title": "Grover Diffuser",
+ "symbol": "U_s",
+ "aliases": [
+  "grover-diffuser",
+  "diffuser"
+ ],
+ "notations": [
+  "U_s",
+  "2|s\\rangle\\langle s| - I",
+  "\\mathrm{D}"
+ ],
+ "description": "Reflection about the uniform superposition, the \"inversion about the mean\" step of Grover's algorithm.",
+ "arity": "n",
+ "dimension": 2,
+ "matrix": [
+  [
+   "-1/2",
+   "1/2",
+   "1/2",
+   "1/2"
+  ],
+  [
+   "1/2",
+   "-1/2",
+   "1/2",
+   "1/2"
+  ],
+  [
+   "1/2",
+   "1/2",
+   "-1/2",
+   "1/2"
+  ],
+  [
+   "1/2",
+   "1/2",
+   "1/2",
+   "-1/2"
+  ]
+ ],
+ "matrix_note": "n = 2",
+ "groups": [
+  "orthogonal"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/grover-diffuser/"
+}

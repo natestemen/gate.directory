@@ -1,0 +1,110 @@
+{
+ "slug": "toffoli",
+ "title": "Toffoli",
+ "symbol": "\\mathrm{CC}X",
+ "aliases": [
+  "toffoli",
+  "ccx"
+ ],
+ "notations": [
+  "\\mathrm{CCX}",
+  "\\mathrm{CCNOT}",
+  "\\mathrm{TOFF}",
+  "C^2X",
+  "\\Lambda^2(X)",
+  "\\text{Toffoli}"
+ ],
+ "description": "Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\\rangle$.",
+ "arity": 3,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ]
+ ],
+ "groups": [
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/toffoli/"
+}

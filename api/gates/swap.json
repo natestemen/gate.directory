@@ -1,0 +1,49 @@
+{
+ "slug": "swap",
+ "title": "SWAP",
+ "symbol": "\\mathrm{SWAP}",
+ "aliases": [],
+ "notations": [
+  "\\mathrm{SWAP}",
+  "\\mathrm{SWAP}_{ij}"
+ ],
+ "description": "Exchanges the quantum states of two qubits.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1
+  ]
+ ],
+ "groups": [
+  "clifford",
+  "orthogonal",
+  "permutation",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/swap/"
+}

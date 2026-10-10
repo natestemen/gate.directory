@@ -1,0 +1,40 @@
+{
+ "slug": "gpi",
+ "title": "GPi",
+ "symbol": "\\mathrm{GPi}",
+ "aliases": [
+  "gpi"
+ ],
+ "notations": [
+  "\\mathrm{GPi}(\\phi)",
+  "\\mathrm{GPI}(\\phi)"
+ ],
+ "description": "IonQ's native $\\pi$ pulse, a bit flip about the equatorial Bloch-sphere axis at angle $\\phi$.",
+ "arity": 1,
+ "dimension": 2,
+ "params": {
+  "phi": {
+   "label": "\\phi",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   0,
+   "exp(-i phi)"
+  ],
+  [
+   "exp(i phi)",
+   0
+  ]
+ ],
+ "groups": [],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/gpi/"
+}

@@ -1,0 +1,61 @@
+{
+ "slug": "fsim",
+ "title": "Fermionic Simulator",
+ "symbol": "\\mathrm{FSim}",
+ "aliases": [
+  "fsim"
+ ],
+ "notations": [],
+ "description": "Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.",
+ "arity": 2,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  },
+  "phi": {
+   "label": "\\phi",
+   "default": "1/3",
+   "range": [
+    0,
+    4
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   "cos(theta)",
+   "-i sin(theta)",
+   0
+  ],
+  [
+   0,
+   "-i sin(theta)",
+   "cos(theta)",
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   "exp(-i phi)"
+  ]
+ ],
+ "groups": [
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/fsim/"
+}

@@ -1,0 +1,22 @@
+{
+ "slug": "phase-oracle",
+ "title": "Phase Oracle",
+ "symbol": "O_f^\\pm",
+ "aliases": [],
+ "notations": [
+  "U_f^\\pm",
+  "\\mathcal{O}_f^\\pm"
+ ],
+ "description": "Encodes a Boolean function as phases on computational basis states.",
+ "arity": "n",
+ "dimension": "p",
+ "groups": [
+  "diagonal",
+  "orthogonal",
+  "number-preserving"
+ ],
+ "properties": [
+  "hermitian"
+ ],
+ "url": "/gates/phase-oracle/"
+}

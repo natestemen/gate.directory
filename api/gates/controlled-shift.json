@@ -1,0 +1,127 @@
+{
+ "slug": "controlled-shift",
+ "title": "Controlled Shift (SUM)",
+ "symbol": "\\mathrm{SUM}_d",
+ "aliases": [
+  "sum",
+  "cadd",
+  "qudit-cx",
+  "controlled-shift"
+ ],
+ "notations": [
+  "\\mathrm{C}X_d",
+  "\\mathrm{ADD}_d",
+  "\\mathrm{SUM}_d"
+ ],
+ "description": "Qudit-controlled shift that adds the control value to the target modulo $d$.",
+ "arity": 2,
+ "dimension": "d",
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ]
+ ],
+ "matrix_note": "d = 3",
+ "groups": [
+  "orthogonal",
+  "permutation"
+ ],
+ "properties": [],
+ "url": "/gates/controlled-shift/"
+}

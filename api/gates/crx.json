@@ -1,0 +1,54 @@
+{
+ "slug": "crx",
+ "title": "Controlled x Rotation",
+ "symbol": "\\mathrm{C}R_x",
+ "aliases": [
+  "crx"
+ ],
+ "notations": [
+  "\\mathrm{CR}_x(\\theta)",
+  "\\Lambda(R_x(\\theta))"
+ ],
+ "description": "Rotates the target about the $x$ axis by $\\theta$ when the control qubit is in the $|1\\rangle$ state.",
+ "arity": 2,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/2",
+   "range": [
+    0,
+    4
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   "cos(theta/2)",
+   "-i sin(theta/2)"
+  ],
+  [
+   0,
+   0,
+   "-i sin(theta/2)",
+   "cos(theta/2)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/crx/"
+}

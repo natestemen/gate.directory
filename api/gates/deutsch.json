@@ -1,0 +1,110 @@
+{
+ "slug": "deutsch",
+ "title": "Deutsch",
+ "symbol": "D(\\theta)",
+ "aliases": [
+  "deutsch"
+ ],
+ "notations": [
+  "D(\\theta)",
+  "\\Lambda^2(iR_x(2\\theta))"
+ ],
+ "description": "The original universal three-qubit gate, applying $iR_x(2\\theta)$ to the target when both controls are $|1\\rangle$.",
+ "arity": 3,
+ "dimension": 2,
+ "params": {
+  "theta": {
+   "label": "\\theta",
+   "default": "1/4",
+   "range": [
+    0,
+    2
+   ]
+  }
+ },
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   "i cos(theta)",
+   "sin(theta)"
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   "sin(theta)",
+   "i cos(theta)"
+  ]
+ ],
+ "groups": [],
+ "properties": [],
+ "url": "/gates/deutsch/"
+}

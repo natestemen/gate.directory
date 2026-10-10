@@ -1,0 +1,48 @@
+{
+ "slug": "cs",
+ "title": "Controlled-S",
+ "symbol": "\\mathrm{C}S",
+ "aliases": [
+  "cs"
+ ],
+ "notations": [
+  "\\Lambda(S)",
+  "\\sqrt{\\mathrm{C}Z}",
+  "\\mathrm{CP}(\\pi/2)"
+ ],
+ "description": "Applies a phase of $i$ to the $|11\\rangle$ state, the square root of controlled-$Z$.",
+ "arity": 2,
+ "dimension": 2,
+ "matrix": [
+  [
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   "i"
+  ]
+ ],
+ "groups": [
+  "diagonal",
+  "number-preserving"
+ ],
+ "properties": [],
+ "url": "/gates/cs/"
+}
