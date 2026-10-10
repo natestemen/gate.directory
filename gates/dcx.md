@@ -12,6 +12,8 @@ groups:
   - permutation
 arity: 2
 weyl: [1/4, 1/4, 0]
+quirk:
+  cols: [["•", "X"], ["X", "•"]]
 description: Two back-to-back CNOTs with alternating control and target qubits.
 sdks:
   qiskit:

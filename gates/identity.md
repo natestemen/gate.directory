@@ -20,6 +20,9 @@ groups:
 properties:
   - hermitian
 arity: n
+quirk:
+  matrix: "{{1,0},{0,1}}"
+  name: I
 description: Leaves the quantum state unchanged.
 sdks:
   qiskit:

@@ -15,6 +15,8 @@ groups:
 properties:
   - hermitian
 arity: 1
+quirk:
+  cols: [["Y"]]
 description: Bit-and-phase flip combining $X$ and $Z$ with a phase.
 sdks:
   qiskit:

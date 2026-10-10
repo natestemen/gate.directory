@@ -14,6 +14,8 @@ properties:
 controlled: hadamard
 arity: 2
 weyl: [1/4, 0, 0]
+quirk:
+  cols: [["•", "H"]]
 description: Applies a Hadamard to the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

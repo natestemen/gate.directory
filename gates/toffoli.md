@@ -19,6 +19,8 @@ properties:
   - hermitian
 controlled: cnot
 arity: 3
+quirk:
+  cols: [["•", "•", "X"]]
 description: Controlled-controlled-NOT gate that flips a target qubit when both controls are $|1\rangle$.
 sdks:
   qiskit:

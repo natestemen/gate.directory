@@ -6,6 +6,8 @@ groups:
   - matchgate
 arity: 2
 weyl: [1/4, 1/8, 0]
+quirk:
+  matrix: "{{0.9238795325,0,0,-0.3826834324i},{0,0.3826834324,-0.9238795325i,0},{0,-0.9238795325i,0.3826834324,0},{-0.3826834324i,0,0,0.9238795325}}"
 description: Two-qubit entangling gate that can synthesize arbitrary elements of $U(4)$ with only two applications.
 citation:
   title: Minimum construction of two-qubit quantum operations

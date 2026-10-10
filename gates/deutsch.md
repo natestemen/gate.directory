@@ -9,6 +9,11 @@ notations:
   - \Lambda^2(iR_x(2\theta))
 arity: 3
 parameters: 1
+quirk:
+  cols:
+    - ["•", "•", {id: Rxft, arg: "4 pi t"}]
+    - ["•", "Z^½"]
+  note: \theta = 2\pi t
 description: The original universal three-qubit gate, applying $iR_x(2\theta)$ to the target when both controls are $|1\rangle$.
 citation:
   title: Quantum computational networks

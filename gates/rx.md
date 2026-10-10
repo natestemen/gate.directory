@@ -9,6 +9,10 @@ notations:
   - X_\theta
 arity: 1
 parameters: 1
+quirk:
+  cols:
+    - [{id: Rxft, arg: "2 pi t"}]
+  note: \theta = 2\pi t
 description: Rotation about the $x$ axis of the Bloch sphere.
 sdks:
   qiskit:

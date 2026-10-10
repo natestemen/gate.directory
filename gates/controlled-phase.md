@@ -17,6 +17,10 @@ weyl:
   coords: [0, 0, phi/4]
   params:
     phi: { label: \phi, range: [0, 2], default: 1 }
+quirk:
+  cols:
+    - ["•", {id: Z^ft, arg: "2 t"}]
+  note: \phi = 2\pi t
 arity: 2
 description: Applies a phase $\mathrm{e}^{i\phi}$ to $|11\rangle$ and leaves other basis states unchanged.
 sdks:

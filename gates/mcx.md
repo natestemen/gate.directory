@@ -18,6 +18,9 @@ properties:
   - hermitian
 controlled: toffoli
 arity: n+1
+quirk:
+  cols: [["•", "•", "•", "X"]]
+  note: n = 3
 description: Flips the target qubit when all $n$ control qubits are in the $|1\rangle$ state.
 citation:
   title: Elementary gates for quantum computation

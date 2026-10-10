@@ -14,6 +14,22 @@ weyl:
     a: { label: a, range: [0, 1/2], default: 3/16 }
     b: { label: b, range: [0, 1/2], default: 1/8 }
     c: { label: c, range: [-1/4, 1/4], default: 1/16 }
+quirk:
+  cols:
+    - ["H", "H"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "-2 pi t"}]
+    - ["•", "X"]
+    - ["H", "H"]
+    - ["X^-½", "X^-½"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "-4 pi t"}]
+    - ["•", "X"]
+    - ["X^½", "X^½"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "-6 pi t"}]
+    - ["•", "X"]
+  note: (a, b, c) = (\pi t, 2\pi t, 3\pi t)
 description: Parameterizes every two-qubit interaction up to local unitaries.
 sdks:
   pennylane:

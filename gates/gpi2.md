@@ -9,6 +9,12 @@ notations:
   - \mathrm{GPI2}(\phi)
 arity: 1
 parameters: 1
+quirk:
+  cols:
+    - [{id: Rzft, arg: "-2 pi t"}]
+    - [{id: Rxft, arg: "pi/2"}]
+    - [{id: Rzft, arg: "2 pi t"}]
+  note: \phi = 2\pi t
 description: IonQ's native $\pi/2$ pulse, a half rotation about the equatorial Bloch-sphere axis at angle $\phi$.
 sdks:
   qiskit:

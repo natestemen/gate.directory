@@ -12,6 +12,8 @@ groups:
   - number-preserving
 arity: 2
 weyl: [1/4, 1/4, 1/24]
+quirk:
+  matrix: "{{1,0,0,0},{0,0,-i,0},{0,-i,0,0},{0,0,0,0.8660254038-0.5i}}"
 description: Google's native two-qubit gate, the fSim gate at $\theta = \pi/2$, $\phi = \pi/6$.
 citation:
   title: Quantum supremacy using a programmable superconducting processor

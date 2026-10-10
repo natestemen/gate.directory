@@ -13,6 +13,10 @@ groups:
   - number-preserving
 arity: 1
 parameters: 1
+quirk:
+  cols:
+    - [{id: Z^ft, arg: "2 t"}]
+  note: \phi = 2\pi t
 description: Applies a relative phase $e^{i\phi}$ to the $|1\rangle$ component.
 sdks:
   qiskit:

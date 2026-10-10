@@ -14,6 +14,10 @@ groups:
 properties:
   - hermitian
 arity: n
+quirk:
+  matrix: "{{-0.5,0.5,0.5,0.5},{0.5,-0.5,0.5,0.5},{0.5,0.5,-0.5,0.5},{0.5,0.5,0.5,-0.5}}"
+  name: Us
+  note: n = 2
 description: Reflection about the uniform superposition, the "inversion about the mean" step of Grover's algorithm.
 citation:
   title: A fast quantum mechanical algorithm for database search

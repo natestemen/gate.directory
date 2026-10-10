@@ -17,6 +17,10 @@ weyl:
   coords: [0, 0, theta/4]
   params:
     theta: { label: \theta, range: [0, 2], default: 1 }
+quirk:
+  cols:
+    - ["•", {id: Rzft, arg: "4 pi t"}]
+  note: \theta = 4\pi t
 description: Rotates the target about the $z$ axis by $\theta$ when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

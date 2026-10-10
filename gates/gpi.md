@@ -11,6 +11,12 @@ properties:
   - hermitian
 arity: 1
 parameters: 1
+quirk:
+  cols:
+    - [{id: Rzft, arg: "-2 pi t"}]
+    - ["X"]
+    - [{id: Rzft, arg: "2 pi t"}]
+  note: \phi = 2\pi t
 description: IonQ's native $\pi$ pulse, a bit flip about the equatorial Bloch-sphere axis at angle $\phi$.
 sdks:
   qiskit:

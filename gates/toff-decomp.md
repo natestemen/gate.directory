@@ -5,6 +5,9 @@ symbol: G
 groups:
   - orthogonal
 arity: 1
+quirk:
+  cols:
+    - [{id: Ryft, arg: "pi/4"}]
 description: A single-qubit rotation used in optimal Toffoli decompositions.
 citation:
   year: 2003

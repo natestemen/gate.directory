@@ -15,6 +15,8 @@ properties:
   - hermitian
 controlled: cz
 arity: 3
+quirk:
+  cols: [["•", "•", "Z"]]
 description: Applies a $-1$ phase to $|111\rangle$ and leaves all other basis states unchanged.
 sdks:
   qiskit:

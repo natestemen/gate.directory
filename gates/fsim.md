@@ -13,6 +13,20 @@ weyl:
   params:
     theta: { label: \theta, range: [0, 1], default: 1/2 }
     phi: { label: \phi, range: [0, 2], default: 1/6 }
+quirk:
+  cols:
+    - ["H", "H"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "2 pi t"}]
+    - ["•", "X"]
+    - ["H", "H"]
+    - ["X^-½", "X^-½"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "2 pi t"}]
+    - ["•", "X"]
+    - ["X^½", "X^½"]
+    - ["•", {id: Z^ft, arg: "-4 t"}]
+  note: \theta = 2\pi t,\ \phi = 4\pi t
 description: Parameterized two-qubit gate combining an $XY$ interaction with a controlled-phase, native to Google superconducting hardware.
 sdks:
   qiskit:

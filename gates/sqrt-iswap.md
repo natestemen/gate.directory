@@ -14,6 +14,8 @@ groups:
   - number-preserving
 arity: 2
 weyl: [1/8, 1/8, 0]
+quirk:
+  matrix: "{{1,0,0,0},{0,0.7071067812,0.7071067812i,0},{0,0.7071067812i,0.7071067812,0},{0,0,0,1}}"
 description: Applies half of an iSWAP interaction, native to superconducting hardware with $XY$ coupling.
 sdks:
   qiskit:

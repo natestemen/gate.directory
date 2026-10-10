@@ -9,6 +9,8 @@ notations:
   - P(\pi/2)
   - K
 arity: 1
+quirk:
+  cols: [["Z^½"]]
 groups:
   - clifford
   - diagonal

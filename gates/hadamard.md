@@ -10,6 +10,8 @@ groups:
 properties:
   - hermitian
 arity: 1
+quirk:
+  cols: [["H"]]
 description: Maps computational basis states to equal superpositions and swaps the $X$ and $Z$ bases.
 sdks:
   qiskit:

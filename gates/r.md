@@ -11,6 +11,12 @@ notations:
   - \mathrm{PhasedX}
 arity: 1
 parameters: 2
+quirk:
+  cols:
+    - [{id: Rzft, arg: "-4 pi t"}]
+    - [{id: Rxft, arg: "2 pi t"}]
+    - [{id: Rzft, arg: "4 pi t"}]
+  note: \theta = 2\pi t,\ \phi = 4\pi t
 description: Rotation by $\theta$ about the equatorial Bloch-sphere axis at azimuthal angle $\phi$.
 sdks:
   qiskit:

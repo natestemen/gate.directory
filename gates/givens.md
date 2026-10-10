@@ -17,6 +17,21 @@ weyl:
   coords: [theta/2, theta/2, 0]
   params:
     theta: { label: \theta, range: [0, 1], default: 1/4 }
+quirk:
+  cols:
+    - [1, "Z^½"]
+    - ["H", "H"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "2 pi t"}]
+    - ["•", "X"]
+    - ["H", "H"]
+    - ["X^-½", "X^-½"]
+    - ["•", "X"]
+    - [1, {id: Rzft, arg: "2 pi t"}]
+    - ["•", "X"]
+    - ["X^½", "X^½"]
+    - [1, "Z^-½"]
+  note: \theta = 2\pi t
 description: Two-level rotation that mixes the $|01\rangle$ and $|10\rangle$ subspace.
 sdks:
   qiskit:

@@ -4,6 +4,9 @@ title: Virtual Distillation
 symbol: B^{(2)}_i
 arity: 2
 weyl: [1/8, 1/8, 0]
+quirk:
+  matrix: "{{1,0,0,0},{0,0.7071067812,0.7071067812,0},{0,-0.7071067812,0.7071067812,0},{0,0,0,1}}"
+  name: B(2)
 groups:
   - orthogonal
 description: A two-qubit entangling gate used in virtual distillation error-mitigation protocols.

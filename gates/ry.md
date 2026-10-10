@@ -11,6 +11,10 @@ groups:
   - orthogonal
 arity: 1
 parameters: 1
+quirk:
+  cols:
+    - [{id: Ryft, arg: "2 pi t"}]
+  note: \theta = 2\pi t
 description: Rotation about the $y$ axis of the Bloch sphere.
 sdks:
   qiskit:

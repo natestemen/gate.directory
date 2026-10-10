@@ -14,6 +14,8 @@ properties:
   - hermitian
 arity: 2
 weyl: [1/4, 0, 0]
+quirk:
+  cols: [["•", "Y"]]
 description: Applies $Y$ to the target qubit when the control qubit is in the $|1\rangle$ state.
 sdks:
   qiskit:

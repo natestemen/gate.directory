@@ -18,6 +18,8 @@ groups:
 properties:
   - hermitian
 arity: 1
+quirk:
+  cols: [["Z"]]
 description: Phase-flip gate that leaves $|0\rangle$ unchanged and flips the phase of $|1\rangle$.
 sdks:
   qiskit:

@@ -12,6 +12,10 @@ groups:
   - number-preserving
 arity: 1
 parameters: 1
+quirk:
+  cols:
+    - [{id: Rzft, arg: "2 pi t"}]
+  note: \theta = 2\pi t
 description: Rotation about the $z$ axis of the Bloch sphere.
 sdks:
   qiskit:

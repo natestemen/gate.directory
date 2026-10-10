@@ -95,6 +95,27 @@ module.exports = function (eleventyConfig) {
     }).replace(/</g, "\\u003c");
   });
 
+  // Link to a gate in Quirk (algassert.com/quirk). Front matter either lists
+  // built-in Quirk gates per column (`cols`) or gives the unitary as a Quirk
+  // matrix string (`matrix`, optionally behind `controls` control wires).
+  eleventyConfig.addFilter("quirkUrl", function (quirk, slug, symbol) {
+    if (!quirk) return null;
+    let circuit;
+    if (quirk.cols) {
+      circuit = { cols: quirk.cols };
+    } else if (quirk.matrix) {
+      const id = "~" + String(slug).replace(/[^a-z0-9]/gi, "").slice(0, 12);
+      const controls = Array(quirk.controls || 0).fill("•");
+      circuit = {
+        cols: [[...controls, id]],
+        gates: [{ id, name: quirk.name || symbolText(symbol), matrix: quirk.matrix }],
+      };
+    } else {
+      return null;
+    }
+    return "https://algassert.com/quirk#circuit=" + encodeURIComponent(JSON.stringify(circuit));
+  });
+
   eleventyConfig.addPassthroughCopy("styles/base.css");
   eleventyConfig.addPassthroughCopy("styles/gate.css");
   eleventyConfig.addPassthroughCopy("styles/weyl.css");

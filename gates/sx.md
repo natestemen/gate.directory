@@ -13,6 +13,8 @@ notations:
 groups:
   - clifford
 arity: 1
+quirk:
+  cols: [["X^½"]]
 description: A gate whose square is the Pauli-$X$ (NOT) gate.
 sdks:
   qiskit:

@@ -17,6 +17,8 @@ properties:
   - hermitian
 arity: 2
 weyl: [1/4, 0, 0]
+quirk:
+  cols: [["•", "Z"]]
 description: Applies a $-1$ phase to $|11\rangle$.
 sdks:
   qiskit:

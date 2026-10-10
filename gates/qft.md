@@ -5,6 +5,9 @@ symbol: \mathrm{QFT}_n
 alias:
   - qft
 arity: n
+quirk:
+  cols: [["QFT3"]]
+  note: n = 3
 description: Applies the discrete Fourier transform to the amplitudes of an $n$-qubit state.
 sdks:
   qiskit:

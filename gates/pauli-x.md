@@ -18,6 +18,8 @@ groups:
 properties:
   - hermitian
 arity: 1
+quirk:
+  cols: [["X"]]
 description: Bit-flip gate that swaps $|0\rangle$ and $|1\rangle$.
 sdks:
   qiskit:

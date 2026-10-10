@@ -9,6 +9,14 @@ notations:
   - R_{\vec{n}}(\theta)
 arity: 1
 parameters: 3
+quirk:
+  cols:
+    - [{id: Rzft, arg: "-2 pi t"}]
+    - [{id: Ryft, arg: "-acos(1/sqrt(3))"}]
+    - [{id: Rzft, arg: "2 pi t"}]
+    - [{id: Ryft, arg: "acos(1/sqrt(3))"}]
+    - [{id: Rzft, arg: "2 pi t"}]
+  note: \theta = 2\pi t,\ \mathbf{n} = (\sqrt{2}\cos 2\pi t,\ \sqrt{2}\sin 2\pi t,\ 1)/\sqrt{3}
 description: Rotation by angle $\theta$ about the Bloch-sphere axis $\vec{n}$.
 sdks:
   qiskit:

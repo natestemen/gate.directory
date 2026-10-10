@@ -13,6 +13,10 @@ groups:
   - number-preserving
 arity: n
 parameters: 1
+quirk:
+  matrix: "{{i,0},{0,i}}"
+  name: Ph(π/2)
+  note: \phi = \pi/2
 description: Multiplies the entire quantum state by an overall phase factor.
 sdks:
   qiskit:

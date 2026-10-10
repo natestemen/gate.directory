@@ -15,6 +15,13 @@
         {% if dimension and dimension != 2 %}<span><strong>Dimension:</strong> ${{ dimension }}$</span>{% endif %}
         {% if parameters %}<span><strong>Parameters:</strong> ${{ parameters }}$</span>{% endif %}
       </p>
+      {% set quirkHref = quirk | quirkUrl(page.fileSlug, symbol) %}
+      {% if quirkHref %}
+      <p class="gate-actions">
+        <a class="quirk-link" href="{{ quirkHref }}" target="_blank" rel="noopener">Open in Quirk ↗</a>
+        {% if quirk.note %}<span class="quirk-note">with ${{ quirk.note }}$</span>{% endif %}
+      </p>
+      {% endif %}
       {% if properties %}
       <p class="gate-badges">
         {% for prop in properties %}<span class="gate-badge">{{ prop }}</span>{% endfor %}
