@@ -286,3 +286,135 @@ a.chip:focus-visible {
   text-transform: uppercase;
   color: var(--ink-muted);
 }
+
+/* ---------------------------------------------------------------- cards */
+
+.gate-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: var(--cell);
+  padding: 20px 4px 6px;
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: inset 0 3px 0 var(--fam);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.gate-card:hover,
+.gate-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: inset 0 3px 0 var(--fam), 0 8px 16px rgba(0, 0, 0, 0.14);
+}
+
+.gate-card:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.gate-card-arity,
+.gate-card-params {
+  position: absolute;
+  top: 7px;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.gate-card-arity {
+  left: 7px;
+  font-weight: 700;
+}
+
+.gate-card-params {
+  right: 7px;
+  color: var(--ink-muted);
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gate-card-symbol {
+  font-size: 15px;
+  line-height: 1;
+  margin-top: 2px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.gate-card-name {
+  margin-top: auto;
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 9px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+.gate-card-ghost {
+  border-style: dashed;
+  border-color: var(--ink-muted);
+  background: transparent;
+  box-shadow: none;
+}
+
+.gate-card-ghost .gate-card-symbol {
+  opacity: 0.5;
+}
+
+.gate-card-ghost:hover,
+.gate-card-ghost:focus-visible {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+/* group map */
+
+.group-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 4px 0 16px;
+}
+
+.group-map .group-shape {
+  fill: var(--card);
+  fill-opacity: 0;
+  stroke: var(--ink);
+  stroke-width: 1.25;
+  transition: fill-opacity 0.15s ease;
+}
+
+.group-map a:hover .group-shape,
+.group-map a:focus-visible .group-shape {
+  fill: var(--peach);
+  fill-opacity: 0.7;
+}
+
+.group-map text {
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--ink);
+  pointer-events: none;
+}
+
+.group-map a:hover text {
+  text-decoration: underline;
+}
+
+.group-map-examples text {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  fill: var(--ink-muted);
+}
+

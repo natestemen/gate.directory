@@ -85,33 +85,40 @@ h2 {
   border-top: 1.5px solid var(--ink);
 }
 
-.gate-main {
+.gate-main,
+.prose {
   flex: 1 1 400px;
   min-width: 0;
   line-height: 1.5;
 }
 
-.gate-main h3 {
+.gate-main h3,
+.prose h3 {
   margin: 24px 0 8px;
 }
 
-.gate-main h3:first-child {
+.gate-main h3:first-child,
+.prose h3:first-child {
   margin-top: 0;
 }
 
-.gate-main ul {
+.gate-main ul,
+.prose ul {
   padding-left: 22px;
 }
 
-.gate-main li + li {
+.gate-main li + li,
+.prose li + li {
   margin-top: 4px;
 }
 
-.gate-main p + p {
+.gate-main p + p,
+.prose p + p {
   margin-top: 10px;
 }
 
-.gate-main table {
+.gate-main table,
+.prose table {
   border-collapse: collapse;
   border: 1.5px solid var(--ink);
   background: var(--card);
@@ -120,13 +127,16 @@ h2 {
 }
 
 .gate-main th,
-.gate-main td {
+.gate-main td,
+.prose th,
+.prose td {
   padding: 6px 12px;
   text-align: left;
   border-bottom: 1px solid var(--rule);
 }
 
-.gate-main th {
+.gate-main th,
+.prose th {
   background: var(--peach);
   border-bottom: 1.5px solid var(--ink);
   font-size: 11px;
@@ -134,7 +144,8 @@ h2 {
   text-transform: uppercase;
 }
 
-.gate-main tr:last-child td {
+.gate-main tr:last-child td,
+.prose tr:last-child td {
   border-bottom: none;
 }
 
@@ -445,4 +456,31 @@ p a .katex {
     height: 72px;
     font-size: 20px;
   }
+}
+
+/* ----------------------------------------------------------------- groups */
+
+.group-masthead {
+  padding-bottom: 22px;
+}
+
+.prose .katex-display {
+  margin: 14px 0;
+}
+
+.tile-grid {
+  --cell: 84px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--cell));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.chip-current {
+  background: var(--peach);
+}
+
+.group-map a.is-current .group-shape {
+  fill: var(--peach);
+  fill-opacity: 0.7;
 }

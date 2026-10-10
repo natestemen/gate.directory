@@ -37,10 +37,210 @@
       <div class="not-footer">
         
         
-<h2>Number-Preserving Group</h2>
 
-<div>
-  <p>Number-preserving (or <em>excitation-preserving</em>) gates conserve the total number of $|1\rangle$s: they never create or destroy excitations, only move them around and adjust phases. Formally, they are the unitaries commuting with the total number operator $\hat{N} = \sum_i (I - Z_i)/2$ — the gates with a global $\mathsf{U}(1)$ symmetry.</p>
+
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+
+<article class="group">
+  <header class="gate-masthead group-masthead">
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>Group</span><span aria-hidden="true">·</span>
+        <span>26 gates</span>
+      </p>
+      <h2 class="gate-title">Number-Preserving Group</h2>
+      <div class="gate-lede"><p>Gates that conserve the number of excitations, moving them around and adjusting phases without creating or destroying any.</p>
+</div>
+    </div>
+  </header>
+
+  <div class="gate-body">
+    <div class="gate-main prose">
+      <p>Number-preserving (or <em>excitation-preserving</em>) gates conserve the total number of $|1\rangle$s: they never create or destroy excitations, only move them around and adjust phases. Formally, they are the unitaries commuting with the total number operator $\hat{N} = \sum_i (I - Z_i)/2$ — the gates with a global $\mathsf{U}(1)$ symmetry.</p>
 <p>$$\mathcal{N}_n := \left\{ U \in \mathsf{U}(2^n) \mid U \hat{N} U^\dag = \hat{N} \right\}$$</p>
 <p>Equivalently, $U$ is block-diagonal with respect to Hamming weight: it decomposes as $\bigoplus_{k=0}^{n} U_k$ with $U_k$ acting on the $\binom{n}{k}$-dimensional weight-$k$ sector.</p>
 <h3>Properties</h3>
@@ -55,200 +255,274 @@
 <li><strong>Error mitigation.</strong> If a circuit should conserve $\hat{N}$, measuring the total excitation number and discarding violating shots (symmetry verification) catches any error that changes the weight — bit flips in particular.</li>
 </ul>
 
-</div>
-
-
-
-<p>The following gates are contained in this group:</p>
-<ul>
-
-  
-
-  
-
-  
-    <li><a href="/gates/ccz/">Controlled-CZ</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/clock/">Clock</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/controlled-clock/">Controlled Clock</a></li>
-  
-
-  
-    <li><a href="/gates/controlled-phase/">Controlled Phase</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/crz/">Controlled $z$ Rotation</a></li>
-  
-
-  
-    <li><a href="/gates/cs/">Controlled-S</a></li>
-  
-
-  
-    <li><a href="/gates/cswap/">Fredkin</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cz/">Controlled-Z</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/fsim/">Fermionic Simulator</a></li>
-  
-
-  
-    <li><a href="/gates/fswap/">fSWAP</a></li>
-  
-
-  
-    <li><a href="/gates/givens/">Givens Rotation</a></li>
-  
-
-  
-    <li><a href="/gates/global-phase/">Global Phase</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-    <li><a href="/gates/iswap/">iSWAP</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
-  
-
-  
-    <li><a href="/gates/phase-oracle/">Phase Oracle</a></li>
-  
-
-  
-    <li><a href="/gates/phase/">Phase Shift</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/rz/">$z$ Rotation</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/rzz/">$zz$ Rotation</a></li>
-  
-
-  
-    <li><a href="/gates/s/">Phase</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/sqrt-iswap/">Square Root iSWAP</a></li>
-  
-
-  
-    <li><a href="/gates/sqrt-swap/">Square Root SWAP</a></li>
-  
-
-  
-    <li><a href="/gates/swap/">SWAP</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/sycamore/">Sycamore</a></li>
-  
-
-  
-    <li><a href="/gates/t/">T</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/xy/">XY Interaction</a></li>
-  
-
-</ul>
-
-
+    </div>
+
+    <aside class="gate-aside">
+      <section>
+        <h3 class="caption">All groups</h3>
+        <ul class="chip-list">
+          
+            <li><a class="chip" href="/groups/clifford/">clifford</a></li>
+          
+            <li><a class="chip" href="/groups/diagonal/">diagonal</a></li>
+          
+            <li><a class="chip" href="/groups/matchgate/">matchgate</a></li>
+          
+            <li><a class="chip chip-current" href="/groups/number-preserving/" aria-current="page">number-preserving</a></li>
+          
+            <li><a class="chip" href="/groups/orthogonal/">orthogonal</a></li>
+          
+            <li><a class="chip" href="/groups/pauli/">pauli</a></li>
+          
+            <li><a class="chip" href="/groups/permutation/">permutation</a></li>
+          
+            <li><a class="chip" href="/groups/unitary/">unitary</a></li>
+          
+        </ul>
+      </section>
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/groups/number-preserving.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="section" id="gates">
+    <div class="section-head">
+      <h2 class="section-title">Gates in this group</h2>
+      
+        <p>In the order of the table on the home page; the colour bar is the gate's family.</p>
+      
+    </div>
+    
+      <div class="tile-grid">
+        
+  <a class="gate-card" href="/gates/pauli-z/" style="--fam: #2f5fd0">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$Z$</span>
+    <span class="gate-card-name">Pauli-Z</span>
+  </a>
+
+  <a class="gate-card" href="/gates/identity/" style="--fam: #2f5fd0">
+    <span class="gate-card-arity" title="qubits">n</span>
+    
+    <span class="gate-card-symbol">$I$</span>
+    <span class="gate-card-name">Identity</span>
+  </a>
+
+  <a class="gate-card" href="/gates/s/" style="--fam: #1a8ec2">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$S$</span>
+    <span class="gate-card-name">Phase</span>
+  </a>
+
+  <a class="gate-card" href="/gates/t/" style="--fam: #1a8ec2">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$T$</span>
+    <span class="gate-card-name">T</span>
+  </a>
+
+  <a class="gate-card" href="/gates/rz/" style="--fam: #0b7a5a">
+    <span class="gate-card-arity" title="qubits">1</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$R_z$</span>
+    <span class="gate-card-name">z Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/phase/" style="--fam: #0b7a5a">
+    <span class="gate-card-arity" title="qubits">1</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$P$</span>
+    <span class="gate-card-name">Phase Shift</span>
+  </a>
+
+  <a class="gate-card" href="/gates/rzz/" style="--fam: #0b7a5a">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$R_{zz}$</span>
+    <span class="gate-card-name">zz Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/crz/" style="--fam: #0b7a5a">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$\mathrm{C}R_z$</span>
+    <span class="gate-card-name">Controlled z Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cz/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}Z$</span>
+    <span class="gate-card-name">Controlled-Z</span>
+  </a>
+
+  <a class="gate-card" href="/gates/controlled-phase/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$\mathrm{C}P$</span>
+    <span class="gate-card-name">Controlled Phase</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cs/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}S$</span>
+    <span class="gate-card-name">Controlled-S</span>
+  </a>
+
+  <a class="gate-card" href="/gates/ccz/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">3</span>
+    
+    <span class="gate-card-symbol">$\mathrm{CC}Z$</span>
+    <span class="gate-card-name">Controlled-CZ</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cswap/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">3</span>
+    
+    <span class="gate-card-symbol">$\mathrm{CSWAP}$</span>
+    <span class="gate-card-name">Fredkin</span>
+  </a>
+
+  <a class="gate-card" href="/gates/swap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{SWAP}$</span>
+    <span class="gate-card-name">SWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/iswap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$i\mathrm{SWAP}$</span>
+    <span class="gate-card-name">iSWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/sqrt-swap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\sqrt{\mathrm{SWAP}}$</span>
+    <span class="gate-card-name">Square Root SWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/sqrt-iswap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\sqrt{i\mathrm{SWAP}}$</span>
+    <span class="gate-card-name">Square Root iSWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/fswap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{fSWAP}$</span>
+    <span class="gate-card-name">fSWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/sycamore/" style="--fam: #c2571a">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{SYC}$</span>
+    <span class="gate-card-name">Sycamore</span>
+  </a>
+
+  <a class="gate-card" href="/gates/xy/" style="--fam: #c2571a">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$\mathrm{XY}$</span>
+    <span class="gate-card-name">XY Interaction</span>
+  </a>
+
+  <a class="gate-card" href="/gates/fsim/" style="--fam: #c2571a">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">2</span>
+    <span class="gate-card-symbol">$\mathrm{FSim}$</span>
+    <span class="gate-card-name">Fermionic Simulator</span>
+  </a>
+
+  <a class="gate-card" href="/gates/givens/" style="--fam: #8a6d00">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$G_{ij}$</span>
+    <span class="gate-card-name">Givens Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/clock/" style="--fam: #556b2f">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$Z_d$</span>
+    <span class="gate-card-name">Clock</span>
+  </a>
+
+  <a class="gate-card" href="/gates/controlled-clock/" style="--fam: #556b2f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}Z_d$</span>
+    <span class="gate-card-name">Controlled Clock</span>
+  </a>
+
+  <a class="gate-card" href="/gates/global-phase/" style="--fam: #666666">
+    <span class="gate-card-arity" title="qubits">n</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$\mathrm{Ph}$</span>
+    <span class="gate-card-name">Global Phase</span>
+  </a>
+
+  <a class="gate-card" href="/gates/phase-oracle/" style="--fam: #666666">
+    <span class="gate-card-arity" title="qubits">n</span>
+    
+    <span class="gate-card-symbol">$O_f^\pm$</span>
+    <span class="gate-card-name">Phase Oracle</span>
+  </a>
+
+      </div>
+    
+  </section>
+
+  <section class="section" id="map">
+    <div class="section-head">
+      <h2 class="section-title">On the map</h2>
+      <p>How the number-preserving group sits among the others: nested regions are subgroups, overlaps are shared gates, and the small labels are one example gate per region.</p>
+    </div>
+    
+    
+<svg class="group-map" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
+  
+  
+    <a href="/groups/unitary/"><rect class="group-shape" x="8" y="8" width="744" height="424" rx="14"/><text x="740" y="30" text-anchor="end">unitary</text></a>
+  
+    <a href="/groups/clifford/"><rect class="group-shape" x="40" y="40" width="430" height="260" rx="10"/><text x="52" y="62">clifford</text></a>
+  
+    <a href="/groups/orthogonal/"><rect class="group-shape" x="120" y="150" width="480" height="250" rx="10"/><text x="590" y="393" text-anchor="end">orthogonal</text></a>
+  
+    <a href="/groups/number-preserving/" class="is-current"><rect class="group-shape" x="300" y="70" width="420" height="290" rx="10"/><text x="570" y="350" text-anchor="end">number-preserving</text></a>
+  
+    <a href="/groups/diagonal/"><rect class="group-shape" x="310" y="105" width="250" height="141" rx="8"/><text x="548" y="118" text-anchor="end">diagonal</text></a>
+  
+    <a href="/groups/pauli/"><rect class="group-shape" x="70" y="76" width="260" height="154" rx="8"/><text x="78" y="92">pauli</text></a>
+  
+    <a href="/groups/permutation/"><rect class="group-shape" x="150" y="210" width="190" height="170" rx="8"/><text x="158" y="370">permutation</text></a>
+  
+    <a href="/groups/matchgate/"><path class="group-shape" stroke-linejoin="round" d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z"/><text x="640" y="175" text-anchor="middle" transform="rotate(-90 640 175)">matchgate</text></a>
+  
+  <g class="group-map-examples" aria-hidden="true">
+    <text x="180" y="118">Y</text><text x="222" y="224">X</text><text x="317" y="186">Z</text><text x="317" y="223">I</text>
+    <text x="400" y="58">H</text><text x="222" y="280">CNOT</text><text x="320" y="280" text-anchor="middle">SWAP</text>
+    <text x="222" y="342">Toffoli</text><text x="320" y="338" text-anchor="middle">CSWAP</text><text x="400" y="128">S</text>
+    <text x="510" y="140">T</text><text x="404" y="200">CZ</text><text x="512" y="200">CCZ</text><text x="400" y="90">iSWAP</text>
+    <text x="548" y="90">XY</text><text x="447" y="277" text-anchor="middle">fSWAP</text>
+    <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text><text x="134" y="330" text-anchor="middle">Ry</text>
+    <text x="682" y="200">FSim</text><text x="62" y="412">Rx</text><text x="624" y="374">Rxx</text>
+  </g>
+</svg>
+
+  </section>
+
+  <p class="gate-foot"><a href="/#groups">← All groups</a></p>
+</article>
 
       </div>
       <footer>

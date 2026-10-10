@@ -37,10 +37,208 @@
       <div class="not-footer">
         
         
-<h2>Orthogonal Group</h2>
 
-<div>
-  <p>The orthogonal group consists of the <em>real</em> unitaries — gates whose matrices have no imaginary entries (the homepage filter calls this group &quot;Real&quot;). Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.</p>
+
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+<article class="group">
+  <header class="gate-masthead group-masthead">
+    <div class="gate-masthead-text">
+      <p class="caption gate-kicker">
+        <span>Group</span><span aria-hidden="true">·</span>
+        <span>25 gates</span>
+      </p>
+      <h2 class="gate-title">Orthogonal Group</h2>
+      <div class="gate-lede"><p>The real unitaries. Circuits built from them keep every amplitude real, and that costs surprisingly little.</p>
+</div>
+    </div>
+  </header>
+
+  <div class="gate-body">
+    <div class="gate-main prose">
+      <p>The orthogonal group consists of the <em>real</em> unitaries — gates whose matrices have no imaginary entries. Real gates compose to real gates, so circuits built from them keep all amplitudes real, and a surprising amount of quantum computing happens entirely inside this group.</p>
 <p>$$
 \begin{aligned}
 \mathsf{O}(n) &amp;:= \left\{ O \in \mathrm{GL}(n, \mathbb{R}) \mid O^{\mathsf{T}} O = I \right\} \\
@@ -56,198 +254,267 @@ $$</p>
 <h3>Why real amplitudes suffice</h3>
 <p>Restricting to real amplitudes costs almost nothing: a single extra qubit can carry the role of the imaginary unit, and real gates on $n+1$ qubits then simulate arbitrary complex circuits on $n$ qubits (<a href="https://arxiv.org/abs/quant-ph/0210187">Rudolph and Grover</a> showed a single two-qubit real gate suffices for universality). Many textbook algorithms — Grover search among them — never produce a complex amplitude in the first place.</p>
 
-</div>
-
-
-
-<p>The following gates are contained in this group:</p>
-<ul>
-
-  
-
-  
-
-  
-    <li><a href="/gates/ccz/">Controlled-CZ</a></li>
-  
-
-  
-    <li><a href="/gates/ch/">Controlled-Hadamard</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cnot/">Controlled Not</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/controlled-shift/">Controlled Shift (SUM)</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/cry/">Controlled $y$ Rotation</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cswap/">Fredkin</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/cz/">Controlled-Z</a></li>
-  
-
-  
-    <li><a href="/gates/dcx/">Double CX</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/fswap/">fSWAP</a></li>
-  
-
-  
-    <li><a href="/gates/givens/">Givens Rotation</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/grover-diffuser/">Grover Diffuser</a></li>
-  
-
-  
-    <li><a href="/gates/hadamard/">Hadamard</a></li>
-  
-
-  
-    <li><a href="/gates/identity/">Identity</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/mcx/">Multi-Controlled X</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/oracle/">Oracle</a></li>
-  
-
-  
-    <li><a href="/gates/pauli-x/">Pauli-X</a></li>
-  
-
-  
-
-  
-    <li><a href="/gates/pauli-z/">Pauli-Z</a></li>
-  
-
-  
-    <li><a href="/gates/phase-oracle/">Phase Oracle</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/rccx/">Margolus</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/ry/">$y$ Rotation</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/shift/">Shift</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/swap/">SWAP</a></li>
-  
-
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/toff-decomp/">unnamed</a></li>
-  
-
-  
-    <li><a href="/gates/toffoli/">Toffoli</a></li>
-  
-
-  
-
-  
-
-  
-    <li><a href="/gates/virtual-distillation/">Virtual Distillation</a></li>
-  
-
-  
-
-  
-
-</ul>
-
-
+    </div>
+
+    <aside class="gate-aside">
+      <section>
+        <h3 class="caption">All groups</h3>
+        <ul class="chip-list">
+          
+            <li><a class="chip" href="/groups/clifford/">clifford</a></li>
+          
+            <li><a class="chip" href="/groups/diagonal/">diagonal</a></li>
+          
+            <li><a class="chip" href="/groups/matchgate/">matchgate</a></li>
+          
+            <li><a class="chip" href="/groups/number-preserving/">number-preserving</a></li>
+          
+            <li><a class="chip chip-current" href="/groups/orthogonal/" aria-current="page">orthogonal</a></li>
+          
+            <li><a class="chip" href="/groups/pauli/">pauli</a></li>
+          
+            <li><a class="chip" href="/groups/permutation/">permutation</a></li>
+          
+            <li><a class="chip" href="/groups/unitary/">unitary</a></li>
+          
+        </ul>
+      </section>
+      <section>
+        <p class="aside-edit"><a href="https://github.com/natestemen/gate.directory/tree/main/groups/orthogonal.md" target="_blank" rel="noopener">Edit this page on GitHub</a></p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="section" id="gates">
+    <div class="section-head">
+      <h2 class="section-title">Gates in this group</h2>
+      
+        <p>In the order of the table on the home page; the colour bar is the gate's family.</p>
+      
+    </div>
+    
+      <div class="tile-grid">
+        
+  <a class="gate-card" href="/gates/pauli-x/" style="--fam: #2f5fd0">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$X$</span>
+    <span class="gate-card-name">Pauli-X</span>
+  </a>
+
+  <a class="gate-card" href="/gates/pauli-z/" style="--fam: #2f5fd0">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$Z$</span>
+    <span class="gate-card-name">Pauli-Z</span>
+  </a>
+
+  <a class="gate-card" href="/gates/identity/" style="--fam: #2f5fd0">
+    <span class="gate-card-arity" title="qubits">n</span>
+    
+    <span class="gate-card-symbol">$I$</span>
+    <span class="gate-card-name">Identity</span>
+  </a>
+
+  <a class="gate-card" href="/gates/hadamard/" style="--fam: #2f5fd0">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$H$</span>
+    <span class="gate-card-name">Hadamard</span>
+  </a>
+
+  <a class="gate-card" href="/gates/toff-decomp/" style="--fam: #8a5a44">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$G$</span>
+    <span class="gate-card-name">unnamed</span>
+  </a>
+
+  <a class="gate-card" href="/gates/ry/" style="--fam: #0b7a5a">
+    <span class="gate-card-arity" title="qubits">1</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$R_y$</span>
+    <span class="gate-card-name">y Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cry/" style="--fam: #0b7a5a">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$\mathrm{C}R_y$</span>
+    <span class="gate-card-name">Controlled y Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cnot/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}X$</span>
+    <span class="gate-card-name">Controlled Not</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cz/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}Z$</span>
+    <span class="gate-card-name">Controlled-Z</span>
+  </a>
+
+  <a class="gate-card" href="/gates/ch/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}H$</span>
+    <span class="gate-card-name">Controlled-Hadamard</span>
+  </a>
+
+  <a class="gate-card" href="/gates/toffoli/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">3</span>
+    
+    <span class="gate-card-symbol">$\mathrm{CC}X$</span>
+    <span class="gate-card-name">Toffoli</span>
+  </a>
+
+  <a class="gate-card" href="/gates/ccz/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">3</span>
+    
+    <span class="gate-card-symbol">$\mathrm{CC}Z$</span>
+    <span class="gate-card-name">Controlled-CZ</span>
+  </a>
+
+  <a class="gate-card" href="/gates/cswap/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">3</span>
+    
+    <span class="gate-card-symbol">$\mathrm{CSWAP}$</span>
+    <span class="gate-card-name">Fredkin</span>
+  </a>
+
+  <a class="gate-card" href="/gates/mcx/" style="--fam: #7a2f8f">
+    <span class="gate-card-arity" title="qubits">n+1</span>
+    
+    <span class="gate-card-symbol">$\mathrm{C}^nX$</span>
+    <span class="gate-card-name">Multi-Controlled X</span>
+  </a>
+
+  <a class="gate-card" href="/gates/rccx/" style="--fam: #8f2f2f">
+    <span class="gate-card-arity" title="qubits">3</span>
+    
+    <span class="gate-card-symbol">$\mathrm{RCC}X$</span>
+    <span class="gate-card-name">Margolus</span>
+  </a>
+
+  <a class="gate-card" href="/gates/swap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{SWAP}$</span>
+    <span class="gate-card-name">SWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/fswap/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{fSWAP}$</span>
+    <span class="gate-card-name">fSWAP</span>
+  </a>
+
+  <a class="gate-card" href="/gates/dcx/" style="--fam: #b3315f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{DC}X$</span>
+    <span class="gate-card-name">Double CX</span>
+  </a>
+
+  <a class="gate-card" href="/gates/givens/" style="--fam: #8a6d00">
+    <span class="gate-card-arity" title="qubits">2</span>
+    <span class="gate-card-params" title="parameters">1</span>
+    <span class="gate-card-symbol">$G_{ij}$</span>
+    <span class="gate-card-name">Givens Rotation</span>
+  </a>
+
+  <a class="gate-card" href="/gates/shift/" style="--fam: #556b2f">
+    <span class="gate-card-arity" title="qubits">1</span>
+    
+    <span class="gate-card-symbol">$X_d$</span>
+    <span class="gate-card-name">Shift</span>
+  </a>
+
+  <a class="gate-card" href="/gates/controlled-shift/" style="--fam: #556b2f">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$\mathrm{SUM}_d$</span>
+    <span class="gate-card-name">Controlled Shift (SUM)</span>
+  </a>
+
+  <a class="gate-card" href="/gates/oracle/" style="--fam: #666666">
+    <span class="gate-card-arity" title="qubits">n</span>
+    
+    <span class="gate-card-symbol">$O_f$</span>
+    <span class="gate-card-name">Oracle</span>
+  </a>
+
+  <a class="gate-card" href="/gates/phase-oracle/" style="--fam: #666666">
+    <span class="gate-card-arity" title="qubits">n</span>
+    
+    <span class="gate-card-symbol">$O_f^\pm$</span>
+    <span class="gate-card-name">Phase Oracle</span>
+  </a>
+
+  <a class="gate-card" href="/gates/grover-diffuser/" style="--fam: #666666">
+    <span class="gate-card-arity" title="qubits">n</span>
+    
+    <span class="gate-card-symbol">$U_s$</span>
+    <span class="gate-card-name">Grover Diffuser</span>
+  </a>
+
+  <a class="gate-card" href="/gates/virtual-distillation/" style="--fam: #666666">
+    <span class="gate-card-arity" title="qubits">2</span>
+    
+    <span class="gate-card-symbol">$B^{(2)}_i$</span>
+    <span class="gate-card-name">Virtual Distillation</span>
+  </a>
+
+      </div>
+    
+  </section>
+
+  <section class="section" id="map">
+    <div class="section-head">
+      <h2 class="section-title">On the map</h2>
+      <p>How the orthogonal group sits among the others: nested regions are subgroups, overlaps are shared gates, and the small labels are one example gate per region.</p>
+    </div>
+    
+    
+<svg class="group-map" viewBox="0 0 760 440" role="img" aria-label="Euler diagram of gate group inclusions and overlaps">
+  
+  
+    <a href="/groups/unitary/"><rect class="group-shape" x="8" y="8" width="744" height="424" rx="14"/><text x="740" y="30" text-anchor="end">unitary</text></a>
+  
+    <a href="/groups/clifford/"><rect class="group-shape" x="40" y="40" width="430" height="260" rx="10"/><text x="52" y="62">clifford</text></a>
+  
+    <a href="/groups/orthogonal/" class="is-current"><rect class="group-shape" x="120" y="150" width="480" height="250" rx="10"/><text x="590" y="393" text-anchor="end">orthogonal</text></a>
+  
+    <a href="/groups/number-preserving/"><rect class="group-shape" x="300" y="70" width="420" height="290" rx="10"/><text x="570" y="350" text-anchor="end">number-preserving</text></a>
+  
+    <a href="/groups/diagonal/"><rect class="group-shape" x="310" y="105" width="250" height="141" rx="8"/><text x="548" y="118" text-anchor="end">diagonal</text></a>
+  
+    <a href="/groups/pauli/"><rect class="group-shape" x="70" y="76" width="260" height="154" rx="8"/><text x="78" y="92">pauli</text></a>
+  
+    <a href="/groups/permutation/"><rect class="group-shape" x="150" y="210" width="190" height="170" rx="8"/><text x="158" y="370">permutation</text></a>
+  
+    <a href="/groups/matchgate/"><path class="group-shape" stroke-linejoin="round" d="M 352 78 L 643 78 Q 650 78 650 85 L 650 373 Q 650 380 643 380 L 587 380 Q 580 380 580 373 L 580 297 Q 580 290 573 290 L 432 290 Q 425 290 425 283 L 425 265 Q 425 258 432 258 L 573 258 Q 580 258 580 251 L 580 102 Q 580 95 573 95 L 352 95 Q 345 95 345 88 L 345 85 Q 345 78 352 78 Z"/><text x="640" y="175" text-anchor="middle" transform="rotate(-90 640 175)">matchgate</text></a>
+  
+  <g class="group-map-examples" aria-hidden="true">
+    <text x="180" y="118">Y</text><text x="222" y="224">X</text><text x="317" y="186">Z</text><text x="317" y="223">I</text>
+    <text x="400" y="58">H</text><text x="222" y="280">CNOT</text><text x="320" y="280" text-anchor="middle">SWAP</text>
+    <text x="222" y="342">Toffoli</text><text x="320" y="338" text-anchor="middle">CSWAP</text><text x="400" y="128">S</text>
+    <text x="510" y="140">T</text><text x="404" y="200">CZ</text><text x="512" y="200">CCZ</text><text x="400" y="90">iSWAP</text>
+    <text x="548" y="90">XY</text><text x="447" y="277" text-anchor="middle">fSWAP</text>
+    <text x="590" y="235" transform="rotate(-90 590 235)">Givens</text><text x="134" y="330" text-anchor="middle">Ry</text>
+    <text x="682" y="200">FSim</text><text x="62" y="412">Rx</text><text x="624" y="374">Rxx</text>
+  </g>
+</svg>
+
+  </section>
+
+  <p class="gate-foot"><a href="/#groups">← All groups</a></p>
+</article>
 
       </div>
       <footer>
